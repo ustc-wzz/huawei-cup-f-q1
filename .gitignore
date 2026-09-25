@@ -1,0 +1,21 @@
+# 仅纳入可复现代码、已运行notebook和关键结果；原始数据与大体积缓存留在本地。
+/*
+!/.gitignore
+!/AGENTS.md
+!/README.md
+!/CHANGELOG.md
+!/0924_F题_问题一.ipynb
+!/notebook_source.py
+!/output_q1/
+/output_q1/*
+!/output_q1/length_domain_calibrated22/
+/output_q1/length_domain_calibrated22/*
+!/output_q1/length_domain_calibrated22/四模型选择对照.md
+!/output_q1/length_domain_calibrated22/tables/
+/output_q1/length_domain_calibrated22/tables/*
+!/output_q1/length_domain_calibrated22/tables/mixture_model_metrics_long.csv
+!/output_q1/length_domain_calibrated22/tables/mixture_outer_fold_metrics.csv
+!/output_q1/length_domain_calibrated22/tables/mixture_selection_protocol.json
+!/output_q1/length_domain_calibrated22/tables/main_mixture_crosscheck.json
+!/output_q1/length_domain_calibrated22/tables/optimal_mixture.csv
+!/output_q1/length_domain_calibrated22/tables/q1_outputs_for_q2_q3.json

@@ -1,0 +1,12 @@
+{
+  "main_model": "对数线性混料",
+  "cv_winner": "梯度提升树 GBM",
+  "GBM_loss_main": 4.744067464177924,
+  "GBM_loss_train_mean": 4.763760917888323,
+  "GBM_loss_uniform": 4.74431330202898,
+  "GBM_loss_search_best": 4.705195815550385,
+  "GBM_main_minus_search_best": 0.03887164862753867,
+  "main_better_than_train_mean_under_GBM": true,
+  "main_better_than_uniform_under_GBM": true,
+  "real_training_validated": false
+}

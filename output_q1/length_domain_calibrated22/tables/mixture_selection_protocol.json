@@ -1,0 +1,33 @@
+{
+  "selection_rule": "CV benchmark: minimum outer OOF RMSE; main model: loglinear for interpretation and constrained optimization; train-only tuning",
+  "outer_seed": 0,
+  "inner_seed": 1,
+  "folds": 5,
+  "target": "mean of 13 validation losses",
+  "cv_winner": "梯度提升树 GBM",
+  "main_model": "对数线性混料",
+  "selected_predictive_model": "对数线性混料",
+  "interpretive_model": "对数线性混料",
+  "main_model_rationale": "prediction-interpretability-optimization tradeoff; not the lowest CV error",
+  "final_parameters": {
+    "线性混料": {},
+    "对数线性混料": {
+      "log__kw_args": {
+        "epsilon": 0.001
+      }
+    },
+    "加性样条（PDF）": {
+      "ridge__alpha": 10.0
+    },
+    "梯度提升树 GBM": {
+      "max_depth": 3,
+      "n_estimators": 500
+    }
+  },
+  "spline_reference": "uspto_backgrounds",
+  "spline_knots": "uniform",
+  "spline_n_knots": 4,
+  "spline_degree": 2,
+  "spline_extrapolation": "linear",
+  "scope": "conditional comparison of stated candidate grids; existing test sets have been inspected in earlier analyses, not a newly untouched holdout"
+}
