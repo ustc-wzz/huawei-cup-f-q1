@@ -135,3 +135,12 @@
 
 !/python_bootstrap.py
 !/bootstrap_uv.json
+
+# v0.9.2 完整模型公式与核查
+!/Q1/
+/Q1/*
+!/Q1/模型建立.md
+!/Q2/模型建立.md
+!/Q3/模型建立.md
+!/公式完整性核查.md
+!/formula_verification.json

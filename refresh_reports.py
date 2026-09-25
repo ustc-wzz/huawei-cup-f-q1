@@ -9,12 +9,20 @@ def refresh():
     path=ROOT/'论文正文.md'
     text=path.read_text(encoding='utf-8')
     head=text.split('# 第三部分')[0]
+    a=head.index('### 3.1 '); b=head.index('## 4 模型求解与结果',a)
+    head=head[:a]+(ROOT/'Q1/模型建立.md').read_text(encoding='utf-8')+'\n'+head[b:]
+    a=head.index('## 5 模型建立'); b=head.index('## 6 模型求解与结果',a)
+    head=head[:a]+(ROOT/'Q2/模型建立.md').read_text(encoding='utf-8')+'\n'+head[b:]
     tail='# 结论与局限'+text.split('# 结论与局限',1)[1]
     head=head.replace(r'\sum_{k\ne j}|r_{jk}|',r'\sum_{k\ne j}r_{jk}^{2}')
     start=head.index('## 4 模型求解与结果')+len('## 4 模型求解与结果')
     end=head.index('| 数据集 | 全局冲突率',start)
     summary=(ROOT/'output_q1/length_domain_calibrated22/results_summary.md').read_text(encoding='utf-8').split('\n',1)[1]
     head=head[:start]+'\n\n'+summary+'\n'+head[end:]
+    import re
+    rho=re.search(r'样本排序相关：([0-9.]+)',summary).group(1)
+    head=re.sub(r'质量分数与线性基线的样本排序相关为 [0-9.]+',f'质量分数与线性基线的样本排序相关为 {float(rho):.4f}',head)
+    head=head.replace('第三问使用前三问接口','第三问使用前两问接口').replace('问题三使用前三问接口','问题三使用前两问接口')
     # Remove a stale hand-written quality-increment sentence; the generated table above replaces it.
     import re
     head=re.sub(r'加入配比质量指数的排序增益为.*?因果效应证据。','质量附加特征的当前检验结果见本节自动生成表；其改善不构成质量因果效应证据。',head)

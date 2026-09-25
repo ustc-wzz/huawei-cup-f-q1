@@ -7,7 +7,7 @@ from repro_runtime import prepare_inputs,sha256
 
 ROOT=Path(__file__).resolve().parent
 
-def build(version='v0.9.1',include_cache=True):
+def build(version='v0.9.2',include_cache=True):
     import re
     if not re.fullmatch(r'v\d+\.\d+\.\d+',version):raise ValueError('版本号格式需为v0.9.0')
     name='F题_四问完整复现包_'+version
@@ -19,7 +19,7 @@ def build(version='v0.9.1',include_cache=True):
     with tempfile.TemporaryDirectory(prefix='.package-',dir=ROOT) as tmp:
         package=Path(tmp)/name;package.mkdir()
         names=NOTEBOOKS+MIRRORS+['run_all.py','repro_runtime.py','python_bootstrap.py','bootstrap_uv.json','signal_cache.py','repro_inputs.json',
-            'refresh_reports.py','论文正文.md','CHANGELOG.md','run_windows.bat','run_macos.command']
+            'refresh_reports.py','Q1/模型建立.md','Q2/模型建立.md','公式完整性核查.md','formula_verification.json','论文正文.md','CHANGELOG.md','run_windows.bat','run_macos.command']
         for relative in names:
             dest=package/relative;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/relative,dest)
         for folder in ['Q2','Q3','Q4']:
@@ -38,7 +38,7 @@ def build(version='v0.9.1',include_cache=True):
         if include_cache:
             shutil.copytree(ROOT/'real_attachments/A_data_value/signals_cache',package/'real_attachments/A_data_value/signals_cache',ignore=ignore)
         shutil.copy2(ROOT/'repro_requirements.txt',package/'requirements.txt')
-        (package/'README.md').write_text((ROOT/'PACKAGE_README.md').read_text(encoding='utf-8').replace('v0.9.1',version),encoding='utf-8')
+        (package/'README.md').write_text((ROOT/'PACKAGE_README.md').read_text(encoding='utf-8').replace('v0.9.2',version),encoding='utf-8')
         if (ROOT/'portability_verification.json').exists():shutil.copy2(ROOT/'portability_verification.json',package/'portability_verification.json')
         # Check the package itself, without generating caches in no-cache packages.
         for record in manifest['files']:assert sha256(package/record['path'])==record['sha256']
@@ -54,6 +54,6 @@ def build(version='v0.9.1',include_cache=True):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--version',default='v0.9.1')
+    parser.add_argument('--version',default='v0.9.2')
     parser.add_argument('--without-cache',action='store_true')
     args=parser.parse_args();build(args.version,not args.without_cache)

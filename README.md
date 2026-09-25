@@ -2,15 +2,15 @@
 
 主文档：`0924_F题_问题一.ipynb`。从本目录完整运行，数据目录为 `real_attachments/A_data_value/`；原始附件与缓存不上传，需按本地数据布局另行准备。
 
-## 四问统一复现入口（v0.9.1）
+## 四问统一复现入口（v0.9.2）
 
-完整包为 `F题_四问完整复现包_v0.9.1.zip`，旧ZIP保持原样。完整解压后Windows双击 `run_windows.bat`；或执行 `python run_all.py`。需已安装Python 3.8或更新版本；当前版本不适合计算依赖时，自动下载包内Python 3.12，不改系统Python；缺依赖时入口自动创建包内独立环境并安装，首次通常需要联网。
+完整包为 `F题_四问完整复现包_v0.9.2.zip`，旧ZIP保持原样。完整解压后Windows双击 `run_windows.bat`；或执行 `python run_all.py`。需已安装Python 3.8或更新版本；当前版本不适合计算依赖时，自动下载包内Python 3.12，不改系统Python；缺依赖时入口自动创建包内独立环境并安装，首次通常需要联网。
 
 运行器自动定位并校验原始附件，缓存缺失/损坏时从A1–A3完整原始数据重建，再顺序运行四问。统一UTF-8并注册随包Noto Sans SC字体。`python run_all.py --prepare-only`只准备环境和缓存；失败后重复运行，或使用`--start-at 2/3/4`续跑。
 
 GitHub仍不上传原始附件和完整ZIP；直接克隆源码不能替代本地完整数据包。面向接收者的简明说明见 `PACKAGE_README.md`，数据清单为 `repro_inputs.json`。当前模型/结果目录及其余历史文件保持原位置。
 
-当前质量冗余度：d_j=1+Σ(k≠j)r_jk²；质量聚合参数β=0.25。四份notebook与源镜像同步，正文通过`python refresh_reports.py`刷新，本地完整包通过`python build_package.py --version v0.9.1`生成独立版本包并校验；已有版本拒绝覆盖。
+当前质量冗余度：d_j=1+Σ(k≠j)r_jk²；质量聚合参数β=0.25。四份notebook与源镜像同步，正文通过`python refresh_reports.py`刷新，本地完整包通过`python build_package.py --version v0.9.2`生成独立版本包并校验；已有版本拒绝覆盖。
 
 领域配比与损失建模：比较线性混料、对数线性混料、加性样条和GBM。经综合权衡，选择对数线性模型作为主模型，用于关系解释与约束配比求解；GBM作为对照模型，其预测表现整体较强，用于比较和辅助核查。模型选择不等于单项预测指标排名第一。
 

@@ -94,9 +94,22 @@ print('B11覆盖模型族：',data['B11'].family.unique(),'；B12检查点索引
 # %% [markdown]
 # ## 2. 经典规模项与跨来源校准（H1）
 #
-# 在B1上拟合$E+AN^{-\alpha}+BD^{-\nu}$。幅度用对数参数化保证正值，对数残差使用Huber损失（阈值0.01），多起点求解；普通对数最小二乘作为拟合敏感性对照。轨迹中的检查点相关，因此按整个模型规模留出，而非随机拆行。
+# **规模基线。** 在B1上令 $\vartheta=(\ln E,\ln A,\alpha,\ln B,\nu)$，预测 $\ell_i=E+AN_i^{-\alpha}+BD_i^{-\nu}$，最小化
 #
-# B2先直接迁移，再用交替模型规模作为校准集，其余规模验证共享指数与自由指数。B4/B5样本较少，采用较简约的来源校准$E_s+c_s(AN^{-\alpha}+BD^{-\nu})$，这是$A_s,B_s$同时缩放的受限形式；来源至少3点才进行来源内留一，其余记录仅用于直接迁移诊断。校准后检验不等于预测一个完全未知来源。
+# $$
+# \widehat\vartheta=\arg\min_{\vartheta}\sum_i\rho_{\delta}(\ln\ell_i-\ln L_i^{obs}),\quad\delta=0.01,\qquad
+# \rho_\delta(r)=\begin{cases}\frac12r^2,&|r|\le\delta,\\\delta|r|-\frac12\delta^2,&|r|>\delta.\end{cases}
+# $$
+#
+# $\ln E\in[-12,4]$，$\ln A,\ln B\in[-12,8]$，$\alpha,\nu\in[0.01,1.5]$；多起点取目标最小者，普通对数最小二乘作对照。该Huber目标只用于规模拟合，不用于下面所有阶段。B1按整个模型规模留出，避免同轨迹检查点随机拆行。
+#
+# B2按参数规模排序，交替规模组成校准/验证集；共享指数时在校准集求非负最小二乘的 $(E_2,A_2,B_2)$，另拟合自由指数作对照。B4/B5按family/source分组，以 $r_i=AN_i^{-\alpha}+BD_i^{-\nu}$为固定基线，来源校准目标为
+#
+# $$
+# (\widehat E_s,\widehat c_s)=\arg\min_{E_s,c_s\ge0}\sum_{i\in\mathcal T_s}(L_i^{obs}-E_s-c_sr_i)^2.
+# $$
+#
+# 其含义是 $A_s=c_sA,B_s=c_sB$的受限校准；仅偏移对照取 $c_s=1,E_s=\max(0,\overline{L-r})$。至少3点的来源实施来源内留一，其余只做直接迁移诊断；这不是整来源留出。B2是半合成，B3插值、B10估算只作一致性诊断，B9是元数据，均不冒充独立真实训练验证。
 
 # %%
 def xy(d):return d.N_params_B.to_numpy(float),d.D_tokens_B.to_numpy(float),d.val_loss.to_numpy(float)
@@ -162,6 +175,15 @@ show(f'B1按规模留出的最大RMSE为 **{b1metrics.iloc[1:].RMSE.max():.6f}**
 # $s_Q$是质量刻度转换斜率。没有共同评分样本时，只能估计$\theta_Q$，不能分别识别$\lambda$和$s_Q$；采用$s_Q=0.5,1,2$作为明确的敏感性情景。$q_B=1$与B1基线的关系先用残差检查；这不等于已证明问题一原始配比质量对应$q_B=1$。
 #
 # B7用于按$(N,D)$组合五折留出；另用B6拟合、预测B7新增质量水平，重合行不作为新增证据。以无质量修正为基线，检验共同修正是否带来预测改善。B8先审计方向，再单独报告纳入敏感性，不因不符合模型就将其异常解释为已知数据错误。
+#
+# **质量响应。** 冻结B1的 $E,A,B,\alpha,\nu$，在去除 $(N,D,q_B)$重复键的B7上求
+#
+# $$
+# \widehat\theta_Q=\arg\min_{0\le\theta\le8}\sum_{i\in B7}
+# \left[L_i^{obs}-E-(AN_i^{-\alpha}+BD_i^{-\nu})e^{\theta(1-q_{B,i})}\right]^2.
+# $$
+#
+# 以 $(N,D)$组合分组五折；另用B6拟合预测B7新增质量水平。B8方向单独审计，纳入敏感性时对照非负范围 $[0,8]$与允许负值范围 $[-8,8]$。80次ND组自助重采样形成条件参数区间；半合成情景内区间不包含真实质量刻度的不确定性。
 
 # %%
 qkeys=['N_params_B','D_tokens_B','Q_score'];q=data['B7'].drop_duplicates(qkeys).copy();q['z']=1-q.Q_score;q['group']=q.groupby(qkeys[:2]).ngroup()
@@ -222,6 +244,15 @@ show(f'共同质量系数 **θ_Q={theta:.4f}**，ND组合留出RMSE为 **{metric
 # $$
 #
 # 参数$E_A,A_A,B_A,\eta$仅用校准配方估计。五折按完整配方向量分组，同配方跨尺度始终在同一折；另外完全留出一个模型尺度。问题一已查看过这些检验集，因此本节是事后迁移诊断，不称为全新盲测。按RegMix原论文Table 2匹配，1M/60M训练1B Token，1B训练25B Token；原CSV没有逐运行D字段，结论以这一元数据匹配为条件。
+#
+# **配比响应。** 冻结问题一 $f_{log},p_0,s_L$及B1指数，取配方实验 $u=0$，最小化
+#
+# $$
+# (\widehat E_A,\widehat A_A,\widehat B_A,\widehat\eta)=\arg\min\sum_i
+# \left[L_i^{obs}-E_A-(A_AN_i^{-\alpha}+B_AD_i^{-\nu})e^{\eta h(p_i)}\right]^2.
+# $$
+#
+# 三个正幅度参数的对数均限制于 $[-12,5]$，$\eta\in[0,3]$，多起点求解；无配比项对照固定 $\eta=0$。此阶段使用A6–A11的1M/60M/1B配方实验作事后迁移校准，不再把这些数据称为问题二的全新独立检验集。同一完整配方向量四舍五入到10位后分组，跨尺度同配方放同折，再另做完整尺度留出；问题一仍是1M训练集内嵌套五折。元数据匹配取1M/60M实验 $D=1$、1B实验 $D=25$（十亿Token），这些不是CSV逐运行直接记录的D。50次配方组重采样重估配比阶段参数，不能与质量阶段的抽样行号配对伪造联合后验。
 
 # %%
 domains=q1['domain_order'];coef=np.array([q1['log_linear_model']['a_i'][d] for d in domains]);eps=q1['log_linear_model']['epsilon']

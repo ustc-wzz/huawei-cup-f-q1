@@ -491,28 +491,8 @@ show('解释：在主情景中质量上限始终活跃，预算增加主要扩�
 recipe_gain=recipe_comparison.predicted_pstar_loss_reduction
 show(f'p*相对p0的同预算预测Loss差改善范围为{recipe_gain.min():.6f}—{recipe_gain.max():.6f}；这依赖配比修正跨来源迁移。p*的提质上限较低，不能只看提质增量判断最终Loss优劣。质量刻度、样本参照上限和同一D代理仍是已确认假设，不被数值核验消除。')
 # Methodology is written after experiments but contains only definitions and methods.
-method=r'''# 问题三模型建立
-
-本问将前两问的质量评价和共同修正标度律转为算力预算下的条件资源配置。领域配比采用参考配比，预测最优配比单独比较；上下文外生给定。质量原分数Q、同配比额外增量u与成本刻度z分别定义，避免混用评价刻度和成本比例。
-
-$$Q_0(p)=\sum_jp_jQ_j,\quad u=Q-Q_0(p),\quad z=T(Q)=\frac{Q-q_{low}}{q_{high}-q_{low}}.$$
-
-固定A1七域等权参考分位锚点；有样本映射的域根据域内高分文档均值构建质量增量参照，沿用映射系数，缺失域不计新增收益。由此给定u的紧区间，域内筛选供给不另行建模，沿用题目同一D成本代理。
-
-$$\min_{N,D,u}\ E_B+(A_BN^{-\alpha}+B_BD^{-\nu})\exp[-\theta_Q u/s_Q+\eta_ph(p)]$$
-$$\mathrm{s.t.}\quad D[kN+c(u)]\le C,\quad N,D>0,\quad 0\le u\le u_{max}(p).$$
-
-其中N、D以十亿计，k包含基础训练与外生上下文注意力成本，c为每十亿训练Token的额外提质成本。三类g采用题设参数，分别完成优化。B1提供损失基线，质量刻度s_Q和配比修正迁移保留条件假设。
-
-固定u时损失对D递减，故预算取等号。令x=ln N，消去D后内层目标严格凸，使用自适应括区间求根求唯一条件最优。外层结合网格定位、所有检测到的驻点、局部精化和两端点比较，避免预设单峰。
-
-$$\alpha AN^{-\alpha}=\nu BD^{-\nu}\frac{kN}{kN+c},\qquad
-M(u)=-\lambda(t_N+t_D)+\frac{\nu t_Dc'}{kN+c}.$$
-
-质量状态定义为下界R0、内点R1和上界R2。预算扫描识别状态变化，再通过边界驻点方程和全局候选比较精化转移位置；数值搜索边界不作为物理边界。R2由u=u_max定义，与z=1无关。对配比、质量效果尺度和质量上限进行单因素敏感性分析。
-
-验证包含预算单位与残差、无提质经典解析解、内层KKT、外层有限差分导数、扩大括区间、外层网格加密、独立二维优化及转移候选解析核验。误差容差和原始结果一起保存。模型检验不代替真实训练验证，也不证明样本筛选参照上限的原料供给可行性。
-'''
+method=(ROOT/'Q3/模型建立.md').read_text(encoding='utf-8')
+show(method)
 (OUT/'模型建立.md').write_text(method, encoding='utf-8')
 solution=summary.replace('# 问题三实际运行结果','# 问题三模型求解',1)
 solution+='\n## 结果解释与图件\n\n主预算区间质量上限持续活跃，N和D随预算增加而扩张；提质成本占比下降是预算分配变化，并非质量下降。图1展示规模和投入曲线，图2分解成本，图3显示上下文对规模和Loss的影响。\n\n'
@@ -583,7 +563,7 @@ extra='\n'.join(extra)+'\n'
 (OUT/'decision_summary.md').write_text(extra, encoding='utf-8')
 (OUT/'results_summary.md').write_text('# 问题三实际运行结果\n\n'+extra+'\n## 50%参考切片与既有核验\n\n'+summary, encoding='utf-8')
 (OUT/'模型建立.md').write_text(method+'\n'+(ROOT/'Q3/decision_method.md').read_text(encoding='utf-8'), encoding='utf-8')
-for name in ['模型建立.md','模型求解.md']:
+for name in ['模型求解.md']:
     path=OUT/name
     path.write_text(path.read_text(encoding='utf-8')+'\n'+extra, encoding='utf-8')
 with (OUT/'模型求解.md').open('a', encoding='utf-8') as f:

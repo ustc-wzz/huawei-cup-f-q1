@@ -17,12 +17,12 @@
   {
     "path": "output_q4_evolution/execution.json",
     "bytes": 181,
-    "sha256": "ac3d4cfa64304e3176d5104442b850c8f316ee9bc15fb7aa7bc7431beebd248b"
+    "sha256": "057f07b85370b9986eb0fa7016656f50d8d5cb588cebe5300a789ef88efe7670"
   },
   {
     "path": "output_q4_evolution/figures/01_causal_structure.pdf",
     "bytes": 38607,
-    "sha256": "2b913c749a4c469381625182e440090c4aaa712d0d83678bbab5281131e268b4"
+    "sha256": "fee9bbf16951d9f313198148cd3cacebf470ef6c8aad1d4a44998f1f3e7a31c0"
   },
   {
     "path": "output_q4_evolution/figures/01_causal_structure.png",
@@ -32,7 +32,7 @@
   {
     "path": "output_q4_evolution/figures/02_data_and_evolution.pdf",
     "bytes": 43112,
-    "sha256": "2aa4c68ac5389c498e3f1c0939e55af86f459ac31a78e8dd34770346cc6d724b"
+    "sha256": "28d3d2f7e0458a4efd49a1556a3aef98214040a822db452c176e8e4a143fc02f"
   },
   {
     "path": "output_q4_evolution/figures/02_data_and_evolution.png",
@@ -42,7 +42,7 @@
   {
     "path": "output_q4_evolution/figures/03_mediation_and_sensitivity.pdf",
     "bytes": 28906,
-    "sha256": "117f0d66b762fa831cb7679c098de7469ca66b1ee7cee6462ffa1c4ee657bdcb"
+    "sha256": "55f473768a3fb2010fac20299f9fda7bbbe6760404feacb91e6270b1c334668c"
   },
   {
     "path": "output_q4_evolution/figures/03_mediation_and_sensitivity.png",
@@ -52,7 +52,7 @@
   {
     "path": "output_q4_evolution/figures/04_frontier_forecasts.pdf",
     "bytes": 34008,
-    "sha256": "6025635b8f71b1bc32837bfa4f61e63f512c30f3f7a081728b18c5f409be7aa9"
+    "sha256": "948d6de549f0942f4a75c9849c733dc1f35b7380b6945920d3081cd950177914"
   },
   {
     "path": "output_q4_evolution/figures/04_frontier_forecasts.png",
@@ -62,7 +62,7 @@
   {
     "path": "output_q4_evolution/figures/05_loss_benchmark_bridge.pdf",
     "bytes": 29981,
-    "sha256": "fa3676d31aaf6d0066cd31e8eb807f22187aef7148311fe8b0d26441985321a5"
+    "sha256": "2edaf24d92b30a486379024ffdbac4b47f392ac8298ae6bc9b5745040d7c517f"
   },
   {
     "path": "output_q4_evolution/figures/05_loss_benchmark_bridge.png",
@@ -72,7 +72,7 @@
   {
     "path": "output_q4_evolution/figures/06_task_level_audit.pdf",
     "bytes": 34497,
-    "sha256": "10e816cfefd3da7e378d61c29b08688c7dcb04a0c565fe140c9a5830d6b83e93"
+    "sha256": "9cf839bd792695d090bfc2d30bc0b26937bb1377a222aaf7a06be08ada5d899c"
   },
   {
     "path": "output_q4_evolution/figures/06_task_level_audit.png",
@@ -82,7 +82,7 @@
   {
     "path": "output_q4_evolution/figures/07_validation.pdf",
     "bytes": 27874,
-    "sha256": "8de01af76068bb2ca227b4a2de651833c47e51958c4d63d272de202820b6b9ae"
+    "sha256": "29b3fdaae6dbdd48573022ca36d2cdfadac04ec99e9ff7c91b31133301f853f7"
   },
   {
     "path": "output_q4_evolution/figures/07_validation.png",
@@ -97,7 +97,7 @@
   {
     "path": "output_q4_evolution/input_manifest.json",
     "bytes": 2383,
-    "sha256": "da3b7189bd9e925e4aa7bbca9687c03f9ee553ee12b138569094b6ab0a66c596"
+    "sha256": "2236c8114c2facb98ff9f2371651afec72c18a9bdacd5767b57076af37e76cfb"
   },
   {
     "path": "output_q4_evolution/mediation_design.json",
@@ -321,8 +321,8 @@
   },
   {
     "path": "output_q4_evolution/模型建立.md",
-    "bytes": 15784,
-    "sha256": "3afba51803485655e79a3e5ab9034ab686c0137299ea33b105cc6905895fc356"
+    "bytes": 19144,
+    "sha256": "4a9b004293db9da9f5287b89d0bfb8903020568e220d047eef40cf9b59d216b4"
   },
   {
     "path": "output_q4_evolution/模型求解.md",
@@ -386,7 +386,7 @@
   },
   {
     "path": "Q4/模型建立.md",
-    "bytes": 15784,
-    "sha256": "3afba51803485655e79a3e5ab9034ab686c0137299ea33b105cc6905895fc356"
+    "bytes": 19144,
+    "sha256": "4a9b004293db9da9f5287b89d0bfb8903020568e220d047eef40cf9b59d216b4"
   }
 ]

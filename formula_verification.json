@@ -1,0 +1,73 @@
+{
+  "release": "v0.9.2",
+  "status": "passed",
+  "notebooks": {
+    "1": {
+      "status": "passed",
+      "notebook_cells": 45,
+      "executed_code_cells": 23,
+      "mirror_exact": true,
+      "no_error_outputs": true,
+      "input_hashes_current": null,
+      "markdown_no_control_characters": true,
+      "math_block_delimiters_compatible": true
+    },
+    "2": {
+      "status": "passed",
+      "notebook_cells": 19,
+      "executed_code_cells": 9,
+      "mirror_exact": true,
+      "no_error_outputs": true,
+      "input_hashes_current": null,
+      "markdown_no_control_characters": true,
+      "math_block_delimiters_compatible": true
+    },
+    "3": {
+      "status": "passed",
+      "notebook_cells": 17,
+      "executed_code_cells": 10,
+      "mirror_exact": true,
+      "no_error_outputs": true,
+      "input_hashes_current": true,
+      "markdown_no_control_characters": true,
+      "math_block_delimiters_compatible": true,
+      "figures_png_pdf_pairs": 12
+    },
+    "4": {
+      "status": "passed",
+      "notebook_cells": 20,
+      "executed_code_cells": 11,
+      "mirror_exact": true,
+      "no_error_outputs": true,
+      "input_hashes_current": true,
+      "markdown_no_control_characters": true,
+      "math_block_delimiters_compatible": true,
+      "figures_png_pdf_pairs": 7
+    }
+  },
+  "unchanged_csv_tables": 161,
+  "changed_csv_tables": [],
+  "Q1_Q2_numerical_code_unchanged": {
+    "notebook_source.py": true,
+    "Q2/notebook_source.py": true
+  },
+  "formula_renderer": {
+    "engine": "KaTeX 0.16.22",
+    "expressions": 1120,
+    "errors": []
+  },
+  "Q3_inner_second_derivative_checks": {
+    "cases": 9,
+    "max_absolute_finite_difference_error": 3.582513700972623e-08
+  },
+  "method_sources_in_combined_paper": true,
+  "chapter_sha256": {
+    "Q1/模型建立.md": "04a36da79145dc64ec2796dada3b71b3415ec9de8e4ae3deb9a014ed962d6e54",
+    "Q2/模型建立.md": "61b7be99afbea16282112f9b55273d29f44023b712056ae87d02c44e4b6b4d27",
+    "Q3/模型建立.md": "ed630be3d45b38707867558e5198b55791a476e30be1317310167cd04315a358",
+    "Q4/模型建立.md": "4a9b004293db9da9f5287b89d0bfb8903020568e220d047eef40cf9b59d216b4"
+  },
+  "unit_tests": 9,
+  "runtime_validation": "macOS; unchanged bootstrap retains v0.9.1 evidence; no native Windows test",
+  "limits": "Formula and implementation consistency, not empirical model or causal validation."
+}

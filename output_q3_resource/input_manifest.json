@@ -1,23 +1,23 @@
 [
   {
     "path": "0924_F题_问题一.ipynb",
-    "bytes": 431584,
-    "sha256": "8ece25e68eeb9fdbd5496bcdc764330455a1ebb291d9bed645b083a1ebda8ea9"
+    "bytes": 429192,
+    "sha256": "974bafee71dcc6e1d5a4207e4326eb45bd81c20372e0591de6eeccda3af95a41"
   },
   {
     "path": "notebook_source.py",
-    "bytes": 155673,
-    "sha256": "13259c3a6c3d8ef42bb1857fbf5de33ab129bc0f6b296806ac745add749f07c8"
+    "bytes": 153225,
+    "sha256": "f0a8bf7fbf292cc65aa1b9584516a7d33b11cd9f173cb04087e53e5fc56eaf9b"
   },
   {
     "path": "0924_问题二.ipynb",
-    "bytes": 141361,
-    "sha256": "c4612e98ef5ee099fcd7e6faa6dfadd75601d391fb43a85e013e2287bfb6e9a8"
+    "bytes": 143834,
+    "sha256": "604a5c37ecf0ef4690bb29ab7e491a99a1d1fbc34413c07d1fd18dde99e14c58"
   },
   {
     "path": "Q2/notebook_source.py",
-    "bytes": 42425,
-    "sha256": "bc6fb8abfb25f931ccb132fe6b49520f4f964df12d4779938786859e344c1dcd"
+    "bytes": 44587,
+    "sha256": "df736393e066a5cd384abc2c983035a51c43c6b8d5eb979719670b151bc693b0"
   },
   {
     "path": "output_q1/length_domain_calibrated22/tables/q1_outputs_for_q2_q3.json",
@@ -52,7 +52,7 @@
   {
     "path": "Q3/quality_audit/input_manifest.json",
     "bytes": 1697,
-    "sha256": "a521c66de4c943213d6ff16644b600f3e28a743794262ffef043ade78efa2f7b"
+    "sha256": "334ea7e8581495f18da5add4eaa9dbf8fbad0f02f81cabf2075d973c7d0b4819"
   },
   {
     "path": "Q3/resource_model.py",
@@ -61,8 +61,8 @@
   },
   {
     "path": "Q3/notebook_source.py",
-    "bytes": 48528,
-    "sha256": "4c0e27cbdf2e8645ecee6a5f545ee1b4eca4254dac0899a9d89f115bd082237e"
+    "bytes": 46435,
+    "sha256": "85e86c7ce280c45fbd2c3f5c626a4942b7c65b8317a0ce12be84d859a98acdc8"
   },
   {
     "path": "real_attachments/B_scaling_laws/pythia_training_log_existing.csv",
@@ -86,8 +86,8 @@
   },
   {
     "path": "Q3/decision_method.md",
-    "bytes": 3935,
-    "sha256": "5d031c5b0d629d84047a97f4f05828e6c294869e5d742008ff2f85042d00aac9"
+    "bytes": 1641,
+    "sha256": "c2f76c2bc24a1fedbca39abc740d231e001d8c5c561e74789c298d8c8f332a4b"
   },
   {
     "path": "Q3/quality_audit/within_domain_selection.csv",

@@ -1,4 +1,4 @@
-# F题四问完整复现包 v0.9.1
+# F题四问完整复现包 v0.9.2
 
 完整解压ZIP后，Windows双击 `run_windows.bat`；macOS可运行 `run_macos.command`。也可以在任意工作目录执行 `python 完整包路径/run_all.py`。不要在压缩包预览窗口内直接运行。
 

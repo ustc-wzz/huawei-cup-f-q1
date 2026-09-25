@@ -132,85 +132,60 @@ print('\n存在缺失的字段及缺失率（其余字段无缺失）:')
 print((miss * 100).round(3).to_string() if len(miss) else '  无缺失')
 
 # %% [markdown]
-# ### 1.2 22 个指标的构造、方向判定与归一化
+# ### 1.2 质量指标预处理与统一尺度
 #
-# #### （1）指标构造中的三个必要处理
+# 记样本为 $i$，指标为 $j\in\{1,\ldots,22\}$，A1参考样本集合为 $\mathcal A$，$n_A=|\mathcal A|$，领域标签为 $d_i$。A2、A3只应用A1已拟合的规则。以下区分原始指标 $x_{ij}$、方向效用 $v_{ij}$、归一化值 $u_{ij}$ 和最终正态分数 $Z_{ij}$。
 #
-# * **广告 / 流畅度分类器的类别方向**：二分类 logits 的类别顺序未在数据说明中给出，不能主观假设。本文用 **域间对照** 判定：网页抓取域（c4、commoncrawl）中广告显著多于学术域（arxiv、wikipedia），若 $p_1$ 在网页域上更低，则第 1 类是"非广告"，广告概率取 $P_{ad}=1-p_1$；同理，流畅度以 arxiv 与 github（代码）的对照判定。
-# * **DSIR 领域相似度按长度归一**：`dsir_*` 是 DSIR 重要性重采样中"目标域 / 原始域"的 **对数似然比在整篇文档上的累加值**，与文档长度近似成正比（A1 上与 $\lg$ 词数的 Spearman 相关为 $-0.89$），直接使用会把"长度"当成"质量"。因此取 **每词平均对数似然比** $\tilde d = d / n_{word}$ 作为样本级指标。
-# * **QuRating 原始四分量均值**：四个分量在同一 logit 尺度，取均值作为 QuRating 综合分（分量另存）。
-#
-# #### （2）指标类型与方向（题目要求统一为"越高越好"）
-#
-# 记原始指标为 $v_{ij}$（样本 $i$，指标 $j$），分三类处理：
+# 列表信号按其字段含义压缩。令 $\pi_k(\boldsymbol\ell)=e^{\ell_k-\max_r\ell_r}/\sum_r e^{\ell_r-\max_r\ell_r}$，则二分类取 $\pi_1$，六级序数信号取 $\sum_{k=0}^5k\pi_k$，单元素教育评分取该元素，QuRating取四分量均值。三个DSIR信号均使用 $x_{ij}=\mathrm{DSIR}_{ij}/\max(n_{word,i},1)$。广告类别方向由A1网页域与学术域的均值对照确定，流畅度由arxiv与github对照确定，判定后对扩展集冻结；这属于代理方向判定，不能替代评分器标签说明。非有限指标值以对应A1有效值中位数填补，A1整列缺失则报错。
 #
 # * **正向型**（越大越好）：教育价值、流畅度、干净度、可读性、推理性、专业性、三个 DSIR 相似度、QuRating、一元词熵、独特词占比、行末标点占比，共 13 个；
 # * **负向型**（越小越好）：广告概率、非字母词占比、高频 2-gram / 3-gram 字符占比、大写字母占比、数字字符占比，共 6 个；
 # * **区间型**（落在合理区间最好）：词数、句子数、平均词长，共 3 个。词数与平均词长的合理区间取自 Gopher 规则（Rae et al., 2021：词数 50–100,000、平均词长 3–10 字符），句子数下限取 3、上限取 A1 的 95% 分位数。
 #
-# #### （3）先归一化，再正态映射
-#
-# 统一方向后的效用记为 v。只在 A1 拟合最小值 a_j、最大值 b_j，令 u=(v-a_j)/(b_j-a_j)，并截断到 [0,1]；常数列置 0.5。扩展集复用 A1 参数，超范围值饱和到边界，不重新拟合。
-#
-# 正态映射 = 将归一化值在 A1 经验分布中的位置映射为标准正态分位点：
-# $$
-# p_j(u)=\frac{1}{n}\sum_{l=1}^{n}
-# \left[\mathbf{1}(u_{lj}<u)+\frac{1}{2}\mathbf{1}(u_{lj}=u)\right].
-# $$
+# 正向型取 $v_{ij}=x_{ij}$，负向型取 $v_{ij}=-x_{ij}$。区间型先令 $t=\log_{10}(1+\max(x,0))$（词数、句子数），平均词长则令 $t=x$；把合理区间端点及A1的99.9%分位同步转换为 $t_l,t_h,t_m$，定义
 #
 # $$
-# \begin{aligned}
-# \widetilde p_j(u)&=\operatorname{clip}\bigl(p_j(u),\epsilon,1-\epsilon\bigr),\\
-# Z_j(u)&=\Phi^{-1}\bigl(\widetilde p_j(u)\bigr),\\
-# \epsilon&=\frac{1}{2n}.
-# \end{aligned}
+# v(t)=\begin{cases}
+# \operatorname{clip}(t/t_l,0,1),&t<t_l,\\
+# 1,&t_l\le t\le t_h,\\
+# \operatorname{clip}\left(1-\dfrac{t-t_h}{\max(t_m-t_h,10^{-9})},0,1\right),&t>t_h.
+# \end{cases}
 # $$
 #
-# 其中，指示函数 $\mathbf{1}(A)$ = 条件 $A$ 成立时取 1，否则取 0；$n$ 为 A1 参考样本数，$\Phi^{-1}$ 为标准正态分布的分位数函数。$\operatorname{clip}(p,\epsilon,1-\epsilon)$ 表示将概率限制在 $[\epsilon,1-\epsilon]$ 内。求和式等价于“严格小于的样本数 + 一半等于的样本数”，不改变并列值的处理。
-# 保留并列，不加随机扰动；离散指标和区间平台不保证连续正态，也不推出联合正态。Q 直接使用 Z。仅为保留22 指标分布图和高低交叉频率诊断，另存 X=(Z+B)/(2B)，B=Φ⁻¹(1−ε)；X 不参与最终 Q 的聚合。Pearson 相关在共同正斜率线性缩放前后相同。
-#
-# #### （4）仅对独特词占比做长度校正
-#
-# 用 t=log(1+词数) 的 A1 分位数自动分20组；相同词数不拆开，重复分界删除，每组不足500条时与相邻组合并。对已方向统一、Min–Max归一化的独特词占比 u，取所在长度组 g 中的经验中秩：
-# $$
-# p_i^{\mathrm{len}}=\frac{1}{n_g}\sum_{l\in g}
-# \left[\mathbf{1}(u_l<u_i)+\frac{1}{2}\mathbf{1}(u_l=u_i)\right].
-# $$
+# 词数合理区间为 $[50,100000]$，句子数为 $[3,\operatorname{Quantile}_{0.95}^{A1}(n_{sent})]$，平均词长为 $[3,10]$。令 $a_j=\min_{l\in\mathcal A}v_{lj}$、$b_j=\max_{l\in\mathcal A}v_{lj}$，归一化为
 #
 # $$
-# \begin{aligned}
-# \widetilde p_i^{\mathrm{len}}
-# &=\operatorname{clip}\bigl(p_i^{\mathrm{len}},\epsilon,1-\epsilon\bigr),\\
-# Z_i^{\mathrm{len}}&=\Phi^{-1}\bigl(\widetilde p_i^{\mathrm{len}}\bigr).
-# \end{aligned}
+# u_{ij}=\begin{cases}\operatorname{clip}\left(\dfrac{v_{ij}-a_j}{b_j-a_j},0,1\right),&b_j>a_j,\\0.5,&b_j=a_j.\end{cases}
 # $$
 #
-# 其中，$g$ 为样本 $i$ 所属长度组的 A1 参考样本集合，$n_g$ 为该组样本数；$\epsilon$ 仍使用全体 A1 的共同取值。
-# 只替换22项中的独特词正态分数，该步骤保持其他 21 项预处理不变；随后重估22×22相关矩阵、去冗余权重、冲突和Q。扩展集按A1固定长度边界入组，复用该组A1参考分布。长度超出A1范围时落入首/末组并标记，不声称已验证极端长度外推。
-#
-# 分组采用等频，因此先取对数不改变样本长度排序；对数主要用于表达尺度，不能把取对数本身说成额外去偏步骤。组内仍有长度差异，特别是末组可能很宽；校正降低的是相对同长度组的差异，并不保证完全去除长度影响。这里不按领域分组。
-#
-# #### （5）仅校准两项格式规则，保留专业性含义
-#
-# 先沿用正负方向及Min–Max归一化，行末标点占比保持正向，非字母词占比保持负向；然后用相同领域d在A1中的参考分布计算
-# 记 $\mathcal I_d=\{l:d_l=d\}$ 为 A1 中领域 $d$ 的参考样本集合，$n_d=|\mathcal I_d|$。则
+# 三类参照分别为全局、长度条件及领域条件。独特词占比记为 $j_U$，格式指标集合为 $\mathcal J_F=\{\text{行末标点占比},\text{非字母词占比}\}$。A1有效词数的 $\ln(1+n_{word})$ 等频分组请求20组，重复分界删除，不拆分相同词数；不足500条的小组与相邻组合并，最终内部边界记为 $b_1^{len}<\cdots<b_{G-1}^{len}$。分组函数为
 #
 # $$
-# p_{ij}^{\mathrm{domain}}=\frac{1}{n_{d_i}}\sum_{l\in\mathcal I_{d_i}}
-# \left[\mathbf{1}(u_{lj}<u_{ij})+\frac{1}{2}\mathbf{1}(u_{lj}=u_{ij})\right].
+# g(i)=\sum_{r=1}^{G-1}\mathbf1\{\ln(1+n_{word,i})>b_r^{len}\},\qquad
+# \mathcal A_g=\{l\in\mathcal A:g(l)=g\},\quad
+# \mathcal A_d=\{l\in\mathcal A:d_l=d\}.
 # $$
 #
-# $$
-# \begin{aligned}
-# \widetilde p_{ij}^{\mathrm{domain}}
-# &=\operatorname{clip}\bigl(p_{ij}^{\mathrm{domain}},\epsilon,1-\epsilon\bigr),\\
-# Z_{ij}^{\mathrm{domain}}
-# &=\Phi^{-1}\bigl(\widetilde p_{ij}^{\mathrm{domain}}\bigr).
-# \end{aligned}
-# $$
-# 仅j属于“行末标点、非字母词”时应用。专业性及其余 19 项保持全局映射，其中独特词使用长度条件映射。A2/A3固定沿用A1的arxiv/github参考分布，不在扩展集重新拟合。常数或大量并列在中秩下保留，不加随机噪声；未知领域报错而不偷偷回退。
+# 长度无效时用A1正有效词数中位数填补；超出A1长度范围仍落在首/末组并另行标记。样本 $i$、指标 $j$ 的参考集合为
 #
-# 领域是文本类型的代理，不能精确区分同一领域的正文、公式、代码和表格；因此本版是分布校准，不声称完成内容分割。book只有171个A1参考样本，参考分布较粗；本版保留这一限制。两项规则的原始值另行导出，便于区分“绝对格式信号”和“同领域相对位置”。负相关减弱属于预期的尺度变化，不等于人工证实所有原冲突都是误报。
+# $$
+# \mathcal R_{ij}=\begin{cases}
+# \mathcal A_{g(i)},&j=j_U,\\
+# \mathcal A_{d_i},&j\in\mathcal J_F,\\
+# \mathcal A,&j\notin\{j_U\}\cup\mathcal J_F.
+# \end{cases}
+# $$
+#
+# 最终正态分数统一写为
+#
+# $$
+# P_{ij}=\frac1{|\mathcal R_{ij}|}\sum_{l\in\mathcal R_{ij}}
+# \left[\mathbf1(u_{lj}<u_{ij})+\frac12\mathbf1(u_{lj}=u_{ij})\right],\qquad
+# Z_{ij}=\Phi^{-1}\!\left(\operatorname{clip}(P_{ij},\epsilon_A,1-\epsilon_A)\right),\quad
+# \epsilon_A=\frac1{2n_A}.
+# $$
+#
+# $\mathbf1$为条件成立取1的指示函数，$\Phi^{-1}$为标准正态分位函数；三类映射的截断量均使用全体A1的 $\epsilon_A$，不改用组样本量。格式指标只按领域分组，独特词只按长度分组，二者不叠加；其余19项含专业性使用全局参照。未知领域报错，不以全局分布偷偷回退。并列值保留中秩，不加噪声；该变换不保证连续或联合正态。图示量 $X_{ij}=(Z_{ij}+B_A)/(2B_A)$、$B_A=\Phi^{-1}(1-\epsilon_A)$ 仅用于展示，不参与质量聚合。
 
 # %%
 # ============ 1.2 指标构造 ============
@@ -273,7 +248,6 @@ desc = pd.DataFrame({'类型': [DIRECTION[j] for j in INDICATORS],
 desc.index = [SHORT[j] + ' (' + j + ')' for j in INDICATORS]
 print('\n22 个指标的类型与 A1 分布摘要（+ 正向 / - 负向 / ~ 区间型）:')
 display(desc)
-
 
 # %%
 # ============ 1.2 分位数正态映射（仅 A1 拟合，三个集合共用） ============
@@ -501,7 +475,6 @@ fig.suptitle('图 1  方向统一并归一化后 22 个质量指标在 A1 七个
 plt.tight_layout(rect=(0, 0.03, 1, 0.98))
 savefig('fig01_indicator_distributions.png'); plt.show()
 
-
 # %% [markdown]
 # ### 1.3 22 个指标的相关性去冗余赋权
 #
@@ -509,7 +482,7 @@ savefig('fig01_indicator_distributions.png'); plt.show()
 # $$
 # r_{jk}=\frac{\sum_i(Z_{ij}-\bar Z_j)(Z_{ik}-\bar Z_k)}{\sqrt{\sum_i(Z_{ij}-\bar Z_j)^2\sum_i(Z_{ik}-\bar Z_k)^2}}.
 # $$
-# 令 V 为在 A1 上非恒定的有效指标集合，定义
+# 令 $V=\{j:\operatorname{sd}_{A1}(Z_j)>10^{-12}\}$，总体标准差分母为 $n_A$；$V$为空时停止计算，定义
 # $$
 # d_j=1+\sum_{k\in V,k\ne j}r_{jk}^{2}.
 # $$
@@ -583,7 +556,6 @@ Wp=W.sort_values('权重');ax.barh([SHORT[j] for j in Wp.index],Wp['权重'],col
 ax.axvline(1/22,color=C_CORAL,ls='--',label='等权参考线 1/22（非主方案）')
 ax.set_xlim(0,wG.max()*1.15);ax.set_xlabel('指标权重');ax.set_title('图 3  22 个指标相关性去冗余赋权');ax.legend()
 savefig('fig03_weights_redundancy22.png');plt.show()
-
 
 # %% [markdown]
 # ### 1.4 聚合方式与线性基线
@@ -671,21 +643,33 @@ for k, (d, ext, c) in enumerate((('arxiv', A2, C_CORAL), ('github', A3, C_GOLD))
 fig.suptitle('图 4  领域级质量评分及抽样集 / 扩展集对照', fontsize=12, y=0.98)
 savefig('fig04_domain_Q_compare.png'); plt.show()
 
-
 # %% [markdown]
 # ## 2. 质量冲突消解
 #
 # ### 2.1 先定义冲突，再计算综合评价
 #
-# 相关矩阵沿用第1.3节的A1 Pearson矩阵。
+# 定义候选指标对、强度及A1高低阈值为
 #
-# 固定阈值 τ_r=0.30：r≤−0.30 为反向冲突，r≥0.30 为同向，−0.30<r<0.30 为弱相关，常数列为不可判定。冲突强度 c_jk=max(0,−r_jk)。阈值是操作性设定，另检验 0.20/0.30/0.40/0.50，不声称是公认界限或显著性检验。相关只描述共同变化，不证明因果矛盾。
+# $$
+# E=\{(j,k):j<k,\ j,k\in V,\ r_{jk}\le-\tau_r\},\quad\tau_r=0.30,\quad
+# c_{jk}=\max(0,-r_{jk}),
+# $$
+# $$
+# q_j^L=\operatorname{Quantile}_{0.20}\{Z_{lj}:l\in\mathcal A\},\qquad
+# q_j^H=\operatorname{Quantile}_{0.80}\{Z_{lj}:l\in\mathcal A\},
+# $$
+# $$
+# H_{ij}=\mathbf1(Z_{ij}>q_j^H),\quad L_{ij}=\mathbf1(Z_{ij}<q_j^L),\quad
+# B_{ijk}=H_{ij}L_{ik}+L_{ij}H_{ik}.
+# $$
 #
-# 样本冲突须在已判定冲突的指标对中出现一高一低：以 A1 的 20%/80% 分位阈值定义 H/L（严格不等式，平台并列不误判），并计算
+# $L_{ij}$在本节是低分指示量，与后文损失 $L$ 不同。分位数沿用程序的线性插值定义；严格不等式避免平台并列被同时计为高、低。候选对权重总和 $W_E=\sum_{(j,k)\in E}c_{jk}$，则
+#
 # $$
-# CI_i=\frac{\sum_{(j,k)\in E}c_{jk}[H_{ij}L_{ik}+L_{ij}H_{ik}]|Z_{ij}-Z_{ik}|}{\sum_{(j,k)\in E}c_{jk}}.
+# CI_i=\begin{cases}\dfrac{\sum_{(j,k)\in E}c_{jk}B_{ijk}|Z_{ij}-Z_{ik}|}{W_E},&W_E>0,\\0,&W_E=0.\end{cases}
 # $$
-# CI>0 为冲突样本，E 为空则 CI=0。扩展集沿用 A1 指标对和高低阈值，不强制划出固定比例冲突。
+#
+# 因此 $E=\varnothing$ 时取零；无触发对的样本也取零。冲突标记为 $I_i^{conf}=\mathbf1(CI_i>0)$，集合 $\mathcal D$ 的冲突率为 $|\mathcal D|^{-1}\sum_{i\in\mathcal D}I_i^{conf}$。阈值是诊断口径，不是显著性检验。A2/A3沿用A1的 $E,q^L,q^H$；改变诊断阈值不改变 $Q$，不强制固定比例的样本被判冲突。
 
 # %%
 # 2.1 Pearson 冲突对与样本冲突强度
@@ -728,7 +712,6 @@ axes[1].axvline(-R_THRESHOLD,ls='--',color=C_NAVY,label='冲突阈值 -0.30')
 axes[1].set_xlabel('正态映射后的 Pearson r');axes[1].legend();axes[1].set_title('反向相关最强的 15 对')
 fig.suptitle('图 5  Pearson 指标冲突结构', fontsize=12)
 plt.tight_layout();savefig('fig05_pearson_conflict_definition.png');plt.show()
-
 
 # %% [markdown]
 # ### 2.2 从指标对、领域和文本长度检查冲突来源
@@ -784,7 +767,6 @@ ax.set_title('(c) CI 与文本长度：Spearman=%.3f'%rho_len)
 fig.suptitle('图 6  直接基于 22 指标的冲突分析',fontsize=13)
 fig.tight_layout();savefig('fig06_conflict_causes.png');plt.show()
 A1[['id','domain','代表冲突指标对','CI','is_conflict']].to_csv(TAB/'representative_conflict_pairs_A1.csv',index=False,encoding='utf-8-sig')
-
 
 # %% [markdown]
 # ### 2.3 指数凹聚合与最终评分
@@ -857,7 +839,6 @@ ax.set_xlabel('惩罚参数 beta'); ax.legend(frameon=False, fontsize=9); ax.set
 fig.suptitle('图 7  冲突消解：加权指数凹聚合相对线性综合分的作用', fontsize=12, y=1.02)
 savefig('fig07_resolution.png'); plt.show()
 
-
 # %% [markdown]
 # ### 2.4 用原始文本内容检验评分可靠性
 #
@@ -895,7 +876,6 @@ for ax, (col, lab_, c) in zip(axes, (('URL密度', 'URL 密度（个 / 千字符
     ax.set_ylabel(lab_); ax.set_xlabel('Q_res 五分位'); ax.set_title(lab_ + ' vs 质量分', fontsize=10.5)
 fig.suptitle('图 8  内容侧独立指标随 Q_res 五分位的变化（这些量未参与评分，用于检验评分可靠性）', fontsize=12, y=1.02)
 plt.tight_layout(); savefig('fig08_content_check.png'); plt.show()
-
 
 # %% [markdown]
 # ### 2.5 扩展集验证
@@ -965,7 +945,6 @@ print('最终域级质量评分表（Q_res 为消解后综合分；已保存 tab
 # 样本级评分导出（供论文附录 / 问题二）
 for A, name in ((A1, 'A1'), (A2, 'A2'), (A3, 'A3')):
     A[['id', 'domain', 'Q_lin', 'Q_res', 'CI', 'is_conflict']].to_csv(TAB / ('sample_Q_%s.csv' % name), index=False, encoding='utf-8-sig')
-
 
 # %% [markdown]
 # ## 3. 领域配比建模
@@ -1201,7 +1180,6 @@ for row,name in enumerate(MODEL_NAMES):
 fig.suptitle('图 11  四模型独立检验：预测与实测（跨尺度未校准）',fontsize=13)
 plt.tight_layout();savefig('fig11_test_pred_vs_actual.png');plt.show()
 
-
 # %% [markdown]
 # ### 3.1.1 四模型比较结果
 #
@@ -1409,31 +1387,36 @@ savefig('fig15_extrapolation_robustness.png'); plt.show()
 #
 # **可识别性边界。** 在未平滑的可分对数有效数据量模型中，域固定质量项可吸收进截距，不能单独识别其效应。本文实际使用带 ε 的模型，因此该代数论证不能不加条件地直接套用；若把质量乘到 p 上且仍采用共同 ε，质量会改变曲线形状。更根本的限制是附件没有同一配比、不同质量的受控实验，且 17 域只有 6 域有直接或近似质量映射，不能据此估计质量的因果效应。配比质量指数是 p 的确定函数，其加入后即使改善预测，也只能作为当前参数化下的辅助特征证据。
 #
-# **跨体系映射**（A16）。7 个质量域与 17 个配方域不一一对应。按映射置信度给配方域 $i$ 赋值：
-# $$
-# Q_i=\kappa_{m(i)}\,Q_{d(i)}+\big(1-\kappa_{m(i)}\big)\,\bar Q.
-# $$
+# **质量映射。** 以七个质量域文档均分的等权均值 $\bar\mu=7^{-1}\sum_d\mu_d$为收缩中心，A16映射 $d(j)$给出配方域的质量代理
 #
 # $$
-# \kappa_{direct}=1,\ \kappa_{near\_direct}=0.8,\ \kappa_{inferred}=0.5
+# Q_j^{mix}=\begin{cases}\kappa_j\mu_{d(j)}+(1-\kappa_j)\bar\mu,&d(j)\text{有质量样本},\\\bar\mu,&d(j)\text{无对应样本},\end{cases}\qquad
+# \kappa_j=\begin{cases}1,&direct,\\0.8,&near\_direct,\\0.5,&inferred.\end{cases}
 # $$
-# 其中 $d(i)$ 是 A16 给出的质量域，$\bar Q$ 是 7 个质量域 $Q^{res}$ 的均值（无信息先验），映射越不确定，$Q_i$ 越向均值收缩；A16 标为 `(none)` 的 11 个域没有对应质量域，取 $Q_i=\bar Q$。arxiv 与 github 采用 **抽样 + 扩展合并去重全量** 的 $Q^{res}$（题目要求的全量口径）。
-#
-# **三项检验**：
-# 1. **域效应 vs 质量**：在 6 个有映射的域上计算对数特征系数 $a_i$ 与 $Q_i$ 的 Spearman / Pearson 相关，预期为负（质量越高、增加该域越降低损失）；
-# 2. **配比级质量指数**：定义配比的加权平均质量 $\bar Q(\mathbf p)=\sum_i p_i Q_i$，用单变量模型 $\bar L=c_0+c_1\bar Q(\mathbf p)$ 在训练集和检验集上的 $R^2$ / Spearman 衡量"一个质量标量能解释多少配比效应"；
-# 3. **增量信息**：把 $\bar Q(\mathbf p)$ 作为附加特征加入对数线性主模型，看检验集 Spearman 是否提升。
-#
-# **候选配比与适用边界。** 对数线性模型在全部 a_i<0 时为凸优化问题。此时其自身目标下的约束最小点满足
-#
 # $$
-# p_i^\star=\max\left(0,\frac{-a_i}{\lambda}-\varepsilon\right),
-# \qquad \sum_i p_i^\star=1.
+# Q_0(p)=\sum_{j=1}^{17}p_jQ_j^{mix},\qquad f_{aug}(p)=c+\sum_ja_j\ln(p_j+\varepsilon_p)+b_QQ_0(p).
 # $$
 #
-# 代码先检查系数条件，再用 SLSQP 核验解析解。这个点仅对所拟合的对数线性曲面最优，不代表真实训练最优。随机生成单纯形候选后，与训练样本、均匀配比和该解析点一起进行四模型交叉评价；不声称候选位于训练数据凸包内，也不声称逐坐标范围检查可以证明其受数据支持。
+# 无对应样本的11域取 $\bar\mu$，不宣称已获得其质量实测。$f_{aug}$是附加特征对照，主配比模型仍为 $f_{log}$；$Q_0$是 $p$的确定函数，预测改善不能单独识别质量因果效应。
 #
-# 后续接口采用对数线性主模型的 KKT 解析配比，并用 SLSQP 数值解核验。GBM 作为对照模型，核查该配比与训练均值、均匀配比及其自身搜索候选的预测损失；模型间分歧如实报告，不将交叉评价称为真实训练验证。另保留对数线性与 GBM 的平均名次折中候选用于比较；它是模型折中启发式，不称为“稳健最优”。所有候选尚无真实训练验证，且跨尺度未校准，后续问题应把它们当作条件性方案。
+# **KKT求解。** KKT条件＝约束最优点的一阶驻点、原始/对偶可行性及互补条件。当前拟合全部 $a_j<0$ 时，Hessian为正定对角阵 $\operatorname{diag}[-a_j/(p_j+\varepsilon_p)^2]$，目标严格凸。令等式约束乘子为 $\xi$、非负约束乘子为 $\mu_j$，避免与问题二质量系数 $\lambda$混淆：
+#
+# $$
+# \mathcal L=f_{log}(p)+\xi(\sum_jp_j-1)-\sum_j\mu_jp_j,
+# $$
+# $$
+# \frac{a_j}{p_j+\varepsilon_p}+\xi-\mu_j=0,\quad
+# p_j\ge0,\ \mu_j\ge0,\ \mu_jp_j=0,\ \sum_jp_j=1.
+# $$
+#
+# 因而
+#
+# $$
+# p_j^*=\max\left(0,-\frac{a_j}{\xi}-\varepsilon_p\right),\qquad
+# \sum_j\max\left(0,-\frac{a_j}{\xi}-\varepsilon_p\right)=1,\quad\xi>0.
+# $$
+#
+# 求解最后的单调标量方程后，以SLSQP数值约束优化核验。若系数条件不成立，程序停止而不继续套用该凸解。候选只对当前拟合曲面最优，不是已实测训练最优。
 
 # %%
 # ============ 3.4 引入 Q 的论证 + 最优配比 ============
@@ -1573,7 +1556,6 @@ crosscheck={'main_model':MAIN_MODEL,'cv_winner':CV_WINNER,
 (TAB/'main_mixture_crosscheck.json').write_text(json.dumps(crosscheck,ensure_ascii=False,indent=2), encoding='utf-8')
 print('主方案的GBM辅助核查（预测而非实测）:');display(pd.Series(crosscheck))
 
-
 # %% [markdown]
 # ## 4. 模型检验与敏感性分析
 #
@@ -1649,7 +1631,6 @@ for name,A,R,Z,Zold in [('A1',A1,R1,Z1_normal,Z1_length),('A2',A2,R2,Z2_normal,Z
         audit[j+'__domain_percentile']=pp[j].to_numpy()
         audit[j+'__domain_Z']=Z[j].to_numpy()
     audit.to_csv(TAB/f'format_calibration_{name}.csv.gz',index=False,compression='gzip')
-
 
 # %% [markdown]
 # ### 4.2 长度校正检验
@@ -1836,7 +1817,6 @@ axes[1].set_xticks([2,4]);axes[1].set_xlabel('指标层模拟机械重复倍数'
 fig.tight_layout();savefig('fig18_length_sensitivity.png');plt.show()
 print('对照完成：先看长度关联，再看留出组件检验、分组敏感性、组界跳变和原文候选，不按最低冲突率选模型。')
 
-
 # %% [markdown]
 # ### 4.3 格式校准检验与局部冲突
 #
@@ -2015,7 +1995,6 @@ axes[1].bar(fr_stress['情景'],fr_stress['Q平均下降'],color=[C_NAVY,C_TEAL,
 fig.tight_layout();savefig('fig20_conflict_audit.png');plt.show()
 print('审查结论：算法没有硬性屏蔽冲突；领域校准改变了参照尺度，因此不能把全局负相关减弱解释为原冲突已被证明消除。局部冲突、原始值和人工核验需求均保留。')
 
-
 # %% [markdown]
 # ### 4.4 聚合参数 β 的敏感性
 #
@@ -2064,7 +2043,6 @@ print(bt_table.round(4).to_string())
 print('\nbook相对线性均分的下调：')
 print(bt_a1[bt_a1['领域']=='book'][['beta','文档均分','相对线性均分下调','集合内领域排名']].round(4).to_string(index=False))
 print('\n验证通过：当前主模型beta=0.25复现A1/A2/A3保存评分；beta越小，每条样本的评分不下降。冲突指标CI与beta无关。')
-
 
 # %% [markdown]
 # #### β 敏感性的解释
@@ -2147,7 +2125,6 @@ print('局部信号单独输出，不修改主模型Q或把局部信号混称为
 print(summary.to_string(index=False))
 print('注意：上述局部审查仅覆盖本次两项格式规则与专业性，不是全部231对的局部扫描；未经过独立人工标签验证。')
 (T/'independent_verification.json').write_text(json.dumps({'22项权重及三个集合Q_CI复算通过':True,'局部信号逐样本导出':True},ensure_ascii=False,indent=2), encoding='utf-8');
-
 
 # %% [markdown]
 # ## 5. 结果与适用边界
