@@ -2,9 +2,9 @@
 
 主文档：`0924_F题_问题一.ipynb`。从本目录完整运行，数据目录为 `real_attachments/A_data_value/`；原始附件与缓存不上传，需按本地数据布局另行准备。
 
-## 四问统一复现入口（v0.7.0）
+## 四问统一复现入口（v0.7.1）
 
-项目根目录新增 `run_all.py`，依次执行四份正式 notebook；问题一完成后自动导出问题二输入，问题三前自动审计质量接口。建议使用 Python 3.12 和 Conda：
+项目根目录新增 `run_all.py`，并在 `F题_四问完整复现包/论文正文.md` 提供四问合并论文正文。运行器依次执行四份正式 notebook；问题一完成后自动导出问题二输入，问题三前自动审计质量接口。建议使用 Python 3.12 和 Conda：
 
 ```bash
 conda env create -f repro_environment.yml
