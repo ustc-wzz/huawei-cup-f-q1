@@ -1,0 +1,12 @@
+{
+  "notebook": "0925_问题三.ipynb",
+  "mirror": "Q3/notebook_source.py",
+  "solver": "Q3/resource_model.py",
+  "runner": "Q3/run_notebook.py",
+  "inputs": "input_manifest.json",
+  "results": "tables/",
+  "figures": "figures/",
+  "summary": "results_summary.md",
+  "methodology": "模型建立.md",
+  "solution": "模型求解.md"
+}

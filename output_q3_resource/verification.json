@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "audit_passed": true,
+  "protected_q1_q2_unchanged": true,
+  "protected_sha256": {
+    "0924_F题_问题一.ipynb": "174c340cd76e0a813eb565853d10e60a1c93b404bc4f0820aabdb01a2ea07ec4",
+    "notebook_source.py": "ebc3e8dfd19ba400546488206f8fee24e3f8b8422b7c2a429e5d838b4a1da32b",
+    "0924_问题二.ipynb": "b24a9ef1e40f8cabbab767d5369fecbc5266325601277c2f78351d95c92044db",
+    "Q2/notebook_source.py": "bc4e43dc8b9ca9195b01a809bfe3c63e2507a4b3720ef46728861155a9d3c828",
+    "output_q1/length_domain_calibrated22/tables/q1_outputs_for_q2_q3.json": "eb18180ea2e95edc13faeac353e14958b1d096b35ef0e3e3bca1b91009e31150",
+    "output_q2_shared/q2_interface.json": "aa630859523ead847b6ab18f681af5476473a2f6c71d3b349f70159ddbcb48b8"
+  },
+  "main_rows": 45,
+  "budget_scan_rows": 3015,
+  "sensitivity_rows": 180,
+  "sensitivity_scan_rows": 6060,
+  "max_budget_relative_error": 4.949597887061958e-16,
+  "max_inner_KKT_log_residual": 2.0866641747829817e-13,
+  "max_derivative_relative_error": 2.6543501281274316e-10,
+  "max_classic_N_relative_error": 2.886579864025407e-15,
+  "max_expanded_bracket_relative_error": 1.7641443861293737e-13,
+  "max_outer_grid_relative_error": 2.220446049250313e-16,
+  "max_outer_grid_t_difference": 2.816432017604953e-07,
+  "independent_cases": 33,
+  "max_independent_objective_relative_error": 2.2759572004815737e-15,
+  "independent_quality_states": [
+    "R0",
+    "R1",
+    "R2"
+  ],
+  "max_transition_analytic_relative_error": 2.248201624865942e-13,
+  "main_states": [
+    "R2"
+  ],
+  "scan_states": [
+    "R2"
+  ],
+  "transitions_detected": 6,
+  "limits": "Numerical cross-checks are not empirical training validation or an interval-arithmetic proof of global optimality."
+}
