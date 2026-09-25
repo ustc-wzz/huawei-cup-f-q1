@@ -1,0 +1,26 @@
+{
+  "version": "0.8.22",
+  "source": "https://pypi.org/pypi/uv/0.8.22/json",
+  "platforms": {
+    "Windows-x86_64": {
+      "filename": "uv-0.8.22-py3-none-win_amd64.whl",
+      "url": "https://files.pythonhosted.org/packages/38/82/94f08992eeb193dc3d5baac437d1867cd37f040f34c7b1a4b1bde2bc4b4b/uv-0.8.22-py3-none-win_amd64.whl",
+      "sha256": "cda349c9ea53644d8d9ceae30db71616b733eb5330375ab4259765aef494b74e"
+    },
+    "Darwin-arm64": {
+      "filename": "uv-0.8.22-py3-none-macosx_11_0_arm64.whl",
+      "url": "https://files.pythonhosted.org/packages/d7/ca/bf37d86af6e16e45fa2b1a03300784ff3297aa9252a23dfbeaf6e391e72e/uv-0.8.22-py3-none-macosx_11_0_arm64.whl",
+      "sha256": "6706b782ad75662df794e186d16b9ffa4946d57c88f21d0eadfd43425794d1b0"
+    },
+    "Darwin-x86_64": {
+      "filename": "uv-0.8.22-py3-none-macosx_10_12_x86_64.whl",
+      "url": "https://files.pythonhosted.org/packages/28/e9/813f7eb9fb9694c4024362782c8933e37887b5195e189f80dc40f2da5958/uv-0.8.22-py3-none-macosx_10_12_x86_64.whl",
+      "sha256": "89944e99b04cc8542cb5931306f1c593f00c9d6f2b652fffc4d84d12b915f911"
+    },
+    "Linux-x86_64": {
+      "filename": "uv-0.8.22-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "url": "https://files.pythonhosted.org/packages/3a/a9/a83cee9b8cf63e57ce64ba27c77777cc66410e144fd178368f55af1fa18d/uv-0.8.22-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "8efec4ef5acddc35f0867998c44e0b15fc4dace1e4c26d01443871a2fbb04bf6"
+    }
+  }
+}

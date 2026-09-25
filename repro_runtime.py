@@ -29,8 +29,12 @@ def ensure_environment(entry, arguments):
     os.environ['PYTHONUTF8']='1';os.environ['PYTHONIOENCODING']='utf-8'
     for stream in [sys.stdout,sys.stderr]:
         if hasattr(stream,'reconfigure'):stream.reconfigure(encoding='utf-8',errors='replace')
+    if sys.version_info[:2] < (3,8):
+        raise RuntimeError('启动程序需要Python 3.8或更新版本；运行环境会自动准备。')
     if sys.version_info[:2] not in [(3,12),(3,13)] or struct.calcsize('P')!=8:
-        raise RuntimeError('此复现包需要64位Python 3.12或3.13；推荐Python 3.12。当前为 '+sys.version.split()[0])
+        from python_bootstrap import prepare_python
+        python=prepare_python(root)
+        raise SystemExit(subprocess.call([str(python),'-X','utf8',str(entry),*arguments],cwd=root))
     if not sys.flags.utf8_mode:
         raise SystemExit(subprocess.call([sys.executable,'-X','utf8',str(entry),*arguments],cwd=root))
     requirements=requirements_path(root)

@@ -1,234 +1,251 @@
 {
-  "version": "v0.9.0",
-  "host": "macOS-26.5-arm64-arm-64bit",
-  "notebooks": {
-    "1": {
-      "status": "passed",
-      "notebook_cells": 45,
-      "executed_code_cells": 23,
-      "mirror_exact": true,
-      "no_error_outputs": true,
-      "input_hashes_current": null,
-      "markdown_no_control_characters": true,
-      "math_block_delimiters_compatible": true
-    },
-    "2": {
-      "status": "passed",
-      "notebook_cells": 19,
-      "executed_code_cells": 9,
-      "mirror_exact": true,
-      "no_error_outputs": true,
-      "input_hashes_current": null,
-      "markdown_no_control_characters": true,
-      "math_block_delimiters_compatible": true
-    },
-    "3": {
-      "status": "passed",
-      "notebook_cells": 17,
-      "executed_code_cells": 10,
-      "mirror_exact": true,
-      "no_error_outputs": true,
-      "input_hashes_current": true,
-      "markdown_no_control_characters": true,
-      "math_block_delimiters_compatible": true,
-      "figures_png_pdf_pairs": 12
-    },
-    "4": {
-      "status": "passed",
-      "notebook_cells": 20,
-      "executed_code_cells": 11,
-      "mirror_exact": true,
-      "no_error_outputs": true,
-      "input_hashes_current": true,
-      "markdown_no_control_characters": true,
-      "math_block_delimiters_compatible": true,
-      "figures_png_pdf_pairs": 7
-    }
+  "version": "v0.9.1",
+  "model_and_dependency_versions_unchanged": true,
+  "bootstrap": {
+    "host": "macOS arm64",
+    "fresh_start_python": "3.11.15",
+    "repeat_start_python": "3.9.6",
+    "fresh_automatic_python_and_dependencies": true,
+    "repeat_existing_environment": true,
+    "all_input_cache_and_font_checks_passed": true,
+    "fresh_seconds": 77.88980674743652,
+    "managed_python": "Python 3.12.11",
+    "Windows_native_execution": false
   },
-  "cache": {
-    "cases": [
+  "unit_tests": 9,
+  "startup_python38_syntax_check": true,
+  "previous_v090_evidence": {
+    "version": "v0.9.0",
+    "host": "macOS-26.5-arm64-arm-64bit",
+    "notebooks": {
+      "1": {
+        "status": "passed",
+        "notebook_cells": 45,
+        "executed_code_cells": 23,
+        "mirror_exact": true,
+        "no_error_outputs": true,
+        "input_hashes_current": null,
+        "markdown_no_control_characters": true,
+        "math_block_delimiters_compatible": true
+      },
+      "2": {
+        "status": "passed",
+        "notebook_cells": 19,
+        "executed_code_cells": 9,
+        "mirror_exact": true,
+        "no_error_outputs": true,
+        "input_hashes_current": null,
+        "markdown_no_control_characters": true,
+        "math_block_delimiters_compatible": true
+      },
+      "3": {
+        "status": "passed",
+        "notebook_cells": 17,
+        "executed_code_cells": 10,
+        "mirror_exact": true,
+        "no_error_outputs": true,
+        "input_hashes_current": true,
+        "markdown_no_control_characters": true,
+        "math_block_delimiters_compatible": true,
+        "figures_png_pdf_pairs": 12
+      },
+      "4": {
+        "status": "passed",
+        "notebook_cells": 20,
+        "executed_code_cells": 11,
+        "mirror_exact": true,
+        "no_error_outputs": true,
+        "input_hashes_current": true,
+        "markdown_no_control_characters": true,
+        "math_block_delimiters_compatible": true,
+        "figures_png_pdf_pairs": 7
+      }
+    },
+    "cache": {
+      "cases": [
+        {
+          "prefix": "A1_sample",
+          "rows": 51230,
+          "cold_seconds": 19.53052282333374,
+          "matches_original_cache": true,
+          "repeat_passed": true
+        },
+        {
+          "prefix": "A2_arxiv",
+          "rows": 17523,
+          "cold_seconds": 1.9064130783081055,
+          "matches_original_cache": true,
+          "repeat_passed": true
+        },
+        {
+          "prefix": "A3_github",
+          "rows": 203752,
+          "cold_seconds": 21.787801027297974,
+          "matches_original_cache": true,
+          "repeat_passed": true
+        }
+      ],
+      "corrupt_cache_recovered": true
+    },
+    "bootstrap_from_empty_environment": true,
+    "utf8_explicit": true,
+    "bundled_font": "Noto Sans SC",
+    "unit_tests": 5,
+    "windows_direct_dependency_wheels": [
       {
-        "prefix": "A1_sample",
-        "rows": 51230,
-        "cold_seconds": 19.53052282333374,
-        "matches_original_cache": true,
-        "repeat_passed": true
+        "requirement": "numpy==2.3.5",
+        "platform": "Windows x64",
+        "python": "312",
+        "wheel": "numpy-2.3.5-cp312-cp312-win_amd64.whl"
       },
       {
-        "prefix": "A2_arxiv",
-        "rows": 17523,
-        "cold_seconds": 1.9064130783081055,
-        "matches_original_cache": true,
-        "repeat_passed": true
+        "requirement": "numpy==2.3.5",
+        "platform": "Windows x64",
+        "python": "313",
+        "wheel": "numpy-2.3.5-cp313-cp313t-win_amd64.whl"
       },
       {
-        "prefix": "A3_github",
-        "rows": 203752,
-        "cold_seconds": 21.787801027297974,
-        "matches_original_cache": true,
-        "repeat_passed": true
+        "requirement": "pandas==2.2.3",
+        "platform": "Windows x64",
+        "python": "312",
+        "wheel": "pandas-2.2.3-cp312-cp312-win_amd64.whl"
+      },
+      {
+        "requirement": "pandas==2.2.3",
+        "platform": "Windows x64",
+        "python": "313",
+        "wheel": "pandas-2.2.3-cp313-cp313-win_amd64.whl"
+      },
+      {
+        "requirement": "scipy==1.18.1",
+        "platform": "Windows x64",
+        "python": "312",
+        "wheel": "scipy-1.18.1-cp312-cp312-win_amd64.whl"
+      },
+      {
+        "requirement": "scipy==1.18.1",
+        "platform": "Windows x64",
+        "python": "313",
+        "wheel": "scipy-1.18.1-cp313-cp313-win_amd64.whl"
+      },
+      {
+        "requirement": "scikit-learn==1.9.1",
+        "platform": "Windows x64",
+        "python": "312",
+        "wheel": "scikit_learn-1.9.1-cp312-cp312-win_amd64.whl"
+      },
+      {
+        "requirement": "scikit-learn==1.9.1",
+        "platform": "Windows x64",
+        "python": "313",
+        "wheel": "scikit_learn-1.9.1-cp313-cp313-win_amd64.whl"
+      },
+      {
+        "requirement": "matplotlib==3.11.2",
+        "platform": "Windows x64",
+        "python": "312",
+        "wheel": "matplotlib-3.11.2-cp312-cp312-win_amd64.whl"
+      },
+      {
+        "requirement": "matplotlib==3.11.2",
+        "platform": "Windows x64",
+        "python": "313",
+        "wheel": "matplotlib-3.11.2-cp313-cp313-win_amd64.whl"
+      },
+      {
+        "requirement": "seaborn==0.13.2",
+        "platform": "Windows x64",
+        "python": "312",
+        "wheel": "seaborn-0.13.2-py3-none-any.whl"
+      },
+      {
+        "requirement": "seaborn==0.13.2",
+        "platform": "Windows x64",
+        "python": "313",
+        "wheel": "seaborn-0.13.2-py3-none-any.whl"
+      },
+      {
+        "requirement": "pyarrow==25.0.1",
+        "platform": "Windows x64",
+        "python": "312",
+        "wheel": "pyarrow-25.0.1-cp312-cp312-win_amd64.whl"
+      },
+      {
+        "requirement": "pyarrow==25.0.1",
+        "platform": "Windows x64",
+        "python": "313",
+        "wheel": "pyarrow-25.0.1-cp313-cp313-win_amd64.whl"
+      },
+      {
+        "requirement": "joblib==1.6.0",
+        "platform": "Windows x64",
+        "python": "312",
+        "wheel": "joblib-1.6.0-py3-none-any.whl"
+      },
+      {
+        "requirement": "joblib==1.6.0",
+        "platform": "Windows x64",
+        "python": "313",
+        "wheel": "joblib-1.6.0-py3-none-any.whl"
+      },
+      {
+        "requirement": "nbformat==5.11.1",
+        "platform": "Windows x64",
+        "python": "312",
+        "wheel": "nbformat-5.11.1-py3-none-any.whl"
+      },
+      {
+        "requirement": "nbformat==5.11.1",
+        "platform": "Windows x64",
+        "python": "313",
+        "wheel": "nbformat-5.11.1-py3-none-any.whl"
+      },
+      {
+        "requirement": "nbclient==0.11.0",
+        "platform": "Windows x64",
+        "python": "312",
+        "wheel": "nbclient-0.11.0-py3-none-any.whl"
+      },
+      {
+        "requirement": "nbclient==0.11.0",
+        "platform": "Windows x64",
+        "python": "313",
+        "wheel": "nbclient-0.11.0-py3-none-any.whl"
+      },
+      {
+        "requirement": "ipykernel==7.3.0",
+        "platform": "Windows x64",
+        "python": "312",
+        "wheel": "ipykernel-7.3.0-py3-none-any.whl"
+      },
+      {
+        "requirement": "ipykernel==7.3.0",
+        "platform": "Windows x64",
+        "python": "313",
+        "wheel": "ipykernel-7.3.0-py3-none-any.whl"
+      },
+      {
+        "requirement": "jupyter_client==8.10.0",
+        "platform": "Windows x64",
+        "python": "312",
+        "wheel": "jupyter_client-8.10.0-py3-none-any.whl"
+      },
+      {
+        "requirement": "jupyter_client==8.10.0",
+        "platform": "Windows x64",
+        "python": "313",
+        "wheel": "jupyter_client-8.10.0-py3-none-any.whl"
       }
     ],
-    "corrupt_cache_recovered": true
-  },
-  "bootstrap_from_empty_environment": true,
-  "utf8_explicit": true,
-  "bundled_font": "Noto Sans SC",
-  "unit_tests": 5,
-  "windows_direct_dependency_wheels": [
-    {
-      "requirement": "numpy==2.3.5",
-      "platform": "Windows x64",
-      "python": "312",
-      "wheel": "numpy-2.3.5-cp312-cp312-win_amd64.whl"
+    "windows_execution": "not performed on a Windows host",
+    "isolated_zip_run": {
+      "all_four_notebooks_passed": true,
+      "started_without_cache_or_outputs": true,
+      "started_from_unrelated_cwd": true,
+      "repeat_prepare_passed": true,
+      "elapsed_seconds": 242.8634810447693,
+      "execution_platform": "macOS; Windows host not available"
     },
-    {
-      "requirement": "numpy==2.3.5",
-      "platform": "Windows x64",
-      "python": "313",
-      "wheel": "numpy-2.3.5-cp313-cp313t-win_amd64.whl"
-    },
-    {
-      "requirement": "pandas==2.2.3",
-      "platform": "Windows x64",
-      "python": "312",
-      "wheel": "pandas-2.2.3-cp312-cp312-win_amd64.whl"
-    },
-    {
-      "requirement": "pandas==2.2.3",
-      "platform": "Windows x64",
-      "python": "313",
-      "wheel": "pandas-2.2.3-cp313-cp313-win_amd64.whl"
-    },
-    {
-      "requirement": "scipy==1.18.1",
-      "platform": "Windows x64",
-      "python": "312",
-      "wheel": "scipy-1.18.1-cp312-cp312-win_amd64.whl"
-    },
-    {
-      "requirement": "scipy==1.18.1",
-      "platform": "Windows x64",
-      "python": "313",
-      "wheel": "scipy-1.18.1-cp313-cp313-win_amd64.whl"
-    },
-    {
-      "requirement": "scikit-learn==1.9.1",
-      "platform": "Windows x64",
-      "python": "312",
-      "wheel": "scikit_learn-1.9.1-cp312-cp312-win_amd64.whl"
-    },
-    {
-      "requirement": "scikit-learn==1.9.1",
-      "platform": "Windows x64",
-      "python": "313",
-      "wheel": "scikit_learn-1.9.1-cp313-cp313-win_amd64.whl"
-    },
-    {
-      "requirement": "matplotlib==3.11.2",
-      "platform": "Windows x64",
-      "python": "312",
-      "wheel": "matplotlib-3.11.2-cp312-cp312-win_amd64.whl"
-    },
-    {
-      "requirement": "matplotlib==3.11.2",
-      "platform": "Windows x64",
-      "python": "313",
-      "wheel": "matplotlib-3.11.2-cp313-cp313-win_amd64.whl"
-    },
-    {
-      "requirement": "seaborn==0.13.2",
-      "platform": "Windows x64",
-      "python": "312",
-      "wheel": "seaborn-0.13.2-py3-none-any.whl"
-    },
-    {
-      "requirement": "seaborn==0.13.2",
-      "platform": "Windows x64",
-      "python": "313",
-      "wheel": "seaborn-0.13.2-py3-none-any.whl"
-    },
-    {
-      "requirement": "pyarrow==25.0.1",
-      "platform": "Windows x64",
-      "python": "312",
-      "wheel": "pyarrow-25.0.1-cp312-cp312-win_amd64.whl"
-    },
-    {
-      "requirement": "pyarrow==25.0.1",
-      "platform": "Windows x64",
-      "python": "313",
-      "wheel": "pyarrow-25.0.1-cp313-cp313-win_amd64.whl"
-    },
-    {
-      "requirement": "joblib==1.6.0",
-      "platform": "Windows x64",
-      "python": "312",
-      "wheel": "joblib-1.6.0-py3-none-any.whl"
-    },
-    {
-      "requirement": "joblib==1.6.0",
-      "platform": "Windows x64",
-      "python": "313",
-      "wheel": "joblib-1.6.0-py3-none-any.whl"
-    },
-    {
-      "requirement": "nbformat==5.11.1",
-      "platform": "Windows x64",
-      "python": "312",
-      "wheel": "nbformat-5.11.1-py3-none-any.whl"
-    },
-    {
-      "requirement": "nbformat==5.11.1",
-      "platform": "Windows x64",
-      "python": "313",
-      "wheel": "nbformat-5.11.1-py3-none-any.whl"
-    },
-    {
-      "requirement": "nbclient==0.11.0",
-      "platform": "Windows x64",
-      "python": "312",
-      "wheel": "nbclient-0.11.0-py3-none-any.whl"
-    },
-    {
-      "requirement": "nbclient==0.11.0",
-      "platform": "Windows x64",
-      "python": "313",
-      "wheel": "nbclient-0.11.0-py3-none-any.whl"
-    },
-    {
-      "requirement": "ipykernel==7.3.0",
-      "platform": "Windows x64",
-      "python": "312",
-      "wheel": "ipykernel-7.3.0-py3-none-any.whl"
-    },
-    {
-      "requirement": "ipykernel==7.3.0",
-      "platform": "Windows x64",
-      "python": "313",
-      "wheel": "ipykernel-7.3.0-py3-none-any.whl"
-    },
-    {
-      "requirement": "jupyter_client==8.10.0",
-      "platform": "Windows x64",
-      "python": "312",
-      "wheel": "jupyter_client-8.10.0-py3-none-any.whl"
-    },
-    {
-      "requirement": "jupyter_client==8.10.0",
-      "platform": "Windows x64",
-      "python": "313",
-      "wheel": "jupyter_client-8.10.0-py3-none-any.whl"
-    }
-  ],
-  "windows_execution": "not performed on a Windows host",
-  "isolated_zip_run": {
-    "all_four_notebooks_passed": true,
-    "started_without_cache_or_outputs": true,
-    "started_from_unrelated_cwd": true,
-    "repeat_prepare_passed": true,
-    "elapsed_seconds": 242.8634810447693,
-    "execution_platform": "macOS; Windows host not available"
-  },
-  "existing_managed_environment_reused_without_install": true
+    "existing_managed_environment_reused_without_install": true
+  }
 }

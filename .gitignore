@@ -132,3 +132,6 @@
 !/assets/
 /assets/*
 !/assets/fonts/
+
+!/python_bootstrap.py
+!/bootstrap_uv.json

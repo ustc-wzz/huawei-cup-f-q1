@@ -54,7 +54,7 @@ class RuntimeTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             root=Path(temp);archive=root/'F题_四问完整复现包_v0.9.0.zip';archive.write_bytes(b'previous')
             with patch.object(build_package,'ROOT',root):
-                with self.assertRaises(FileExistsError):build_package.build()
+                with self.assertRaises(FileExistsError):build_package.build(version='v0.9.0')
             self.assertEqual(archive.read_bytes(),b'previous')
 
 if __name__=='__main__':unittest.main()
