@@ -1,0 +1,4 @@
+﻿尺度1,尺度2,匹配配方数,Spearman
+test_1M,test_60M,256,0.9657980945296404
+test_1M,test_1B,0,
+test_60M,test_1B,0,

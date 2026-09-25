@@ -1,8 +1,25 @@
-# F题问题一：质量评价与领域配比
+# F题：质量评价、领域配比与标度律
 
 主文档：`0924_F题_问题一.ipynb`。从本目录完整运行，数据目录为 `real_attachments/A_data_value/`；原始附件与缓存不上传，需按本地数据布局另行准备。
 
 当前方法：β=0.25；对数线性用于领域配比主建模与KKT求解，GBM作为预测性能基准和辅助核查，保留线性与PDF加性样条对照。主模型定位不等于交叉验证冠军。
+
+## 问题二：共同修正标度律（v0.3.0）
+
+主文档：`0924_问题二.ipynb`；对应文本镜像为 `Q2/notebook_source.py`，根目录的 `notebook_source.py` 仍对应问题一。
+
+采用 `L_s = E_s + (A_s N^(-α) + B_s D^(-ν)) exp(-λu + ηh(p))`，其中 `u = Q-Q0(p)`；来源允许不同基线幅度。质量评分映射未被联合数据标定，接口分别保存已估计的 θ_Q 与未识别的 λ、s_Q。notebook完整展示数据口径、跨来源假设、参数估计与留出验证、边际效用/弹性、领域替代/组合效应、质量—规模替代及适用边界。
+
+在项目根目录运行（需本地原始附件和问题一当前输出）：
+
+```bash
+python Q2/export_q1_inputs.py
+python Q2/run_shared.py
+```
+
+依赖：numpy、pandas、scipy、scikit-learn、matplotlib、nbformat、nbclient、ipykernel。输入位于 `real_attachments/A_data_value/regmix_tables/`、`real_attachments/B_scaling_laws/`；原始附件不在仓库内。第一次命令只补充导出当前问题一结果，不重新选模；第二次从镜像生成固定文件并执行所有单元。
+
+结果位于 `output_q2_shared/`：`results_summary.md` 为结论，`tables/` 为指标与分析，`figures/` 为图，`q2_interface.json` 为后续接口。质量分组留出 RMSE=0.062225，配比分组留出 RMSE=0.094679；完整留尺度误差明显增大，联合质量—配比响应仍是工作假设，不能宣称已获得完全可迁移的实测四因素规律。
 
 ## 版本区分
 
@@ -11,6 +28,7 @@
 - `v0.1.0`：修改前基线，GBM主预测与候选接口。
 - `v0.2.0`：对数线性主模型与解析配比接口，GBM辅助核查。
 - `v0.2.1`：新增跨对话项目记忆，模型与实验结果不变。
+- `v0.3.0`：问题二共同修正标度律，完整执行及替代关系分析；问题一保持不变。
 
 ## 新对话的项目记忆
 

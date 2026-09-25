@@ -20,3 +20,24 @@
 !/output_q1/length_domain_calibrated22/tables/main_mixture_crosscheck.json
 !/output_q1/length_domain_calibrated22/tables/optimal_mixture.csv
 !/output_q1/length_domain_calibrated22/tables/q1_outputs_for_q2_q3.json
+
+# 问题二共同修正模型：固定主文件、镜像与复现实验。
+!/0924_问题二.ipynb
+!/Q2/
+/Q2/*
+!/Q2/notebook_source.py
+!/Q2/export_q1_inputs.py
+!/Q2/run_shared.py
+!/output_q2_shared/
+/output_q2_shared/*
+!/output_q2_shared/results_summary.md
+!/output_q2_shared/q2_interface.json
+!/output_q2_shared/verification.json
+!/output_q2_shared/versions.json
+!/output_q2_shared/tables/
+/output_q2_shared/tables/*
+!/output_q2_shared/tables/*.csv
+/output_q2_shared/tables/large_model_scenarios.csv
+!/output_q2_shared/figures/
+/output_q2_shared/figures/*
+!/output_q2_shared/figures/*.png

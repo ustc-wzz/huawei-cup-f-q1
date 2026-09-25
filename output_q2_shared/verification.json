@@ -1,0 +1,11 @@
+{
+  "completed": true,
+  "q1_model": "对数线性混料",
+  "q1_input_hash_verified": true,
+  "quality_overlap_verified": true,
+  "recipe_group_leakage_checked": true,
+  "finite_difference_and_equivalence_assertions": "passed",
+  "quality_scale_identified": false,
+  "joint_response_validated": false,
+  "notes": "自助区间为条件区间；全部情景结果需要相应来源与评分映射假设。"
+}
