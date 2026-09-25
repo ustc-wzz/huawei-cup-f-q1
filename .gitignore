@@ -118,3 +118,7 @@
 !/output_q1/length_domain_calibrated22/tables/independent_verification.json
 !/output_q2_shared/delivery_checks.json
 !/revision_v080.json
+
+# 目录导航与移动台账；历史材料和完整交付数据保持本地。
+!/目录导航.md
+!/目录整理记录.json
