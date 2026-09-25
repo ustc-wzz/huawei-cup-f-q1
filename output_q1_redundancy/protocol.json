@@ -1,0 +1,18 @@
+{
+  "seed": 20260925,
+  "beta": 0.25,
+  "bootstrap": 200,
+  "fixed_preprocessing": true,
+  "bootstrap_scope": "conditional on fixed A1 preprocessing; not end-to-end independent validation",
+  "extension_excludes_A1_ids": true,
+  "duplicate_noise_sd": 0.5,
+  "blind_pairs": 42,
+  "human_review_status": "pending",
+  "main_model_changed": false,
+  "input_sha256": {
+    "all_indicators_A1.csv.gz": "0629ea5cdbb77fa494ba204554184be5c9d9e3535e1a64f749d218f28b57738b",
+    "all_indicators_A2.csv.gz": "37eee8b4623969f65935403a4a3e256372f99e1c819e9376ed49b38773c3ccfa",
+    "all_indicators_A3.csv.gz": "2e9394b499605274ae57d8e88164c96c16b50bddcf047db6377b51d18d6bed2c",
+    "indicator_weights.csv": "f4ffdb4fec6fa2b058211710452a85d08d7382786ae8123573e309e3d131961a"
+  }
+}

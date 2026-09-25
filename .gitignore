@@ -94,3 +94,13 @@
 /output_q4_evolution/figures/*
 !/output_q4_evolution/figures/*.png
 !/output_q4_evolution/figures/*.pdf
+
+# 冗余度独立实验；原文盲评包仅保留本地，不提交原文。
+!/Q1_redundancy/
+!/output_q1_redundancy/
+/output_q1_redundancy/*
+!/output_q1_redundancy/*.csv
+!/output_q1_redundancy/*.json
+!/output_q1_redundancy/*.md
+/output_q1_redundancy/split.csv
+/Q1_redundancy/__pycache__/
