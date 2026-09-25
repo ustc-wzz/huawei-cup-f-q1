@@ -41,6 +41,7 @@
 !/Q3/
 /Q3/*
 !/Q3/audit_quality_interface.py
+!/Q3/第三问notebook执行Prompt.md
 !/Q3/quality_audit/
 /Q3/quality_audit/*
 !/Q3/quality_audit/*.csv

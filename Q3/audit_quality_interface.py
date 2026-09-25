@@ -1,7 +1,7 @@
 """Read-only audit of Q1 scores for proposed Q3 quality/cost interfaces.
 
 Run from repository root: Q1/.venv/bin/python Q3/audit_quality_interface.py
-All mapping and cap candidates are proposals, not adopted model changes.
+Adopted choices are recorded in the execution prompt; other rows are sensitivity candidates.
 """
 from pathlib import Path
 import hashlib
@@ -147,7 +147,7 @@ verification={'status':'passed','raw_rows':len(raw),'unique_rows':len(pool),
               'domain_means_match_current_interface':True,'q1_q2_interface_hash_matches':True,
               'candidate_caps_monotone':bool(all((np.diff(g.u_cap_candidate)>=-1e-12).all() for _,g in caps.groupby('recipe',sort=False))),
               'all_candidate_aggregate_cost_coordinates_in_0_1':True,
-              'decisions':'All mappings/caps pending user approval; existing Q1/Q2 unchanged.',
+              'decisions':'Seven recommendations approved; see execution prompt. Alternative audit rows remain sensitivity candidates. Existing Q1/Q2 unchanged.',
               'limitations':['Q scores are model-based document scores, not measured training gains.',
                              'Document/word retention is not token retention.',
                              '11 missing mixture domains retain baseline with zero proposed gain.',

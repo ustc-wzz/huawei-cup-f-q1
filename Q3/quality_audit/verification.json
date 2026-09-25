@@ -8,7 +8,7 @@
   "q1_q2_interface_hash_matches": true,
   "candidate_caps_monotone": true,
   "all_candidate_aggregate_cost_coordinates_in_0_1": true,
-  "decisions": "All mappings/caps pending user approval; existing Q1/Q2 unchanged.",
+  "decisions": "Seven recommendations approved; see execution prompt. Alternative audit rows remain sensitivity candidates. Existing Q1/Q2 unchanged.",
   "limitations": [
     "Q scores are model-based document scores, not measured training gains.",
     "Document/word retention is not token retention.",
