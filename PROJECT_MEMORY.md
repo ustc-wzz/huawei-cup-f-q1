@@ -32,6 +32,8 @@
 
 ## 3. 领域配比：主模型定位与数据关系
 
+领域配比与损失建模：比较线性混料、对数线性混料、加性样条和GBM。经综合权衡，选择对数线性模型作为主模型，用于关系解释与约束配比求解；GBM作为对照模型，其预测表现整体较强，用于比较和辅助核查。模型选择不等于单项预测指标排名第一。
+
 RegMix的512组训练记录＝同一约1M参数规模、不同配方的512次训练，不是512种模型规模。`real_attachments/A_data_value/regmix_tables/train_mixture_1m.csv` 为17域配比，`train_pile_loss_1m.csv` 为13域验证损失，以 `index` 关联。目标是13域损失均值。测试配方有1M/256组、60M/256组、1B/64组。
 
 17域字段为 arxiv、freelaw、nih_exporter、pubmed_central、wikipedia_en、dm_mathematics、github、philpapers、stackexchange、enron_emails、gutenberg_pg_19、pile_cc、ubuntu_irc、europarl、hackernews、pubmed_abstracts、uspto_backgrounds。七域与十七域来自不同分类体系，映射与缺失域均值填补是近似，不是实测同质量。
