@@ -2,6 +2,18 @@
 
 主文档：`0924_F题_问题一.ipynb`。从本目录完整运行，数据目录为 `real_attachments/A_data_value/`；原始附件与缓存不上传，需按本地数据布局另行准备。
 
+## 四问统一复现入口（v0.7.0）
+
+项目根目录新增 `run_all.py`，依次执行四份正式 notebook；问题一完成后自动导出问题二输入，问题三前自动审计质量接口。建议使用 Python 3.12 和 Conda：
+
+```bash
+conda env create -f repro_environment.yml
+conda activate huawei-cup-f-repro
+python run_all.py
+```
+
+第二问失败后可用 `python run_all.py --start-at 2` 续跑；`--start-at 3`、`--start-at 4` 分别从第三、四问开始。输出写入 `output_q1/`、`output_q2_shared/`、`output_q3_resource/`、`output_q4_evolution/`。GitHub 版本仍不包含原始附件；运行前须按 `real_attachments/source_manifest.json` 准备数据，并在项目根目录放置题目文件 `算力约束下提升大语言模型能力的资源配置建模.docx`。完整单机数据包为本地交付物，不随 Git 提交。
+
 当前质量聚合参数：β=0.25。
 
 领域配比与损失建模：比较线性混料、对数线性混料、加性样条和GBM。经综合权衡，选择对数线性模型作为主模型，用于关系解释与约束配比求解；GBM作为对照模型，其预测表现整体较强，用于比较和辅助核查。模型选择不等于单项预测指标排名第一。

@@ -5,6 +5,9 @@
 !/PROJECT_MEMORY.md
 !/README.md
 !/CHANGELOG.md
+!/run_all.py
+!/repro_requirements.txt
+!/repro_environment.yml
 !/0924_F题_问题一.ipynb
 !/notebook_source.py
 !/output_q1/

@@ -1,0 +1,8 @@
+name: huawei-cup-f-repro
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - -r repro_requirements.txt
