@@ -16,8 +16,8 @@ def compare(a,b):
  k=max(1,int(np.ceil(.1*len(a))));ia=np.argsort(a,kind='stable');ib=np.argsort(b,kind='stable')
  return {'rho':spearmanr(a,b).statistic,'top10_overlap':len(np.intersect1d(ia[-k:],ib[-k:]))/k,'bottom10_overlap':len(np.intersect1d(ia[:k],ib[:k]))/k,'mean_abs_rank_shift':np.mean(np.abs(rankdata(a)-rankdata(b)))/len(a)}
 W={p:weights(Z['A1'],p) for p in [1,2]};Q={p:{s:score(z,W[p]) for s,z in Z.items()} for p in [1,2]}
-assert np.allclose(W[1],pd.read_csv(R/'indicator_weights.csv',index_col=0)['权重'])
-assert np.allclose(Q[1]['A1'],pd.read_csv(R/'sample_Q_A1.csv').Q_res)
+assert np.allclose(W[2],pd.read_csv(R/'indicator_weights.csv',index_col=0)['权重'])
+assert np.allclose(Q[2]['A1'],pd.read_csv(R/'sample_Q_A1.csv').Q_res)
 pd.DataFrame({'indicator':cols,'abs_weight':W[1],'square_weight':W[2]}).to_csv(O/'weights.csv',index=False)
 pd.DataFrame([{'set':s,**compare(Q[1][s],Q[2][s])} for s in Z]).to_csv(O/'method_comparison.csv',index=False)
 pd.concat([F[s][['domain']].assign(set=s,abs_score=Q[1][s],square_score=Q[2][s]).groupby(['set','domain']).agg(['mean','count']) for s in Z]).to_csv(O/'domain_scores.csv')
@@ -99,5 +99,5 @@ for reviewer in [1,2]:
 choice填L（左更好）、R（右更好）、T（相当）、U（无法判断），reason写简短理由。每对为同领域完整文本，左右随机，无模型分数。
 随机样本与分歧样本的结果须分开报告；该评审包不能估计全语料总体准确率。重复运行不覆盖已有评审表；仍建议保留原始标注备份。
 ''')
-(O/'protocol.json').write_text(json.dumps({'seed':20260925,'beta':.25,'bootstrap':B,'fixed_preprocessing':True,'bootstrap_scope':'conditional on fixed A1 preprocessing; not end-to-end independent validation','extension_excludes_A1_ids':True,'duplicate_noise_sd':.5,'blind_pairs':len(key),'human_review_status':'pending','main_model_changed':False,'input_sha256':{f:hashlib.sha256((R/f).read_bytes()).hexdigest() for f in ['all_indicators_A1.csv.gz','all_indicators_A2.csv.gz','all_indicators_A3.csv.gz','indicator_weights.csv']}},ensure_ascii=False,indent=2))
+(O/'protocol.json').write_text(json.dumps({'seed':20260925,'beta':.25,'bootstrap':B,'fixed_preprocessing':True,'bootstrap_scope':'conditional on fixed A1 preprocessing; not end-to-end independent validation','extension_excludes_A1_ids':True,'duplicate_noise_sd':.5,'blind_pairs':len(key),'human_review_status':'pending','main_model_weight_power':2,'changes_main_outputs':False,'input_sha256':{f:hashlib.sha256((R/f).read_bytes()).hexdigest() for f in ['all_indicators_A1.csv.gz','all_indicators_A2.csv.gz','all_indicators_A3.csv.gz','indicator_weights.csv']}},ensure_ascii=False,indent=2))
 print('SUCCESS',flush=True)

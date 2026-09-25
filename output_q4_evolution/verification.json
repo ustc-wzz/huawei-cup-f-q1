@@ -26,7 +26,7 @@
     "all_input_hashes_match": true,
     "all_c8_raw_hashes_match": true
   },
-  "max_scale_derivative_error": 2.4049609526066718e-11,
+  "max_scale_derivative_error": 1.0287687368659704e-11,
   "max_budget_relative_error": 1.9385089126420652e-16,
   "scope": "numerical identities, evidence boundaries and reproducibility only; not causal proof"
 }

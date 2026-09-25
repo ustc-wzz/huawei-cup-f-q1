@@ -3,11 +3,11 @@
 #
 # **主线：固定领域配比与质量情景 → 把预算分配给参数、训练数据和提质 → 检验预算变化是否改变最优质量状态。**
 #
-# 本文承接问题二共同指数修正，采用用户已确认的七项选择。本版以参考配比、筛选支持的五档质量上限与全局收益阈值为主线；前六节保留50%参考切片与数值核验，第七节给出当前决策结论。所有结果均为模型预测，不是新增大模型训练实测。质量上限是样本筛选参照的情景上限，不能解释为天然质量极限。
+# 本文承接问题二共同指数修正，以参考配比、筛选支持的五档质量上限与全局收益阈值为主线；第1–6节分析50%参考切片，第7节比较五档上限和全局阈值。所有结果均为模型预测，不是新增大模型训练实测。质量上限是样本筛选参照的情景上限，不能解释为天然质量极限。
 #
 # ## 1. 输入、题意与证据边界
 #
-# 输入来自前两问当前接口、质量核查及C7；核对哈希和评分后使用，不重新拟合前两问。参数量与数据量采用十亿单位。未知域的基线沿用问题一填补，新增提质收益取零，这是已确认约定。
+# 输入来自前两问当前接口、质量核查及C7；核对哈希和评分后使用，不重新拟合前两问。参数量与数据量采用十亿单位。未知域的基线沿用问题一填补，新增提质收益取零，
 
 # %%
 from pathlib import Path
@@ -386,7 +386,6 @@ for cost in COSTS:
     for ax,col,title in zip(axes.flat,['N_B','D_B','loss_gain','share_quality'],['最优参数量（十亿）','最优训练量（十亿Token）','相对无提质的预测Loss下降','提质算力占比']):
         ax.plot(d.C,d[col],color=colors[cost],label=COST_LABELS[cost]);ax.set_xscale('log');ax.set(xlabel='预算（FLOPs）',ylabel=title)
         if col in ['N_B','D_B']:ax.set_yscale('log')
-        if col=='t':ax.set_ylim(-.05,1.12)
 axes[0,0].legend();fig.suptitle('主情景，2048上下文：规模变化与质量状态',y=1.02)
 finish(fig,'01_budget_allocation')
 fig,axes=plt.subplots(1,3,figsize=(12,3.8))
@@ -562,7 +561,7 @@ for name in ['07_screening_evidence','08_global_decision_phase','12_critical_ben
 
 # %%
 # Current decision report supersedes interpreting the 50% reference as a unique ceiling.
-extra=['## v0.5.0：上限情景与临界收益决策','',
+extra=['## 上限情景与临界收益决策','',
        '质量上限并列采用80%、50%、20%、10%、5%高分文档参照；50%仅为固定展示切片。所有配置为条件预测。',
        '筛选支持是现有样本评分的支持，不等于可供应足量训练Token。book域5%参照仅9篇，尾部情景证据较弱。','',
        '|文档参照保留率|p0质量上限U|配置数|状态集合|','|---|---:|---:|---|']

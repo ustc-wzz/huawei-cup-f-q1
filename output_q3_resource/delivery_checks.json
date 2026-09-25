@@ -3,7 +3,9 @@
   "notebook_cells": 17,
   "executed_code_cells": 10,
   "mirror_exact": true,
-  "all_input_hashes_current": true,
   "no_error_outputs": true,
+  "input_hashes_current": true,
+  "markdown_no_control_characters": true,
+  "math_block_delimiters_compatible": true,
   "figures_png_pdf_pairs": 12
 }

@@ -5,8 +5,8 @@
   "decision_checks": 1125,
   "max_threshold_grid_relative_error": 0.0,
   "max_tie_log_objective_gap": 2.220446049250313e-16,
-  "max_shadow_relative_error": 7.763145681849437e-11,
-  "max_equivalent_loss_error": 4.440892098500626e-16,
+  "max_shadow_relative_error": 7.76183561868038e-11,
+  "max_equivalent_loss_error": 8.881784197001252e-16,
   "max_budget_relative_error": 4.194304e-16,
   "limits": "Sample-supported quality scenarios, no token supply guarantee; lambda is conditional, no new training validation."
 }

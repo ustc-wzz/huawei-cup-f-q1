@@ -39,7 +39,7 @@ def run():
     fail=[labels[k] for k,r in bmetrics.iterrows() if r.quantile_N_time>=r.last_month_q90]
     qsample=read('c4_compute_sample')
     score_dispersion=read('task_weight_sensitivity').groupby('type').forecast_12m.agg(['min','max'])
-    text=f'''# 问题四模型求解与结果（v0.6.1）
+    text=f'''# 问题四模型求解与结果
 
 ## 4.9 数据进入模型后的实际范围
 
@@ -145,7 +145,7 @@ Q3未来主配置Loss范围为[{absbridge.loss.min():.6f}, {absbridge.loss.max()
 '''
     (OUT/'模型求解.md').write_text(text)
     shutil.copyfile(ROOT/'Q4/模型建立.md',OUT/'模型建立.md')
-    summary=f'''# 问题四结果入口 — v0.6.1
+    summary=f'''# 问题四结果入口 — v0.8.0
 
 全部数据来自本地附件，原件未修改；方法、代码和实际输出已统一。
 
@@ -161,7 +161,7 @@ Q3未来主配置Loss范围为[{absbridge.loss.min():.6f}, {absbridge.loss.max()
 入口：`0925_问题四.ipynb`；复现：`Q1/.venv/bin/python Q4/run_notebook.py`。正式章节为`模型建立.md`、`模型求解.md`，源数据索引见`input_manifest.json`及`c8_input_manifest.json`。图件在`figures/`，结果在`tables/`。
 '''
     (OUT/'results_summary.md').write_text(summary)
-    dump(dict(version='v0.6.1',causal_status='conditional on maintained assumptions',
+    dump(dict(version='v0.8.0',causal_status='conditional on maintained assumptions',
         complete_ND_population='matched pretrained only',contributions=main.to_dict(),
         origin=fore['cutoff'],forecast_targets=mainpred[['target_date','forecast','lo','hi']].to_dict('records'),
         bridges='high-comparability future losses unsupported; medium cross-report scenario only',

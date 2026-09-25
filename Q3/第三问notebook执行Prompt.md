@@ -47,7 +47,7 @@ T(Q)=(Q-q_low)/(q_high-q_low)，锚点取审查表中A1_only的七域等权1%/99
 
 u_max(p;r)=sum_{j in 有映射的配方域} p_j*kappa_j*[mu_d(j)(r)-mu_d(j)(1)]。
 
-沿用direct=1、near_direct=0.8。r=0.5主情景，0.2敏感性；缺失域增量0。Q_max=Q0+u_max，z0=T(Q0)，z_max=T(Q_max)。参考：r=0.5时p0的u_max约0.113672，p*约0.092007。用脚本/表复现，不只复制近似数值。
+沿用direct=1、near_direct=0.8。五档上限并列，r=0.5为展示切片，0.2另作敏感性切片；缺失域增量0。Q_max=Q0+u_max，z0=T(Q0)，z_max=T(Q_max)。各质量数值读取当前quality_cap_candidates.csv，不沿用旧赋权方案的手写常数。
 
 求解：min L，约束N>0、D>0、0<=u<=u_max、C_total<=C。未提供真实硬件上下界，不把B1观测范围自动当成物理可行范围。数值搜索区间必须可自适应扩展。
 

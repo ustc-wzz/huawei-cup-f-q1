@@ -3,7 +3,7 @@
 #
 # **研究主线：用问题一刻画数据质量与领域配比，用附件B识别规模与质量规律，在来源校准后建立共同修正标度律，并检验资源之间的替代关系。**
 #
-# 本版主模型为
+# 主模型为
 #
 # $$
 # L_s=E_s+\left(A_sN^{-\alpha}+B_sD^{-\nu}\right)
@@ -201,10 +201,11 @@ n,dd,y=xy(q);normalized=(y-E)/(classic(n,dd,par)-E)
 ax[0].scatter(q.Q_score,normalized,s=9,alpha=.3);x=np.linspace(q.Q_score.min(),1,100);ax[0].plot(x,np.exp(theta*(1-x)),color='#E76F51');ax[0].set(xlabel='附件B质量 q_B',ylabel='归一化可约损失',title='共同质量修正：B7半合成数据')
 ax[1].scatter(q.val_loss,qcv,s=10,alpha=.6);lims=[q.val_loss.min(),q.val_loss.max()];ax[1].plot(lims,lims,'k--',lw=1);ax[1].set(xlabel='半合成观测Loss',ylabel='ND组合留出预测',title='质量响应留出验证');finish_fig('02_quality')
 show(f'共同质量系数 **θ_Q={theta:.4f}**，ND组合留出RMSE为 **{metrics(q.val_loss,qcv)["RMSE"]:.4f}**。区间只描述B7半合成情景内的组重采样变动；刻度转换和真实数据质量效应仍未识别。B8方向不同，不能与B7不加区分地估计一个统一质量响应。')
+
 # %% [markdown]
 # ## 4. 对数线性配比与跨尺度迁移（H2的配比部分）
 #
-# **领域配比与损失建模：**比较线性混料、对数线性混料、加性样条和GBM。经综合权衡，选择对数线性模型作为主模型，用于关系解释与约束配比求解；GBM作为对照模型，其预测表现整体较强，用于比较和辅助核查。模型选择不等于单项预测指标排名第一。
+# 沿用问题一对数线性配比主模型，以其相对预测损失构造配比修正；模型比较见问题一。
 #
 # 问题一给出$f(\mathbf p)=c+\sum_i a_i\ln(p_i+0.001)$，定义
 #

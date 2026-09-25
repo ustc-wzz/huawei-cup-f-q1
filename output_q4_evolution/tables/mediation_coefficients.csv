@@ -1,7 +1,7 @@
 equation,term,value
-outcome_logit,intercept,-3.541544001660515
-outcome_logit,scale_index,1.2175594745708704
-outcome_logit,time_year,0.1915539053768703
+outcome_logit,intercept,-3.541544001655858
+outcome_logit,scale_index,1.217559474575308
+outcome_logit,time_year,0.19155390537719286
 lnN,intercept,1.3227985572639192
 lnN,time_year,0.28652848007393034
 lnD,intercept,6.410830705880421

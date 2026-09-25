@@ -1,33 +1,33 @@
 [
   {
     "path": "0924_F题_问题一.ipynb",
-    "bytes": 4951216,
-    "sha256": "174c340cd76e0a813eb565853d10e60a1c93b404bc4f0820aabdb01a2ea07ec4"
+    "bytes": 437329,
+    "sha256": "51d6ba438e7aac272ab1b2a79c0f1bd615a0cab0f76e3bca5638b48dc6b36288"
   },
   {
     "path": "notebook_source.py",
-    "bytes": 165432,
-    "sha256": "ebc3e8dfd19ba400546488206f8fee24e3f8b8422b7c2a429e5d838b4a1da32b"
+    "bytes": 160599,
+    "sha256": "944227ff8ef47e3f62f99ff30a57b31703e939459974450fd50a38b40fd57259"
   },
   {
     "path": "0924_问题二.ipynb",
-    "bytes": 558129,
-    "sha256": "b24a9ef1e40f8cabbab767d5369fecbc5266325601277c2f78351d95c92044db"
+    "bytes": 140567,
+    "sha256": "8fe261dc7e9c721370923895fbe9a1488a69a6f63b9441ca42f634dc510658ad"
   },
   {
     "path": "Q2/notebook_source.py",
-    "bytes": 42726,
-    "sha256": "bc4e43dc8b9ca9195b01a809bfe3c63e2507a4b3720ef46728861155a9d3c828"
+    "bytes": 42501,
+    "sha256": "8546dcd15c8f57f564ac9e78cc53fb288c583d3a2d5446f051f7d927fd403400"
   },
   {
     "path": "output_q1/length_domain_calibrated22/tables/q1_outputs_for_q2_q3.json",
     "bytes": 33964,
-    "sha256": "eb18180ea2e95edc13faeac353e14958b1d096b35ef0e3e3bca1b91009e31150"
+    "sha256": "84b8588103765ebf867eed63b79246626d884c7af11110af51c44d2a573b17fa"
   },
   {
     "path": "output_q2_shared/q2_interface.json",
-    "bytes": 3769,
-    "sha256": "aa630859523ead847b6ab18f681af5476473a2f6c71d3b349f70159ddbcb48b8"
+    "bytes": 3779,
+    "sha256": "840078125cf347cf03d6bd95477e0afbe030e19c5c287699dc22076215995cf3"
   },
   {
     "path": "real_attachments/C_efficiency_evolution/model_architecture_metadata.csv",
@@ -42,17 +42,17 @@
   {
     "path": "Q3/quality_audit/anchor_sensitivity.csv",
     "bytes": 188,
-    "sha256": "5483a7ac7ae5d299fd2d5859437597f7b108e47c83c14c3e695be4b3dd728596"
+    "sha256": "df4c50af05ca539616046ce44c0a72bbcd83e55ac9e3bb9a15c9f8c08844fc9c"
   },
   {
     "path": "Q3/quality_audit/quality_cap_candidates.csv",
-    "bytes": 1333,
-    "sha256": "7000cb419b80cf36e4dd9d0e4f57f8ac8b9c8e8b4641c393981367aaabc7e3e5"
+    "bytes": 1343,
+    "sha256": "293747c4328b2fca4a0ca5adf07c5dafb229526933f05680972488ed645e660c"
   },
   {
     "path": "Q3/quality_audit/input_manifest.json",
     "bytes": 1697,
-    "sha256": "4396cd88d7a9391aa64748784bce031480d41788f2c82d56f9ccd9f0d1bb6ed1"
+    "sha256": "8b95039fbfed974cfd8e310252d6cf13786f9f19564fc5f96939c8560d742423"
   },
   {
     "path": "Q3/resource_model.py",
@@ -61,8 +61,8 @@
   },
   {
     "path": "Q3/notebook_source.py",
-    "bytes": 48507,
-    "sha256": "2b73c3d7255ccb7c883142ebfd14b8f7599130aaf6e8358b555d6f77858cc852"
+    "bytes": 48380,
+    "sha256": "21e5f8166e4027fcb57e8f309e925ec3d7fec358b86a589455e6fac04bbf4cb4"
   },
   {
     "path": "real_attachments/B_scaling_laws/pythia_training_log_existing.csv",
@@ -81,17 +81,17 @@
   },
   {
     "path": "Q3/audit_quality_interface.py",
-    "bytes": 8405,
-    "sha256": "95ba595e4eff64486cbaab43c0373440f4b8510d4dbc152507dc081fb481f5d5"
+    "bytes": 8408,
+    "sha256": "1412ec35cdbede3b17685d492ca49bc43d7ea23e83a0908c16c12b489f0a7a40"
   },
   {
     "path": "Q3/decision_method.md",
-    "bytes": 4046,
-    "sha256": "71d9abeedf12f0e2f9770427283fdc3f09f8f16954b0075a12431801a991d443"
+    "bytes": 3935,
+    "sha256": "5d031c5b0d629d84047a97f4f05828e6c294869e5d742008ff2f85042d00aac9"
   },
   {
     "path": "Q3/quality_audit/within_domain_selection.csv",
-    "bytes": 6223,
-    "sha256": "aad83e95f2c95435b37fa3709f1b51e3801a20c44e3d47af2b84e4d80bdca8a3"
+    "bytes": 6220,
+    "sha256": "62b6907adb07b633cde0db660eced8ddba31d07a30edf7ccd6c500feab3ba0a1"
   }
 ]

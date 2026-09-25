@@ -1,0 +1,90 @@
+{
+  "version": "v0.8.0",
+  "notebooks": {
+    "1": {
+      "status": "passed",
+      "notebook_cells": 45,
+      "executed_code_cells": 23,
+      "mirror_exact": true,
+      "no_error_outputs": true,
+      "input_hashes_current": null,
+      "markdown_no_control_characters": true,
+      "math_block_delimiters_compatible": true
+    },
+    "2": {
+      "status": "passed",
+      "notebook_cells": 19,
+      "executed_code_cells": 9,
+      "mirror_exact": true,
+      "no_error_outputs": true,
+      "input_hashes_current": null,
+      "markdown_no_control_characters": true,
+      "math_block_delimiters_compatible": true
+    },
+    "3": {
+      "status": "passed",
+      "notebook_cells": 17,
+      "executed_code_cells": 10,
+      "mirror_exact": true,
+      "no_error_outputs": true,
+      "input_hashes_current": true,
+      "markdown_no_control_characters": true,
+      "math_block_delimiters_compatible": true,
+      "figures_png_pdf_pairs": 12
+    },
+    "4": {
+      "status": "passed",
+      "notebook_cells": 20,
+      "executed_code_cells": 11,
+      "mirror_exact": true,
+      "no_error_outputs": true,
+      "input_hashes_current": true,
+      "markdown_no_control_characters": true,
+      "math_block_delimiters_compatible": true,
+      "figures_png_pdf_pairs": 7
+    }
+  },
+  "markdown_characters": {
+    "0924_F题_问题一.ipynb": {
+      "before": 17559,
+      "after": 14446
+    },
+    "0924_问题二.ipynb": {
+      "before": 5701,
+      "after": 5619
+    },
+    "0925_问题三.ipynb": {
+      "before": 4089,
+      "after": 4066
+    },
+    "0925_问题四.ipynb": {
+      "before": 846,
+      "after": 831
+    }
+  },
+  "weight_max_difference_from_independent_square_experiment": 4.0245584642661925e-16,
+  "quality_domain_before": {
+    "arxiv": 0.2595841614693544,
+    "book": -0.33494961396064427,
+    "c4": -0.014007728858179755,
+    "commoncrawl": 0.10144170327071864,
+    "github": -0.3858460528786779,
+    "stackexchange": -0.07368738437573669,
+    "wikipedia": -0.19863517549743812
+  },
+  "quality_domain_after": {
+    "arxiv": 0.2225736504137245,
+    "book": -0.4208437198419146,
+    "c4": -0.02098316588946182,
+    "commoncrawl": 0.07280859552019457,
+    "github": -0.3444984288722766,
+    "stackexchange": -0.07260158627902256,
+    "wikipedia": -0.2057795034410034
+  },
+  "q1_main_recipe_unchanged_within_1e_12": true,
+  "q2_parameters_unchanged_within_1e_7": true,
+  "q3_reference_cap": 0.1115116258349447,
+  "q3_transition_count": 6,
+  "q4_max_forecast_score_change": 1.9363336960509514e-05,
+  "human_accuracy_validation": "pending; model-rule change is not evidence of improved accuracy"
+}

@@ -104,3 +104,17 @@
 !/output_q1_redundancy/*.md
 /output_q1_redundancy/split.csv
 /Q1_redundancy/__pycache__/
+
+# v0.8.0：同步正文、交付构建与平方赋权关键证据；原始评分缓存仍仅本地。
+!/refresh_reports.py
+!/build_package.py
+!/论文正文.md
+!/output_q1/length_domain_calibrated22/results_summary.md
+!/output_q1/length_domain_calibrated22/delivery_checks.json
+!/output_q1/length_domain_calibrated22/tables/indicator_weights.csv
+!/output_q1/length_domain_calibrated22/tables/weighting_parameters.json
+!/output_q1/length_domain_calibrated22/tables/domain_Q.csv
+!/output_q1/length_domain_calibrated22/tables/quality_increment.csv
+!/output_q1/length_domain_calibrated22/tables/independent_verification.json
+!/output_q2_shared/delivery_checks.json
+!/revision_v080.json

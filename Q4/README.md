@@ -1,6 +1,6 @@
 # 问题四复现入口
 
-固定主文档：`0925_问题四.ipynb`；文本镜像：`Q4/notebook_source.py`；版本v0.6.1。正式输出在`output_q4_evolution/`，其中`results_summary.md`为结果入口，`模型建立.md`、`模型求解.md`为完整论文方法和求解章节。
+固定主文档：`0925_问题四.ipynb`；文本镜像：`Q4/notebook_source.py`；整包版本v0.8.0（结构模型沿用v0.6.0，承接平方赋权后的Q3配置）。正式输出在`output_q4_evolution/`，其中`results_summary.md`为结果入口，`模型建立.md`、`模型求解.md`为完整论文方法和求解章节。
 
 在项目根目录运行：
 
