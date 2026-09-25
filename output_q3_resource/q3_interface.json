@@ -200,7 +200,10 @@
     "main": "tables/main_results.csv",
     "scan": "tables/budget_scan.csv",
     "sensitivity": "tables/sensitivity_results.csv",
-    "transitions": "tables/transitions.csv"
+    "transitions": "tables/transitions.csv",
+    "cap_scenarios": "tables/cap_scenario_results.csv",
+    "thresholds": "tables/quality_benefit_thresholds.csv",
+    "resource_values": "tables/resource_value_analysis.csv"
   },
   "quality_gain_observed_training": false,
   "joint_transfer_validated": false,
@@ -211,5 +214,14 @@
     "quality_positive_extrapolation",
     "mixture_transfer_assumption"
   ],
-  "q2_interface_sha256": "aa630859523ead847b6ab18f681af5476473a2f6c71d3b349f70159ddbcb48b8"
+  "q2_interface_sha256": "aa630859523ead847b6ab18f681af5476473a2f6c71d3b349f70159ddbcb48b8",
+  "quality_cap_scenarios": [
+    0.8,
+    0.5,
+    0.2,
+    0.1,
+    0.05
+  ],
+  "reference_slice": "keep=0.5,s_Q=1; not an identified unique quality ceiling",
+  "benefit_decisions": "Global secant thresholds of H_C(u)=log F_C(u); lambda remains unidentified"
 }

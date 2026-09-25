@@ -41,3 +41,18 @@ with tempfile.TemporaryDirectory(prefix='q3-kernel-') as tmp:
 assert all(c.execution_count is not None for c in nb.cells if c.cell_type=='code')
 assert not any(o.output_type=='error' for c in nb.cells for o in c.get('outputs',[]))
 print('All Q3 notebook cells executed successfully.',flush=True)
+
+# Reproducible delivery checks (visual inspection is recorded separately).
+import hashlib
+written=nbformat.read(target,as_version=4)
+assert [c.source for c in written.cells]==[c.source for c in cells]
+manifest=json.loads((ROOT/'output_q3_resource/input_manifest.json').read_text())
+assert all(hashlib.sha256((ROOT/r['path']).read_bytes()).hexdigest()==r['sha256'] for r in manifest)
+figures=sorted((ROOT/'output_q3_resource/figures').glob('*.png'))
+assert all(p.with_suffix('.pdf').is_file() for p in figures)
+checks={'status':'passed','notebook_cells':len(written.cells),
+        'executed_code_cells':sum(c.cell_type=='code' for c in written.cells),
+        'mirror_exact':True,'all_input_hashes_current':True,'no_error_outputs':True,
+        'figures_png_pdf_pairs':len(figures)}
+(ROOT/'output_q3_resource/delivery_checks.json').write_text(json.dumps(checks,ensure_ascii=False,indent=2)+'\n')
+print(json.dumps(checks,ensure_ascii=False),flush=True)

@@ -1,17 +1,9 @@
 {
   "status": "passed",
-  "notebook_cells": 14,
-  "executed_code_cells": 8,
+  "notebook_cells": 17,
+  "executed_code_cells": 10,
   "mirror_exact": true,
   "all_input_hashes_current": true,
   "no_error_outputs": true,
-  "figures_png_pdf_pairs": 6,
-  "reviewed_figures": [
-    "01_budget_allocation",
-    "02_cost_shares",
-    "03_context_sensitivity",
-    "04_quality_transitions",
-    "05_sensitivity_gain",
-    "06_transition_zoom"
-  ]
+  "figures_png_pdf_pairs": 12
 }

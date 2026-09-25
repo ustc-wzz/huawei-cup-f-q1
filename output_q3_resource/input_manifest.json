@@ -61,8 +61,8 @@
   },
   {
     "path": "Q3/notebook_source.py",
-    "bytes": 40455,
-    "sha256": "dea81e1e7de41cbe16165b4063b677d5027c01b26eb0e8cee055590f1a809717"
+    "bytes": 48507,
+    "sha256": "2b73c3d7255ccb7c883142ebfd14b8f7599130aaf6e8358b555d6f77858cc852"
   },
   {
     "path": "real_attachments/B_scaling_laws/pythia_training_log_existing.csv",
@@ -73,5 +73,25 @@
     "path": "real_attachments/B_scaling_laws/supplementary_NQ_experiment_expanded.csv",
     "bytes": 17154,
     "sha256": "880fd265ca3e1d9bc93b4559af7ed7c18f89040634266c50bae03d88486e0f3a"
+  },
+  {
+    "path": "Q3/decision_analysis.py",
+    "bytes": 14271,
+    "sha256": "8f22e89139665e3a0a890d0665c433f2863522122617137fbf4a9317175b928a"
+  },
+  {
+    "path": "Q3/audit_quality_interface.py",
+    "bytes": 8405,
+    "sha256": "95ba595e4eff64486cbaab43c0373440f4b8510d4dbc152507dc081fb481f5d5"
+  },
+  {
+    "path": "Q3/decision_method.md",
+    "bytes": 4046,
+    "sha256": "71d9abeedf12f0e2f9770427283fdc3f09f8f16954b0075a12431801a991d443"
+  },
+  {
+    "path": "Q3/quality_audit/within_domain_selection.csv",
+    "bytes": 6223,
+    "sha256": "aad83e95f2c95435b37fa3709f1b51e3801a20c44e3d47af2b84e4d80bdca8a3"
   }
 ]

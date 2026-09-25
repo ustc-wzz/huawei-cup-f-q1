@@ -8,5 +8,10 @@
   "figures": "figures/",
   "summary": "results_summary.md",
   "methodology": "模型建立.md",
-  "solution": "模型求解.md"
+  "solution": "模型求解.md",
+  "decision_module": "Q3/decision_analysis.py",
+  "decision_method": "Q3/decision_method.md",
+  "decision_summary": "decision_summary.md",
+  "decision_verification": "decision_verification.json",
+  "primary_figures": "figures/07—12"
 }

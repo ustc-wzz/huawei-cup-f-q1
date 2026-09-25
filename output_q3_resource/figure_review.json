@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "backend": "Python matplotlib",
+  "reviewed_new_figures": [
+    "07_screening_evidence",
+    "08_global_decision_phase",
+    "09_cap_sensitivity",
+    "10_resource_tradeoffs",
+    "11_budget_composition",
+    "12_critical_benefit_zoom"
+  ],
+  "review": [
+    "Opened every new PNG and checked labels, legends, layout and plotted meaning.",
+    "No clipped labels or major overlap found.",
+    "PDF uses TrueType text; corresponding PNG has 300 dpi.",
+    "Phase regions are conditional decisions, not statistical intervals.",
+    "Ternary trajectories are short and structurally constrained; their limited interpretation is explicit."
+  ],
+  "scope": "Model prediction figures, no new training experiments."
+}

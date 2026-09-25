@@ -20,4 +20,6 @@ Q1/.venv/bin/python Q3/run_notebook.py
 
 入口文件：`output_q3_resource/results_summary.md`（实际结论）、`verification.json`（验证）、`q3_interface.json`（后续接口）。`模型建立.md`和`模型求解.md`由最终执行生成，数值源于CSV；PNG和PDF图件在figures目录。
 
-主质量上限是用户确认的最高50%文档均值增量参照，并非真实最高质量；采用同一D成本代理，不能据此保证足量原始Token供给。s_Q仍未识别，正向提质和高预算规模存在外推。数值核验不等于真实训练验证。
+质量上限采用最高80%、50%、20%、10%、5%文档均值增量参照的并列情景，50%仅是展示切片，并非真实最高质量；采用同一D成本代理，不能据此保证足量原始Token供给。s_Q仍未识别，正向提质和高预算规模存在外推。数值核验不等于真实训练验证。
+
+当前v0.5.0扩展模块为 `Q3/decision_analysis.py`，推导与图件合同见 `Q3/decision_method.md`。全局收益阈值、上限组和资源价值通过notebook最后两节实际生成；入口摘要 `output_q3_resource/decision_summary.md`，新增核验 `decision_verification.json`。图07—12展示筛选证据、相位图、上限敏感性、资源权衡、三元组成与临界收益放大。

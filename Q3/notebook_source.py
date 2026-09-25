@@ -3,7 +3,7 @@
 #
 # **主线：固定领域配比与质量情景 → 把预算分配给参数、训练数据和提质 → 检验预算变化是否改变最优质量状态。**
 #
-# 本文承接问题二共同指数修正，采用用户已确认的七项选择。主结果以参考配比为条件，所有结果均为模型预测，不是新增大模型训练实测。质量上限是样本筛选参照的情景上限，不能解释为天然质量极限。
+# 本文承接问题二共同指数修正，采用用户已确认的七项选择。本版以参考配比、筛选支持的五档质量上限与全局收益阈值为主线；前六节保留50%参考切片与数值核验，第七节给出当前决策结论。所有结果均为模型预测，不是新增大模型训练实测。质量上限是样本筛选参照的情景上限，不能解释为天然质量极限。
 #
 # ## 1. 输入、题意与证据边界
 #
@@ -81,7 +81,7 @@ show(f'核查通过：{audit["raw_rows"]:,}条评分合并为{audit["unique_rows
 #
 # 对有质量映射的域集合$\mathcal M$，用域内最高$r$比例文档的均值$\mu_{d(j)}(r)$定义上限参照：
 # $$u_{\max}(p;r)=\sum_{j\in\mathcal M}p_j\kappa_j[\mu_{d(j)}(r)-\mu_{d(j)}(1)].$$
-# 主情景$r=0.5$，敏感性$r=0.2$；缺失域新增收益为零，原$\bar Q$不变。选择上限并不强制实际筛选比例；中间质量水平的连续可调性是模型假设。
+# 前文固定展示$r=0.5$并对照$r=0.2$；第7节并列评价$r\in\{0.8,0.5,0.2,0.1,0.05\}$；缺失域新增收益为零，原$\bar Q$不变。选择上限并不强制实际筛选比例；中间质量水平的连续可调性是模型假设。
 #
 # $$L=E_B+(A_BN^{-\alpha}+B_BD^{-\nu})\exp[-\theta_Q u/s_Q+\eta_ph(p)].$$
 #
@@ -383,7 +383,7 @@ colors={'exponential':'#277DA1','power':'#D17B35','logarithmic':'#4D9078'}
 fig,axes=plt.subplots(2,2,figsize=(11,7))
 for cost in COSTS:
     d=scan.loc[scan.L_ctx.eq(2048)&scan.cost.eq(cost)]
-    for ax,col,title in zip(axes.flat,['N_B','D_B','t','share_quality'],['最优参数量（十亿）','最优训练量（十亿Token）','质量投入 u/u_max','提质算力占比']):
+    for ax,col,title in zip(axes.flat,['N_B','D_B','loss_gain','share_quality'],['最优参数量（十亿）','最优训练量（十亿Token）','相对无提质的预测Loss下降','提质算力占比']):
         ax.plot(d.C,d[col],color=colors[cost],label=COST_LABELS[cost]);ax.set_xscale('log');ax.set(xlabel='预算（FLOPs）',ylabel=title)
         if col in ['N_B','D_B']:ax.set_yscale('log')
         if col=='t':ax.set_ylim(-.05,1.12)
@@ -526,3 +526,86 @@ solution+='s_Q=2时，质量响应减弱，幂函数成本出现从不提质到�
 dump({'notebook':'0925_问题三.ipynb','mirror':'Q3/notebook_source.py','solver':'Q3/resource_model.py',
       'runner':'Q3/run_notebook.py','inputs':'input_manifest.json','results':'tables/','figures':'figures/',
       'summary':'results_summary.md','methodology':'模型建立.md','solution':'模型求解.md'},'artifact_manifest.json')
+
+# %% [markdown]
+# ## 7. 筛选支持的上限组与全局质量收益阈值
+#
+# 本节是当前决策结论的主入口。前文50%配置保留为可复核的参考切片；80%、50%、20%、10%、5%上限情景并列比较，并不选择一个所谓真实上限。
+# 筛选曲线节点直接来自去重后的文档评分，连线仅连接已计算节点；文档质量与词数来自样本，训练供给尚无Token库存保证。book域仅171篇，5%尾部仅9篇，严格筛选的上限证据尤其有限。
+#
+# 令 $F_C(u)=\min_N\{AN^{-\alpha}+B[C/(kN+c(u))]^{-\nu}\}$，$H_C(u)=\log F_C(u)$。
+# 去除共同常数后，决策等价于最小化 $H_C(u)-\lambda u$，其中 $\lambda=\theta_Q/s_Q$。
+# 全局临界收益为
+# $$\lambda_{\rm on}=\inf_{0<u\le U}\frac{H_C(u)-H_C(0)}{u},\qquad
+# \lambda_{\rm full}=\sup_{0\le u<U}\frac{H_C(U)-H_C(u)}{U-u}.$$
+# $\lambda<\lambda_{on}$时不提质；$\lambda>\lambda_{full}$时达到上限；两阈值严格分离时，中间区间最优解在内部。
+# 等号处端点为最优解之一，可能与其他配置并列；两阈值相等时可直接R0→R2。端点导数只是割线比的极限，不替代全局比较。
+# 阈值使用原始质量单位，可转换成$s_Q=\theta_Q/\lambda$（方向反转）；它们是成本与标度律给定后的决策门槛，不是对真实质量收益的估计。
+#
+# **图件逻辑**：筛选证据 → 全局决策相位图与临界区间放大 → 上限敏感性 → 资源机会成本与等效算力。
+# 统一Python绘图，PNG 300 dpi及可编辑文字PDF，源数据逐图保存；色带是决策区域，不是置信区间。
+# 三元图用于区分上下文造成的预算组成变化，同一上下文的注意力/训练比例固定，不将三个份额当成独立证据。
+#
+# 影子价格＝增加一单位预算时最优损失的局部下降率，$-dL^*/dC=\nu t_D\exp(-\lambda u+\eta h)/C$。
+# 图中绘制更易读的$-dL^*/d\log C$；遇到分支跳变应使用单边导数。
+# 无提质等效算力＝在同一模型、配比和上下文下，无提质方案达到当前预测损失所需的预算。
+# 令$\epsilon=\alpha\nu/(\alpha+\nu)$，则$C_{eq}/C=[(L_0(C)-E)/(L^*(C)-E)]^{1/\epsilon}$；这是模型内换算，不是实测加速比。
+
+# %%
+from Q3.decision_analysis import run as run_decision_analysis
+cap_results,benefit_thresholds,resource_values,decision_checks=run_decision_analysis(ROOT,model,make_scenario,scan,main,contexts)
+display(benefit_thresholds.loc[benefit_thresholds.keep.eq(.5)&benefit_thresholds.C.eq(1e19)&benefit_thresholds.L_ctx.eq(2048),
+        ['cost','lambda_on','lambda_full','sQ_on','sQ_full','local_lambda_on','local_lambda_full']])
+display(cap_results.groupby(['keep','state']).size().rename('n').reset_index())
+for name in ['07_screening_evidence','08_global_decision_phase','12_critical_benefit_zoom','09_cap_sensitivity','10_resource_tradeoffs','11_budget_composition']:
+    display(Image(filename=str(FIG/f'{name}.png')))
+
+# %%
+# Current decision report supersedes interpreting the 50% reference as a unique ceiling.
+extra=['## v0.5.0：上限情景与临界收益决策','',
+       '质量上限并列采用80%、50%、20%、10%、5%高分文档参照；50%仅为固定展示切片。所有配置为条件预测。',
+       '筛选支持是现有样本评分的支持，不等于可供应足量训练Token。book域5%参照仅9篇，尾部情景证据较弱。','',
+       '|文档参照保留率|p0质量上限U|配置数|状态集合|','|---|---:|---:|---|']
+for keep,d in cap_results.groupby('keep',sort=False):
+    extra.append(f'|{keep:.0%}|{d.u_max.iloc[0]:.6f}|{len(d)}|{", ".join(sorted(d.state.unique()))}|')
+extra+=['','在10¹⁹ FLOPs、上下文2048、50%参照下：','',
+        '|成本|开始提质λ阈值|达到上限λ阈值|开始提质s_Q门槛|达到上限s_Q门槛|',
+        '|---|---:|---:|---:|---:|']
+for r in benefit_thresholds.loc[benefit_thresholds.keep.eq(.5)&benefit_thresholds.C.eq(1e19)&benefit_thresholds.L_ctx.eq(2048)].itertuples(index=False):
+    extra.append(f'|{COST_LABELS[r.cost]}|{r.lambda_on:.6f}|{r.lambda_full:.6f}|{r.sQ_on:.4f}|{r.sQ_full:.4f}|')
+extra+=['','λ越大越有利于提质，s_Q越小越有利于提质。低于λ_on选择R0，高于λ_full选择R2；严格中间区间选择R1；等号处允许并列最优。s_Q=1对应λ='+f'{model.theta:.6f}，只是条件切片。',
+        '阈值来自内层重新优化后的全局割线比较；局部端点导数另列，不能替代全局阈值。','',
+        f'完成{len(cap_results)}个上限情景配置、{len(benefit_thresholds)}组全局阈值、{decision_checks["decision_checks"]}个阈值两侧/内部/等号决策核验。',
+        f'阈值网格129→513最大相对差{decision_checks["max_threshold_grid_relative_error"]:.3e}；影子价值有限差分最大相对差{decision_checks["max_shadow_relative_error"]:.3e}。','',
+        '三元图说明预算组成；由于注意力/训练比由窗口固定，它不增加独立决策维度。等效算力与影子价值仅适用于同一条件模型；不会据此宣称优于参考版或实测训练。']
+for C in [1e19,1e24]:
+    r=resource_values.loc[resource_values.C.eq(C)&resource_values.L_ctx.eq(2048)&resource_values.cost.eq('exponential')].iloc[0]
+    extra.append(f'指数成本、2048窗口、预算{C:.0e}：无提质等效算力倍率{r.equivalent_compute_multiplier:.4f}，影子价值−dL*/dlnC={r.loss_drop_per_log_budget:.6f}，提质占比{r.share_quality:.6%}，绝对提质成本{r.C_quality:.4e} FLOPs。')
+extra='\n'.join(extra)+'\n'
+(OUT/'decision_summary.md').write_text(extra)
+(OUT/'results_summary.md').write_text('# 问题三实际运行结果\n\n'+extra+'\n## 50%参考切片与既有核验\n\n'+summary)
+(OUT/'模型建立.md').write_text(method+'\n'+(ROOT/'Q3/decision_method.md').read_text())
+for name in ['模型建立.md','模型求解.md']:
+    path=OUT/name
+    path.write_text(path.read_text()+'\n'+extra)
+with (OUT/'模型求解.md').open('a') as f:
+    for name,title in [('07_screening_evidence','样本筛选证据'),('08_global_decision_phase','全局决策相位图'),('12_critical_benefit_zoom','临界收益放大'),('09_cap_sensitivity','上限组敏感性'),('10_resource_tradeoffs','资源权衡'),('11_budget_composition','预算组成')]:
+        f.write(f'\n![{title}](figures/{name}.png)\n')
+config['quality_cap_scenarios']=[.8,.5,.2,.1,.05]
+config['reference_slice']='keep=0.5,s_Q=1; not an identified unique quality ceiling'
+config['benefit_decisions']='Global secant thresholds of H_C(u)=log F_C(u); lambda remains unidentified'
+dump(config,'config.json')
+interface.update({k:config[k] for k in ['quality_cap_scenarios','reference_slice','benefit_decisions']})
+interface['artifacts'].update({'cap_scenarios':'tables/cap_scenario_results.csv','thresholds':'tables/quality_benefit_thresholds.csv','resource_values':'tables/resource_value_analysis.csv'})
+dump(interface,'q3_interface.json')
+verification['decision_extension']=decision_checks
+dump(verification,'verification.json')
+manifest=json.loads((OUT/'input_manifest.json').read_text())
+for p in [ROOT/'Q3/decision_analysis.py',ROOT/'Q3/audit_quality_interface.py',ROOT/'Q3/decision_method.md',ROOT/'Q3/quality_audit/within_domain_selection.csv']:
+    manifest.append({'path':str(p.relative_to(ROOT)),'bytes':p.stat().st_size,'sha256':sha(p)})
+dump(manifest,'input_manifest.json')
+assert all(sha(ROOT/p)==h for p,h in protected_before.items())
+artifacts=json.loads((OUT/'artifact_manifest.json').read_text())
+artifacts.update({'decision_module':'Q3/decision_analysis.py','decision_method':'Q3/decision_method.md','decision_summary':'decision_summary.md','decision_verification':'decision_verification.json','primary_figures':'figures/07—12'})
+dump(artifacts,'artifact_manifest.json')
+show(extra)

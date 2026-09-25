@@ -69,3 +69,6 @@
 !/output_q2_shared/figures/
 /output_q2_shared/figures/*
 !/output_q2_shared/figures/*.png
+
+!/Q3/decision_analysis.py
+!/Q3/decision_method.md
