@@ -27,7 +27,7 @@ print('计算数据：仅本地附件；预测起点由最后可比观测日期�
 # 下文给出变量、假设、噪声、有限时期反事实分解、预算耦合和验证方法。结果由后续代码真实运行后产生。
 
 # %%
-display(Markdown((ROOT/'Q4/模型建立.md').read_text()))
+display(Markdown((ROOT/'Q4/模型建立.md').read_text(encoding='utf-8')))
 
 # %% [markdown]
 # ## 二、样本筛选与确定性匹配
@@ -36,7 +36,7 @@ display(Markdown((ROOT/'Q4/模型建立.md').read_text()))
 
 # %%
 clean,nd,epoch,paired=read_data()
-display(pd.Series(json.loads((OUT/'data_audit.json').read_text()),name='数据审计'))
+display(pd.Series(json.loads((OUT/'data_audit.json').read_text(encoding='utf-8')),name='数据审计'))
 display(nd[['Model','N','D','publication_date','S']])
 
 # %% [markdown]
@@ -110,5 +110,5 @@ for name in ['01_causal_structure','03_mediation_and_sensitivity','04_frontier_f
     display(Image(filename=str(OUT/'figures'/f'{name}.png'),width=1000))
 
 # %%
-display(Markdown((OUT/'模型求解.md').read_text()))
+display(Markdown((OUT/'模型求解.md').read_text(encoding='utf-8')))
 print('完成。结果入口：',OUT/'results_summary.md')

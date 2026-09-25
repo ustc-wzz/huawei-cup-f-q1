@@ -44,8 +44,8 @@ pool = raw.drop_duplicates(['domain','id']).copy()
 q1path = TAB / 'q1_outputs_for_q2_q3.json'
 q2path = ROOT / 'output_q2_shared/q2_interface.json'
 inputs.extend([q1path,q2path])
-q1 = json.loads(q1path.read_text())
-q2 = json.loads(q2path.read_text())
+q1 = json.loads(q1path.read_text(encoding='utf-8'))
+q2 = json.loads(q2path.read_text(encoding='utf-8'))
 assert hashlib.sha256(q1path.read_bytes()).hexdigest() == q2['q1_interface_sha256']
 for dom, group in pool.groupby('domain'):
     assert np.isclose(group.Q_res.mean(), q1['quality_domain_Q_res'][dom], atol=1e-12)
@@ -154,10 +154,10 @@ verification={'status':'passed','raw_rows':len(raw),'unique_rows':len(pool),
                              'No raw corpus token supply or measured processing cost is available in this audit.',
                              'Mapping T does not identify the B-to-Q1 conversion s_Q.']}
 assert verification['candidate_caps_monotone']
-(OUT/'verification.json').write_text(json.dumps(verification,ensure_ascii=False,indent=2)+'\n')
+(OUT/'verification.json').write_text(json.dumps(verification,ensure_ascii=False,indent=2)+'\n', encoding='utf-8')
 manifest=[{'path':str(p.relative_to(ROOT)),'bytes':p.stat().st_size,
            'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in inputs]
-(OUT/'input_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+(OUT/'input_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n', encoding='utf-8')
 print(json.dumps(verification,ensure_ascii=False,indent=2))
 print(pd.DataFrame(dist).to_string(index=False))
 print(caps.to_string(index=False))

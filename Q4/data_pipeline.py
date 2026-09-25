@@ -23,7 +23,7 @@ def save(df, name):
 def dump(obj, name):
     OUT.mkdir(exist_ok=True)
     (OUT/f'{name}.json').write_text(json.dumps(obj, ensure_ascii=False, indent=2,
-        default=lambda x: x.item() if isinstance(x,np.generic) else str(x))+'\n')
+        default=lambda x: x.item() if isinstance(x,np.generic) else str(x))+'\n', encoding='utf-8')
 
 def key(name):
     # Preserve decimal separators: OPT-1.3B must never match OPT-13B.
@@ -134,7 +134,7 @@ def aggregate_c8(clean):
         # Audit every file for corruption; select lexicographically latest timestamped valid JSON.
         for f in sorted(folder.glob('*.json')):
             manifest.append(dict(path=str(f.relative_to(ROOT)),sha256=hashlib.sha256(f.read_bytes()).hexdigest()))
-            try:j=json.loads(f.read_text())
+            try:j=json.loads(f.read_text(encoding='utf-8'))
             except (ValueError,UnicodeError) as err:
                 invalid+=1;bad.append(dict(file=str(f.relative_to(ROOT)),error=str(err)[:160]));continue
             if isinstance(j.get('results'),dict):chosen=(f,j);valid+=1
@@ -173,6 +173,6 @@ def aggregate_c8(clean):
 
 if __name__=='__main__':
     clean,nd,e,paired=read_data()
-    print((OUT/'data_audit.json').read_text())
+    print((OUT/'data_audit.json').read_text(encoding='utf-8'))
     print(nd[['Model','N','D','publication_date','S']].to_string(index=False))
     print(aggregate_c8(clean)[1])

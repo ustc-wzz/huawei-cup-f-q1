@@ -211,5 +211,5 @@ def run(root,model,make_scenario,scan,main,contexts):
         max_budget_relative_error=float(results.budget_relative_error.max()),
         limits='Sample-supported quality scenarios, no token supply guarantee; lambda is conditional, no new training validation.')
     assert status['max_budget_relative_error']<1e-12
-    (out/'decision_verification.json').write_text(json.dumps(status,ensure_ascii=False,indent=2)+'\n')
+    (out/'decision_verification.json').write_text(json.dumps(status,ensure_ascii=False,indent=2)+'\n', encoding='utf-8')
     return results,tr,values,status

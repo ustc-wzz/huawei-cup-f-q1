@@ -17,77 +17,77 @@
   {
     "path": "output_q4_evolution/execution.json",
     "bytes": 181,
-    "sha256": "6a5d7f68b3c29244fba6f217ba4d683e856cd2ca66d316a10a4112d08788ca55"
+    "sha256": "ac3d4cfa64304e3176d5104442b850c8f316ee9bc15fb7aa7bc7431beebd248b"
   },
   {
     "path": "output_q4_evolution/figures/01_causal_structure.pdf",
-    "bytes": 61370,
-    "sha256": "c26592aafb8ed4c4bce852684529fb1def2425227d19933b1d9015b38f7e11f5"
+    "bytes": 38607,
+    "sha256": "2b913c749a4c469381625182e440090c4aaa712d0d83678bbab5281131e268b4"
   },
   {
     "path": "output_q4_evolution/figures/01_causal_structure.png",
-    "bytes": 180778,
-    "sha256": "7aa399aca71911ec926796f5b01fc843bbc3f975224729e42549e2712bd175b5"
+    "bytes": 165355,
+    "sha256": "3d980ecb8cc53805b039080bd35dbd035f9250128a8c0ebe8ddf95086a7569e7"
   },
   {
     "path": "output_q4_evolution/figures/02_data_and_evolution.pdf",
-    "bytes": 65877,
-    "sha256": "78fd6afb1cd3030f40095feca76c232553980ac1649da2463722539e3828ed62"
+    "bytes": 43112,
+    "sha256": "2aa4c68ac5389c498e3f1c0939e55af86f459ac31a78e8dd34770346cc6d724b"
   },
   {
     "path": "output_q4_evolution/figures/02_data_and_evolution.png",
-    "bytes": 366123,
-    "sha256": "268e67f33e82695707243c9f293519208badd8b53b08c664bfa82dcf37df9fb5"
+    "bytes": 345951,
+    "sha256": "452701bbd2e29f48fbe26395ef26ed8d459cbaab0a3b5b3ac0753c04ef5a5c3f"
   },
   {
     "path": "output_q4_evolution/figures/03_mediation_and_sensitivity.pdf",
-    "bytes": 49969,
-    "sha256": "572b4856553249e5316d901d42b17306487712d32a49b9d6e6041075e3efdc15"
+    "bytes": 28906,
+    "sha256": "117f0d66b762fa831cb7679c098de7469ca66b1ee7cee6462ffa1c4ee657bdcb"
   },
   {
     "path": "output_q4_evolution/figures/03_mediation_and_sensitivity.png",
-    "bytes": 180814,
-    "sha256": "d01b1b32043d8839a338b87bc07e5a6f9772c9d298c1067f04dbf40307e7b58f"
+    "bytes": 170011,
+    "sha256": "adb87ff24acb7984775f8ccd378373490a29fe368281262ed7f54d8f83c1c02b"
   },
   {
     "path": "output_q4_evolution/figures/04_frontier_forecasts.pdf",
-    "bytes": 58591,
-    "sha256": "de91467bf63ce36d02b4516df7377bf5ec1538d6f9938cc3292be9ef8437c51c"
+    "bytes": 34008,
+    "sha256": "6025635b8f71b1bc32837bfa4f61e63f512c30f3f7a081728b18c5f409be7aa9"
   },
   {
     "path": "output_q4_evolution/figures/04_frontier_forecasts.png",
-    "bytes": 194387,
-    "sha256": "3de735c6951d41e9d98233a5785d29f2facb25f5e7104e45b522d5b78b187c4a"
+    "bytes": 173494,
+    "sha256": "7bedc8f6cbc4d5bb39bc8e1013fb85ebc498d92b31b0cc3e7f8fd4264a8ab4ec"
   },
   {
     "path": "output_q4_evolution/figures/05_loss_benchmark_bridge.pdf",
-    "bytes": 49571,
-    "sha256": "94035a8d609736e6f7d0fc4098f5aa2cf828f626420ad46a88a7365694fe3c9d"
+    "bytes": 29981,
+    "sha256": "fa3676d31aaf6d0066cd31e8eb807f22187aef7148311fe8b0d26441985321a5"
   },
   {
     "path": "output_q4_evolution/figures/05_loss_benchmark_bridge.png",
-    "bytes": 215828,
-    "sha256": "3e7e41dc029aaa4025f643e05e19ffaf96e38ecea66c27623dadc51cb410110f"
+    "bytes": 182983,
+    "sha256": "140521ecfdf543e0af2e222e1e993a12ffb8d329036679a0e05786d366a69ec8"
   },
   {
     "path": "output_q4_evolution/figures/06_task_level_audit.pdf",
-    "bytes": 57720,
-    "sha256": "fc244db5dff09e018f633c1d7adaa10bd7cf0a1ae15400298c1dcdafd848c3ad"
+    "bytes": 34497,
+    "sha256": "10e816cfefd3da7e378d61c29b08688c7dcb04a0c565fe140c9a5830d6b83e93"
   },
   {
     "path": "output_q4_evolution/figures/06_task_level_audit.png",
-    "bytes": 130268,
-    "sha256": "22b92c08b0eb96bcb0218246f22c726242534f07f86b7f7dbe5a42cd695e4b1e"
+    "bytes": 117943,
+    "sha256": "1b86f81c3e91988ad840e8b0c2651f002e4179b17de950a16cf461c76ff72127"
   },
   {
     "path": "output_q4_evolution/figures/07_validation.pdf",
-    "bytes": 48085,
-    "sha256": "2f0cc0091ca943fce79e6583e5edb3b24650f04877dcf6adf03a0d86e2226390"
+    "bytes": 27874,
+    "sha256": "8de01af76068bb2ca227b4a2de651833c47e51958c4d63d272de202820b6b9ae"
   },
   {
     "path": "output_q4_evolution/figures/07_validation.png",
-    "bytes": 123603,
-    "sha256": "34d090fe966884e0d525c3fb77e25cb4fcaa75a2da8046f130d60a841013bcbe"
+    "bytes": 111868,
+    "sha256": "0c695234f8187112dfba1033a5ab37f2904d30a547d658944f041209b1e8d12d"
   },
   {
     "path": "output_q4_evolution/forecast_design.json",
@@ -97,7 +97,7 @@
   {
     "path": "output_q4_evolution/input_manifest.json",
     "bytes": 2383,
-    "sha256": "c33b3e4642910ba698e8f015952302f355acd624ae7eefabeda1df4b3d24f447"
+    "sha256": "da3b7189bd9e925e4aa7bbca9687c03f9ee553ee12b138569094b6ab0a66c596"
   },
   {
     "path": "output_q4_evolution/mediation_design.json",
@@ -331,18 +331,18 @@
   },
   {
     "path": "Q4/README.md",
-    "bytes": 2129,
-    "sha256": "729b99d9abd71b0dc6d2e19f263331afbf1a6098326ea0179fda9033ee67ebee"
+    "bytes": 2200,
+    "sha256": "dc0efd0454478ec46d9dff880ea4515eac3d25db770db7e3ceb075e1677312c8"
   },
   {
     "path": "Q4/data_pipeline.py",
-    "bytes": 10931,
-    "sha256": "d0d6bc20fc0f03c9c2b13e6046897ecfd190c4b974d1b5eea41aba0e86d99e4b"
+    "bytes": 10981,
+    "sha256": "e862a3cc5c85d17e35cf3bb563f0f8079895bea280e38d38ed6a4aa81a29d8f4"
   },
   {
     "path": "Q4/evolution_model.py",
-    "bytes": 24193,
-    "sha256": "fc8850fca4df8bc4e498294e746d410a3b4ec57a3f6201564da40a662e480cfb"
+    "bytes": 24225,
+    "sha256": "cccbaf7cbb3ec9bc7d4a200c2a86a38e0793df3068db2eb53296e277ceef6f06"
   },
   {
     "path": "Q4/figure_contract.md",
@@ -351,18 +351,18 @@
   },
   {
     "path": "Q4/notebook_source.py",
-    "bytes": 4899,
-    "sha256": "fc58db5a9b6e119c64997b7a684c023378fe0d9a20bf3c3f02a578376e117c62"
+    "bytes": 4947,
+    "sha256": "8e13d688bf7d7b06c65ba4fdc2c6cd3fc90ecf1fea41172a6fba4cb44f1ddb76"
   },
   {
     "path": "Q4/plots.py",
-    "bytes": 9965,
-    "sha256": "e848be4341f56e8225d18d7e82690335a597b30a5515c3e0be8422c7fd15b28d"
+    "bytes": 9939,
+    "sha256": "c0856545b14cd673b7ec9e675777086f66cdd430a310c5e4c4d40ebfd2f13746"
   },
   {
     "path": "Q4/report.py",
-    "bytes": 17083,
-    "sha256": "219fe0c1cf4f947f59d2bd6035317ed6902737ba62d3bb5e867c3a4f498583c7"
+    "bytes": 17135,
+    "sha256": "ff209874fe9c8836c664b28bb5f36dda8ceca713442fb4b6ea4f252309adf8ab"
   },
   {
     "path": "Q4/requirements.txt",
@@ -381,8 +381,8 @@
   },
   {
     "path": "Q4/verify.py",
-    "bytes": 5120,
-    "sha256": "6f6b0e70e5472bcbc0a9297ac6930d9ebb69a097087b8d08ce079ce0df5ccf93"
+    "bytes": 5200,
+    "sha256": "5a5e7a1e7208414f0f202ceaf986194dd60dd6f2b8271ddfc3cecba3540645f3"
   },
   {
     "path": "Q4/模型建立.md",

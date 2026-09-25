@@ -6,7 +6,7 @@ import pandas as pd
 from data_pipeline import ROOT,OUT,dump
 
 def read(n):return pd.read_csv(OUT/'tables'/f'{n}.csv')
-def js(n):return json.loads((OUT/f'{n}.json').read_text())
+def js(n):return json.loads((OUT/f'{n}.json').read_text(encoding='utf-8'))
 def md(df):
     def fmt(v):
         if isinstance(v,(float,np.floating)):return '—' if np.isnan(v) else f'{v:.3f}'
@@ -143,7 +143,7 @@ Q3未来主配置Loss范围为[{absbridge.loss.min():.6f}, {absbridge.loss.max()
 
 独立数值和证据核验状态：{js('verification')['status']}，通过{len(js('verification')['checks'])}项。验证涵盖公式恒等式、退化情形、有限差分、预算守恒、支撑边界、任务重建及输入哈希；它不构成因果识别证明。结果表是论文数字的唯一来源，原始附件未修改。
 '''
-    (OUT/'模型求解.md').write_text(text)
+    (OUT/'模型求解.md').write_text(text, encoding='utf-8')
     shutil.copyfile(ROOT/'Q4/模型建立.md',OUT/'模型建立.md')
     summary=f'''# 问题四结果入口 — v0.8.0
 
@@ -160,7 +160,7 @@ Q3未来主配置Loss范围为[{absbridge.loss.min():.6f}, {absbridge.loss.max()
 
 入口：`0925_问题四.ipynb`；复现：`Q1/.venv/bin/python Q4/run_notebook.py`。正式章节为`模型建立.md`、`模型求解.md`，源数据索引见`input_manifest.json`及`c8_input_manifest.json`。图件在`figures/`，结果在`tables/`。
 '''
-    (OUT/'results_summary.md').write_text(summary)
+    (OUT/'results_summary.md').write_text(summary, encoding='utf-8')
     dump(dict(version='v0.8.0',causal_status='conditional on maintained assumptions',
         complete_ND_population='matched pretrained only',contributions=main.to_dict(),
         origin=fore['cutoff'],forecast_targets=mainpred[['target_date','forecast','lo','hi']].to_dict('records'),

@@ -8,7 +8,7 @@ from evolution_model import scale_index,decompose,fit_structural,PAR
 
 def run():
     def read(n):return pd.read_csv(OUT/'tables'/f'{n}.csv')
-    nd=read('nd_primary_sample');design=json.loads((OUT/'mediation_design.json').read_text())
+    nd=read('nd_primary_sample');design=json.loads((OUT/'mediation_design.json').read_text(encoding='utf-8'))
     t0,t1=design['t0'],design['t1'];f=fit_structural(nd);checks={}
     checks['decimal_model_names_distinct']=key('facebook/opt-1.3b')!=key('OPT-13B')
     checks['unique_primary_models']=not nd.Model.duplicated().any()
@@ -40,7 +40,7 @@ def run():
     checks['forecast_score_bounds']=bool(p.forecast.between(0,100).all() and p.lo.between(0,100).all() and p.hi.between(0,100).all())
     checks['forecast_interval_ordered']=bool((p.lo<=p.hi).all())
     checks['frozen_compute_zero_scale_gain']=bool((p.loc[p.scenario.eq('compute_frozen'),'scale_logit_gain'].abs()<1e-12).all())
-    cut=pd.Timestamp(json.loads((OUT/'forecast_design.json').read_text())['cutoff'])
+    cut=pd.Timestamp(json.loads((OUT/'forecast_design.json').read_text(encoding='utf-8'))['cutoff'])
     checks['future_dates_from_last_C1_observation']=all(pd.Timestamp(row.target_date)==cut+pd.DateOffset(months=int(row.horizon_months)) for _,row in p.iterrows())
     comp=read('c4_compute_sample');checks['no_future_C4_publication']=bool((pd.to_datetime(comp.pub)<=cut).all())
     br=read('q3_absolute_bridge_forecast')
@@ -54,10 +54,10 @@ def run():
     raw=c8.raw_accuracy;lower=c8.chance_baseline
     manual_leaf=np.maximum(0,(raw-lower)/(1-lower))*100
     checks['c8_chance_normalization']=bool(np.allclose(c8.normalized_score,manual_leaf,equal_nan=True))
-    audit=json.loads((OUT/'c8_audit.json').read_text());ledger=read('c8_directory_ledger')
+    audit=json.loads((OUT/'c8_audit.json').read_text(encoding='utf-8'));ledger=read('c8_directory_ledger')
     checks['c8_corruption_accounted']=int(ledger.invalid_files.sum())==audit['corrupt_files']
-    checks['all_input_hashes_match']=all(hashlib.sha256((ROOT/v['path']).read_bytes()).hexdigest()==v['sha256'] for v in json.loads((OUT/'input_manifest.json').read_text()))
-    checks['all_c8_raw_hashes_match']=all(hashlib.sha256((ROOT/v['path']).read_bytes()).hexdigest()==v['sha256'] for v in json.loads((OUT/'c8_input_manifest.json').read_text()))
+    checks['all_input_hashes_match']=all(hashlib.sha256((ROOT/v['path']).read_bytes()).hexdigest()==v['sha256'] for v in json.loads((OUT/'input_manifest.json').read_text(encoding='utf-8')))
+    checks['all_c8_raw_hashes_match']=all(hashlib.sha256((ROOT/v['path']).read_bytes()).hexdigest()==v['sha256'] for v in json.loads((OUT/'c8_input_manifest.json').read_text(encoding='utf-8')))
     out=dict(status='passed' if all(checks.values()) else 'failed',checks={k:bool(v) for k,v in checks.items()},
              max_scale_derivative_error=maxerr,max_budget_relative_error=float(budget.max()),
              scope='numerical identities, evidence boundaries and reproducibility only; not causal proof')

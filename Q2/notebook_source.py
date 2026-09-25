@@ -33,15 +33,14 @@ ROOT=Path.cwd(); BROOT=ROOT/'real_attachments/B_scaling_laws'
 QROOT=ROOT/'output_q1/length_domain_calibrated22'; HROOT=QROOT/'q2_loglinear_inputs'
 OUT=ROOT/'output_q2_shared'; TAB=OUT/'tables'; FIG=OUT/'figures'
 for p in [TAB,FIG]:p.mkdir(parents=True,exist_ok=True)
-q1=json.loads((QROOT/'tables/q1_outputs_for_q2_q3.json').read_text())
-meta=json.loads((HROOT/'metadata.json').read_text())
+q1=json.loads((QROOT/'tables/q1_outputs_for_q2_q3.json').read_text(encoding='utf-8'))
+meta=json.loads((HROOT/'metadata.json').read_text(encoding='utf-8'))
 assert q1['selected_predictive_model']=='对数线性混料'
 assert hashlib.sha256((QROOT/'tables/q1_outputs_for_q2_q3.json').read_bytes()).hexdigest()==meta['interface_sha256']
 RNG=np.random.default_rng(925)
 pd.set_option('display.max_columns',15)
-fonts={f.name for f in font_manager.fontManager.ttflist}
-for f in ['Arial Unicode MS','PingFang SC','Heiti SC','Noto Sans CJK SC']:
-    if f in fonts:plt.rcParams['font.family']=f;break
+from repro_runtime import configure_fonts
+configure_fonts()
 plt.rcParams.update({'axes.unicode_minus':False,'figure.dpi':110,'savefig.dpi':180,'axes.spines.top':False,'axes.spines.right':False})
 def save_table(df,name):
     df.to_csv(TAB/f'{name}.csv',index=False,encoding='utf-8-sig');return df
@@ -54,7 +53,7 @@ def metrics(y,p):
             'R2':float(1-np.sum((y-p)**2)/v) if v>0 else np.nan,
             'Spearman':float(spearmanr(y,p).statistic) if np.std(p)>1e-12 else np.nan}
 versions={'python':platform.python_version(),'numpy':np.__version__,'pandas':pd.__version__,'scipy':scipy.__version__,'sklearn':sklearn.__version__}
-(OUT/'versions.json').write_text(json.dumps(versions,indent=2))
+(OUT/'versions.json').write_text(json.dumps(versions,indent=2), encoding='utf-8')
 print('当前问题一模型：',q1['selected_predictive_model'],'；主配比复现误差：',meta['p_star_prediction_error'])
 
 # %% [markdown]

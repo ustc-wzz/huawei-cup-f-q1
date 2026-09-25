@@ -37,8 +37,9 @@ pd.set_option('display.width', 180)
 pd.set_option('display.max_columns', 40)
 pd.set_option('display.float_format', lambda v: '%.4f' % v)
 
-# ---- 中文字体（Windows 默认字体） ----
-plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'Microsoft YaHei', 'Noto Sans CJK SC', 'Noto Sans CJK JP']
+# ---- 随包中文字体，Windows/macOS共用 ----
+from repro_runtime import configure_fonts
+configure_fonts()
 plt.rcParams['axes.unicode_minus'] = False
 plt.rcParams['figure.dpi'] = 110
 plt.rcParams['savefig.dpi'] = 300
@@ -103,114 +104,13 @@ print('输出目录:', OUT)
 
 # %%
 # ============ 1.1 流式读取器 ============
-SCALAR_FIELDS = ['dsir_books', 'dsir_wiki', 'dsir_math',
-                 'rps_doc_word_count', 'rps_doc_num_sentences', 'rps_doc_unigram_entropy',
-                 'rps_doc_frac_unique_words', 'rps_doc_frac_no_alph_words',
-                 'rps_doc_frac_chars_top_2gram', 'rps_doc_frac_chars_top_3gram',
-                 'rps_lines_uppercase_letter_fraction', 'rps_lines_ending_with_terminal_punctution_mark',
-                 'rps_lines_numerical_chars_fraction', 'rps_doc_mean_word_length']
-MB_FIELDS = ['modernbert_cleanliness', 'modernbert_readability', 'modernbert_reasoning', 'modernbert_professionalism']
-OUT_COLS = (['id', 'sub_path', 'domain'] + SCALAR_FIELDS +
-            ['fineweb_edu', 'fluency_p1', 'ad_p1'] + MB_FIELDS +
-            ['qurater_1', 'qurater_2', 'qurater_3', 'qurater_4',
-             'n_chars', 'n_lines', 'n_url', 'frac_nonascii', 'snippet'])
-NUM_COLS = [c for c in OUT_COLS if c not in ('id', 'sub_path', 'domain', 'snippet')]
-CHUNK = 25000
-
-def softmax(z):
-    m = max(z); e = [math.exp(v - m) for v in z]; s = sum(e)
-    return [v / s for v in e]
-
-def to_float(v, fmt='%.6g'):
-    if v is None: return ''
-    if isinstance(v, (list, tuple)):
-        if len(v) != 1: return ''
-        v = v[0]
-    try:
-        f = float(v)
-        return '' if f != f else fmt % f
-    except Exception:
-        return ''
-
-def compress_record(obj, domain):
-    row = {'id': obj.get('id', ''), 'sub_path': obj.get('sub_path', ''), 'domain': domain}
-    for c in SCALAR_FIELDS:
-        row[c] = to_float(obj.get(c))
-    row['fineweb_edu'] = to_float(obj.get('fineweb_edu'))
-    for src, dst in (('fluency_en', 'fluency_p1'), ('ad_en', 'ad_p1')):
-        v = obj.get(src)
-        row[dst] = ('%.6g' % softmax(v)[1]) if isinstance(v, (list, tuple)) and len(v) == 2 else to_float(v)
-    for c in MB_FIELDS:
-        v = obj.get(c)
-        if isinstance(v, (list, tuple)) and len(v) >= 2:
-            p = softmax(v); row[c] = '%.6g' % sum(k * pk for k, pk in enumerate(p))
-        else:
-            row[c] = to_float(v)
-    v = obj.get('qurater')
-    for k in range(4):
-        row['qurater_%d' % (k + 1)] = to_float(v[k]) if isinstance(v, (list, tuple)) and k < len(v) else ''
-    text = obj.get('content') or obj.get('text') or ''
-    if text:
-        n = len(text)
-        row['n_chars'] = n; row['n_lines'] = text.count('\n') + 1
-        row['n_url'] = text.count('http://') + text.count('https://') + text.count('www.')
-        row['frac_nonascii'] = '%.4g' % (sum(1 for ch in text if ord(ch) > 127) / n)
-        row['snippet'] = text[:200].replace('\r', ' ').replace('\n', ' ')
-    else:
-        row['n_chars'] = row['n_lines'] = row['n_url'] = row['frac_nonascii'] = row['snippet'] = ''
-    return row
-
-def norm_domain(s):
-    s = str(s or 'unknown').lower().replace('redpajama', '').replace('_', '').replace('-', '').strip()
-    return {'cc': 'commoncrawl', 'books': 'book', 'wiki': 'wikipedia'}.get(s, s)
-
-def open_any(p):
-    p = str(p)
-    return lzma.open(p, 'rt', encoding='utf-8') if p.endswith('.xz') else open(p, 'r', encoding='utf-8')
-
-def stream_to_cache(paths, prefix, fixed_domain=None):
-    """逐行流式读取原始 jsonl(.xz)，按 CHUNK 行写入 xz 压缩的 CSV 分卷。"""
-    for old in CACHE.glob(prefix + '_part*.csv.xz'):
-        old.unlink()
-    n, part, fo, w, t0 = 0, 0, None, None, time.time()
-    for p in paths:
-        print('  流式读取', p)
-        with open_any(p) as f:
-            for line in f:
-                line = line.strip()
-                if not line: continue
-                try:
-                    obj = json.loads(line)
-                except Exception:
-                    continue
-                if fo is None or n % CHUNK == 0:
-                    if fo is not None: fo.close()
-                    part += 1
-                    fo = lzma.open(CACHE / ('%s_part%02d.csv.xz' % (prefix, part)), 'wt', encoding='utf-8', newline='')
-                    w = csv.DictWriter(fo, fieldnames=OUT_COLS); w.writeheader()
-                dom = fixed_domain if fixed_domain else norm_domain(obj.get('_source_domain'))
-                w.writerow(compress_record(obj, dom)); n += 1
-                if n % 20000 == 0: print('    已处理 %d 条, %.0fs' % (n, time.time() - t0))
-    if fo is not None: fo.close()
-    print('  完成 %d 条 -> %d 个分卷, %.0fs' % (n, part, time.time() - t0))
+from signal_cache import OUT_COLS, NUM_COLS, SCALAR_FIELDS, MB_FIELDS, open_any, raw_signal_paths
+from signal_cache import load_signals as _load_signals
 
 def load_signals(prefix, raw_paths, fixed_domain=None):
-    parts = sorted(CACHE.glob(prefix + '_part*.csv.xz'))
-    if not parts:
-        if not raw_paths:
-            raise FileNotFoundError('既没有缓存也没有原始文件: ' + prefix)
-        stream_to_cache(raw_paths, prefix, fixed_domain)
-        parts = sorted(CACHE.glob(prefix + '_part*.csv.xz'))
-    df = pd.concat([pd.read_csv(p) for p in parts], ignore_index=True)
-    for c in NUM_COLS:
-        df[c] = pd.to_numeric(df[c], errors='coerce')
-    print('[%s] %d 个分卷 -> %d 条记录' % (prefix, len(parts), len(df)))
-    return df
+    return _load_signals(CACHE, prefix, raw_paths, fixed_domain)
 
-RAW_A1 = [p for p in [DATA / 'slimpajama_quality_signal_sample.jsonl.xz'] if p.exists()] or \
-         [p for p in DATA.glob('slimpajama_quality_signal_sample.jsonl*/slimpajama_quality_signal_sample.jsonl') if p.is_file()]
-RAW_A2 = sorted((DATA / 'slimpajama_quality_extended').glob('arxiv_*.jsonl.xz'))
-RAW_A3 = sorted((DATA / 'slimpajama_quality_extended').glob('github_*.jsonl.xz'))
+RAW_A1, RAW_A2, RAW_A3 = raw_signal_paths(DATA)
 print('原始文件: A1', [p.name for p in RAW_A1], '| A2', [p.name for p in RAW_A2], '| A3', [p.name for p in RAW_A3])
 
 # %%
@@ -568,7 +468,7 @@ np.savez_compressed(TAB / 'normal_quantile_reference.npz', **REFERENCE)
     'median': MEDIAN.to_dict(), 'interval': INTERVAL,
     'ad_p1_is_nonad': bool(AD_P1_IS_NONAD), 'fl_p1_is_fluent': bool(FL_P1_IS_FLUENT),
     'weight_method': 'squared Pearson redundancy weights for 22 indicators; no grouping; alpha=1',
-}, ensure_ascii=False, indent=2))
+}, ensure_ascii=False, indent=2), encoding='utf-8')
 normal_diagnostic = pd.DataFrame({
     '原归一化值唯一数': U1.nunique(), '原归一化值最大并列比例': U1.apply(lambda v: v.value_counts(normalize=True).max()),
     '最终正态分数唯一数':Z1_normal.nunique(),
@@ -664,7 +564,7 @@ print('权重范围:',wG.min(),wG.max(),'；无变异指标:',VALID_IND.index[~V
  'formula':'d_j=1+sum_{k != j} r_jk**2; w_j=d_j^(-alpha)/sum d^(-alpha)',
  'fit_set':'A1','indicator_order':INDICATORS,'valid_indicators':VALID_NAMES,
  'redundancy':REDUNDANCY.to_dict(),'weights':dict(zip(INDICATORS,wG.tolist()))
-},ensure_ascii=False,indent=2))
+},ensure_ascii=False,indent=2), encoding='utf-8')
 dist=squareform(np.clip(1-RHO.fillna(0).pow(2).values,0,1),checks=False)
 order=hierarchy.leaves_list(hierarchy.linkage(dist,method='average'))
 lab=[SHORT[j] for j in RHO.columns]
@@ -1276,7 +1176,7 @@ print('仅用全部A4/A5内部CV选定的参数:',PARAMS)
     'final_parameters':PARAMS,'spline_reference':REFERENCE_DOMAIN,'spline_knots':'uniform',
     'spline_n_knots':4,'spline_degree':2,'spline_extrapolation':'linear',
     'scope':'conditional comparison of stated candidate grids; existing test sets have been inspected in earlier analyses, not a newly untouched holdout'
-},ensure_ascii=False,indent=2))
+},ensure_ascii=False,indent=2), encoding='utf-8')
 # 对数线性为关系解释与约束配比求解主模型；GBM为对照及辅助核查模型。
 EPS_LOG=float(PARAMS[MODEL_NAMES[1]]['log__kw_args']['epsilon'])
 def zlog(P):return log_features(P,EPS_LOG)
@@ -1670,7 +1570,7 @@ crosscheck={'main_model':MAIN_MODEL,'cv_winner':CV_WINNER,
  'main_better_than_train_mean_under_GBM':bool(g_main<g_mean),
  'main_better_than_uniform_under_GBM':bool(g_main<g_uniform),
  'real_training_validated':False}
-(TAB/'main_mixture_crosscheck.json').write_text(json.dumps(crosscheck,ensure_ascii=False,indent=2))
+(TAB/'main_mixture_crosscheck.json').write_text(json.dumps(crosscheck,ensure_ascii=False,indent=2), encoding='utf-8')
 print('主方案的GBM辅助核查（预测而非实测）:');display(pd.Series(crosscheck))
 
 
@@ -1727,7 +1627,7 @@ checks={'22指标独立赋权':len(W)==22,'权重非负':bool((wG>=0).all()),
         '权重和为1':bool(np.isclose(wG.sum(),1)),
         '不是直接等权':bool(not np.allclose(wG,1/22)),
         'A1原始样本数':len(A1),'A2原始样本数':len(A2),'A3原始样本数':len(A3)}
-(TAB/'validation_checks.json').write_text(json.dumps(checks,ensure_ascii=False,indent=2))
+(TAB/'validation_checks.json').write_text(json.dumps(checks,ensure_ascii=False,indent=2), encoding='utf-8')
 display(pd.Series(checks))
 
 for name,A,R,Z,oldZ in [('A1',A1,R1,Z1_normal,Z1_uncorrected),('A2',A2,R2,Z2_normal,Z2_uncorrected),('A3',A3,R3,Z3_normal,Z3_uncorrected)]:
@@ -2106,7 +2006,7 @@ fr_checks={'未使用冲突排除名单':fr_expected==fr_actual,'专业性及另
  '已保留局部反向关系而非宣称无冲突':True,
  '存在校准后的域内候选冲突':bool(fr_within.loc[fr_within['阶段']=='校准后','域内r<=负0.3'].any()),
  '有独立人工标签足以证明误判改善':False}
-(TAB/'audit_checks.json').write_text(json.dumps(fr_checks,ensure_ascii=False,indent=2));display(pd.Series(fr_checks))
+(TAB/'audit_checks.json').write_text(json.dumps(fr_checks,ensure_ascii=False,indent=2), encoding='utf-8');display(pd.Series(fr_checks))
 fig,axes=plt.subplots(1,2,figsize=(15,5.5))
 wp=fr_within[fr_within['阶段']=='校准后'].pivot(index='领域',columns='指标',values='域内Pearson')
 wp.columns=[SHORT[j] for j in wp.columns];wp.plot.bar(ax=axes[0],color=[C_NAVY,C_TEAL]);axes[0].axhline(-.3,color=C_CORAL,ls='--')
@@ -2130,7 +2030,7 @@ from scipy.special import logsumexp
 # 固定既有A1参照、22项指标和权重；仅改变指数凹聚合的beta。
 # 本节不覆盖主模型BETA=0.25及评分/接口文件。
 bt_root=Path('output_q1/length_domain_calibrated22/tables')
-bt_main_beta=float(__import__('json').loads((bt_root/'q1_outputs_for_q2_q3.json').read_text())['beta'])
+bt_main_beta=float(__import__('json').loads((bt_root/'q1_outputs_for_q2_q3.json').read_text(encoding='utf-8'))['beta'])
 bt_w=pd.read_csv(bt_root/'indicator_weights.csv',index_col=0)['权重']
 bt_values=[0.0,0.1,0.25,0.5,0.75,1.0]
 bt_rows=[]
@@ -2188,7 +2088,7 @@ OUT=BASE/'output_q1/length_domain_calibrated22'
 T=OUT/'tables'
 rules=['rps_lines_ending_with_terminal_punctution_mark','rps_doc_frac_no_alph_words']
 prof='modernbert_professionalism'
-audit_beta=float(json.loads((T/'q1_outputs_for_q2_q3.json').read_text())['beta'])
+audit_beta=float(json.loads((T/'q1_outputs_for_q2_q3.json').read_text(encoding='utf-8'))['beta'])
 wtab=pd.read_csv(T/'indicator_weights.csv',index_col=0)
 cols=wtab.index.tolist();w=wtab['权重'].to_numpy()
 assert len(cols)==22 and np.isclose(w.sum(),1) and np.all(w>=0)
@@ -2246,7 +2146,7 @@ print('独立复算通过：22项去冗余权重、所有集合的Q及CI、固�
 print('局部信号单独输出，不修改主模型Q或把局部信号混称为原全局冲突率。')
 print(summary.to_string(index=False))
 print('注意：上述局部审查仅覆盖本次两项格式规则与专业性，不是全部231对的局部扫描；未经过独立人工标签验证。')
-(T/'independent_verification.json').write_text(json.dumps({'22项权重及三个集合Q_CI复算通过':True,'局部信号逐样本导出':True},ensure_ascii=False,indent=2));
+(T/'independent_verification.json').write_text(json.dumps({'22项权重及三个集合Q_CI复算通过':True,'局部信号逐样本导出':True},ensure_ascii=False,indent=2), encoding='utf-8');
 
 
 # %% [markdown]

@@ -1,23 +1,23 @@
 [
   {
     "path": "0924_F题_问题一.ipynb",
-    "bytes": 437329,
-    "sha256": "51d6ba438e7aac272ab1b2a79c0f1bd615a0cab0f76e3bca5638b48dc6b36288"
+    "bytes": 431584,
+    "sha256": "8ece25e68eeb9fdbd5496bcdc764330455a1ebb291d9bed645b083a1ebda8ea9"
   },
   {
     "path": "notebook_source.py",
-    "bytes": 160599,
-    "sha256": "944227ff8ef47e3f62f99ff30a57b31703e939459974450fd50a38b40fd57259"
+    "bytes": 155673,
+    "sha256": "13259c3a6c3d8ef42bb1857fbf5de33ab129bc0f6b296806ac745add749f07c8"
   },
   {
     "path": "0924_问题二.ipynb",
-    "bytes": 140567,
-    "sha256": "8fe261dc7e9c721370923895fbe9a1488a69a6f63b9441ca42f634dc510658ad"
+    "bytes": 141361,
+    "sha256": "c4612e98ef5ee099fcd7e6faa6dfadd75601d391fb43a85e013e2287bfb6e9a8"
   },
   {
     "path": "Q2/notebook_source.py",
-    "bytes": 42501,
-    "sha256": "8546dcd15c8f57f564ac9e78cc53fb288c583d3a2d5446f051f7d927fd403400"
+    "bytes": 42425,
+    "sha256": "bc6fb8abfb25f931ccb132fe6b49520f4f964df12d4779938786859e344c1dcd"
   },
   {
     "path": "output_q1/length_domain_calibrated22/tables/q1_outputs_for_q2_q3.json",
@@ -52,7 +52,7 @@
   {
     "path": "Q3/quality_audit/input_manifest.json",
     "bytes": 1697,
-    "sha256": "8b95039fbfed974cfd8e310252d6cf13786f9f19564fc5f96939c8560d742423"
+    "sha256": "a521c66de4c943213d6ff16644b600f3e28a743794262ffef043ade78efa2f7b"
   },
   {
     "path": "Q3/resource_model.py",
@@ -61,8 +61,8 @@
   },
   {
     "path": "Q3/notebook_source.py",
-    "bytes": 48380,
-    "sha256": "21e5f8166e4027fcb57e8f309e925ec3d7fec358b86a589455e6fac04bbf4cb4"
+    "bytes": 48528,
+    "sha256": "4c0e27cbdf2e8645ecee6a5f545ee1b4eca4254dac0899a9d89f115bd082237e"
   },
   {
     "path": "real_attachments/B_scaling_laws/pythia_training_log_existing.csv",
@@ -76,13 +76,13 @@
   },
   {
     "path": "Q3/decision_analysis.py",
-    "bytes": 14271,
-    "sha256": "8f22e89139665e3a0a890d0665c433f2863522122617137fbf4a9317175b928a"
+    "bytes": 14289,
+    "sha256": "3cad56725a7d64907dc0c017d70076c4c7411066bbd2b2a60026dccbf1d1bdd5"
   },
   {
     "path": "Q3/audit_quality_interface.py",
-    "bytes": 8408,
-    "sha256": "1412ec35cdbede3b17685d492ca49bc43d7ea23e83a0908c16c12b489f0a7a40"
+    "bytes": 8476,
+    "sha256": "bee2efa9866e694474b50feaddfae1578070d7dec0dd1f158974d9150bd2f394"
   },
   {
     "path": "Q3/decision_method.md",

@@ -13,7 +13,9 @@ TYPE={'pretrained':'预训练基础','chat_finetuned':'对话／微调','merge':
 
 def table(n):return pd.read_csv(OUT/'tables'/f'{n}.csv')
 def setup():
-    plt.rcParams.update({'font.family':'sans-serif','font.sans-serif':['Arial Unicode MS','PingFang SC','DejaVu Sans'],
+    from repro_runtime import configure_fonts
+    configure_fonts()
+    plt.rcParams.update({
       'axes.unicode_minus':False,'font.size':10,'axes.titlesize':12,'axes.labelsize':10,
       'axes.spines.top':False,'axes.spines.right':False,'legend.frameon':False,
       'pdf.fonttype':42,'svg.fonttype':'none','figure.dpi':130,'savefig.dpi':300})

@@ -31,21 +31,20 @@ def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def save(df,name):
     df.to_csv(TAB/f'{name}.csv',index=False,encoding='utf-8-sig');return df
 def show(s):display(Markdown(s))
-def dump(x,name): (OUT/name).write_text(json.dumps(x,ensure_ascii=False,indent=2,allow_nan=False)+'\n')
+def dump(x,name): (OUT/name).write_text(json.dumps(x,ensure_ascii=False,indent=2,allow_nan=False)+'\n', encoding='utf-8')
 pd.set_option('display.max_columns',16)
 pd.set_option('display.precision',6)
-fonts={f.name for f in font_manager.fontManager.ttflist}
-for f in ['Arial Unicode MS','PingFang SC','Heiti SC','Noto Sans CJK SC']:
-    if f in fonts:plt.rcParams['font.family']=f;break
+from repro_runtime import configure_fonts
+configure_fonts()
 plt.rcParams.update({'axes.unicode_minus':False,'figure.dpi':110,'savefig.dpi':160,
                     'axes.spines.top':False,'axes.spines.right':False,'font.size':10})
 protected=[ROOT/x for x in ['0924_F题_问题一.ipynb','notebook_source.py','0924_问题二.ipynb','Q2/notebook_source.py',
            'output_q1/length_domain_calibrated22/tables/q1_outputs_for_q2_q3.json','output_q2_shared/q2_interface.json']]
 protected_before={str(p.relative_to(ROOT)):sha(p) for p in protected}
-q1=json.loads(protected[-2].read_text()); q2=json.loads(protected[-1].read_text())
+q1=json.loads(protected[-2].read_text(encoding='utf-8')); q2=json.loads(protected[-1].read_text(encoding='utf-8'))
 assert sha(protected[-2])==q2['q1_interface_sha256']
 subprocess.run([sys.executable,str(ROOT/'Q3/audit_quality_interface.py')],cwd=ROOT,check=True,capture_output=True,text=True)
-audit=json.loads((ROOT/'Q3/quality_audit/verification.json').read_text())
+audit=json.loads((ROOT/'Q3/quality_audit/verification.json').read_text(encoding='utf-8'))
 assert audit['status']=='passed' and audit['domain_means_match_current_interface']
 with zipfile.ZipFile(ROOT/'算力约束下提升大语言模型能力的资源配置建模.docx') as z:
     xml=ET.fromstring(z.read('word/document.xml'))
@@ -487,7 +486,7 @@ for r in actual_transitions.itertuples(index=False):
 if not len(actual_transitions):lines.append('- 所有已扫描敏感性情景均未检测到转移。')
 lines+=['',f'验证：{len(independent)}组独立二维优化对照，最大可约损失相对差{verification["max_independent_objective_relative_error"]:.3e}；最大预算相对残差{verification["max_budget_relative_error"]:.3e}。',
  '局限：质量响应来自半合成实验且u>0向基准以上外推；s_Q未识别；高预算N/D超出观测覆盖；同一D成本代理不保证原料供给；p*对照依赖跨来源配比修正。当前结果是条件最优预测，不是实测训练最优。']
-summary='\n'.join(lines)+'\n';(OUT/'results_summary.md').write_text(summary);show(summary)
+summary='\n'.join(lines)+'\n';(OUT/'results_summary.md').write_text(summary, encoding='utf-8');show(summary)
 show('解释：在主情景中质量上限始终活跃，预算增加主要扩张N和D；提质成本占比下降不等于质量投入下降。s_Q=2降低单位原始质量增量的预测收益，因而在低预算幂函数成本下出现R0/R1。更长上下文挤压规模扩张收益，转移预算可能降低，但同预算的绝对预测Loss仍升高，不能解读为长上下文更便宜。')
 recipe_gain=recipe_comparison.predicted_pstar_loss_reduction
 show(f'p*相对p0的同预算预测Loss差改善范围为{recipe_gain.min():.6f}—{recipe_gain.max():.6f}；这依赖配比修正跨来源迁移。p*的提质上限较低，不能只看提质增量判断最终Loss优劣。质量刻度、样本参照上限和同一D代理仍是已确认假设，不被数值核验消除。')
@@ -514,14 +513,14 @@ M(u)=-\lambda(t_N+t_D)+\frac{\nu t_Dc'}{kN+c}.$$
 
 验证包含预算单位与残差、无提质经典解析解、内层KKT、外层有限差分导数、扩大括区间、外层网格加密、独立二维优化及转移候选解析核验。误差容差和原始结果一起保存。模型检验不代替真实训练验证，也不证明样本筛选参照上限的原料供给可行性。
 '''
-(OUT/'模型建立.md').write_text(method)
+(OUT/'模型建立.md').write_text(method, encoding='utf-8')
 solution=summary.replace('# 问题三实际运行结果','# 问题三模型求解',1)
 solution+='\n## 结果解释与图件\n\n主预算区间质量上限持续活跃，N和D随预算增加而扩张；提质成本占比下降是预算分配变化，并非质量下降。图1展示规模和投入曲线，图2分解成本，图3显示上下文对规模和Loss的影响。\n\n'
 for f,title in [('01_budget_allocation','预算配置'),('02_cost_shares','成本份额'),('03_context_sensitivity','上下文敏感性'),('04_quality_transitions','质量状态'),('05_sensitivity_gain','收益敏感性'),('06_transition_zoom','转移区间放大')]:
     solution+=f'![{title}](figures/{f}.png)\n\n'
 solution+=f'p*对照相对p0的预测Loss改善为{recipe_gain.min():.6f}—{recipe_gain.max():.6f}，这一比较依赖配比修正迁移假设。质量上限较低并不意味着最终Loss更高。\n\n'
 solution+='s_Q=2时，质量响应减弱，幂函数成本出现从不提质到部分提质再到样本参照上限的连续转移。更长上下文减少规模扩张的相对吸引力，转移预算降低；这不能抵消其对绝对Loss的不利影响。转移方程的解析候选与全局数值分支核验相符。\n'
-(OUT/'模型求解.md').write_text(solution)
+(OUT/'模型求解.md').write_text(solution, encoding='utf-8')
 dump({'notebook':'0925_问题三.ipynb','mirror':'Q3/notebook_source.py','solver':'Q3/resource_model.py',
       'runner':'Q3/run_notebook.py','inputs':'input_manifest.json','results':'tables/','figures':'figures/',
       'summary':'results_summary.md','methodology':'模型建立.md','solution':'模型求解.md'},'artifact_manifest.json')
@@ -581,13 +580,13 @@ for C in [1e19,1e24]:
     r=resource_values.loc[resource_values.C.eq(C)&resource_values.L_ctx.eq(2048)&resource_values.cost.eq('exponential')].iloc[0]
     extra.append(f'指数成本、2048窗口、预算{C:.0e}：无提质等效算力倍率{r.equivalent_compute_multiplier:.4f}，影子价值−dL*/dlnC={r.loss_drop_per_log_budget:.6f}，提质占比{r.share_quality:.6%}，绝对提质成本{r.C_quality:.4e} FLOPs。')
 extra='\n'.join(extra)+'\n'
-(OUT/'decision_summary.md').write_text(extra)
-(OUT/'results_summary.md').write_text('# 问题三实际运行结果\n\n'+extra+'\n## 50%参考切片与既有核验\n\n'+summary)
-(OUT/'模型建立.md').write_text(method+'\n'+(ROOT/'Q3/decision_method.md').read_text())
+(OUT/'decision_summary.md').write_text(extra, encoding='utf-8')
+(OUT/'results_summary.md').write_text('# 问题三实际运行结果\n\n'+extra+'\n## 50%参考切片与既有核验\n\n'+summary, encoding='utf-8')
+(OUT/'模型建立.md').write_text(method+'\n'+(ROOT/'Q3/decision_method.md').read_text(encoding='utf-8'), encoding='utf-8')
 for name in ['模型建立.md','模型求解.md']:
     path=OUT/name
-    path.write_text(path.read_text()+'\n'+extra)
-with (OUT/'模型求解.md').open('a') as f:
+    path.write_text(path.read_text(encoding='utf-8')+'\n'+extra, encoding='utf-8')
+with (OUT/'模型求解.md').open('a', encoding='utf-8') as f:
     for name,title in [('07_screening_evidence','样本筛选证据'),('08_global_decision_phase','全局决策相位图'),('12_critical_benefit_zoom','临界收益放大'),('09_cap_sensitivity','上限组敏感性'),('10_resource_tradeoffs','资源权衡'),('11_budget_composition','预算组成')]:
         f.write(f'\n![{title}](figures/{name}.png)\n')
 config['quality_cap_scenarios']=[.8,.5,.2,.1,.05]
@@ -599,12 +598,12 @@ interface['artifacts'].update({'cap_scenarios':'tables/cap_scenario_results.csv'
 dump(interface,'q3_interface.json')
 verification['decision_extension']=decision_checks
 dump(verification,'verification.json')
-manifest=json.loads((OUT/'input_manifest.json').read_text())
+manifest=json.loads((OUT/'input_manifest.json').read_text(encoding='utf-8'))
 for p in [ROOT/'Q3/decision_analysis.py',ROOT/'Q3/audit_quality_interface.py',ROOT/'Q3/decision_method.md',ROOT/'Q3/quality_audit/within_domain_selection.csv']:
     manifest.append({'path':str(p.relative_to(ROOT)),'bytes':p.stat().st_size,'sha256':sha(p)})
 dump(manifest,'input_manifest.json')
 assert all(sha(ROOT/p)==h for p,h in protected_before.items())
-artifacts=json.loads((OUT/'artifact_manifest.json').read_text())
+artifacts=json.loads((OUT/'artifact_manifest.json').read_text(encoding='utf-8'))
 artifacts.update({'decision_module':'Q3/decision_analysis.py','decision_method':'Q3/decision_method.md','decision_summary':'decision_summary.md','decision_verification':'decision_verification.json','primary_figures':'figures/07—12'})
 dump(artifacts,'artifact_manifest.json')
 show(extra)

@@ -16,7 +16,7 @@ from data_pipeline import ROOT, OUT, CD, DIMS, save, dump
 SEED=20260925
 REPS=400
 REFERENCE=pd.Timestamp('2023-01-01')
-PAR=json.loads((ROOT/'output_q2_shared/q2_interface.json').read_text())['B1']
+PAR=json.loads((ROOT/'output_q2_shared/q2_interface.json').read_text(encoding='utf-8'))['B1']
 
 def zscore(s): return logit(np.clip(np.asarray(s,dtype=float)/100, .001, .999))
 def score(z): return 100*expit(z)
@@ -214,7 +214,7 @@ def compute_history(epoch,cutoff):
 def coupled_forecast(nd,epoch,cutoff,bridge_models):
     sys.path.insert(0,str(ROOT/'Q3'))
     from resource_model import ResourceModel,Scenario
-    cfg=json.loads((ROOT/'output_q3_resource/config.json').read_text())
+    cfg=json.loads((ROOT/'output_q3_resource/config.json').read_text(encoding='utf-8'))
     mdl=ResourceModel(dict(B1=cfg['parameters'],theta_Q=cfg['theta_Q'],eta=cfg['eta_p']))
     sc=Scenario(**cfg['scenarios']['main'])
     d,q,c0,growth=compute_history(epoch,cutoff)

@@ -118,3 +118,17 @@
 !/output_q1/length_domain_calibrated22/tables/independent_verification.json
 !/output_q2_shared/delivery_checks.json
 !/revision_v080.json
+
+# v0.9.0 跨平台准备流程；环境、原始附件与完整ZIP仍仅本地。
+!/repro_runtime.py
+!/signal_cache.py
+!/repro_inputs.json
+!/run_windows.bat
+!/run_macos.command
+!/PACKAGE_README.md
+!/portability_verification.json
+!/tests/
+/tests/__pycache__/
+!/assets/
+/assets/*
+!/assets/fonts/
