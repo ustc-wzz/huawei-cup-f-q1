@@ -46,10 +46,17 @@ print('All Q4 notebook cells executed successfully.',flush=True)
 import hashlib
 written=nbformat.read(target,as_version=4)
 assert [c.source for c in written.cells]==[c.source for c in cells]
+markdown_texts=[c.source for c in written.cells if c.cell_type=='markdown']
+for c in written.cells:
+    for output in c.get('outputs',[]):
+        text=output.get('data',{}).get('text/markdown')
+        if text is not None:markdown_texts.append(''.join(text) if isinstance(text,list) else text)
+assert all(not any(ord(ch)<32 and ch not in '\n\r\t' for ch in text) for text in markdown_texts), 'Control character in rendered Markdown'
+assert all('\\[' not in text and '\\]' not in text for text in markdown_texts), 'Use $$ blocks for notebook math compatibility'
 manifest=json.loads((ROOT/'output_q4_evolution/input_manifest.json').read_text())
 assert all(hashlib.sha256((ROOT/r['path']).read_bytes()).hexdigest()==r['sha256'] for r in manifest)
 figs=sorted((ROOT/'output_q4_evolution/figures').glob('*.png'))
 assert len(figs)==7 and all(p.with_suffix('.pdf').is_file() for p in figs)
-checks={'status':'passed','notebook_cells':len(written.cells),'executed_code_cells':sum(c.cell_type=='code' for c in written.cells),'mirror_exact':True,'input_hashes_current':True,'no_error_outputs':True,'figures_png_pdf_pairs':len(figs)}
+checks={'status':'passed','notebook_cells':len(written.cells),'executed_code_cells':sum(c.cell_type=='code' for c in written.cells),'mirror_exact':True,'input_hashes_current':True,'no_error_outputs':True,'figures_png_pdf_pairs':len(figs),'markdown_no_control_characters':True,'math_block_delimiters_compatible':True}
 (ROOT/'output_q4_evolution/delivery_checks.json').write_text(json.dumps(checks,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(checks,ensure_ascii=False),flush=True)

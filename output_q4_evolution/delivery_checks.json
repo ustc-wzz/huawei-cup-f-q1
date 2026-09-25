@@ -6,5 +6,9 @@
   "input_hashes_current": true,
   "no_error_outputs": true,
   "figures_png_pdf_pairs": 7,
-  "visual_review": "Seven PNG figures inspected; causal-arrow layout and frontier labels corrected; no clipping observed."
+  "markdown_no_control_characters": true,
+  "math_block_delimiters_compatible": true,
+  "katex_formulas_parsed": 72,
+  "markdown_math_blocks_rendered": 19,
+  "numerical_tables_unchanged": 38
 }
