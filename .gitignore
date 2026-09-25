@@ -38,6 +38,14 @@
 /output_q2_shared/tables/*
 !/output_q2_shared/tables/*.csv
 /output_q2_shared/tables/large_model_scenarios.csv
+!/Q3/
+/Q3/*
+!/Q3/audit_quality_interface.py
+!/Q3/quality_audit/
+/Q3/quality_audit/*
+!/Q3/quality_audit/*.csv
+!/Q3/quality_audit/*.json
+!/Q3/quality_audit/*.md
 !/output_q2_shared/figures/
 /output_q2_shared/figures/*
 !/output_q2_shared/figures/*.png

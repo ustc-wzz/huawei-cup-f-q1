@@ -1,0 +1,47 @@
+[
+  {
+    "path": "output_q1/length_domain_calibrated22/tables/sample_Q_A1.csv",
+    "bytes": 4216772,
+    "sha256": "59735eda72a4e3ebe09038501b5b643d9c5838debd96fea5e875f5791784e9cb"
+  },
+  {
+    "path": "output_q1/length_domain_calibrated22/tables/length_calibration_A1.csv.gz",
+    "bytes": 2440523,
+    "sha256": "181dc7aa5bc7e97298513acf0b4331a4a549015c262e0441ffc366fc8881bef1"
+  },
+  {
+    "path": "output_q1/length_domain_calibrated22/tables/sample_Q_A2.csv",
+    "bytes": 1336761,
+    "sha256": "fe06d81511cb416095a9870f2bb5bf7ca50f665d58d156737b3f6ded2d1efff0"
+  },
+  {
+    "path": "output_q1/length_domain_calibrated22/tables/length_calibration_A2.csv.gz",
+    "bytes": 768884,
+    "sha256": "a6b8dbd91d30612fdc106ea1fa300c560a0add27e2543384f211f50a4dbb77ec"
+  },
+  {
+    "path": "output_q1/length_domain_calibrated22/tables/sample_Q_A3.csv",
+    "bytes": 16100804,
+    "sha256": "c6b24deafa42e87f483386b4bc71ea39af4387d544962a8d57b98415c92b5a2c"
+  },
+  {
+    "path": "output_q1/length_domain_calibrated22/tables/length_calibration_A3.csv.gz",
+    "bytes": 9077843,
+    "sha256": "a71d2fdd45d3f07971247ed7a512ab691b9dfd5eb559f05487fac360ae3ef4e8"
+  },
+  {
+    "path": "output_q1/length_domain_calibrated22/tables/q1_outputs_for_q2_q3.json",
+    "bytes": 33964,
+    "sha256": "eb18180ea2e95edc13faeac353e14958b1d096b35ef0e3e3bca1b91009e31150"
+  },
+  {
+    "path": "output_q2_shared/q2_interface.json",
+    "bytes": 3769,
+    "sha256": "aa630859523ead847b6ab18f681af5476473a2f6c71d3b349f70159ddbcb48b8"
+  },
+  {
+    "path": "real_attachments/A_data_value/domain_mapping_guide.csv",
+    "bytes": 1296,
+    "sha256": "4a4479f41b9f46116e688cd0c13ccdad4e687192fc1a38c4add690771ebff480"
+  }
+]

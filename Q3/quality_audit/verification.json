@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "raw_rows": 272505,
+  "unique_rows": 261086,
+  "overlap_rows_removed_for_aggregation": 11419,
+  "max_duplicate_score_spread": 0.0,
+  "domain_means_match_current_interface": true,
+  "q1_q2_interface_hash_matches": true,
+  "candidate_caps_monotone": true,
+  "all_candidate_aggregate_cost_coordinates_in_0_1": true,
+  "decisions": "All mappings/caps pending user approval; existing Q1/Q2 unchanged.",
+  "limitations": [
+    "Q scores are model-based document scores, not measured training gains.",
+    "Document/word retention is not token retention.",
+    "11 missing mixture domains retain baseline with zero proposed gain.",
+    "No raw corpus token supply or measured processing cost is available in this audit.",
+    "Mapping T does not identify the B-to-Q1 conversion s_Q."
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "columns": [
+    "id",
+    "domain",
+    "Q_lin",
+    "Q_res",
+    "CI",
+    "is_conflict"
+  ],
+  "duplicate_rows_in_profile": 0,
+  "fields": {
+    "CI": {
+      "distinct": 7358,
+      "max": 6.620608754413206,
+      "min": 0.0,
+      "missing": 0,
+      "missing_fraction": 0.0,
+      "numeric_parse_fraction": 1.0,
+      "rows": 51230
+    },
+    "Q_lin": {
+      "distinct": 51230,
+      "max": 1.2501676726852171,
+      "min": -1.6947069771639485,
+      "missing": 0,
+      "missing_fraction": 0.0,
+      "numeric_parse_fraction": 1.0,
+      "rows": 51230
+    },
+    "Q_res": {
+      "distinct": 51230,
+      "max": 1.1456872415777428,
+      "min": -1.8318472769459957,
+      "missing": 0,
+      "missing_fraction": 0.0,
+      "numeric_parse_fraction": 1.0,
+      "rows": 51230
+    },
+    "domain": {
+      "distinct": 7,
+      "max": null,
+      "min": null,
+      "missing": 0,
+      "missing_fraction": 0.0,
+      "numeric_parse_fraction": 0.0,
+      "rows": 51230
+    },
+    "id": {
+      "distinct": 51230,
+      "max": null,
+      "min": null,
+      "missing": 0,
+      "missing_fraction": 0.0,
+      "numeric_parse_fraction": 0.0,
+      "rows": 51230
+    },
+    "is_conflict": {
+      "distinct": 2,
+      "max": null,
+      "min": null,
+      "missing": 0,
+      "missing_fraction": 0.0,
+      "numeric_parse_fraction": 0.0,
+      "rows": 51230
+    }
+  },
+  "file": "/Users/luochen/\u534e\u4e3a\u676f/F\u9898/z\u5907\u4efd_\u526f\u672c/output_q1/length_domain_calibrated22/tables/sample_Q_A1.csv",
+  "rows_profiled": 51230,
+  "sampled": false,
+  "sha256": "59735eda72a4e3ebe09038501b5b643d9c5838debd96fea5e875f5791784e9cb"
+}
