@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "notebook_cells": 20,
+  "executed_code_cells": 11,
+  "mirror_exact": true,
+  "input_hashes_current": true,
+  "no_error_outputs": true,
+  "figures_png_pdf_pairs": 7,
+  "visual_review": "Seven PNG figures inspected; causal-arrow layout and frontier labels corrected; no clipping observed."
+}

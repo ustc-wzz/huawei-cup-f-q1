@@ -1,0 +1,20 @@
+{
+  "cutoff": "2025-03-13",
+  "compute_sample": 215,
+  "C0": 3.303422000000004e+24,
+  "historical_log_compute_growth_per_year": 1.0337133922793442,
+  "main_growth_fraction": 0.25,
+  "main_technical_half_life_months": 24,
+  "quantile": 0.9,
+  "target": "pretrained conditional q90 capability along Q3 loss-optimal resource frontier",
+  "coefficient": [
+    -2.9782477643142213,
+    1.1231536995460925,
+    0.29218717272075245
+  ],
+  "x0": 1.6719354256491847,
+  "anchor_score": 38.72621187989484,
+  "issue": "Forecast dates originate at last C1 observation, not the current wall-clock date.",
+  "no_double_count": "Q3 quality/recipe held fixed across time; only relative loss gain enters. Time drift is not added to absolute C6 bridges.",
+  "conditional_interval": "Does not include unidentified Q2 structural bias or model-family transfer error."
+}

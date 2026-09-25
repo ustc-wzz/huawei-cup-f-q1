@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "checks": {
+    "decimal_model_names_distinct": true,
+    "unique_primary_models": true,
+    "primary_all_pretrained": true,
+    "primary_no_D_imputation": true,
+    "decomposition_additive": true,
+    "equal_time_zero_effects": true,
+    "reverse_time_negates_effects": true,
+    "zero_scale_coefficient_zero_indirect": true,
+    "zero_time_coefficient_zero_direct": true,
+    "scale_elasticities_match_finite_difference": true,
+    "q3_budget_feasible": true,
+    "q3_quality_cap_shortcut_verified": true,
+    "forecast_score_bounds": true,
+    "forecast_interval_ordered": true,
+    "frozen_compute_zero_scale_gain": true,
+    "future_dates_from_last_C1_observation": true,
+    "no_future_C4_publication": true,
+    "unsupported_bridges_return_missing": true,
+    "bridges_monotone": true,
+    "c8_three_task_equal_aggregation": true,
+    "c8_chance_normalization": true,
+    "c8_corruption_accounted": true,
+    "all_input_hashes_match": true,
+    "all_c8_raw_hashes_match": true
+  },
+  "max_scale_derivative_error": 2.4049609526066718e-11,
+  "max_budget_relative_error": 1.9385089126420652e-16,
+  "scope": "numerical identities, evidence boundaries and reproducibility only; not causal proof"
+}

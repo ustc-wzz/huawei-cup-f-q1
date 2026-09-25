@@ -1,0 +1,19 @@
+{
+  "n": 35,
+  "organizations": 10,
+  "t0": 0.2518822724161533,
+  "t1": 1.431895961670089,
+  "start_date": "2023-04-03",
+  "end_date": "2024-06-07",
+  "comparison": "publication-time interquartile contrast in matched pretrained models",
+  "bootstrap_replicates": 400,
+  "bootstrap_unit": "publisher organization",
+  "condition_number": 5.955076320367432,
+  "design_rank": 3,
+  "assumptions": [
+    "Residual time effect represents non-scale technical progress, conditional on comparable scale and evaluation.",
+    "No remaining time-scale-score confounding; scale and outcome disturbances are independent in the primary model.",
+    "The Q2 exponents and scale-shape transfer across model families; coefficients are reestimated on C1-C4.",
+    "Metadata availability/leaderboard inclusion do not distort the target contrast after sample restrictions."
+  ]
+}

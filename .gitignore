@@ -72,3 +72,22 @@
 
 !/Q3/decision_analysis.py
 !/Q3/decision_method.md
+
+# 第四问：仅提交代码、已运行主文档和可追溯结果，不提交原始附件或运行缓存。
+!/0925_问题四.ipynb
+!/Q4/
+/Q4/*
+!/Q4/*.py
+!/Q4/*.md
+!/Q4/requirements.txt
+!/output_q4_evolution/
+/output_q4_evolution/*
+!/output_q4_evolution/*.json
+!/output_q4_evolution/*.md
+!/output_q4_evolution/tables/
+/output_q4_evolution/tables/*
+!/output_q4_evolution/tables/*.csv
+!/output_q4_evolution/figures/
+/output_q4_evolution/figures/*
+!/output_q4_evolution/figures/*.png
+!/output_q4_evolution/figures/*.pdf

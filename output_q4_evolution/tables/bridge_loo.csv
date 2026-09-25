@@ -1,0 +1,76 @@
+tier,Model,actual,prediction,error,supported,Loss_Source
+high,EleutherAI/pythia-160m,5.730394616916023,,,False,"Pythia training log (Attachment B, final checkpoint D=299.9B tokens)"
+high,EleutherAI/pythia-410m,5.227072311484412,5.400331418873492,0.17325910738907968,True,"Pythia training log (Attachment B, final checkpoint D=299.9B tokens)"
+high,EleutherAI/pythia-1b,5.07026822083096,5.718238032483979,0.6479698116530193,True,"Pythia training log (Attachment B, final checkpoint D=299.9B tokens)"
+high,EleutherAI/pythia-1.4b,6.008531439497028,5.416575656883733,-0.5919557826132946,True,"Pythia training log (Attachment B, final checkpoint D=299.9B tokens)"
+high,EleutherAI/pythia-2.8b,5.554946281603011,5.9875391071195105,0.43259282551649925,True,"Pythia training log (Attachment B, final checkpoint D=299.9B tokens)"
+high,EleutherAI/pythia-6.9b,5.966546774741993,5.969699842156936,0.0031530674149422566,True,"Pythia training log (Attachment B, final checkpoint D=299.9B tokens)"
+high,EleutherAI/pythia-12b,6.059841492942702,,,False,"Pythia training log (Attachment B, final checkpoint D=299.9B tokens)"
+medium,meta-llama/Meta-Llama-3-8B,13.626857071686077,28.00986727745393,14.383010205767855,True,"LLaMA 3 Technical Report (Meta, 2024), training loss at convergence"
+medium,meta-llama/Llama-2-7b-hf,8.806357596540016,28.182027972994867,19.37567037645485,True,"LLaMA 2 paper (Touvron et al., 2023), training loss at convergence"
+medium,meta-llama/Llama-3.1-8B,14.42086519266696,27.981509844561753,13.560644651894792,True,"LLaMA 3.1 Technical Report (Meta, 2024), training loss"
+medium,Qwen/Qwen2-0.5B,7.224121473565234,6.586780633287707,-0.6373408402775276,True,"Qwen2 Technical Report (Alibaba, 2024), validation loss"
+medium,Qwen/Qwen2-1.5B,10.445452935561454,10.874275924008032,0.4288229884465782,True,"Qwen2 Technical Report (Alibaba, 2024), validation loss"
+medium,Qwen/Qwen2-7B,23.9251621404824,20.924544033109342,-3.0006181073730573,True,"Qwen2 Technical Report (Alibaba, 2024), validation loss"
+medium,Qwen/Qwen2.5-0.5B,6.550067614297009,7.69211659246195,1.142048978164941,True,"Qwen2.5 Technical Report (Alibaba, 2024), validation loss"
+medium,Qwen/Qwen2.5-1.5B,13.852701161320264,10.612179906641972,-3.240521254678292,True,"Qwen2.5 Technical Report (Alibaba, 2024), validation loss"
+medium,Qwen/Qwen2.5-7B,26.019159924095096,20.801367692896832,-5.217792231198263,True,"Qwen2.5 Technical Report (Alibaba, 2024), validation loss"
+medium,Qwen/Qwen2.5-14B,31.951062693148973,27.35543136240168,-4.595631330747292,True,"Qwen2.5 Technical Report (Alibaba, 2024), validation loss"
+medium,google/gemma-2-2b,10.359615568466916,10.88087879839992,0.5212632299330036,True,"Gemma 2 Technical Report (Google, 2024), final loss"
+medium,google/gemma-2-9b,21.205286776100692,21.084536701602385,-0.12075007449830721,True,"Gemma 2 Technical Report (Google, 2024), final loss"
+medium,google/gemma-2-27b,23.926167340782825,27.64203476784333,3.7158674270605054,True,"Gemma 2 Technical Report (Google, 2024), final loss"
+medium,google/gemma-7b,15.442818570272308,13.067087110466217,-2.375731459806092,True,"Gemma Technical Report (Google, 2024), final loss"
+medium,microsoft/phi-2,15.5342915582149,10.482826799188537,-5.051464759026363,True,"Phi-2 model card (Microsoft, 2023), training loss"
+medium,microsoft/phi-1_5,7.170966845799231,11.126159469374358,3.955192623575127,True,"Phi-1.5 paper (Microsoft, 2023), training loss"
+medium,microsoft/Phi-3-mini-4k-instruct,27.56217404359228,20.71060215645582,-6.851571887136458,True,"Phi-3 Technical Report (Microsoft, 2024), training loss"
+medium,meta-llama/Meta-Llama-3-70B,26.705350171613343,27.54277823817082,0.8374280665574751,True,"LLaMA 3 Technical Report (Meta, 2024), training loss at convergence"
+medium,meta-llama/Llama-2-13b-hf,11.065185981273997,28.101355530682934,17.03616954940894,True,"LLaMA 2 paper (Touvron et al., 2023), training loss"
+medium,meta-llama/Llama-2-70b-hf,18.372598605703004,,,False,"LLaMA 2 paper (Touvron et al., 2023), training loss"
+medium,mistralai/Mistral-7B-v0.1,14.575358924083137,21.474532457603416,6.89917353352028,True,"Mistral 7B technical report (Mistral AI, 2023), validation loss"
+medium,mistralai/Mistral-7B-Instruct-v0.2,18.50789159273764,21.24320700650609,2.7353154137684506,True,"Mistral 7B model card (Mistral AI, 2024)"
+medium,mistralai/Mixtral-8x7B-v0.1,19.665108918316083,27.79421542578857,8.129106507472486,True,"Mixtral technical report (Mistral AI, 2023), validation loss"
+medium,Qwen/Qwen2.5-32B,38.00796730514634,27.139113340544636,-10.868853964601701,True,"Qwen2.5 Technical Report (Alibaba, 2024), validation loss"
+medium,Qwen/Qwen2.5-72B,38.441143572535815,27.12364275956644,-11.317500812969374,True,"Qwen2.5 Technical Report (Alibaba, 2024), validation loss"
+medium,Qwen/Qwen2-57B-A14B,25.0338731324107,27.602473846713767,2.5686007143030665,True,"Qwen2 Technical Report (Alibaba, 2024), validation loss"
+medium,01-ai/Yi-6B,13.611617485376058,21.531223130468536,7.919605645092478,True,"Yi Technical Report (01.AI, 2023), training loss"
+medium,01-ai/Yi-34B,22.373127018936653,27.697500493623554,5.324373474686901,True,"Yi Technical Report (01.AI, 2023), training loss"
+medium,tiiuae/falcon-7b,5.17344472031948,11.279815017488184,6.106370297168704,True,"Falcon technical report (TII, 2023), validation loss"
+medium,tiiuae/falcon-40b,11.40130446230009,21.661241543590652,10.259937081290563,True,"Falcon technical report (TII, 2023), validation loss"
+medium,google/gemma-1.1-2b-it,8.053373854341979,11.058282007178763,3.0049081528367836,True,"Gemma Technical Report (Google, 2024), final loss"
+medium,google/gemma-1.1-7b-it,17.693584228972615,21.291107439668743,3.597523210696128,True,"Gemma Technical Report (Google, 2024), final loss"
+medium,facebook/opt-1.3b,5.276689334204645,9.167085725187944,3.890396390983299,True,"OPT paper (Zhang et al., 2022), Pile validation loss"
+medium,deepseek-ai/deepseek-llm-7b-base,8.227098434870664,21.847959545204148,13.620861110333484,True,"DeepSeek LLM Technical Report (DeepSeek-AI, 2023), validation loss"
+medium,microsoft/Phi-3-small-8k-instruct,32.34201367038736,20.42943511958552,-11.91257855080184,True,"Phi-3 Technical Report (Microsoft, 2024), training loss"
+medium,microsoft/Phi-3-medium-4k-instruct,33.09765943937642,27.314481478607842,-5.78317796076858,True,"Phi-3 Technical Report (Microsoft, 2024), training loss"
+medium,01-ai/Yi-1.5-34B,25.64649419429311,27.58059452307511,1.9341003287820016,True,Yi-1.5 report
+medium,01-ai/Yi-1.5-34B-32K,26.727912908508134,27.54197242613886,0.8140595176307244,True,Yi-1.5 report
+medium,01-ai/Yi-1.5-34B-Chat,33.35799367075618,27.305183827487145,-6.052809843269035,True,Yi-1.5 report
+medium,01-ai/Yi-1.5-34B-Chat-16K,29.403554842710225,27.446413785631638,-1.9571410570785872,True,Yi-1.5 report
+medium,01-ai/Yi-34B-200K,20.01347533597433,27.781773768015068,7.768298432040737,True,Yi technical report
+medium,01-ai/Yi-34B-Chat,24.226662652803373,27.63130279241403,3.404640139610656,True,Yi technical report
+medium,01-ai/Yi-6B-200K,11.99609829883284,21.626253670853433,9.630155372020594,True,Yi technical report
+medium,01-ai/Yi-6B-Chat,14.11765000523676,21.501456511653203,7.383806506416443,True,Yi technical report
+medium,EleutherAI/gpt-neox-20b,6.1165221524743325,28.27809352456864,22.161571372094308,True,GPT-NeoX paper
+medium,Qwen/Qwen2-0.5B-Instruct,6.586780633287707,7.224121473565234,0.6373408402775276,True,Qwen2 report
+medium,Qwen/Qwen2-1.5B-Instruct,14.141936815181689,10.445452935561454,-3.696483879620235,True,Qwen2 report
+medium,Qwen/Qwen2-57B-A14B-Instruct,33.015868823547095,27.317402572030325,-5.69846625151677,True,Qwen2 MoE report
+medium,Qwen/Qwen2-7B-Instruct,27.93668778218485,20.68857193653861,-7.24811584564624,True,Qwen2 report
+medium,Qwen/Qwen2.5-0.5B-Instruct,10.107543850719257,6.409414763838648,-3.6981290868806083,True,Qwen2.5 report
+medium,Qwen/Qwen2.5-1.5B-Instruct,18.430509141644382,10.260040831232422,-8.17046831041196,True,Qwen2.5 report
+medium,Qwen/Qwen2.5-14B-Instruct,41.30945747711163,27.021202977260167,-14.288254499851462,True,Qwen2.5 report
+medium,Qwen/Qwen2.5-14B-Instruct-1M,41.559026792386994,27.0122897874289,-14.546737004958093,True,Qwen2.5 report
+medium,Qwen/Qwen2.5-32B-Instruct,46.59714569921449,26.832356969327915,-19.764788729886572,True,Qwen2.5 report
+medium,Qwen/Qwen2.5-72B-Instruct,47.98045991216864,26.782952890293842,-21.1975070218748,True,Qwen2.5 report
+medium,Qwen/Qwen2.5-7B-Instruct,35.200108659947965,20.261311884905485,-14.93879677504248,True,Qwen2.5 report
+medium,Qwen/Qwen2.5-7B-Instruct-1M,32.76394723937119,20.40461549788059,-12.3593317414906,True,Qwen2.5 report
+medium,bigscience/bloom-7b1,3.795510241848182,11.385809977370592,7.590299735522409,True,BLOOM paper
+medium,google/gemma-2-27b-it,36.17428251510342,27.204602083046165,-8.969680432057256,True,Gemma2 report
+medium,google/gemma-2-2b-it,17.046939294966545,10.366469280976872,-6.680470013989673,True,Gemma2 report
+medium,google/gemma-2-2b-jpn-it,17.11540570593849,10.36120263397903,-6.754203071959459,True,Gemma2 report
+medium,google/gemma-2-9b-it,32.07276025267082,20.445273555921787,-11.627486696749031,True,Gemma2 report
+medium,google/gemma-7b-it,13.067087110466217,15.442818570272308,2.375731459806092,True,Gemma report
+medium,meta-llama/Meta-Llama-3-70B-Instruct,36.37222412927012,27.197532739683076,-9.174691389587046,True,Llama3 technical report
+medium,meta-llama/Meta-Llama-3-8B-Instruct,23.908735693936837,27.642657326659258,3.7339216327224207,True,Llama3 technical report
+medium,microsoft/phi-1,5.574318195377169,11.2489785963299,5.674660400952731,True,Phi-1.5 paper
+medium,tiiuae/falcon-40b-instruct,10.484506782098748,21.871659066343724,11.387152284244976,True,Falcon technical report
+medium,tiiuae/falcon-7b-instruct,5.1165739086852,11.284189695306205,6.167615786621005,True,Falcon technical report

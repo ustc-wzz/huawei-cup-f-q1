@@ -1,0 +1,14 @@
+{
+  "json_files": 1958,
+  "corrupt_files": 4,
+  "directories": 1863,
+  "directories_without_valid": 3,
+  "corrupt_directories_with_fallback": 1,
+  "models": 1860,
+  "complete": 1856,
+  "matched": 1012,
+  "matching_within_1e_6": 967,
+  "median_abs_difference": 0.0,
+  "p95_abs_difference": 3.552713678800501e-15,
+  "note": "latest valid evaluations may differ from C1 snapshot; scores are not silently replaced"
+}

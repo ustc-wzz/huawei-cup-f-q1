@@ -1,0 +1,9 @@
+source_class,Year,n,mean_score,matched,max_abs_difference
+historical_noncomparable,2019,1,5.0,0,
+historical_noncomparable,2020,1,50.0,0,
+historical_noncomparable,2021,2,3.5,0,
+historical_noncomparable,2022,7,16.0,0,
+historical_noncomparable,2023,13,12.923076923076923,0,
+historical_noncomparable,2024,2,5.5,0,
+same_leaderboard,2024,2671,21.132407338075627,1698,7.69728097110788
+same_leaderboard,2025,1902,22.7833596214511,808,8.048009214120384

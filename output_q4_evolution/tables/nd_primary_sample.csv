@@ -1,0 +1,155 @@
+Model,#Params (B),Submission Date,Hub License,Type,Average ⬆️,IFEval,BBH,MATH Lvl 5,GPQA,MUSR,MMLU-PRO,date,N,license,S,type,org,key,exclusion,month,status,candidates,epoch_model,epoch_row,publication_date,D,C,N_epoch,epoch_org,base_model,dataset_notes,compute_notes,confidence,parameter_notes,source,is_moe,training_from_scratch,eligible_nd,lag_days,N_leaderboard,t,lnN,lnD
+google/gemma-7b,8.538,2024-06-08,gemma,🟢 pretrained,15.442818570272308,26.593217108383534,21.11609932329174,7.401812688821751,4.921700223713646,10.979947916666667,21.644134160756497,2024-06-08,8.538074112,gemma,15.442818570272303,pretrained,google,gemma7b,,2024-06-01,accepted,1,Gemma 7B,1474.0,2024-02-21,6000.0,3.07e+23,8.538074112,Google DeepMind,,"""Gemma 2B and 7B are trained on 2T and 6T tokens respectively of primarily-English data from web documents, mathematics, and code.""
+Not explicitly stated that this doesn't involve multiple epochs, but I expect it does not.","6ND aproximation 6*8.54B*6T = 3.07e23
+""Gemma 2B and 7B are trained on 2T and 6T tokens respectively of primarily-English data from web documents, mathematics, and code.""
+
+As confirmation: ""We estimate the carbon emissions from pretraining the Gemma models to be ∼ 131 𝑡𝐶𝑂2𝑒𝑞. ""
+
+U.S. avg CO2 per kWh is ~0.87lbs 
+131 tCO2 * 2000 lb/t * (1 kWh/0.87lb) = 3.01e5 kWh
+
+Per SemiAnalysis TPU v5e uses ~ 5x less power than H100, so ~140 W TDP
+3.01e5 kWh * 1000 W/kW * 1 TPUv5e/140 W  = 2.15e6 TPUv5e-hours
+
+In bf16 precision, TPUv5e has peak performance of 197 TF/s, so:
+2.15e6 * 3600 * 197e12 * 0.3 = 4.57e23",Confident,"Table 2, sum of embedding and non-embedding parameters",Gemma: Open Models Based on Gemini Research and Technology,False,True,True,108,8.538,1.1389459274469542,2.144535468551084,8.699514748210191
+EleutherAI/gpt-neox-20b,20.739,2024-06-09,apache-2.0,🟢 pretrained,6.1165221524743325,25.86880587951081,4.929114201526899,1.3595166163141994,0.0,2.816666666666666,1.725029550827422,2024-06-09,20.0,apache-2.0,6.1165221524743325,pretrained,eleutherai,gptneox20b,,2024-06-01,accepted,1,GPT-NeoX-20B,2304.0,2022-02-09,341.173367965,9.31627008e+22,20.0,EleutherAI,,"""In aggregate, the Pile consists of over 825GiB of raw text data""
+
+Figure 4",Trained for 3 months on 96 A100s (according to correspondence with author). Let's say 0.4 utilization rate.,Confident,,GPT-NeoX-20B: An Open-Source Autoregressive Language Model,False,True,True,851,20.739,-0.892539356605065,2.995732273553991,5.832390758541255
+EleutherAI/pythia-160m,0.213,2024-06-09,apache-2.0,🟢 pretrained,5.730394616916023,18.155161637787735,2.198832279508135,0.906344410876133,1.1185682326621946,10.675520833333332,1.3279403073286051,2024-06-09,0.16,apache-2.0,5.730394616916023,pretrained,eleutherai,pythia160m,,2024-06-01,accepted,1,Pythia-160m,1993.0,2023-04-03,299.892736,2.87900000001e+20,0.16,"EleutherAI,Booz Allen Hamilton, McLean,University of Cambridge,Indraprastha Institute of Information Technology
+Delhi,Stability AI,datasaur.ai,University of Amsterdam",,"""We train all models for 299,892,736,000 ≈ 300B tokens""","https://www.wolframalpha.com/input?i=6+FLOP+*+160+million+*+299892736000
+
+Table 5 gives confirmation:
+1030 GPU-hours * 3600 sec/hr * 3.12e14 FLOP/sec * 0.3 (utilization assumption) = 3.5e20",Confident,See Table 1 for non-embedding parameters,Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling,False,True,True,433,0.213,0.2518822724161533,-1.8325814637483102,5.703424864054485
+EleutherAI/pythia-410m,0.506,2024-06-09,apache-2.0,🟢 pretrained,5.227072311484412,21.954525104500505,2.7154281203357473,0.9818731117824772,1.230425055928408,3.0598958333333326,1.4202866430260035,2024-06-09,0.41,apache-2.0,5.227072311484412,pretrained,eleutherai,pythia410m,,2024-06-01,accepted,1,Pythia-410m,1997.0,2023-04-03,299.892736,7.37700000001e+20,0.41,"EleutherAI,Booz Allen Hamilton, McLean,University of Cambridge,Indraprastha Institute of Information Technology
+Delhi,Stability AI,datasaur.ai,University of Amsterdam",,"""We train all models for 299,892,736,000 ≈ 300B tokens""",https://www.wolframalpha.com/input?i=6+FLOP+*+410+million+*+299892736000,Confident,See Table 1 for non-embedding parameters,Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling,False,True,True,433,0.506,0.2518822724161533,-0.8915981192837836,5.703424864054485
+Qwen/Qwen2-1.5B,1.544,2024-06-09,apache-2.0,🟢 pretrained,10.445452935561454,21.132705665412217,11.781833653483533,7.02416918429003,1.9015659955257265,3.5932291666666667,17.239213947990542,2024-06-09,1.5,apache-2.0,10.445452935561454,pretrained,qwen,qwen21.5b,,2024-06-01,accepted,1,Qwen2-1.5B,1204.0,2024-06-07,7000.0,6.3e+22,1.5,Alibaba,,"""All models were pre-trained on a high-quality, large-scale dataset comprising over 7 trillion tokens, covering a wide range of domains and languages.""",6 FLOP / parameter / token * 1.5 * 10^9  parameters * 7 * 10^12 tokens = 6.3e+22 FLOP,Confident,1.5B,Hello Qwen2,False,True,True,2,1.544,1.431895961670089,0.4054651081081644,8.85366542803745
+Qwen/Qwen2-7B,7.616,2024-06-09,apache-2.0,🟢 pretrained,23.9251621404824,31.48667757106699,34.711136202753416,20.39274924471299,7.270693512304249,14.322916666666666,35.366799645390074,2024-06-09,7.0,apache-2.0,23.9251621404824,pretrained,qwen,qwen27b,,2024-06-01,accepted,1,Qwen2-7B,1202.0,2024-06-07,7000.0,2.9400000000001e+23,7.0,Alibaba,,"""All models were pre-trained on a high-quality, large-scale dataset comprising over 7 trillion tokens, covering a wide range of domains and languages.""","7 billion params, 7 trillion tokens
+
+6 FLOP * 7 billion * 7 trillion ~= 2.94e23 FLOP",Confident,7B parameters (table 1),Hello Qwen2,False,True,True,2,7.616,1.431895961670089,1.9459101490553132,8.85366542803745
+bigcode/starcoder2-15b,15.958,2024-06-09,bigcode-openrail-m,🟢 pretrained,12.539175421645837,27.802231412651764,20.373540752678547,5.966767371601208,3.1319910514541416,2.9283854166666674,15.032136524822691,2024-06-09,15.0,bigcode-openrail-m,12.539175421645837,pretrained,bigcode,starcoder215b,,2024-06-01,accepted,1,StarCoder 2 15B,1447.0,2024-02-29,913.23,3.87e+23,15.0,"Hugging Face,ServiceNow,NVIDIA,BigCode",,from Table 4,estimation is given in Table 6 ,Confident,15B,StarCoder 2 and The Stack v2: The Next Generation,False,True,True,101,15.958,1.160848733744011,2.70805020110221,6.816987765627211
+bigcode/starcoder2-3b,3.03,2024-06-09,bigcode-openrail-m,🟢 pretrained,6.549147626379535,20.370838264693234,8.909299421083569,1.5105740181268883,0.0,1.432291666666666,7.0718823877068555,2024-06-09,3.0,bigcode-openrail-m,6.549147626379535,pretrained,bigcode,starcoder23b,,2024-06-01,accepted,1,StarCoder 2 3B,1449.0,2024-02-29,622.09,5.94e+22,3.0,"Hugging Face,ServiceNow,NVIDIA,BigCode",,from Table 4,estimation is given in Table 6 ,Confident,3B,StarCoder 2 and The Stack v2: The Next Generation,False,True,True,101,3.03,1.160848733744011,1.0986122886681098,6.433084776805697
+bigcode/starcoder2-7b,7.174,2024-06-09,bigcode-openrail-m,🟢 pretrained,8.2934383764798,22.09193827932109,11.395110106503443,3.096676737160121,0.2237136465324418,5.8166666666666655,7.1365248226950335,2024-06-09,7.0,bigcode-openrail-m,8.293438376479799,pretrained,bigcode,starcoder27b,,2024-06-01,accepted,1,StarCoder 2 7B,1448.0,2024-02-29,658.58,1.55e+23,7.0,"Hugging Face,ServiceNow,NVIDIA,BigCode",,from Table 4,estimation is given in Table 6 ,Confident,7B,StarCoder 2 and The Stack v2: The Next Generation,False,True,True,101,7.174,1.160848733744011,1.9459101490553132,6.490086002035066
+microsoft/phi-1_5,1.418,2024-06-09,mit,🟢 pretrained,7.170966845799231,20.32839532440591,7.468938770070243,1.812688821752266,2.348993288590602,3.385416666666666,7.681368203309693,2024-06-09,1.3,mit,7.170966845799231,pretrained,microsoft,phi1.5,,2024-06-01,accepted,1,Phi-1.5,1773.0,2023-09-11,30.0,1.17e+21,1.3,Microsoft,,"""In a nutshell we build phi-1.5, a 1.3 billion parameter model trained on a dataset of 30 billion tokens""","150B training tokens
+
+150B*1.3B*6 = 1.17e21
+
+also, took 1.5k GPU-hours with A100s, per Table 1
+
+1500 * 312 trillion * 3600 * 0.3 (utilization assumption) = 5.05e20
+
+so utilization was likely ~60%. may be high due to the relatively small cluster.
+",Confident,,Textbooks Are All You Need II: phi-1.5 technical report,False,True,True,272,1.418,0.6926762491444216,0.26236426446749106,3.4011973816621555
+microsoft/phi-2,2.78,2024-06-09,mit,🟢 pretrained,15.5342915582149,27.3875539125077,28.038519293439304,2.9456193353474323,2.9082774049216997,13.83697916666666,18.088800236406616,2024-06-09,2.7,mit,15.534291558214901,pretrained,microsoft,phi2,,2024-06-01,accepted,1,Phi-2,1594.0,2023-12-12,250.0,2.27e+22,2.7,Microsoft,,"""trained on 1.4T tokens from multiple passes on a mixture of Synthetic and Web datasets for NLP and coding""
+From Huggingface Hub: ""Dataset size: 250B tokens, combination of NLP synthetic data created by AOAI GPT-3.5 and filtered web data from Falcon RefinedWeb and SlimPajama, which was assessed by AOAI GPT-4.""","2.7B params, trained on 1.4T tokens
+
+2.7 billion * 1.4 trillion * 6 = 2.27e22
+
+96*14 A100-days
+
+14 * 96 * 312 trillion * 24 * 3600 * 0.3 = 1.09e22",Confident,2.7B,Phi-2: The surprising power of small language models,False,True,True,180,2.78,0.944558521560575,0.9932517730102834,5.521460917862246
+tiiuae/falcon-40b,40.0,2024-06-09,apache-2.0,🟢 pretrained,11.40130446230009,24.964538535530178,16.583304730312175,1.812688821752266,3.1319910514541416,5.193229166666668,16.722074468085104,2024-06-09,40.0,apache-2.0,11.40130446230009,pretrained,tiiuae,falcon40b,,2024-06-01,accepted,1,Falcon-40B,2019.0,2023-03-15,1000.0,2.4e+23,40.0,Technology Innovation Institute,,1000B tokens ~= 750B words,"C = 6ND = 6 * 40B * 1000B = 2.4e+23 FLOP (assuming one epoch)
+
+Table 1 from https://arxiv.org/pdf/2311.16867 Falcon paper
+
+2,800 petaflop-days * 1e15 * 24 * 3600 = 2.4192e+23 FLOPs",Confident,Model comes in 7B and 40B variants.,Abu Dhabi-based Technology Innovation Institute Introduces Falcon LLM: Foundational Large Language Model (LLM) outperforms GPT-3 with 40 Billion Parameters,False,True,True,452,40.0,0.1998631074606434,3.6888794541139363,6.907755278982137
+tiiuae/falcon-7b,7.0,2024-06-09,apache-2.0,🟢 pretrained,5.17344472031948,18.205140139274903,5.963936911876051,0.9818731117824772,0.0,4.497135416666667,1.392582742316784,2024-06-09,7.0,apache-2.0,5.1734447203194796,pretrained,tiiuae,falcon7b,,2024-06-01,accepted,1,Falcon-7B,1963.0,2023-04-24,1500.0,6.3e+22,7.0,Technology Innovation Institute,,"1125000000000.0 words  assuming 0.75 words per token (1.5T tokens)
+""Falcon-7B is a 7B parameters causal decoder-only model built by TII and trained on 1,500B tokens of RefinedWeb enhanced with curated corpora. It is made available under the Apache 2.0 license.""","6ND = 6 * 7B * 1.5T = 6.3e22
+""Falcon-7B is a 7B parameters causal decoder-only model built by TII and trained on 1,500B tokens of RefinedWeb enhanced with curated corpora. It is made available under the Apache 2.0 license.""
+
+Table 1 from https://arxiv.org/pdf/2311.16867 Falcon paper
+
+730 petaflop-days * 1e15 * 24 * 3600 = 6.3072e+22 FLOPs",Confident,7B,Falcon-7B ,False,True,True,412,7.0,0.30937713894592744,1.9459101490553132,7.313220387090301
+01-ai/Yi-34B,34.389,2024-06-12,apache-2.0,🟢 pretrained,22.373127018936653,30.45751938190668,35.542431259008794,5.13595166163142,15.548098434004473,9.648437500000004,37.90632387706855,2024-06-12,34.0,apache-2.0,22.373127018936653,pretrained,01-ai,yi34b,,2024-06-01,accepted,1,Yi-34B,1689.0,2023-11-02,3100.0,6.1e+23,34.0,01.AI,,"""language models pretrained from scratch on 3.1T highly-engineered large amount of data, and finetuned on a small but meticulously polished alignment data.""","""The dataset we use contains Chinese & English only. We used approximately 3T tokens"" sounds like this means it was trained on 3T tokens, not necessarily that the dataset contains 3T tokens?
+
+If so, 34b * 3T * 6 = 6.1e23",Confident,34b,Yi: Open Foundation Models by 01.AI,False,True,True,223,34.389,0.8350444900752909,3.5263605246161616,8.039157390473237
+EleutherAI/gpt-neo-2.7B,2.718,2024-06-12,mit,🟢 pretrained,6.4310478009874465,25.896288514474925,4.178602667081014,1.0574018126888218,2.1252796420581683,3.5205729166666675,1.8081412529550824,2024-06-12,2.7,mit,6.4310478009874465,pretrained,eleutherai,gptneo2.7b,,2024-06-01,accepted,1,GPT-Neo-2.7B,2477.0,2021-03-21,420.0,7.9e+21,2.7,EleutherAI,,"""In aggregate, the Pile consists of over 825GiB of raw text data""
+
+(see GPT-NeoX)
+
+""This model was trained for 420 billion tokens over 400,000 steps. It was trained as a masked autoregressive language model, using cross-entropy loss.""
+
+https://huggingface.co/EleutherAI/gpt-neo-2.7B","source: https://www.aitracker.org/
+
+6 FLOP / token / parameter * 2.7 * 10^9 parameters * 420000000000 tokens [see dataset size notes] = 6.804e+21 FLOP",Confident,"source: https://www.eleuther.ai/projects/gpt-neo/
+
+Note: Directory of LLMs (https://docs.google.com/spreadsheets/d/1gc6yse74XCwBx028HV_cvdxwXkmXejVjkO-Mz2uwE0k/edit#gid=0) gives a somewhat lower estimate (2e9)",GPT-Neo: Large Scale Autoregressive Language Modeling with Mesh-Tensorflow,False,True,True,1179,2.718,-1.782340862422998,0.9932517730102834,6.040254711277414
+EleutherAI/pythia-12b,12.0,2024-06-12,apache-2.0,🟢 pretrained,6.059841492942702,24.71475684517081,4.987531038290507,1.6616314199395772,0.0,3.7872395833333345,1.2078900709219855,2024-06-12,12.0,apache-2.0,6.059841492942702,pretrained,eleutherai,pythia12b,,2024-06-01,accepted,1,Pythia-12b,1990.0,2023-04-03,299.892736,2.1590000000001e+22,12.0,"EleutherAI,Booz Allen Hamilton, McLean,University of Cambridge,Indraprastha Institute of Information Technology
+Delhi,Stability AI,datasaur.ai,University of Amsterdam",,"""We train all models for 299,892,736,000 ≈ 300B tokens""",https://www.wolframalpha.com/input?i=6+FLOP+*+12+billion+*+299892736000,Confident,See Table 1 for non-embedding parameters,Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling,False,True,True,436,12.0,0.2518822724161533,2.4849066497880004,5.703424864054485
+EleutherAI/pythia-2.8b,2.909,2024-06-12,apache-2.0,🟢 pretrained,5.554946281603011,21.73222604910526,5.077786161905462,1.3595166163141994,0.0,3.63828125,1.521867612293143,2024-06-12,2.8,apache-2.0,5.554946281603011,pretrained,eleutherai,pythia2.8b,,2024-06-01,accepted,1,Pythia-2.8b,1991.0,2023-04-03,299.892736,5.038000000001e+21,2.8,"EleutherAI,Booz Allen Hamilton, McLean,University of Cambridge,Indraprastha Institute of Information Technology
+Delhi,Stability AI,datasaur.ai,University of Amsterdam",,"""We train all models for 299,892,736,000 ≈ 300B tokens""",https://www.wolframalpha.com/input?i=6+FLOP+*+2.8+billion+*+299892736000,Confident,See Table 1 for non-embedding parameters,Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling,False,True,True,436,2.909,0.2518822724161533,1.0296194171811581,5.703424864054485
+EleutherAI/pythia-6.9b,6.9,2024-06-12,apache-2.0,🟢 pretrained,5.966546774741993,22.811362739752745,5.88163197981621,1.4350453172205435,0.2237136465324418,3.81484375,1.632683215130022,2024-06-12,6.9,apache-2.0,5.966546774741993,pretrained,eleutherai,pythia6.9b,,2024-06-01,accepted,1,Pythia-6.9b,1992.0,2023-04-03,299.892736,1.2420000000001e+22,6.9,"EleutherAI,Booz Allen Hamilton, McLean,University of Cambridge,Indraprastha Institute of Information Technology
+Delhi,Stability AI,datasaur.ai,University of Amsterdam",,The Pile contains 300B tokens,https://www.wolframalpha.com/input?i=6+FLOP+*+6.9+billion+*+299892736000,Confident,See Table 1 for non-embedding parameters,Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling,False,True,True,436,6.9,0.2518822724161533,1.9315214116032138,5.703424864054485
+google/gemma-2b,2.506,2024-06-12,gemma,🟢 pretrained,7.321959810488082,20.375825033134305,8.246263426638125,3.0211480362537766,0.6711409395973182,7.555989583333336,4.061391843971631,2024-06-12,2.50643456,gemma,7.321959810488082,pretrained,google,gemma2b,,2024-06-01,accepted,1,Gemma 2B,1478.0,2024-02-21,3000.0,4.5115822e+22,2.50643456,Google DeepMind,,"""Gemma 2B and 7B are trained on 3T and 6T tokens respectively of primarily-English data from web documents, mathematics, and code.""
+Not explicitly stated that this doesn't involve multiple epochs, but I expect it does not.","6ND = 6*2506434560.00 parameters * 3*10^12 training tokens = 4.5115822e+22
+
+(assuming 1 epoch)",Confident,"Table 2, sum of embedding and non-embedding parameters:
+
+2B 524,550,144 + 1,981,884,416 = 2506434560",Gemma: Open Models Based on Gemini Research and Technology,False,True,True,112,2.506,1.1389459274469542,0.9188612492617074,8.006367567650246
+meta-llama/Meta-Llama-3-70B,70.554,2024-06-12,llama3,🟢 pretrained,26.705350171613343,16.031906452656727,48.709812647505885,18.580060422960727,19.686800894854585,16.011197916666664,41.21232269503546,2024-06-12,70.0,llama3,26.705350171613343,pretrained,meta-llama,llama370b,,2024-06-01,accepted,1,Llama 3-70B,1340.0,2024-04-18,15000.0,7.861e+24,70.0,Meta AI,,,"Arithmetic calculation:
+6 * 15T tokens * 70B parameters = 6.3e24
+
+GPU calculation:
+https://huggingface.co/meta-llama/Meta-Llama-3-70B indicates training took 6.4M GPU-hours
+We also know their larger scale training runs for 405B were getting between 0.38-0.41 MFU. Presumably the 70B model gets at least 0.43 utilization (405B has to be split across two nodes, while 70B should fit on one).
+990 TFLOPS per GPU * 6.4 million GPU hours * 3600s * 0.43 = 9.808e24
+
+Geometric mean: sqrt(6.3e24 * 9.808e24) = 7.861e24",Confident,,Introducing Meta Llama 3: The most capable openly available LLM to date,False,True,True,55,70.554,1.2950034223134839,4.248495242049359,9.615805480084347
+meta-llama/Meta-Llama-3-8B,8.03,2024-06-12,llama3,🟢 pretrained,13.626857071686077,14.550614591506092,24.50076379676797,4.531722054380665,7.38255033557047,6.242447916666666,24.553043735224584,2024-06-12,8.0,llama3,13.626857071686075,pretrained,meta-llama,llama38b,,2024-06-01,accepted,1,Llama 3-8B,1341.0,2024-04-18,15000.0,7.2e+23,8.0,Meta AI,,,"Counting operations
+15000000000000 tokens*8000000000.00 parameters*6 FLOP / token / parameter = 7.2×10^23 FLOP
+
+GPU calculation
+400 TFLOPS per GPU * 1.3M GPU hours * 3600s=1.872×10^24 
+(it is not confident that 400 TFLOPs applies to the Llama 3-8B training run)",Confident,,Introducing Meta Llama 3: The most capable openly available LLM to date,False,True,True,55,8.03,1.2950034223134839,2.0794415416798357,9.615805480084347
+bigscience/bloom-3b,3.003,2024-06-13,bigscience-bloom-rail-1.0,🟢 pretrained,4.387894128649155,12.709610500139627,3.4200982840077354,0.8308157099697886,0.0,7.891145833333333,1.4756944444444438,2024-06-13,3.0,bigscience-bloom-rail-1.0,4.387894128649154,pretrained,bigscience,bloom3b,,2024-06-01,accepted,1,BLOOM-3B,2210.0,2022-07-05,354.0,,3.0,"Hugging Face,BigScience",,"Table 3.5 https://arxiv.org/pdf/2211.05100
+
+341B (pretrain) + 13B (finetune) = 354B  tokens total ",,Confident,,BigScience Language Open-science Open-access Multilingual (BLOOM) Language Model,False,True,True,709,3.003,-0.4928131416837782,1.0986122886681098,5.869296913133774
+bigscience/bloom-560m,0.559,2024-06-13,bigscience-bloom-rail-1.0,🟢 pretrained,3.50724359916236,6.202431769926019,2.885363608028119,0.3776435045317221,1.5659955257270708,8.185416666666667,1.8266105200945617,2024-06-13,0.56,bigscience-bloom-rail-1.0,3.50724359916236,pretrained,bigscience,bloom560m,,2024-06-01,accepted,1,BLOOM-560M,2208.0,2022-07-05,354.0,,0.56,"Hugging Face,BigScience",,"Table 3.5 https://arxiv.org/pdf/2211.05100
+
+341B (pretrain) + 13B (finetune) = 354B  tokens total ",,Confident,,BigScience Language Open-science Open-access Multilingual (BLOOM) Language Model,False,True,True,709,0.559,-0.4928131416837782,-0.579818495252942,5.869296913133774
+google/gemma-2-9b,9.0,2024-07-11,gemma,🟢 pretrained,21.205286776100692,20.398320899657357,34.09681853589784,13.444108761329304,10.514541387024613,14.29765625,34.48027482269504,2024-07-11,9.0,gemma,21.205286776100692,pretrained,google,gemma29b,,2024-07-01,accepted,1,Gemma 2 9B,1163.0,2024-06-24,8000.0,4.32e+23,9.0,Google DeepMind,,"""the 9B model on 8 trillion tokens""","""For the 9B model, we train on an 8x16x32 configuration of TPUv4, totaling 4096 chips""
+
+6ND = 6 FLOP / token / parameter * 9000000000 parameters * 8000000000000 tokens = 4.32e+23 FLOP",Confident,,"Gemma 2 offers best-in-class performance, runs at incredible speed across different hardware and easily integrates with other AI tools.",False,True,True,17,9.0,1.4784394250513346,2.1972245773362196,8.987196820661973
+meta-llama/Llama-3.1-70B,70.554,2024-07-23,llama3.1,🟢 pretrained,26.200215843375947,16.843752354862875,46.39941295581887,18.42900302114804,18.34451901565996,16.581770833333337,40.602836879432616,2024-07-23,70.0,llama3.1,26.200215843375947,pretrained,meta-llama,llama3.170b,,2024-07-01,accepted,1,Llama 3.1-70B,1105.0,2024-07-23,15000.0,7.929e+24,70.0,Meta AI,,,"Huggingface page says 3.1-70B used 7.0M H100 hours and trained over 15T tokens. https://huggingface.co/meta-llama/Llama-3.1-70B
+The paper also says that 3.1-405B got MFU of between 38-43%; presumably 70B was around the same or a bit higher. I'll assume utilization of 40%
+
+6ND:
+6 * 15T * 70B = 6.3e24 FLOPs
+
+Hardware:
+7M * 9.9e14 * 3600 * 0.4 = 9.98e24 FLOPs
+
+Geometric mean: sqrt(6.3e24 * 9.98e24) = 7.929e24
+
+Note that Llama 3-70B also said it used 15T tokens, but only 6.4M H100 hours. This suggests 3.1 might have used a bit more than 15T tokens.
+
+Training compute upper bound: 7M H100-hours * 989 TFLOPS * 50% utilization = 1.25e25 FLOP",Confident,70B,The Llama 3 Herd of Models,False,True,True,0,70.554,1.5578370978781657,4.248495242049359,9.615805480084347
+google/gemma-2-2b,2.614,2024-07-31,gemma,🟢 pretrained,10.129463155055184,19.931226922343825,11.755807532236112,2.8700906344410875,1.6778523489932915,11.43046875,13.111332742316788,2024-07-31,2.6,gemma,10.129463155055184,pretrained,google,gemma22b,,2024-07-01,accepted,1,Gemma 2 2B,1165.0,2024-06-24,2000.0,3.12e+22,2.6,Google DeepMind,,"""the 2.6B on 2 trillion tokens""","""For the 2.6B model, we train on a 2x16x16 configuration of TPUv5e, totaling 512 chips""
+
+6ND = 6 FLOP / token / parameter * 2600000000 parameters * 2000000000000 tokens = 3.12e+22 FLOP",Confident,,"Gemma 2 offers best-in-class performance, runs at incredible speed across different hardware and easily integrates with other AI tools.",False,True,True,37,2.614,1.4784394250513346,0.9555114450274363,7.600902459542082
+stabilityai/stablelm-3b-4e1t,2.795,2024-08-10,cc-by-sa-4.0,🟢 pretrained,7.3261912916856,22.031986240951785,9.01307034954628,1.0574018126888218,0.0,4.422656249999999,7.432033096926712,2024-08-10,2.7954432,cc-by-sa-4.0,7.3261912916856,pretrained,stabilityai,stablelm3b4e1t,,2024-08-01,accepted,1,StableLM-3B-4E1T,1749.0,2023-09-29,1000.0,6.21e+22,2.7954432,Stability AI,,Trained on 1T tokens (~750B words),"""StableLM-3B-4E1T was trained on the Stability AI cluster across 256 NVIDIA A100 40GB GPUs (AWS P4d instances). Training began on August 23, 2023, and took approximately 30 days to complete.""
+
+256 * 30 * 24* 3600 * 312 trillion * 0.3 utilization (assumption) = 6.21e22
+
+6ND = 6*2795443200*1000000000000*4 epochs = 6.7090637e+22",Confident,,,False,True,True,316,2.795,0.7419575633127995,1.027990662909335,6.907755278982137
+EleutherAI/gpt-j-6b,6.0,2024-08-19,apache-2.0,🟢 pretrained,6.570411768928537,25.221855787089368,4.912818068323685,1.3595166163141994,0.0,5.252083333333334,2.6761968085106376,2024-08-19,6.053381344,apache-2.0,6.570411768928537,pretrained,eleutherai,gptj6b,,2024-08-01,accepted,1,GPT-J-6B,2461.0,2021-05-01,400.0,1.5e+22,6.053381344,"EleutherAI,LAION",,"""The model was trained on 400B tokens from The Pile dataset with 800GB text.""
+
+1 GB ~ 200M words",source: zero shot evaluation table in GitHub,Confident,source: model details table in GitHub,GPT-J-6B: 6B JAX-Based Transformer,False,True,True,1206,6.0,-1.6700889801505818,1.800617015751118,5.991464547107982
+google/gemma-2-27b,27.227,2024-08-24,gemma,🟢 pretrained,23.926167340782825,24.75221301701707,37.390737454186464,16.61631419939577,13.422818791946312,13.921093749999995,37.4538268321513,2024-08-24,27.0,gemma,23.926167340782822,pretrained,google,gemma227b,,2024-08-01,accepted,1,Gemma 2 27B,1164.0,2024-06-24,13000.0,2.106e+24,27.0,Google DeepMind,,"""We train Gemma 2 27B on 13 trillion tokens of primarily-English data""","""For the 27B model, we train on an 8x24x32 configuration of
+TPUv5p, totaling 6144 chips""
+
+trained on 13T tokens
+
+6ND = 6*27000000000*13000000000000=2.106e+24",Confident,,"Gemma 2 offers best-in-class performance, runs at incredible speed across different hardware and easily integrates with other AI tools.",False,True,True,61,27.227,1.4784394250513346,3.295836866004329,9.472704636443673
+Qwen/Qwen2.5-32B,32.764,2024-09-19,apache-2.0,🟢 pretrained,38.00796730514634,40.76649955451536,53.954752851332,35.64954682779456,21.58836689038031,22.69583333333333,53.39280437352246,2024-09-19,32.5,apache-2.0,38.00796730514634,pretrained,qwen,qwen2.532b,,2024-09-01,accepted,1,Qwen2.5-32B,938.0,2024-09-17,18000.0,3.51e+24,32.5,Alibaba,,"""In terms of Qwen2.5, the language models, all models are pretrained on our latest large-scale dataset, encompassing up to 18 trillion tokens""",6 FLOP / parameter / token * 32.5B parameters * 18 trillion tokens = 3.51 × 10^24 FLOP,Confident,32.5B,Qwen2.5: A Party of Foundation Models!,False,True,True,2,32.764,1.7111567419575633,3.481240089335692,9.798127036878302
+meta-llama/Llama-3.2-1B,1.24,2024-09-23,llama3.2,🟢 pretrained,4.195140014045501,14.7779004153424,4.366029656556756,1.2084592145015105,0.0,2.5578125000000003,2.2606382978723394,2024-09-23,1.23,llama3.2,4.195140014045501,pretrained,meta-llama,llama3.21b,,2024-09-01,accepted,1,Llama 3.2 1B,880.0,2024-09-24,9000.0,6.642e+22,1.23,Meta AI,,"""Llama 3.2 was pretrained on up to 9 trillion tokens of data from publicly available sources.""","6ND = 6*1230000000.00*9000000000000 = 6.642e+22
+
+370000 hours * 3600 s * 133800000000000 FLOPS/s* 0.3 = 5.346648e+22",Confident,https://huggingface.co/meta-llama/Llama-3.2-1B,"Llama 3.2: Revolutionizing edge AI and vision with open, customizable models",False,True,True,-1,1.24,1.730321697467488,0.20701416938432612,9.104979856318357
+meta-llama/Llama-3.2-3B,3.213,2024-09-27,llama3.2,🟢 pretrained,8.697822716562822,13.374069690643047,14.232664884364109,1.8882175226586104,2.348993288590602,3.81484375,16.528147163120565,2024-09-27,3.21,llama3.2,8.697822716562822,pretrained,meta-llama,llama3.23b,,2024-09-01,accepted,1,Llama 3.2 3B,881.0,2024-09-24,9000.0,1.7334e+23,3.21,Meta AI,,"""Llama 3.2 was pretrained on up to 9 trillion tokens of data from publicly available sources.""","6ND = 6*3210000000.00*9000000000000 = 1.7334e+23
+
+460000 hours * 3600 s * 133800000000000 FLOPS/s* 0.3 = 6.647184e+22",Confident,https://huggingface.co/meta-llama/Llama-3.2-1B,"Llama 3.2: Revolutionizing edge AI and vision with open, customizable models",False,True,True,3,3.213,1.730321697467488,1.1662709371419244,9.104979856318357
+Qwen/Qwen2-0.5B,0.494,2024-11-30,apache-2.0,🟢 pretrained,7.224121473565234,18.732186154957738,7.918512040903256,2.643504531722054,1.45413870246085,4.601041666666668,7.99534574468085,2024-11-30,0.5,apache-2.0,7.224121473565236,pretrained,qwen,qwen20.5b,,2024-11-01,accepted,1,Qwen2-0.5B,1205.0,2024-06-07,12000.0,3.6e+22,0.5,Alibaba,,Table 1,6 FLOP/parameter/token * 500000000 parameters * 12000000000000 tokens = 3.6e+22 FLOP,Confident,,Hello Qwen2,False,True,True,176,0.494,1.431895961670089,-0.6931471805599453,9.392661928770137
+EleutherAI/pythia-1b,1.079,2025-01-27,apache-2.0,🟢 pretrained,5.07026822083096,22.079415949680183,2.2939863995762866,0.906344410876133,0.8948545861297527,2.7343749999999996,1.512632978723403,2025-01-27,1.0,apache-2.0,5.07026822083096,pretrained,eleutherai,pythia1b,,2025-01-01,accepted,1,Pythia-1b,1994.0,2023-04-03,299.892736,1.799000000001e+21,1.0,"EleutherAI,Booz Allen Hamilton, McLean,University of Cambridge,Indraprastha Institute of Information Technology
+Delhi,Stability AI,datasaur.ai,University of Amsterdam",,"""We train all models for 299,892,736,000 ≈ 300B tokens""",https://www.wolframalpha.com/input?i=6+FLOP+*+1+billion+*+299892736000,Confident,See Table 1 for non-embedding parameters,Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling,False,True,True,665,1.079,0.2518822724161533,0.0,5.703424864054485
+EleutherAI/pythia-1.4b,1.515,2025-01-28,apache-2.0,🟢 pretrained,6.008531439497028,23.708094522533543,3.878989478987103,1.5105740181268883,1.5659955257270708,4.02265625,1.3648788416075646,2025-01-28,1.4,apache-2.0,6.008531439497028,pretrained,eleutherai,pythia1.4b,,2025-01-01,accepted,1,Pythia-1.4b,1995.0,2023-04-03,299.892736,2.5190000000001e+21,1.4,"EleutherAI,Booz Allen Hamilton, McLean,University of Cambridge,Indraprastha Institute of Information Technology
+Delhi,Stability AI,datasaur.ai,University of Amsterdam",,"""We train all models for 299,892,736,000 ≈ 300B tokens""",https://www.wolframalpha.com/input?i=6+FLOP+*+1.4+billion+*+299892736000,Confident,See Table 1 for non-embedding parameters,Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling,False,True,True,666,1.515,0.2518822724161533,0.3364722366212129,5.703424864054485

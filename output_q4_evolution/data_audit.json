@@ -1,0 +1,29 @@
+{
+  "c1_rows": 4576,
+  "c1_unique_screened": 2449,
+  "c1_duplicate_removed": 57,
+  "dates": [
+    "2024-06-08",
+    "2025-03-13"
+  ],
+  "types": {
+    "chat_finetuned": 1542,
+    "merge": 667,
+    "pretrained": 192,
+    "continued": 43,
+    "other": 5
+  },
+  "matched": 69,
+  "primary_nd": 35,
+  "nd_organizations": 10,
+  "nd_publication_range": [
+    "2021-03-21",
+    "2024-09-24"
+  ],
+  "c3_rows": 4599,
+  "c3_sources": {
+    "same_leaderboard": 4573,
+    "historical_noncomparable": 26
+  },
+  "score_rebuild_max_error": 1.4210854715202004e-14
+}

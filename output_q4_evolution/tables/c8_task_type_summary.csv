@@ -1,0 +1,16 @@
+type,task,count,mean,median
+chat_finetuned,leaderboard_musr_murder_mysteries,634,7.041009463722401,6.400000000000006
+chat_finetuned,leaderboard_musr_object_placements,634,11.616010695977915,9.179687499999998
+chat_finetuned,leaderboard_musr_team_allocation,634,8.066561514195584,3.3999999999999995
+continued,leaderboard_musr_murder_mysteries,19,4.505263157894738,2.400000000000002
+continued,leaderboard_musr_object_placements,19,8.948396381578945,6.738281249999998
+continued,leaderboard_musr_team_allocation,19,5.378947368421054,0.0
+merge,leaderboard_musr_murder_mysteries,257,11.623346303501947,12.00000000000001
+merge,leaderboard_musr_object_placements,257,16.859192607003887,16.992187499999996
+merge,leaderboard_musr_team_allocation,257,9.800778210116732,10.000000000000005
+other,leaderboard_musr_murder_mysteries,3,8.000000000000007,8.800000000000008
+other,leaderboard_musr_object_placements,3,16.66666666666666,16.992187499999996
+other,leaderboard_musr_team_allocation,3,6.733333333333334,0.0
+pretrained,leaderboard_musr_murder_mysteries,96,3.800000000000002,2.400000000000002
+pretrained,leaderboard_musr_object_placements,96,10.39021809895833,8.691406249999998
+pretrained,leaderboard_musr_team_allocation,96,7.177083333333335,4.9
