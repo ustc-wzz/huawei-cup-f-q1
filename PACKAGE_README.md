@@ -1,4 +1,4 @@
-# F题四问完整复现包 v0.9.2
+# F题四问完整复现包 v0.9.5
 
 完整解压ZIP后，Windows双击 `run_windows.bat`；macOS可运行 `run_macos.command`。也可以在任意工作目录执行 `python 完整包路径/run_all.py`。不要在压缩包预览窗口内直接运行。
 
@@ -6,7 +6,7 @@
 
 程序自动完成：检查Python和依赖 → 定位并校验原始附件 → 加载随包中文字体 → 读取完整缓存或从原始数据重建 → 顺序运行四问。A1/A2/A3原始压缩数据全部随包提供；无须创建signals_cache目录。缓存损坏或来源变化会自动重建，已有结果目录允许重复运行并更新输出。
 
-运行结果保存在四份notebook及 `output_q1/`、`output_q2_shared/`、`output_q3_resource/`、`output_q4_evolution/`。质量评分仍采用平方Pearson冗余度，β=0.25；本版只改运行和交付流程，不改变建模假设。
+运行结果保存在四份notebook及 `output_q1/`、`output_q2_shared/`、`output_q3_resource/`、`output_q4_evolution/`。论文图统一存放于根目录 `figures/`，含43组连续编号PNG/SVG；《四问结果分析与论文插图.docx》按四问执行步骤配有结果说明，并在Word中嵌入SVG矢量图和PNG兼容回退。质量评分仍采用平方Pearson冗余度，β=0.25；本版只改运行和交付流程，不改变建模假设。
 
 故障排查时可运行 `python run_all.py --prepare-only`，仅检查环境、附件、字体并准备缓存。`--start-at 2`、`--start-at 3`、`--start-at 4`可从失败问续跑，前序结果必须来自同一版输入；默认从第一问完整运行。
 
