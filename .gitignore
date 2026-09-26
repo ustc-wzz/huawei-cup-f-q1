@@ -181,6 +181,15 @@
 !/output_q2_paper/*.json
 !/output_q2_paper/*.md
 
+# v0.9.12 第一问指定章节精简副本、附录与可追溯编辑
+!/F题论文初稿_问题一5.8至5.10精简_20260926.docx
+!/Q1/simplify_paper_sections.py
+!/Q1/论文5.8至5.10精简正文.md
+!/Q1/论文问题一补充附录.md
+!/Q1/论文5.8至5.10精简核验.json
+!/output_q1/length_domain_calibrated22/tables/quality_only_model.csv
+!/output_q1/length_domain_calibrated22/tables/weight_sensitivity.csv
+
 # v0.9.13 第三问论文精简及可追溯编辑
 !/F题论文初稿_问题三精简_20260926.docx
 !/rewrite_q3_paper.py

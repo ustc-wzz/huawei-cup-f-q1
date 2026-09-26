@@ -1,0 +1,73 @@
+{
+  "version": "v0.9.12",
+  "source": "F题论文初稿_格式修复_202609261400(1).docx",
+  "source_sha256": "3b99c6e7948725fdd33e54cee6b3500f0e9aee0fe975d405bde5b5bdeafe9a19",
+  "output": "F题论文初稿_问题一5.8至5.10精简_20260926.docx",
+  "output_sha256": "f254e1f2dc01f76e38b63ea6ee8879e295edba9a8df91d9aaadbbdfc3a0857ff",
+  "sources": {
+    "output_q1/length_domain_calibrated22/tables/quality_increment.csv": "df33b5e54cca5c8030eae9a2803f3bfbfcf18aa143a2c9c02e9530c1f79a25b6",
+    "output_q1/length_domain_calibrated22/tables/quality_only_model.csv": "4aa8c03fa9ba51467b05cfd5715a4ebb04cf1c550d5edd9333a5c7a02104e252",
+    "output_q1/length_domain_calibrated22/tables/weight_sensitivity.csv": "04faccf736563d3ea1db2b98f0c7870536da546c4ba88ae8b8078b744740b7ab",
+    "output_q1/length_domain_calibrated22/tables/mixture_model_metrics_long.csv": "13058ff38d88c6622bf26a18cbf2c19eb3bf614175ffe0a5de04e1bdcaf6e34d",
+    "output_q1/length_domain_calibrated22/tables/optimal_mixture.csv": "a8e5dd6f45356aee3587b1be42a91fbf06d9e3e9791bb8c3635f446d69e8963f",
+    "output_q1/length_domain_calibrated22/tables/main_mixture_crosscheck.json": "d2e450d73c391796646258548ec80dd45cbb7a0b5e3ca15c4ca11abe08380c2c",
+    "output_q1/length_domain_calibrated22/tables/q1_outputs_for_q2_q3.json": "cef384757208acdbf91c680713a797483eb2cfcd97128cbc7a56a745b7b236f1",
+    "output_q1/length_domain_calibrated22/tables/mixture_selection_protocol.json": "4c632ab818cba1892d19029df70fe825b0f6315b12f618b85a460a4b422b2ad4"
+  },
+  "modified_sections": [
+    "5.8",
+    "5.9",
+    "5.10"
+  ],
+  "other_body_nodes_unchanged": true,
+  "all_original_display_equations_preserved": true,
+  "all_other_zip_parts_unchanged": true,
+  "source_unchanged": true,
+  "main_candidate": "loglinear KKT optimum; rank fusion is supplementary",
+  "corrected_implementation_notes": [
+    "Dirichlet parameter 0.71 → 0.7",
+    "No component clipping / renormalizing in current candidate generation"
+  ],
+  "equation_number_map": {
+    "5-27": "5-27",
+    "5-28": "5-28",
+    "5-31": "5-29",
+    "5-32": "5-30",
+    "5-33": "5-31",
+    "5-36": "5-32",
+    "5-29": "附1-1",
+    "5-30": "附1-2",
+    "5-34": "附1-3",
+    "5-35": "附1-4",
+    "5-37": "附1-5",
+    "5-38": "附1-6",
+    "5-39": "附1-7"
+  },
+  "old_body_characters": 3771,
+  "new_body_characters": 2327,
+  "body_reduction_percent": 38.3,
+  "render_qa": {
+    "status": "passed for all modified pages",
+    "page_count": 91,
+    "modified_pdf_pages": [
+      32,
+      33,
+      34,
+      35,
+      88,
+      89,
+      90,
+      91
+    ],
+    "checks": [
+      "Native equations and their labels readable",
+      "Equation introductions stay with equations",
+      "Appendix tables fit without clipped rows",
+      "Key results match frozen CSV/JSON outputs",
+      "All other body nodes and package parts preserved"
+    ],
+    "other_pages": "Overview inspected; original content preserved",
+    "renderer": "Bundled LibreOffice via render_docx.py; CJK fontconfig supplied",
+    "note": "LibreOffice updates pre-existing SEQ fields in untouched sections during PDF export. Those source fields and their cached values are unchanged in the delivered DOCX."
+  }
+}
