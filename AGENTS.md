@@ -65,4 +65,4 @@
 
 记忆更新只修改协作说明，不触发四问重算或重新打包；代码、公式、数据或结果实际改变时再按对应依赖链重跑。完整ZIP包含原始附件，Git仓库不含；两种交付方式不要混写为都需要手工补缓存。当前四问核验记录见`formula_verification.json`，不把旧版本号当作当前模型版本。
 
-- v0.9.7独立论文流程图采用浅蓝圆角框，文字仅置于节点内：`figures/q4_causal_publication.png`（600 dpi）及PDF/SVG；复现入口`Q4/draw_causal_publication.py`。显式展示Z节点及T→Z路径；本次未替换既有Notebook图或重建ZIP，数值模型不变。
+- v0.9.8独立论文流程图采用浅蓝、浅绿、浅橙三类圆角节点，文字仅置于节点内：`figures/q4_causal_publication.png`（600 dpi）及PDF/SVG；复现入口`Q4/draw_causal_publication.py`。显式展示Z节点及T→Z路径；本次未替换既有Notebook图或重建ZIP，数值模型不变。

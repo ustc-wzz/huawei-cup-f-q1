@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-09-26T14:54:19.978750</dc:date>
+    <dc:date>2026-09-26T14:55:29.078807</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -32,96 +32,96 @@ z
    <g id="patch_2">
     <path d="M 180 126 
 L 231.274261 126 
-" clip-path="url(#pda4c8d11f2)" style="fill: none; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
+" clip-path="url(#p388c6439b4)" style="fill: none; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
     <path d="M 226.874261 123.8 
 L 231.274261 126 
 L 226.874261 128.2 
 z
-" clip-path="url(#pda4c8d11f2)" style="fill: #8393a3; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
+" clip-path="url(#p388c6439b4)" style="fill: #8393a3; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
    </g>
    <g id="patch_3">
     <path d="M 393.84 126 
 L 440.074261 126 
-" clip-path="url(#pda4c8d11f2)" style="fill: none; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
+" clip-path="url(#p388c6439b4)" style="fill: none; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
     <path d="M 435.674261 123.8 
 L 440.074261 126 
 L 435.674261 128.2 
 z
-" clip-path="url(#pda4c8d11f2)" style="fill: #8393a3; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
+" clip-path="url(#p388c6439b4)" style="fill: #8393a3; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
    </g>
    <g id="patch_4">
     <path d="M 602.64 126 
 L 656.074261 126 
-" clip-path="url(#pda4c8d11f2)" style="fill: none; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
+" clip-path="url(#p388c6439b4)" style="fill: none; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
     <path d="M 651.674261 123.8 
 L 656.074261 126 
 L 651.674261 128.2 
 z
-" clip-path="url(#pda4c8d11f2)" style="fill: #8393a3; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
+" clip-path="url(#p388c6439b4)" style="fill: #8393a3; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
    </g>
    <g id="patch_5">
     <path d="M 818.64 126 
 L 877.114261 126 
-" clip-path="url(#pda4c8d11f2)" style="fill: none; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
+" clip-path="url(#p388c6439b4)" style="fill: none; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
     <path d="M 872.714261 123.8 
 L 877.114261 126 
 L 872.714261 128.2 
 z
-" clip-path="url(#pda4c8d11f2)" style="fill: #8393a3; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
+" clip-path="url(#p388c6439b4)" style="fill: #8393a3; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
    </g>
    <g id="patch_6">
     <path d="M 313.2 58.32 
 L 313.2 90.874261 
-" clip-path="url(#pda4c8d11f2)" style="fill: none; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
+" clip-path="url(#p388c6439b4)" style="fill: none; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
     <path d="M 315.4 86.474261 
 L 313.2 90.874261 
 L 311 86.474261 
 z
-" clip-path="url(#pda4c8d11f2)" style="fill: #8393a3; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
+" clip-path="url(#p388c6439b4)" style="fill: #8393a3; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
    </g>
    <g id="patch_7">
     <path d="M 738 58.32 
 L 738 90.874261 
-" clip-path="url(#pda4c8d11f2)" style="fill: none; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
+" clip-path="url(#p388c6439b4)" style="fill: none; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
     <path d="M 740.2 86.474261 
 L 738 90.874261 
 L 735.8 86.474261 
 z
-" clip-path="url(#pda4c8d11f2)" style="fill: #8393a3; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
+" clip-path="url(#p388c6439b4)" style="fill: #8393a3; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
    </g>
    <g id="patch_8">
     <path d="M 408.96 231.84 
 L 313.2 231.84 
 L 313.2 161.125739 
-" clip-path="url(#pda4c8d11f2)" style="fill: none; stroke-dasharray: 4.6,3.45; stroke-dashoffset: 0; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
+" clip-path="url(#p388c6439b4)" style="fill: none; stroke-dasharray: 4.6,3.45; stroke-dashoffset: 0; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
     <path d="M 311 165.525739 
 L 313.2 161.125739 
 L 315.4 165.525739 
 z
-" clip-path="url(#pda4c8d11f2)" style="fill: #8393a3; stroke-dasharray: 4.6,3.45; stroke-dashoffset: 0; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
+" clip-path="url(#p388c6439b4)" style="fill: #8393a3; stroke-dasharray: 4.6,3.45; stroke-dashoffset: 0; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
    </g>
    <g id="patch_9">
     <path d="M 635.04 231.84 
 L 705.6 231.84 
 L 705.6 161.125739 
-" clip-path="url(#pda4c8d11f2)" style="fill: none; stroke-dasharray: 4.6,3.45; stroke-dashoffset: 0; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
+" clip-path="url(#p388c6439b4)" style="fill: none; stroke-dasharray: 4.6,3.45; stroke-dashoffset: 0; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
     <path d="M 703.4 165.525739 
 L 705.6 161.125739 
 L 707.8 165.525739 
 z
-" clip-path="url(#pda4c8d11f2)" style="fill: #8393a3; stroke-dasharray: 4.6,3.45; stroke-dashoffset: 0; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
+" clip-path="url(#p388c6439b4)" style="fill: #8393a3; stroke-dasharray: 4.6,3.45; stroke-dashoffset: 0; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
    </g>
    <g id="patch_10">
     <path d="M 104.4 159.84 
 L 104.4 318.96 
 L 766.8 318.96 
 L 766.8 161.125739 
-" clip-path="url(#pda4c8d11f2)" style="fill: none; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
+" clip-path="url(#p388c6439b4)" style="fill: none; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
     <path d="M 764.6 165.525739 
 L 766.8 161.125739 
 L 769 165.525739 
 z
-" clip-path="url(#pda4c8d11f2)" style="fill: #8393a3; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
+" clip-path="url(#p388c6439b4)" style="fill: #8393a3; stroke: #8393a3; stroke-width: 1.15; stroke-linecap: round"/>
    </g>
    <g id="patch_11">
     <path d="M 39.24 159.84 
@@ -134,7 +134,7 @@ Q 29.16 92.16 29.16 102.24
 L 29.16 149.76 
 Q 29.16 159.84 39.24 159.84 
 z
-" clip-path="url(#pda4c8d11f2)" style="fill: #e8f2fe; stroke: #d5e5f7; stroke-linejoin: miter"/>
+" clip-path="url(#p388c6439b4)" style="fill: #e8f2fe; stroke: #cfdff2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_12">
     <path d="M 242.64 159.84 
@@ -147,7 +147,7 @@ Q 232.56 92.16 232.56 102.24
 L 232.56 149.76 
 Q 232.56 159.84 242.64 159.84 
 z
-" clip-path="url(#pda4c8d11f2)" style="fill: #e8f2fe; stroke: #d5e5f7; stroke-linejoin: miter"/>
+" clip-path="url(#p388c6439b4)" style="fill: #e8f2fe; stroke: #cfdff2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_13">
     <path d="M 451.44 159.84 
@@ -160,7 +160,7 @@ Q 441.36 92.16 441.36 102.24
 L 441.36 149.76 
 Q 441.36 159.84 451.44 159.84 
 z
-" clip-path="url(#pda4c8d11f2)" style="fill: #e8f2fe; stroke: #d5e5f7; stroke-linejoin: miter"/>
+" clip-path="url(#p388c6439b4)" style="fill: #e8f2fe; stroke: #cfdff2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_14">
     <path d="M 667.44 159.84 
@@ -173,7 +173,7 @@ Q 657.36 92.16 657.36 102.24
 L 657.36 149.76 
 Q 657.36 159.84 667.44 159.84 
 z
-" clip-path="url(#pda4c8d11f2)" style="fill: #e8f2fe; stroke: #d5e5f7; stroke-linejoin: miter"/>
+" clip-path="url(#p388c6439b4)" style="fill: #eaf5ec; stroke: #cfe4d4; stroke-linejoin: miter"/>
    </g>
    <g id="patch_15">
     <path d="M 888.84 159.84 
@@ -186,7 +186,7 @@ Q 878.76 92.16 878.76 102.24
 L 878.76 149.76 
 Q 878.76 159.84 888.84 159.84 
 z
-" clip-path="url(#pda4c8d11f2)" style="fill: #e8f2fe; stroke: #d5e5f7; stroke-linejoin: miter"/>
+" clip-path="url(#p388c6439b4)" style="fill: #eaf5ec; stroke: #cfe4d4; stroke-linejoin: miter"/>
    </g>
    <g id="patch_16">
     <path d="M 242.64 58.32 
@@ -199,7 +199,7 @@ Q 232.56 13.68 232.56 23.76
 L 232.56 48.24 
 Q 232.56 58.32 242.64 58.32 
 z
-" clip-path="url(#pda4c8d11f2)" style="fill: #e8f2fe; stroke: #d5e5f7; stroke-linejoin: miter"/>
+" clip-path="url(#p388c6439b4)" style="fill: #fff0e1; stroke: #edd8c2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_17">
     <path d="M 651.24 58.32 
@@ -212,7 +212,7 @@ Q 641.16 13.68 641.16 23.76
 L 641.16 48.24 
 Q 641.16 58.32 651.24 58.32 
 z
-" clip-path="url(#pda4c8d11f2)" style="fill: #e8f2fe; stroke: #d5e5f7; stroke-linejoin: miter"/>
+" clip-path="url(#p388c6439b4)" style="fill: #fff0e1; stroke: #edd8c2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_18">
     <path d="M 419.04 265.68 
@@ -225,163 +225,163 @@ Q 408.96 198 408.96 208.08
 L 408.96 255.6 
 Q 408.96 265.68 419.04 265.68 
 z
-" clip-path="url(#pda4c8d11f2)" style="fill: #e8f2fe; stroke: #d5e5f7; stroke-linejoin: miter"/>
+" clip-path="url(#p388c6439b4)" style="fill: #fff0e1; stroke: #edd8c2; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- $T$：时间 -->
-    <g style="fill: #2776bd" transform="translate(81.26 121.184922)">
+    <g style="fill: #326d9e" transform="translate(81.26 121.184922)">
      <text>
-      <tspan x="0" y="-0.21875" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">T</tspan>
-      <tspan x="7.228012" y="-0.21875" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">：</tspan>
-      <tspan x="20.228012" y="-0.21875" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">时</tspan>
-      <tspan x="33.228012" y="-0.21875" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">间</tspan>
+      <tspan x="0" y="-0.21875" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #326d9e">T</tspan>
+      <tspan x="7.228012" y="-0.21875" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #326d9e">：</tspan>
+      <tspan x="20.228012" y="-0.21875" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #326d9e">时</tspan>
+      <tspan x="33.228012" y="-0.21875" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #326d9e">间</tspan>
      </text>
     </g>
-    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd" transform="translate(65.4 140.668672)">技术时代代理</text>
+    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #326d9e" transform="translate(65.4 140.668672)">技术时代代理</text>
    </g>
    <g id="text_2">
     <!-- $M$：规模中介 -->
-    <g style="fill: #2776bd" transform="translate(275.24 121.314922)">
+    <g style="fill: #326d9e" transform="translate(275.24 121.314922)">
      <text>
-      <tspan x="0" y="-0.84375" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">M</tspan>
-      <tspan x="10.82901" y="-0.84375" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">：</tspan>
-      <tspan x="23.82901" y="-0.84375" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">规</tspan>
-      <tspan x="36.82901" y="-0.84375" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">模</tspan>
-      <tspan x="49.82901" y="-0.84375" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">中</tspan>
-      <tspan x="62.82901" y="-0.84375" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">介</tspan>
+      <tspan x="0" y="-0.84375" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #326d9e">M</tspan>
+      <tspan x="10.82901" y="-0.84375" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #326d9e">：</tspan>
+      <tspan x="23.82901" y="-0.84375" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #326d9e">规</tspan>
+      <tspan x="36.82901" y="-0.84375" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #326d9e">模</tspan>
+      <tspan x="49.82901" y="-0.84375" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #326d9e">中</tspan>
+      <tspan x="62.82901" y="-0.84375" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #326d9e">介</tspan>
      </text>
     </g>
     <!-- $(\ln N,\,\ln D)$ -->
-    <g style="fill: #2776bd" transform="translate(283.495 139.070078)">
+    <g style="fill: #326d9e" transform="translate(283.495 139.070078)">
      <text>
-      <tspan x="0" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">(</tspan>
-      <tspan x="4.32901" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">l</tspan>
-      <tspan x="7.943008" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">n</tspan>
-      <tspan x="25.280724" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">,</tspan>
-      <tspan x="33.297434" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">l</tspan>
-      <tspan x="36.911432" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">n</tspan>
-      <tspan x="54.964144" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">)</tspan>
-      <tspan x="16.609718" y="-0.125" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">N</tspan>
-      <tspan x="45.578142" y="-0.125" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">D</tspan>
+      <tspan x="0" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #326d9e">(</tspan>
+      <tspan x="4.32901" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #326d9e">l</tspan>
+      <tspan x="7.943008" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #326d9e">n</tspan>
+      <tspan x="25.280724" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #326d9e">,</tspan>
+      <tspan x="33.297434" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #326d9e">l</tspan>
+      <tspan x="36.911432" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #326d9e">n</tspan>
+      <tspan x="54.964144" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #326d9e">)</tspan>
+      <tspan x="16.609718" y="-0.125" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #326d9e">N</tspan>
+      <tspan x="45.578142" y="-0.125" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #326d9e">D</tspan>
      </text>
     </g>
    </g>
    <g id="text_3">
     <!-- $x(M)$：标度响应 -->
-    <g style="fill: #2776bd" transform="translate(476.825 120.794922)">
+    <g style="fill: #326d9e" transform="translate(476.825 120.794922)">
      <text>
-      <tspan x="0" y="-0.625" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">x</tspan>
-      <tspan x="10.101013" y="-0.625" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">M</tspan>
-      <tspan x="5.772003" y="-0.625" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">(</tspan>
-      <tspan x="20.930023" y="-0.625" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">)</tspan>
-      <tspan x="25.259033" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">：</tspan>
-      <tspan x="38.259033" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">标</tspan>
-      <tspan x="51.259033" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">度</tspan>
-      <tspan x="64.259033" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">响</tspan>
-      <tspan x="77.259033" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">应</tspan>
+      <tspan x="0" y="-0.625" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #326d9e">x</tspan>
+      <tspan x="10.101013" y="-0.625" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #326d9e">M</tspan>
+      <tspan x="5.772003" y="-0.625" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #326d9e">(</tspan>
+      <tspan x="20.930023" y="-0.625" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #326d9e">)</tspan>
+      <tspan x="25.259033" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #326d9e">：</tspan>
+      <tspan x="38.259033" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #326d9e">标</tspan>
+      <tspan x="51.259033" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #326d9e">度</tspan>
+      <tspan x="64.259033" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #326d9e">响</tspan>
+      <tspan x="77.259033" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #326d9e">应</tspan>
      </text>
     </g>
-    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd" transform="translate(489.5 140.716406)">承接第二问</text>
+    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #326d9e" transform="translate(489.5 140.716406)">承接第二问</text>
    </g>
    <g id="text_4">
     <!-- $Z$：能力变换 -->
-    <g style="fill: #2776bd" transform="translate(701.86 121.249922)">
+    <g style="fill: #477858" transform="translate(701.86 121.249922)">
      <text>
-      <tspan x="0" y="-0.03125" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">Z</tspan>
-      <tspan x="7.228012" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">：</tspan>
-      <tspan x="20.228012" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">能</tspan>
-      <tspan x="33.228012" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">力</tspan>
-      <tspan x="46.228012" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">变</tspan>
-      <tspan x="59.228012" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">换</tspan>
+      <tspan x="0" y="-0.03125" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #477858">Z</tspan>
+      <tspan x="7.228012" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #477858">：</tspan>
+      <tspan x="20.228012" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #477858">能</tspan>
+      <tspan x="33.228012" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #477858">力</tspan>
+      <tspan x="46.228012" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #477858">变</tspan>
+      <tspan x="59.228012" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #477858">换</tspan>
      </text>
     </g>
     <!-- $\operatorname{logit}(S/100)$ -->
-    <g style="fill: #2776bd" transform="translate(706.93 138.810078)">
+    <g style="fill: #477858" transform="translate(706.93 138.810078)">
      <text>
-      <tspan x="0" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">l</tspan>
-      <tspan x="3.613998" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">o</tspan>
-      <tspan x="10.113998" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">g</tspan>
-      <tspan x="16.613998" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">i</tspan>
-      <tspan x="20.227997" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">t</tspan>
-      <tspan x="23.841995" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">(</tspan>
-      <tspan x="34.671005" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">/</tspan>
-      <tspan x="38.285004" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">1</tspan>
-      <tspan x="44.785004" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">0</tspan>
-      <tspan x="51.285004" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">0</tspan>
-      <tspan x="57.785004" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">)</tspan>
-      <tspan x="28.171005" y="-0.125" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">S</tspan>
+      <tspan x="0" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #477858">l</tspan>
+      <tspan x="3.613998" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #477858">o</tspan>
+      <tspan x="10.113998" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #477858">g</tspan>
+      <tspan x="16.613998" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #477858">i</tspan>
+      <tspan x="20.227997" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #477858">t</tspan>
+      <tspan x="23.841995" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #477858">(</tspan>
+      <tspan x="34.671005" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #477858">/</tspan>
+      <tspan x="38.285004" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #477858">1</tspan>
+      <tspan x="44.785004" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #477858">0</tspan>
+      <tspan x="51.285004" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #477858">0</tspan>
+      <tspan x="57.785004" y="-0.125" style="font-size: 13px; font-family: 'STIXGeneral'; fill: #477858">)</tspan>
+      <tspan x="28.171005" y="-0.125" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #477858">S</tspan>
      </text>
     </g>
    </g>
    <g id="text_5">
     <!-- $S$：综合能力分 -->
-    <g style="fill: #2776bd" transform="translate(918.95 121.314922)">
+    <g style="fill: #477858" transform="translate(918.95 121.314922)">
      <text>
-      <tspan x="0" y="-0.828125" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">S</tspan>
-      <tspan x="6.5" y="-0.828125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">：</tspan>
-      <tspan x="19.5" y="-0.828125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">综</tspan>
-      <tspan x="32.5" y="-0.828125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">合</tspan>
-      <tspan x="45.5" y="-0.828125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">能</tspan>
-      <tspan x="58.5" y="-0.828125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">力</tspan>
-      <tspan x="71.5" y="-0.828125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">分</tspan>
+      <tspan x="0" y="-0.828125" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #477858">S</tspan>
+      <tspan x="6.5" y="-0.828125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #477858">：</tspan>
+      <tspan x="19.5" y="-0.828125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #477858">综</tspan>
+      <tspan x="32.5" y="-0.828125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #477858">合</tspan>
+      <tspan x="45.5" y="-0.828125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #477858">能</tspan>
+      <tspan x="58.5" y="-0.828125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #477858">力</tspan>
+      <tspan x="71.5" y="-0.828125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #477858">分</tspan>
      </text>
     </g>
-    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd" transform="translate(915.7 140.861641)">六任务等权聚合</text>
+    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #477858" transform="translate(915.7 140.861641)">六任务等权聚合</text>
    </g>
    <g id="text_6">
     <!-- $\varepsilon_M$：规模扰动 -->
-    <g style="fill: #2776bd" transform="translate(273.68 40.485)">
+    <g style="fill: #996b3c" transform="translate(273.68 40.485)">
      <text>
-      <tspan x="0" y="-0.1875" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">ε</tspan>
-      <tspan x="5.772003" y="1.7625" style="font-style: italic; font-size: 9.1px; font-family: 'STIXGeneral'; fill: #2776bd">M</tspan>
-      <tspan x="13.93731" y="-0.1875" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">：</tspan>
-      <tspan x="26.93731" y="-0.1875" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">规</tspan>
-      <tspan x="39.93731" y="-0.1875" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">模</tspan>
-      <tspan x="52.93731" y="-0.1875" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">扰</tspan>
-      <tspan x="65.93731" y="-0.1875" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">动</tspan>
+      <tspan x="0" y="-0.1875" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #996b3c">ε</tspan>
+      <tspan x="5.772003" y="1.7625" style="font-style: italic; font-size: 9.1px; font-family: 'STIXGeneral'; fill: #996b3c">M</tspan>
+      <tspan x="13.93731" y="-0.1875" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">：</tspan>
+      <tspan x="26.93731" y="-0.1875" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">规</tspan>
+      <tspan x="39.93731" y="-0.1875" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">模</tspan>
+      <tspan x="52.93731" y="-0.1875" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">扰</tspan>
+      <tspan x="65.93731" y="-0.1875" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">动</tspan>
      </text>
     </g>
    </g>
    <g id="text_7">
     <!-- $\varepsilon_Y$：能力与评测扰动 -->
-    <g style="fill: #2776bd" transform="translate(680.28 40.55)">
+    <g style="fill: #996b3c" transform="translate(680.28 40.55)">
      <text>
-      <tspan x="0" y="-0.03125" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">ε</tspan>
-      <tspan x="5.772003" y="1.91875" style="font-style: italic; font-size: 9.1px; font-family: 'STIXGeneral'; fill: #2776bd">Y</tspan>
-      <tspan x="11.416612" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">：</tspan>
-      <tspan x="24.416612" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">能</tspan>
-      <tspan x="37.416612" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">力</tspan>
-      <tspan x="50.416612" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">与</tspan>
-      <tspan x="63.416612" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">评</tspan>
-      <tspan x="76.416612" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">测</tspan>
-      <tspan x="89.416612" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">扰</tspan>
-      <tspan x="102.416612" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">动</tspan>
+      <tspan x="0" y="-0.03125" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #996b3c">ε</tspan>
+      <tspan x="5.772003" y="1.91875" style="font-style: italic; font-size: 9.1px; font-family: 'STIXGeneral'; fill: #996b3c">Y</tspan>
+      <tspan x="11.416612" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">：</tspan>
+      <tspan x="24.416612" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">能</tspan>
+      <tspan x="37.416612" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">力</tspan>
+      <tspan x="50.416612" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">与</tspan>
+      <tspan x="63.416612" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">评</tspan>
+      <tspan x="76.416612" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">测</tspan>
+      <tspan x="89.416612" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">扰</tspan>
+      <tspan x="102.416612" y="-0.03125" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">动</tspan>
      </text>
     </g>
    </g>
    <g id="text_8">
     <!-- $U$：未观测共同影响因素 -->
-    <g style="fill: #2776bd" transform="translate(452.255 227.284922)">
+    <g style="fill: #996b3c" transform="translate(452.255 227.284922)">
      <text>
-      <tspan x="0" y="-0.625" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #2776bd">U</tspan>
-      <tspan x="9.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">：</tspan>
-      <tspan x="22.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">未</tspan>
-      <tspan x="35.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">观</tspan>
-      <tspan x="48.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">测</tspan>
-      <tspan x="61.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">共</tspan>
-      <tspan x="74.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">同</tspan>
-      <tspan x="87.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">影</tspan>
-      <tspan x="100.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">响</tspan>
-      <tspan x="113.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">因</tspan>
-      <tspan x="126.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd">素</tspan>
+      <tspan x="0" y="-0.625" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'; fill: #996b3c">U</tspan>
+      <tspan x="9.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">：</tspan>
+      <tspan x="22.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">未</tspan>
+      <tspan x="35.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">观</tspan>
+      <tspan x="48.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">测</tspan>
+      <tspan x="61.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">共</tspan>
+      <tspan x="74.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">同</tspan>
+      <tspan x="87.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">影</tspan>
+      <tspan x="100.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">响</tspan>
+      <tspan x="113.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">因</tspan>
+      <tspan x="126.386002" y="-0.625" style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c">素</tspan>
      </text>
     </g>
-    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #2776bd" transform="translate(470 246.571641)">仅用于敏感性分析</text>
+    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; fill: #996b3c" transform="translate(470 246.571641)">仅用于敏感性分析</text>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="pda4c8d11f2">
+  <clipPath id="p388c6439b4">
    <rect x="0" y="0" width="1080" height="360"/>
   </clipPath>
  </defs>
