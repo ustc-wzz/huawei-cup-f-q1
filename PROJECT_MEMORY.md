@@ -139,4 +139,4 @@ C6高／中可比层分别等渗桥接，支撑范围之外返回缺失；高可
 
 本次记忆整理未改动模型、notebook、数据或结果；v0.9.2已有四问完整重跑、161张CSV结果表不变及1120处公式渲染检查记录，见`formula_verification.json`。记忆更新不代表新增实机验证。
 
-- v0.9.6新增独立论文流程图：`figures/q4_causal_publication.png`（600 dpi）及PDF/SVG；复现入口`Q4/draw_causal_publication.py`。显式展示Z节点及T→Z路径；本次未替换既有Notebook图或重建ZIP，数值模型不变。
+- v0.9.7独立论文流程图采用浅蓝圆角框，文字仅置于节点内：`figures/q4_causal_publication.png`（600 dpi）及PDF/SVG；复现入口`Q4/draw_causal_publication.py`。显式展示Z节点及T→Z路径；本次未替换既有Notebook图或重建ZIP，数值模型不变。
