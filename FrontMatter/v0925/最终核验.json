@@ -1,0 +1,56 @@
+{
+  "version": "v0.9.25",
+  "source_files_unchanged": true,
+  "posterior_math_objects_unchanged": 459,
+  "original_media_unchanged": 47,
+  "original_quote_paragraphs_verified": [
+    53,
+    33,
+    34,
+    26
+  ],
+  "files": {
+    "front": {
+      "unique_relationship_ids": true,
+      "internal_targets_resolve": true,
+      "external_relationships": 0,
+      "reference_bookmarks_resolve": true,
+      "sha256": "38e845cd6d183cb4471a86fe1712d2d168b6ba503c9e06454c1ff77ac18ade96",
+      "seq_ref_fields": 19,
+      "word_updated_fields_identical": true,
+      "native_word_pdf_pages": 12,
+      "native_word_pdf_sha256": "80819314387612f5be9604c14ca7b178b60bc732f2d9118c175d5666bc3e9c7c",
+      "visual_review": "all 12 pages checked"
+    },
+    "combined": {
+      "unique_relationship_ids": true,
+      "internal_targets_resolve": true,
+      "external_relationships": 0,
+      "reference_bookmarks_resolve": true,
+      "sha256": "9de6a8b793581944a1ec4ebfc947b0f65e70eebb387a70c9cbf63add1a4cb257",
+      "seq_ref_fields": 256,
+      "word_updated_fields_identical": true,
+      "native_word_pdf_pages": 63,
+      "native_word_pdf_sha256": "7fe102b1814dd85c1fd1b0975b43e9b6ea9dccd4fdef17b418dbab2e08611ce4",
+      "visual_review": "all pages checked; final Q4 number-cell revision checked on pages 47–52"
+    }
+  },
+  "native_word": "Microsoft Word 16.89.1",
+  "opening_prompts": "Final QA editions opened without repair or link-update prompts.",
+  "field_cache_method": "Final SEQ/REF instructions and cached values exactly match Word-updated QA copies; original OMML is retained.",
+  "rendering_note": "Word-native pagination is authoritative (12/63 pages); LibreOffice auxiliary pagination differs.",
+  "inherited_image_issues": [
+    "图7-1原图缺少节点文字",
+    "图8-1原图内部问次误标为第二问"
+  ],
+  "numerical_models_not_recomputed": true,
+  "final_number_layout_changed_pages": [
+    47,
+    48,
+    49,
+    50,
+    51,
+    52
+  ],
+  "other_pages_pixel_identical_to_reviewed_word_export": true
+}
