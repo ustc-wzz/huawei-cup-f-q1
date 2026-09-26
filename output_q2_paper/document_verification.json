@@ -1,0 +1,415 @@
+{
+  "version": "v0.9.11",
+  "source": "F题论文初稿_问题二精简_20260926.docx",
+  "source_sha256": "d3b4ab21443b072dac756574755cee40a76c1cee769a5d16c9fe0a79dfe52b24",
+  "output": "F题论文初稿_问题二图文优化_20260926.docx",
+  "output_sha256": "d6a3890369133ddb9f4bf1825ef0b4fedbf754cd433f295eeb449bc86a23b938",
+  "changed_original_parts": [
+    "word/document.xml",
+    "word/_rels/document.xml.rels"
+  ],
+  "new_images": 5,
+  "main_figures": 3,
+  "appendix_figures": 2,
+  "all_math_preserved": true,
+  "other_chapters_preserved": true,
+  "source_unchanged": true,
+  "render_qa": {
+    "status": "passed",
+    "pages": 79,
+    "q2_pages": [
+      33,
+      39
+    ],
+    "appendix_pages": [
+      75,
+      79
+    ],
+    "main_figure_pages": [
+      35,
+      37,
+      38
+    ],
+    "appendix_figure_pages": [
+      78,
+      79
+    ],
+    "full_document_overview_reviewed": true,
+    "modified_pages_full_size_reviewed": [
+      35,
+      36,
+      37,
+      38,
+      39,
+      78,
+      79
+    ],
+    "unchanged_body_pages_pixel_checked": 72,
+    "exclude_shifted_page_footer": true,
+    "all_captions_on_same_page_as_figure": true,
+    "preview_note": "Canonical renderer on temporary copies with cached SEQ/REF results frozen, to avoid pre-existing LibreOffice equation reset incompatibility. Final DOCX fields and formulas remain editable.",
+    "page_comparison": [
+      {
+        "source_page": 1,
+        "output_page": 1,
+        "body_identical": true
+      },
+      {
+        "source_page": 2,
+        "output_page": 2,
+        "body_identical": true
+      },
+      {
+        "source_page": 3,
+        "output_page": 3,
+        "body_identical": true
+      },
+      {
+        "source_page": 4,
+        "output_page": 4,
+        "body_identical": true
+      },
+      {
+        "source_page": 5,
+        "output_page": 5,
+        "body_identical": true
+      },
+      {
+        "source_page": 6,
+        "output_page": 6,
+        "body_identical": true
+      },
+      {
+        "source_page": 7,
+        "output_page": 7,
+        "body_identical": true
+      },
+      {
+        "source_page": 8,
+        "output_page": 8,
+        "body_identical": true
+      },
+      {
+        "source_page": 9,
+        "output_page": 9,
+        "body_identical": true
+      },
+      {
+        "source_page": 10,
+        "output_page": 10,
+        "body_identical": true
+      },
+      {
+        "source_page": 11,
+        "output_page": 11,
+        "body_identical": true
+      },
+      {
+        "source_page": 12,
+        "output_page": 12,
+        "body_identical": true
+      },
+      {
+        "source_page": 13,
+        "output_page": 13,
+        "body_identical": true
+      },
+      {
+        "source_page": 14,
+        "output_page": 14,
+        "body_identical": true
+      },
+      {
+        "source_page": 15,
+        "output_page": 15,
+        "body_identical": true
+      },
+      {
+        "source_page": 16,
+        "output_page": 16,
+        "body_identical": true
+      },
+      {
+        "source_page": 17,
+        "output_page": 17,
+        "body_identical": true
+      },
+      {
+        "source_page": 18,
+        "output_page": 18,
+        "body_identical": true
+      },
+      {
+        "source_page": 19,
+        "output_page": 19,
+        "body_identical": true
+      },
+      {
+        "source_page": 20,
+        "output_page": 20,
+        "body_identical": true
+      },
+      {
+        "source_page": 21,
+        "output_page": 21,
+        "body_identical": true
+      },
+      {
+        "source_page": 22,
+        "output_page": 22,
+        "body_identical": true
+      },
+      {
+        "source_page": 23,
+        "output_page": 23,
+        "body_identical": true
+      },
+      {
+        "source_page": 24,
+        "output_page": 24,
+        "body_identical": true
+      },
+      {
+        "source_page": 25,
+        "output_page": 25,
+        "body_identical": true
+      },
+      {
+        "source_page": 26,
+        "output_page": 26,
+        "body_identical": true
+      },
+      {
+        "source_page": 27,
+        "output_page": 27,
+        "body_identical": true
+      },
+      {
+        "source_page": 28,
+        "output_page": 28,
+        "body_identical": true
+      },
+      {
+        "source_page": 29,
+        "output_page": 29,
+        "body_identical": true
+      },
+      {
+        "source_page": 30,
+        "output_page": 30,
+        "body_identical": true
+      },
+      {
+        "source_page": 31,
+        "output_page": 31,
+        "body_identical": true
+      },
+      {
+        "source_page": 32,
+        "output_page": 32,
+        "body_identical": true
+      },
+      {
+        "source_page": 38,
+        "output_page": 40,
+        "body_identical": true
+      },
+      {
+        "source_page": 39,
+        "output_page": 41,
+        "body_identical": true
+      },
+      {
+        "source_page": 40,
+        "output_page": 42,
+        "body_identical": true
+      },
+      {
+        "source_page": 41,
+        "output_page": 43,
+        "body_identical": true
+      },
+      {
+        "source_page": 42,
+        "output_page": 44,
+        "body_identical": true
+      },
+      {
+        "source_page": 43,
+        "output_page": 45,
+        "body_identical": true
+      },
+      {
+        "source_page": 44,
+        "output_page": 46,
+        "body_identical": true
+      },
+      {
+        "source_page": 45,
+        "output_page": 47,
+        "body_identical": true
+      },
+      {
+        "source_page": 46,
+        "output_page": 48,
+        "body_identical": true
+      },
+      {
+        "source_page": 47,
+        "output_page": 49,
+        "body_identical": true
+      },
+      {
+        "source_page": 48,
+        "output_page": 50,
+        "body_identical": true
+      },
+      {
+        "source_page": 49,
+        "output_page": 51,
+        "body_identical": true
+      },
+      {
+        "source_page": 50,
+        "output_page": 52,
+        "body_identical": true
+      },
+      {
+        "source_page": 51,
+        "output_page": 53,
+        "body_identical": true
+      },
+      {
+        "source_page": 52,
+        "output_page": 54,
+        "body_identical": true
+      },
+      {
+        "source_page": 53,
+        "output_page": 55,
+        "body_identical": true
+      },
+      {
+        "source_page": 54,
+        "output_page": 56,
+        "body_identical": true
+      },
+      {
+        "source_page": 55,
+        "output_page": 57,
+        "body_identical": true
+      },
+      {
+        "source_page": 56,
+        "output_page": 58,
+        "body_identical": true
+      },
+      {
+        "source_page": 57,
+        "output_page": 59,
+        "body_identical": true
+      },
+      {
+        "source_page": 58,
+        "output_page": 60,
+        "body_identical": true
+      },
+      {
+        "source_page": 59,
+        "output_page": 61,
+        "body_identical": true
+      },
+      {
+        "source_page": 60,
+        "output_page": 62,
+        "body_identical": true
+      },
+      {
+        "source_page": 61,
+        "output_page": 63,
+        "body_identical": true
+      },
+      {
+        "source_page": 62,
+        "output_page": 64,
+        "body_identical": true
+      },
+      {
+        "source_page": 63,
+        "output_page": 65,
+        "body_identical": true
+      },
+      {
+        "source_page": 64,
+        "output_page": 66,
+        "body_identical": true
+      },
+      {
+        "source_page": 65,
+        "output_page": 67,
+        "body_identical": true
+      },
+      {
+        "source_page": 66,
+        "output_page": 68,
+        "body_identical": true
+      },
+      {
+        "source_page": 67,
+        "output_page": 69,
+        "body_identical": true
+      },
+      {
+        "source_page": 68,
+        "output_page": 70,
+        "body_identical": true
+      },
+      {
+        "source_page": 69,
+        "output_page": 71,
+        "body_identical": true
+      },
+      {
+        "source_page": 70,
+        "output_page": 72,
+        "body_identical": true
+      },
+      {
+        "source_page": 71,
+        "output_page": 73,
+        "body_identical": true
+      },
+      {
+        "source_page": 72,
+        "output_page": 74,
+        "body_identical": true
+      },
+      {
+        "source_page": 73,
+        "output_page": 75,
+        "body_identical": true
+      },
+      {
+        "source_page": 74,
+        "output_page": 76,
+        "body_identical": true
+      },
+      {
+        "source_page": 75,
+        "output_page": 77,
+        "body_identical": true
+      },
+      {
+        "source_page": 33,
+        "output_page": 33,
+        "body_identical": true
+      },
+      {
+        "source_page": 34,
+        "output_page": 34,
+        "body_identical": true
+      }
+    ]
+  },
+  "independent_source_zip_scope_and_math_check": true
+}

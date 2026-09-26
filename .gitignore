@@ -165,3 +165,18 @@
 !/Q2/论文第二问精简正文.md
 !/Q2/论文第二问实现附录.md
 !/Q2/论文第二问精简核验.json
+
+# v0.9.11 第二问三张核心结果图与图文副本
+!/F题论文初稿_问题二图文优化_20260926.docx
+!/Q2/draw_core_figures.py
+!/Q2/insert_core_figures.py
+!/Q2/论文配图说明.md
+!/Q2/论文第二问图文正文.md
+!/output_q2_paper/
+/output_q2_paper/*
+!/output_q2_paper/*.png
+!/output_q2_paper/*.svg
+!/output_q2_paper/*.pdf
+!/output_q2_paper/*.csv
+!/output_q2_paper/*.json
+!/output_q2_paper/*.md

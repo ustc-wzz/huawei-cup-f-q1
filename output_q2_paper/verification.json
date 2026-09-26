@@ -1,0 +1,117 @@
+{
+  "version": "v0.9.11",
+  "fit_recomputed": false,
+  "inputs_sha256": {
+    "output_q2_shared/q2_interface.json": "85d730930cf2408526d6644bbfdbc4ae57059262560cf0733f666e88b17e2a88",
+    "output_q2_shared/tables/quality_validation.csv": "6e01a941ef843df88971f3da617d1002c6a41813172b82d23f284ad9abd9926d",
+    "output_q2_shared/tables/mixture_validation.csv": "536b6014c99bf7fbbe48da2ca1fba985d47d710088606246d64b3ec19b97b29b",
+    "output_q2_shared/tables/quality_parameter_substitution.csv": "20afc8895bbbb651468af03432d399ca570cb24ea5db2ae3766f91bf62733ec2",
+    "output_q2_shared/tables/mixture_candidates.csv": "f1f060856cdd9442782e2b0fd12755691d8d2d6e258be9f8ac44104951c4618f",
+    "output_q2_shared/tables/domain_transfers.csv": "7880b86ae78cd117fbc2bef4e851e7ac0dd1a5487f441c9b2c0a8e3d39deba0e"
+  },
+  "frozen_B1_parameters": {
+    "E": 1.6898377701578535,
+    "A": 0.3539687203434089,
+    "alpha": 0.3399854249224743,
+    "B": 1.240274629902671,
+    "nu": 0.2798924654965345
+  },
+  "theta_Q": 0.39665934754854026,
+  "eta": 0.07956681304010307,
+  "reference": {
+    "N_B": 7.0,
+    "D_B": 140.0,
+    "u": 0,
+    "mixture": "p0"
+  },
+  "validation_comparison": [
+    {
+      "comparison": "质量",
+      "n": 450,
+      "baseline_RMSE": 0.2073067192305288,
+      "corrected_RMSE": 0.0622251697974275,
+      "reduction_pct": 69.9840072582346
+    },
+    {
+      "comparison": "配比",
+      "n": 576,
+      "baseline_RMSE": 0.2371948146206564,
+      "corrected_RMSE": 0.0946790853930648,
+      "reduction_pct": 60.08383001774966
+    }
+  ],
+  "selected_directions": [
+    {
+      "target": "ubuntu_irc",
+      "loss_change": -0.001719789086258583
+    },
+    {
+      "target": "wikipedia_en",
+      "loss_change": 6.358200789913226e-05
+    },
+    {
+      "target": "europarl",
+      "loss_change": 0.0005014836702921244
+    }
+  ],
+  "selection_rule": "min / lower median / max of all 16 recipients at delta=0.01, donor pile_cc",
+  "transfer_max_abs_difference_from_existing_csv": 4.614364446098307e-16,
+  "substitution_equal_loss_check": true,
+  "existing_substitution_match": true,
+  "candidate_loss_match": true,
+  "figure_count": 3,
+  "visual_qa": "passed; all three final figures and their Word placements inspected",
+  "exports": {
+    "01_correction_effectiveness": {
+      "pixels": [
+        4200,
+        2010
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "svg_editable_text": true,
+      "pdf_text_extractable": true,
+      "sha256": {
+        "png": "61fcf2eaf13ba6c4f3bf49f4e1f92aa804ec5842b562cd1cf07728601e1d0371",
+        "pdf": "efed82ef93c38539da2f15d55e6fcdb329446e5f99fd175f9f70071338862cb7",
+        "svg": "a69d7d48b10edd33b19a7db21e0627f2a314b39d2d93dff398bfaf835b99044b"
+      }
+    },
+    "02_quality_parameter_substitution": {
+      "pixels": [
+        4200,
+        2100
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "svg_editable_text": true,
+      "pdf_text_extractable": true,
+      "sha256": {
+        "png": "bb2d0e833867ff72d94a066540c8597fd5bd97038e557f8a0ae0e8431f3afcb5",
+        "pdf": "e1af96b8867a9d05289214d32d57531da5372d1df6c07adbc1f3ef046a244a0d",
+        "svg": "2b1a01e48e59043553d29b4b301d9549ae642a50e4beed53397aed5b9cd60860"
+      }
+    },
+    "03_mixture_loss_response": {
+      "pixels": [
+        4200,
+        2070
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "svg_editable_text": true,
+      "pdf_text_extractable": true,
+      "sha256": {
+        "png": "b15af6ab32d7bf85aa1973d5f8007e6c3efda872ed6d89c1f568aeb308d651b1",
+        "pdf": "20080af53910fb2ca5875940ab206a53a98d91d8140cad285104b09ef658505f",
+        "svg": "7a32cb4be2abff92fdbccb766e1fb09196f8827df2ffe65b979df7a98611c01e"
+      }
+    }
+  }
+}
