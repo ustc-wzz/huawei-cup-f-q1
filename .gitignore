@@ -246,3 +246,12 @@
 !/output_q4_monthly_frontier/*.png
 !/output_q4_monthly_frontier/*.pdf
 !/output_q4_monthly_frontier/*.svg
+
+# v0.9.21 指定第四问论文重构，预览中间件不提交。
+!/F题论文_问题四重构_独立章节_v0.9.21.docx
+!/F题论文_问题四重构_完整副本_v0.9.21.docx
+!/Q4/paper_restructure_v0921/
+/Q4/paper_restructure_v0921/*
+!/Q4/paper_restructure_v0921/*.md
+!/Q4/paper_restructure_v0921/*.json
+!/Q4/paper_restructure_v0921/assets/
