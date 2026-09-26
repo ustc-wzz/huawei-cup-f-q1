@@ -208,3 +208,13 @@
 
 # v0.9.15 图07布局与变量数学排版
 !/figure_typography.py
+
+# v0.9.16 第一问5.6—5.10正文与附录
+!/F题论文初稿_问题一5.6至5.10精简_20260926.docx
+!/Q1/restructure_paper_56_510.py
+!/Q1/论文5.6至5.10精简正文.md
+!/Q1/论文问题一5.6至5.10附录.md
+!/Q1/论文5.6至5.10精简核验.json
+!/Q1/论文5.6至5.10修订说明.md
+!/output_q1/length_domain_calibrated22/tables/domain_marginal_effects.csv
+!/output_q1/length_domain_calibrated22/tables/transfer_matrix.csv
