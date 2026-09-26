@@ -19,10 +19,15 @@ def run():
     for num in range(1,21):
         svg=next((ROOT/'figures').glob(f'fig_{num:02d}_*.svg'))
         assert svg.with_suffix('.png').exists() and svg.with_suffix('.pdf').exists()
-        ET.parse(svg)
+        tree=ET.parse(svg)
+        visible=' '.join(''.join(node.itertext()) for node in tree.iter() if node.tag.endswith('}text'))
+        assert not re.search(r'Q_lin|Q_res|Qbar|p_rob|R2',visible),svg.name
         outputs.append(svg.with_suffix('.png'))
     t5=outputs[4].with_suffix('.svg').read_text()
     t6=outputs[5].with_suffix('.svg').read_text()
+    t7=outputs[6].with_suffix('.svg').read_text()
+    assert '(c)' not in t7 and '敏感性' not in t7
+    assert 'Q_{\\mathrm{lin}}' in t7 and 'Q_{\\mathrm{res}}' in t7
     assert 'Pearson 相关系数' in t5 and 'Person' not in t5
     assert '反向相关最强的指标对' not in t6 and '(c)' not in t6
     assert '(a)' in t6 and '(b)' in t6
@@ -36,7 +41,8 @@ def run():
         fig.tight_layout();fig.savefig(OUT/f'contact_{page+1}.png',dpi=130);plt.close(fig)
     result={'numbered_titles_remaining_all_figures':numbered,'q1_png_svg_pdf_sets':len(outputs),
             'unchanged_result_tables':len(baseline),'changed_result_tables':changed,
-            'figure5_pearson_label':True,'figure6_two_panel_labels':True}
+            'figure5_pearson_label':True,'figure6_two_panel_labels':True,
+            'figure7_two_panels_math_labels':True,'q1_visible_math_variables_formatted':True}
     (OUT/'verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(result,ensure_ascii=False,indent=2))
 if __name__=='__main__':run()

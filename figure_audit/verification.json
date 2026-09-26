@@ -4,5 +4,7 @@
   "unchanged_result_tables": 89,
   "changed_result_tables": [],
   "figure5_pearson_label": true,
-  "figure6_two_panel_labels": true
+  "figure6_two_panel_labels": true,
+  "figure7_two_panels_math_labels": true,
+  "q1_visible_math_variables_formatted": true
 }

@@ -205,3 +205,6 @@
 !/figure_audit/*.md
 !/figure_audit/*.json
 !/figure_audit/*.py
+
+# v0.9.15 图07布局与变量数学排版
+!/figure_typography.py

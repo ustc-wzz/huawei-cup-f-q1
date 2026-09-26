@@ -83,6 +83,8 @@ def savefig(name):
     number, content = stem[3:5], stem[6:]
     target = BASE_DIR / 'figures' / f'fig_{number}_{content}.png'
     target.parent.mkdir(parents=True, exist_ok=True)
+    from figure_typography import format_math_labels
+    format_math_labels(plt.gcf())
     plt.tight_layout()
     plt.savefig(target, dpi=300, bbox_inches='tight')
     plt.savefig(target.with_suffix('.svg'), bbox_inches='tight')
@@ -812,8 +814,8 @@ SENS=pd.DataFrame(sens);display(SENS)
 tau_sens=pd.DataFrame([{'相关阈值':t,'冲突指标对数':int((PAIRS.Pearson<=-t).sum()),'冲突样本占比':float((sample_conflict(Z1_normal,t)>0).mean()),'平均CI':sample_conflict(Z1_normal,t).mean()} for t in [.2,.3,.4,.5]])
 display(tau_sens)
 # ---- 图 7 ----
-fig = plt.figure(figsize=(16, 5.4))
-gs = gridspec.GridSpec(1, 3, width_ratios=[1.1, 1, 1], wspace=0.3)
+fig = plt.figure(figsize=(11, 5.0))
+gs = gridspec.GridSpec(1, 2, width_ratios=[1.1, 1], wspace=0.3)
 ax = fig.add_subplot(gs[0])
 idx = RNG.choice(len(A1), 15000, replace=False)
 sc = ax.scatter(A1['Q_lin'].values[idx], A1['Q_res'].values[idx], c=A1['CI'].values[idx], cmap=CMAP_TC, s=6, alpha=0.6, linewidths=0)
@@ -827,12 +829,6 @@ for mask, c, lab_ in ((~A1['is_conflict'], C_TEAL, '非冲突样本 (CI = %.1f)'
     if len(v) < 2 or np.std(v) == 0: continue
     ax.fill_between(xs, stats.gaussian_kde(v)(xs), color=c, alpha=0.3); ax.plot(xs, stats.gaussian_kde(v)(xs), color=c, lw=2, label='%s，均值 %.3f' % (lab_, v.mean()))
 ax.axvline(0, color='#333333', lw=1); ax.set_xlabel('Q_res - Q_lin'); ax.set_ylabel('密度'); ax.legend(frameon=False, fontsize=9); ax.set_title('(b) 消解带来的评分调整量分布', fontsize=10.5)
-ax = fig.add_subplot(gs[2])
-ax.plot(SENS['beta'], SENS['与Q_lin的Spearman'], marker='o', color=C_NAVY, lw=2, label='与 Q_lin 的 Spearman')
-ax.plot(SENS['beta'], SENS['前10%集合与Q_lin的Jaccard'], marker='s', color=C_TEAL, lw=2, label='前 10% 样本集合的 Jaccard')
-ax.plot(SENS['beta'], -SENS['冲突样本平均下调'], marker='D', color=C_CORAL, lw=2, label='冲突样本平均下调幅度')
-ax.axvline(BETA, color=C_GOLD, lw=6, alpha=0.35); ax.text(BETA, ax.get_ylim()[1] * 0.98 if ax.get_ylim()[1] > 0 else 0.9, '本文取 beta = %g' % BETA, ha='center', va='top', fontsize=9, color='#7A5C00')
-ax.set_xlabel('惩罚参数 beta'); ax.legend(frameon=False, fontsize=9); ax.set_title('(c) 消解强度对 beta 的敏感性', fontsize=10.5)
 savefig('fig07_resolution.png'); plt.show()
 
 # %% [markdown]
