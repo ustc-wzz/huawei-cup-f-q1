@@ -76,7 +76,7 @@
       "sha256": {
         "png": "61fcf2eaf13ba6c4f3bf49f4e1f92aa804ec5842b562cd1cf07728601e1d0371",
         "pdf": "efed82ef93c38539da2f15d55e6fcdb329446e5f99fd175f9f70071338862cb7",
-        "svg": "a69d7d48b10edd33b19a7db21e0627f2a314b39d2d93dff398bfaf835b99044b"
+        "svg": "0f0ca3eca5fb86bd16ad85dc0b62fa51a9a8e95099b7b235c28b9b4a5312edf9"
       }
     },
     "02_quality_parameter_substitution": {
@@ -93,7 +93,7 @@
       "sha256": {
         "png": "bb2d0e833867ff72d94a066540c8597fd5bd97038e557f8a0ae0e8431f3afcb5",
         "pdf": "e1af96b8867a9d05289214d32d57531da5372d1df6c07adbc1f3ef046a244a0d",
-        "svg": "2b1a01e48e59043553d29b4b301d9549ae642a50e4beed53397aed5b9cd60860"
+        "svg": "164bcf8b89cc20ed710f8fd76bbd3f487647955047d90cb3141bc15fb84de2fd"
       }
     },
     "03_mixture_loss_response": {
@@ -110,7 +110,7 @@
       "sha256": {
         "png": "b15af6ab32d7bf85aa1973d5f8007e6c3efda872ed6d89c1f568aeb308d651b1",
         "pdf": "20080af53910fb2ca5875940ab206a53a98d91d8140cad285104b09ef658505f",
-        "svg": "7a32cb4be2abff92fdbccb766e1fb09196f8827df2ffe65b979df7a98611c01e"
+        "svg": "40774b2e7d871a7954c3839431cc91d8b7cd1fe4e8dcb86a2c9375dce3c6daa0"
       }
     }
   }
