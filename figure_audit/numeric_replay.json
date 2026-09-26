@@ -1,0 +1,137 @@
+{
+  "tables_checked": 89,
+  "relative_tolerance": 1e-09,
+  "absolute_tolerance": 1e-10,
+  "replay_differences": [
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/all_indicators_A1.csv.gz",
+      "max_absolute_numeric_difference": 0.0
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/length_calibration_A3.csv.gz",
+      "max_absolute_numeric_difference": 0.0
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/audit_local_extension.csv",
+      "max_absolute_numeric_difference": 1.1934897514720433e-15
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/length_calibration_A1.csv.gz",
+      "max_absolute_numeric_difference": 0.0
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/format_calibration_A2.csv.gz",
+      "max_absolute_numeric_difference": 0.0
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/all_indicators_A3.csv.gz",
+      "max_absolute_numeric_difference": 0.0
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/log_elasticity_by_scale.csv",
+      "max_absolute_numeric_difference": 1.0408340855860843e-16
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/mixture_train_only_tuning.csv",
+      "max_absolute_numeric_difference": 1.0061396160665481e-16
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/mixture_oof_predictions.csv",
+      "max_absolute_numeric_difference": 2.398081733190338e-14
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/format_ablation_samples_A2.csv.gz",
+      "max_absolute_numeric_difference": 0.0
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/audit_global_local_flags_A2.csv.gz",
+      "max_absolute_numeric_difference": 0.0
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/optimal_mixture.csv",
+      "max_absolute_numeric_difference": 3.0531133177191805e-16
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/mixture_outer_fold_metrics.csv",
+      "max_absolute_numeric_difference": 7.327471962526033e-15
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/audit_covariance_decomposition.csv",
+      "max_absolute_numeric_difference": 0.0
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/q1_outputs_for_q2_q3.json",
+      "numeric_equivalent": true
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/sample_extended_distributions.csv",
+      "max_absolute_numeric_difference": 1.0061396160665481e-16
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/mixture_model_metrics_long.csv",
+      "max_absolute_numeric_difference": 1.1368683772161603e-11
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/length_calibration_A2.csv.gz",
+      "max_absolute_numeric_difference": 0.0
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/format_calibration_A1.csv.gz",
+      "max_absolute_numeric_difference": 0.0
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/domain_transfer_effects.csv",
+      "max_absolute_numeric_difference": 9.003214840319629e-16
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/format_calibration_A3.csv.gz",
+      "max_absolute_numeric_difference": 0.0
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/all_indicators_A2.csv.gz",
+      "max_absolute_numeric_difference": 0.0
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/domain_marginal_effects.csv",
+      "max_absolute_numeric_difference": 1.4210854715202004e-14
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/audit_global_local_flags_A3.csv.gz",
+      "max_absolute_numeric_difference": 0.0
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/audit_within_domain_pairs.csv",
+      "max_absolute_numeric_difference": 1.6653345369377348e-16
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/mixture_model_eval.csv",
+      "max_absolute_numeric_difference": 1.1368683772161603e-11
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/format_ablation_samples_A3.csv.gz",
+      "max_absolute_numeric_difference": 0.0
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/transfer_matrix.csv",
+      "max_absolute_numeric_difference": 5.551115123125783e-16
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/quality_only_model.csv",
+      "max_absolute_numeric_difference": 9.996344030316351e-17
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/format_ablation_samples_A1.csv.gz",
+      "max_absolute_numeric_difference": 0.0
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/reference_domain_transfer_1pp.csv",
+      "max_absolute_numeric_difference": 1.8006429680639258e-15
+    },
+    {
+      "file": "output_q1/length_domain_calibrated22/tables/audit_global_local_flags_A1.csv.gz",
+      "max_absolute_numeric_difference": 0.0
+    }
+  ],
+  "baseline_bytes_retained": true,
+  "reason": "重跑的浮点尾数与gzip时间戳差异；数值等价核验通过后保留原表字节及下游接口哈希。"
+}

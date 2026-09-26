@@ -196,3 +196,12 @@
 !/Q3/论文第三问精简正文.md
 !/Q3/论文第三问实现附录.md
 !/Q3/论文第三问精简核验.json
+
+# v0.9.14 论文绘图规范及图件核验
+!/绘图规范.md
+!/figures/fig_*.pdf
+!/figure_audit/
+/figure_audit/*
+!/figure_audit/*.md
+!/figure_audit/*.json
+!/figure_audit/*.py

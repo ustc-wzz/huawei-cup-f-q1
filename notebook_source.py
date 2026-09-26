@@ -44,6 +44,8 @@ plt.rcParams['axes.unicode_minus'] = False
 plt.rcParams['figure.dpi'] = 110
 plt.rcParams['savefig.dpi'] = 300
 plt.rcParams['savefig.bbox'] = 'tight'
+plt.rcParams['svg.fonttype'] = 'none'
+plt.rcParams['pdf.fonttype'] = 42
 plt.rcParams['axes.spines.top'] = False
 plt.rcParams['axes.spines.right'] = False
 plt.rcParams['axes.grid'] = True
@@ -84,6 +86,7 @@ def savefig(name):
     plt.tight_layout()
     plt.savefig(target, dpi=300, bbox_inches='tight')
     plt.savefig(target.with_suffix('.svg'), bbox_inches='tight')
+    plt.savefig(target.with_suffix('.pdf'), bbox_inches='tight')
     plt.savefig(FIG / name, dpi=300, bbox_inches='tight')
 
 print('数据目录:', DATA)
@@ -478,9 +481,8 @@ for ax, j in zip(axes.ravel(), INDICATORS):
 for ax in axes.ravel()[len(INDICATORS):]:
     ax.axis('off')
 handles = [Line2D([0], [0], color=DOM_COLORS[d], lw=2, label=d) for d in DOMAINS]
-fig.legend(handles=handles, loc='lower center', ncol=12, frameon=False, fontsize=9.5, bbox_to_anchor=(0.5, -0.01))
-fig.suptitle('图 1  方向统一并归一化后 22 个质量指标在 A1 七个域上的经验累积分布 ECDF（+ 正向 / - 负向 / ~ 区间型）', fontsize=12, y=0.995)
-plt.tight_layout(rect=(0, 0.03, 1, 0.98))
+axes[3, 4].legend(handles=handles, loc='center left', ncol=1, frameon=False, fontsize=10, borderaxespad=0)
+plt.tight_layout()
 savefig('fig01_indicator_distributions.png'); plt.show()
 
 # %% [markdown]
@@ -555,14 +557,14 @@ sns.heatmap(RHO.iloc[order,order],cmap=CMAP_DIV,vmin=-1,vmax=1,square=True,ax=ax
  cbar_kws={'shrink':.6,'label':'Pearson 相关系数'},linewidths=.4,linecolor='white')
 ax.grid(False);plt.setp(ax.get_xticklabels(),rotation=90,fontsize=9)
 plt.setp(ax.get_yticklabels(),fontsize=9)
-ax.set_title('图 2  22 个指标的 Pearson 相关（聚类仅用于显示顺序，不用于分组赋权）')
+
 savefig('fig02_corr_cluster_heatmap.png');plt.show()
 print('DSIR 三指标的相关性（分别赋权、不合并）:')
 display(RHO.loc[['dsir_books','dsir_wiki','dsir_math'],['dsir_books','dsir_wiki','dsir_math']])
 fig,ax=plt.subplots(figsize=(10,8))
 Wp=W.sort_values('权重');ax.barh([SHORT[j] for j in Wp.index],Wp['权重'],color=C_NAVY)
 ax.axvline(1/22,color=C_CORAL,ls='--',label='等权参考线 1/22（非主方案）')
-ax.set_xlim(0,wG.max()*1.15);ax.set_xlabel('指标权重');ax.set_title('图 3  22 个指标相关性去冗余赋权');ax.legend()
+ax.set_xlim(0,wG.max()*1.15);ax.set_xlabel('指标权重');ax.legend()
 savefig('fig03_weights_redundancy22.png');plt.show()
 
 # %% [markdown]
@@ -648,7 +650,6 @@ for k, (d, ext, c) in enumerate((('arxiv', A2, C_CORAL), ('github', A3, C_GOLD))
     ax.text(0.02, 0.95, 'KS = %.3f (p = %.2g)\nWasserstein = %.4f' % (r['KS统计量'], r['KS_p'], r['Wasserstein距离']), transform=ax.transAxes, va='top', fontsize=9, bbox=dict(boxstyle='round', fc='white', ec='#CCCCCC'))
     ax.set_xlabel('样本级 Q_lin'); ax.set_ylabel('密度'); ax.set_title('(%s) %s 域：抽样集 vs 扩展集的样本级分布' % ('bc'[k], d), fontsize=10.5)
     ax.legend(frameon=False, fontsize=9)
-fig.suptitle('图 4  领域级质量评分及抽样集 / 扩展集对照', fontsize=12, y=0.98)
 savefig('fig04_domain_Q_compare.png'); plt.show()
 
 # %% [markdown]
@@ -710,21 +711,17 @@ def sample_conflict(Z, threshold=R_THRESHOLD):
 
 PAIRS.to_csv(TAB / 'conflict_pairs_A1.csv', index=False, encoding='utf-8-sig')
 
-fig,axes=plt.subplots(1,2,figsize=(15,6))
-conf_strength=(-RHO).clip(lower=0).where(RHO<=-R_THRESHOLD,0)
-sns.heatmap(conf_strength.rename(index=SHORT,columns=SHORT),ax=axes[0],cmap=CMAP_SEQ,vmin=0,vmax=1,xticklabels=True,yticklabels=True)
-axes[0].set_title('Pearson 冲突强度：仅 r ≤ -0.30 的指标对')
+fig,ax=plt.subplots(figsize=(9,5.6))
 top_corr=PAIRS.sort_values('Pearson').head(15).iloc[::-1]
-axes[1].barh(top_corr['指标j']+' × '+top_corr['指标k'],top_corr.Pearson,color=C_CORAL)
-axes[1].axvline(-R_THRESHOLD,ls='--',color=C_NAVY,label='冲突阈值 -0.30')
-axes[1].set_xlabel('正态映射后的 Pearson r');axes[1].legend();axes[1].set_title('反向相关最强的 15 对')
-fig.suptitle('图 5  Pearson 指标冲突结构', fontsize=12)
+ax.barh(top_corr['指标j']+' × '+top_corr['指标k'],top_corr.Pearson,color=C_CORAL)
+ax.axvline(-R_THRESHOLD,ls='--',color=C_NAVY,label='冲突阈值 −0.30')
+ax.set_xlabel('Pearson 相关系数 r（正态映射后）');ax.legend(loc='lower left')
 plt.tight_layout();savefig('fig05_pearson_conflict_definition.png');plt.show()
 
 # %% [markdown]
 # ### 2.2 从指标对、领域和文本长度检查冲突来源
 #
-# 直接在 22 个指标上分析，不计算维度得分。展示三个层次：相关最负的一对指标的联合分布；7 个领域的冲突信号比例和最常见实际触发指标对；文本长度与 CI 的关联。模型评分器和规则指标的区分仅用于描述来源差异，不产生分组权重或分组得分。
+# 直接在 22 个指标上分析，不计算维度得分。图中展示7个领域的冲突信号比例及文本长度与CI的关联；最常见实际触发指标对保留在结果表中。模型评分器和规则指标的区分仅用于描述来源差异，不产生分组权重或分组得分。
 #
 # 每条文本的代表冲突对取已触发“一高一低”条件的指标对中，对 CI 贡献最大的一对，并记录高低方向。未触发则记“无冲突信号”。这些分析描述关联，不证明因果；CI>0 表示存在冲突信号，不等同于严重冲突。
 
@@ -755,24 +752,16 @@ A1['wc_decile']=pd.qcut(A1.rps_doc_word_count.rank(method='first'),10,labels=Fal
 len_conf=A1.groupby('wc_decile').agg(词数中位数=('rps_doc_word_count','median'),平均冲突强度=('CI','mean'),冲突样本占比=('is_conflict','mean'))
 rho_len=stats.spearmanr(A1.CI,np.log1p(A1.rps_doc_word_count))[0]
 print('CI 与 log(词数) 的 Spearman:',rho_len);display(len_conf)
-fig,axes=plt.subplots(1,3,figsize=(17,5.6))
+fig,axes=plt.subplots(1,2,figsize=(11,4.8))
 dc=dom_conf.sort_values('冲突样本占比');ax=axes[0]
 ax.barh(dc.index,100*dc['冲突样本占比'],color=[DOM_COLORS[d] for d in dc.index])
 for i,v in enumerate(100*dc['冲突样本占比']):ax.text(v+.5,i,'%.1f%%'%v,va='center',fontsize=9)
 ax.set_xlim(0,110);ax.set_xlabel('存在冲突信号的样本比例 (%)');ax.set_title('(a) 7 个领域的冲突信号')
-strong=PAIRS.sort_values('Pearson').iloc[0];a,b=strong.j,strong.k;ax=axes[1]
-hb=ax.hexbin(Z1_normal[a],Z1_normal[b],gridsize=45,cmap=CMAP_SEQ,mincnt=1,bins='log')
-for v in [lo[a],hi[a]]:ax.axvline(v,color=C_CORAL,ls='--',lw=1)
-for v in [lo[b],hi[b]]:ax.axhline(v,color=C_CORAL,ls='--',lw=1)
-plt.colorbar(hb,ax=ax,shrink=.75,label='样本数（对数色标）')
-ax.set_xlabel(SHORT[a]+'（正态分数）');ax.set_ylabel(SHORT[b]+'（正态分数）')
-ax.set_title('(b) 反向相关最强的指标对：r=%.3f'%strong.Pearson)
-ax=axes[2];ax.plot(len_conf.index,len_conf['平均冲突强度'],marker='o',color=C_NAVY,label='平均 CI')
+ax=axes[1];ax.plot(len_conf.index,len_conf['平均冲突强度'],marker='o',color=C_NAVY,label='平均 CI')
 ax.set_xticks(len_conf.index);ax.set_xlabel('词数十分位：1 最短，10 最长');ax.set_ylabel('平均 CI')
 ax2=ax.twinx();ax2.grid(False);ax2.plot(len_conf.index,100*len_conf['冲突样本占比'],marker='s',ls='--',color=C_CORAL,label='信号比例')
 ax2.set_ylabel('存在冲突信号的样本比例 (%)');ax2.spines['right'].set_visible(True)
-ax.set_title('(c) CI 与文本长度：Spearman=%.3f'%rho_len)
-fig.suptitle('图 6  直接基于 22 指标的冲突分析',fontsize=13)
+ax.set_title('(b) CI 与文本长度：Spearman=%.3f'%rho_len)
 fig.tight_layout();savefig('fig06_conflict_causes.png');plt.show()
 A1[['id','domain','代表冲突指标对','CI','is_conflict']].to_csv(TAB/'representative_conflict_pairs_A1.csv',index=False,encoding='utf-8-sig')
 
@@ -844,7 +833,6 @@ ax.plot(SENS['beta'], SENS['前10%集合与Q_lin的Jaccard'], marker='s', color=
 ax.plot(SENS['beta'], -SENS['冲突样本平均下调'], marker='D', color=C_CORAL, lw=2, label='冲突样本平均下调幅度')
 ax.axvline(BETA, color=C_GOLD, lw=6, alpha=0.35); ax.text(BETA, ax.get_ylim()[1] * 0.98 if ax.get_ylim()[1] > 0 else 0.9, '本文取 beta = %g' % BETA, ha='center', va='top', fontsize=9, color='#7A5C00')
 ax.set_xlabel('惩罚参数 beta'); ax.legend(frameon=False, fontsize=9); ax.set_title('(c) 消解强度对 beta 的敏感性', fontsize=10.5)
-fig.suptitle('图 7  冲突消解：加权指数凹聚合相对线性综合分的作用', fontsize=12, y=1.02)
 savefig('fig07_resolution.png'); plt.show()
 
 # %% [markdown]
@@ -882,7 +870,6 @@ for ax, (col, lab_, c) in zip(axes, (('URL密度', 'URL 密度（个 / 千字符
     for i, v in enumerate(qc[col]):
         ax.text(i, v, '%.3g' % v, ha='center', va='bottom', fontsize=8.5)
     ax.set_ylabel(lab_); ax.set_xlabel('Q_res 五分位'); ax.set_title(lab_ + ' vs 质量分', fontsize=10.5)
-fig.suptitle('图 8  内容侧独立指标随 Q_res 五分位的变化（这些量未参与评分，用于检验评分可靠性）', fontsize=12, y=1.02)
 plt.tight_layout(); savefig('fig08_content_check.png'); plt.show()
 
 # %% [markdown]
@@ -933,7 +920,6 @@ for ax, (d, Ze) in zip(axes, [('arxiv', Z2_normal), ('github', Z3_normal)]):
     ax.set_yticklabels([SHORT[a]+' × '+SHORT[b] for r,a,b in ranked],fontsize=8)
     ax.set_xlabel('正态分数的 Pearson 相关系数')
     ax.set_title(d+'：反向相关最强的 12 对');ax.legend(frameon=False,fontsize=8)
-fig.suptitle('图 9  当前相关冲突定义在扩展集上的复现',fontsize=12)
 plt.tight_layout();savefig('fig09_extended_conflict_check.png');plt.show()
 
 # ---- 最终域级 Q 表（线性 + 消解后；A1、扩展集、以及 arxiv/github 的合并全量） ----
@@ -1057,7 +1043,6 @@ for d, c in (('pile_cc', C_NAVY), ('dm_mathematics', C_CORAL), ('stackexchange',
 ax.set_xscale('log'); ax.xaxis.set_major_formatter(mpl.ticker.FuncFormatter(lambda v, _: '%g' % v)); ax.xaxis.set_minor_formatter(mpl.ticker.NullFormatter())
 ax.set_xlabel('域份额 p_i + 0.001（对数轴）'); ax.set_ylabel('13 域平均损失'); ax.legend(frameon=False, fontsize=9)
 ax.set_title('(c) 单域份额与平均损失：先降后升（本域收益递减 + 挤占其他域）', fontsize=10.5)
-fig.suptitle('图 10  配比实验数据总览（A4/A5）', fontsize=12, y=1.0)
 savefig('fig10_regmix_overview.png'); plt.show()
 
 # %%
@@ -1185,7 +1170,6 @@ for row,name in enumerate(MODEL_NAMES):
         ax.text(.03,.97,'rho=%.3f\nR2=%.3f\nRMSE=%.3f'%(mt['Spearman'],mt['R2'],mt['RMSE']),
                 transform=ax.transAxes,va='top',fontsize=9)
         ax.set_xlabel(name+'：1M尺度预测');ax.set_ylabel('实测平均损失');ax.set_title(tn)
-fig.suptitle('图 11  四模型独立检验：预测与实测（跨尺度未校准）',fontsize=13)
 plt.tight_layout();savefig('fig11_test_pred_vs_actual.png');plt.show()
 
 # %% [markdown]
@@ -1302,7 +1286,6 @@ ax.barh(y + wbar / 2, ME['边际效应@训练均值配比'], wbar, color=C_NAVY,
 ax.barh(y - wbar / 2, ME['边际效应@均匀配比'], wbar, color=C_GOLD, label='在均匀配比 (1/17) 处')
 ax.axvline(0, color='#333333', lw=1); ax.set_yticks(y); ax.set_yticklabels(ME.index, fontsize=9.5)
 ax.set_xlabel('沿单纯形方向的边际效应 g_i(p)（负 = 比当前平均域更值得增加）'); ax.legend(frameon=False, loc='lower left'); ax.set_title('(b) 边际效应随配比位置变化（边际收益递减）', fontsize=10.5)
-fig.suptitle('图 12  各领域对 13 域平均损失的影响（对数线性混料模型）', fontsize=12, y=1.0)
 plt.tight_layout(); savefig('fig12_marginal_effects_forest.png'); plt.show()
 
 # 图13：三模型在相同参考配比与可行转移幅度下对照。
@@ -1313,7 +1296,6 @@ axes[0].set_title('(a) 样条：转移0.1个百分点');axes[0].tick_params(axis
 REF_TRANSFER.sort_values('加性样条').plot.barh(ax=axes[1],color=[C_PLUM,C_TEAL,C_NAVY])
 axes[1].axvline(0,color=C_GREY,lw=1);axes[1].set_title('(b) 从专利背景域转出1个百分点')
 axes[1].set_xlabel('预测损失变化');axes[1].tick_params(axis='y',labelsize=8)
-fig.suptitle('图 13  固定配比约束下的局部替代效应',fontsize=12)
 plt.tight_layout();savefig('fig13_domain_transfer_effects.png');plt.show()
 
 # ---- 图 14：跨域迁移矩阵 ----
@@ -1325,7 +1307,7 @@ for j, v in enumerate(VAL13):
     if v in DOM17:
         i = DOM17.index(v); ax.add_patch(Rectangle((j, i), 1, 1, fill=False, edgecolor=C_GOLD, lw=2.2))
 ax.set_xlabel('验证域（13 个）'); ax.set_ylabel('配方域（17 个）'); plt.setp(ax.get_xticklabels(), rotation=45, ha='right', fontsize=9); plt.setp(ax.get_yticklabels(), fontsize=9)
-ax.set_title('图 14  配方域 -> 验证域的跨域迁移矩阵（逐验证域对数线性模型；金框 = 同名域）', fontsize=11.5)
+
 savefig('fig14_transfer_matrix.png'); plt.show()
 
 # %% [markdown]
@@ -1387,7 +1369,6 @@ ax = fig.add_subplot(gs[2])
 sns.heatmap(AV_rank.loc[AV_rank['1M 训练(512)'].sort_values().index], cmap=CMAP_SEQ, annot=True, fmt='.0f', ax=ax, cbar_kws={'shrink': 0.7, 'label': '对数特征系数 a_i 名次（1 = 系数最负）'}, linewidths=0.4, linecolor='white', annot_kws={'size': 8})
 ax.grid(False)
 ax.set_title('(c) 域对数特征系数名次在各尺度间的变化', fontsize=10.5); ax.set_xlabel(''); plt.setp(ax.get_xticklabels(), rotation=0, fontsize=9); plt.setp(ax.get_yticklabels(), fontsize=8.5)
-fig.suptitle('图 15  外推表 A12-A15 上的稳健性：配比排序、单域排序与域效应排序', fontsize=12, y=1.0)
 savefig('fig15_extrapolation_robustness.png'); plt.show()
 
 # %% [markdown]
@@ -1529,7 +1510,6 @@ ax.barh(y - 0.5 * wbar, OPT['GBM 搜索最优'], wbar, color=C_PLUM, label='GBM 
 ax.barh(y - 1.5 * wbar, OPT['训练集平均配比'], wbar, color=C_NAVY, alpha=0.7, label='训练集平均配比（GBM 评估 %.3f）' % CMP['GBM 预测损失'][4])
 ax.set_yticks(y); ax.set_yticklabels(OPT.index, fontsize=8.5); ax.invert_yaxis(); ax.set_xlabel('配比份额'); ax.legend(frameon=False, fontsize=8.5, loc='upper center', bbox_to_anchor=(0.5, -0.09), ncol=2)
 ax.set_title('(c) 三种候选配比与训练集平均配比（按主模型 p* 排序）', fontsize=10)
-fig.suptitle('图 16  质量评分 Q 与配比效应的关系及候选配比', fontsize=12, y=1.0)
 savefig('fig16_Q_and_optimal_mixture.png'); plt.show()
 
 # ---- 保存给问题二 / 三的接口文件 ----
