@@ -1,3 +1,7 @@
+## v0.9.22 — 2026-09-26
+
+- v0.9.22图12拆分：从原SVG直接提取左右矢量子图，分别输出`figures/fig_12_marginal_effects_forest_left.svg`和`figures/fig_12_marginal_effects_forest_right.svg`；保留原始坐标、图例、数学文字与统计内容，原图、数据、Notebook及模型不变。复现入口`Q1/split_fig12_svg.py`，结构核验见`figure_audit/fig12_split.json`，两图均已完成渲染检查。
+
 ## v0.9.21 — 2026-09-26
 
 - 基于指定原稿独立审查后重构第四问，提供独立章节与完整论文副本，保留前三问原内容。

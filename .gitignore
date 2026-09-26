@@ -255,3 +255,6 @@
 !/Q4/paper_restructure_v0921/*.md
 !/Q4/paper_restructure_v0921/*.json
 !/Q4/paper_restructure_v0921/assets/
+
+# v0.9.22 图12左右矢量子图拆分复现入口
+!/Q1/split_fig12_svg.py

@@ -1,0 +1,40 @@
+{
+  "source": "figures/fig_12_marginal_effects_forest.svg",
+  "source_sha256": "17037e7123c3ca58d9f953c5371d4e02ec458cd2c386fe2f5f832b9f286f40d2",
+  "method": "Extract original axes groups and shared vector definitions; crop page only.",
+  "model_and_data_changed": false,
+  "panels": [
+    {
+      "file": "figures/fig_12_marginal_effects_forest_left.svg",
+      "viewBox": [
+        0,
+        0,
+        569,
+        496.281818
+      ],
+      "original_panel_preserved": true,
+      "editable_text_nodes": 28,
+      "raster_images": 0,
+      "references_resolved": true
+    },
+    {
+      "file": "figures/fig_12_marginal_effects_forest_right.svg",
+      "viewBox": [
+        565,
+        0,
+        507.444169,
+        496.281818
+      ],
+      "original_panel_preserved": true,
+      "editable_text_nodes": 27,
+      "raster_images": 0,
+      "references_resolved": true
+    }
+  ],
+  "visual_qa": {
+    "rendered_panels": 2,
+    "labels_legends_math_complete": true,
+    "white_background": true,
+    "original_svg_unchanged": true
+  }
+}

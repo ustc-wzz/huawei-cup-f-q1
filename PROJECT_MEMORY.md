@@ -160,3 +160,5 @@ C6高／中可比层分别等渗桥接，支撑范围之外返回缺失；高可
 - v0.9.19第四问独立月度观测前沿：入口`Q4/月度能力前沿.ipynb`，镜像`Q4/monthly_frontier_notebook_source.py`，绘图`Q4/draw_monthly_frontier.py`，产物`output_q4_monthly_frontier/`。沿用2449模型许可筛选与提交月份，前沿成员为得分≥月度90%分位；3月仅截至13日。2024年6—8月均值29.54，2024年12月—2025年2月40.23，差10.68分；描述性构成变化不能解释为因果效应，未改原四问模型、Notebook或ZIP。
 
 - v0.9.21基于用户指定的`初稿/F题论文_问题四.docx`重构第四问，交付`F题论文_问题四重构_独立章节_v0.9.21.docx`与完整副本；独立正文6页、附录3页，主线为历史归因→损失换算检验→资源约束前沿→验证，保留11个正文与8个附录可编辑公式。补充既有冻结算力对照，收紧来源字段留出、删任务敏感性对象及两类重抽样口径，24个月区间下限按原始精度修正为23.05。脚本`Q4/restructure_q4_v0921.py`，审查、源稿、图件快照及核验位于`Q4/paper_restructure_v0921/`；原稿、其他章节、数值模型、Notebook和ZIP不变。
+
+- v0.9.22图12拆分：从原SVG直接提取左右矢量子图，分别输出`figures/fig_12_marginal_effects_forest_left.svg`和`figures/fig_12_marginal_effects_forest_right.svg`；保留原始坐标、图例、数学文字与统计内容，原图、数据、Notebook及模型不变。复现入口`Q1/split_fig12_svg.py`，结构核验见`figure_audit/fig12_split.json`，两图均已完成渲染检查。
