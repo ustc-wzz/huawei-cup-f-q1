@@ -1,0 +1,521 @@
+{
+  "version": "v0.9.10",
+  "source_name": "F题论文初稿_格式修复_202609261400.docx",
+  "source_sha256": "091161d54dbe37fd29caaeb647194de3565351676acfd8995d53d976de35c993",
+  "output": "F题论文初稿_问题二精简_20260926.docx",
+  "output_sha256": "d3b4ab21443b072dac756574755cee40a76c1cee769a5d16c9fe0a79dfe52b24",
+  "changed_package_parts": [
+    "word/document.xml",
+    "word/settings.xml"
+  ],
+  "original_unchanged": true,
+  "other_chapters_preserved": true,
+  "model_recomputed": false,
+  "old_q2_body_elements": 245,
+  "new_q2_body_elements": 69,
+  "appendix_body_elements": 45,
+  "old_q2_text_characters": 13046,
+  "new_q2_text_characters": 4127,
+  "main_text_reduction_percent": 68.37,
+  "editable_display_equations": {
+    "6": 16,
+    "附2": 11
+  },
+  "result_tables": {
+    "6": 3,
+    "附2": 2
+  },
+  "equation_source_map": [
+    {
+      "source_body_index": 422,
+      "new_label": "6-1"
+    },
+    {
+      "source_body_index": 429,
+      "new_label": "6-2"
+    },
+    {
+      "source_body_index": 444,
+      "new_label": "6-3"
+    },
+    {
+      "source_body_index": 446,
+      "new_label": "6-4"
+    },
+    {
+      "source_body_index": 467,
+      "new_label": "6-5"
+    },
+    {
+      "source_body_index": 469,
+      "new_label": "6-6"
+    },
+    {
+      "source_body_index": 474,
+      "new_label": "6-7"
+    },
+    {
+      "source_body_index": 495,
+      "new_label": "6-8"
+    },
+    {
+      "source_body_index": 497,
+      "new_label": "6-9"
+    },
+    {
+      "source_body_index": 509,
+      "new_label": "6-10"
+    },
+    {
+      "source_body_index": 511,
+      "new_label": "6-11"
+    },
+    {
+      "source_body_index": 515,
+      "new_label": "6-12"
+    },
+    {
+      "source_body_index": 518,
+      "new_label": "6-13"
+    },
+    {
+      "source_body_index": 531,
+      "new_label": "6-14"
+    },
+    {
+      "source_body_index": 551,
+      "new_label": "6-15"
+    },
+    {
+      "source_body_index": 567,
+      "new_label": "6-16"
+    },
+    {
+      "source_body_index": 456,
+      "new_label": "附2-1"
+    },
+    {
+      "source_body_index": 460,
+      "new_label": "附2-2"
+    },
+    {
+      "source_body_index": 540,
+      "new_label": "附2-3"
+    },
+    {
+      "source_body_index": 536,
+      "new_label": "附2-4"
+    },
+    {
+      "source_body_index": 557,
+      "new_label": "附2-5"
+    },
+    {
+      "source_body_index": 563,
+      "new_label": "附2-6"
+    },
+    {
+      "source_body_index": 572,
+      "new_label": "附2-7"
+    },
+    {
+      "source_body_index": 583,
+      "new_label": "附2-8"
+    },
+    {
+      "source_body_index": 588,
+      "new_label": "附2-9"
+    },
+    {
+      "source_body_index": 590,
+      "new_label": "附2-10"
+    },
+    {
+      "source_body_index": 611,
+      "new_label": "附2-11"
+    }
+  ],
+  "numerical_sources_sha256": {
+    "output_q2_shared/q2_interface.json": "85d730930cf2408526d6644bbfdbc4ae57059262560cf0733f666e88b17e2a88",
+    "output_q2_shared/tables/classic_validation.csv": "adda82b665c033457aac6d8a7c94f82ef748f06aa261da07233365f083bb82a2",
+    "output_q2_shared/tables/cross_source_validation.csv": "5ce28220464c7b86dbf12862a8b41d330fa88e4b106d84892bf929e359686a64",
+    "output_q2_shared/tables/quality_validation.csv": "6e01a941ef843df88971f3da617d1002c6a41813172b82d23f284ad9abd9926d",
+    "output_q2_shared/tables/mixture_validation.csv": "536b6014c99bf7fbbe48da2ca1fba985d47d710088606246d64b3ec19b97b29b",
+    "output_q2_shared/tables/conditional_uncertainty.csv": "f5b3a723a21d710bdef1fba278f2b26518ac11f4f53d82695dd907479d1a6582",
+    "output_q2_shared/tables/quality_parameter_substitution.csv": "20afc8895bbbb651468af03432d399ca570cb24ea5db2ae3766f91bf62733ec2",
+    "output_q2_shared/tables/domain_combination_effects.csv": "d8273c1762cbb70875f6825177afd6f18642dfcc416ec7db81612ca3b92c2d72",
+    "output_q2_shared/tables/mixture_candidates.csv": "f1f060856cdd9442782e2b0fd12755691d8d2d6e258be9f8ac44104951c4618f",
+    "output_q2_shared/tables/quality_B8_sensitivity.csv": "6898adf3500b34f0a6f6e6dac30635811321b8e254e96e8e0c93f2c29e36fb51",
+    "output_q2_shared/tables/quality_direction_audit.csv": "84319422f04345b8190fcac798d885dd9f9f636458cb2c4d9612ccc302ae818d",
+    "output_q2_shared/tables/paired_group_improvement.csv": "54c1a15bae89d8a2a4034e2297386a5ac994d2941b015bc35f5063f045282947",
+    "output_q2_shared/tables/estimated_loss_consistency.csv": "a82cd850e41c1f004296e4756bba7ece72d90dd1f6cd96f08438cdd18c9cbce8"
+  },
+  "render_qa": {
+    "status": "passed",
+    "full_document_layout_overview_reviewed": true,
+    "revised_pages_reviewed_full_size": [
+      33,
+      34,
+      35,
+      36,
+      37,
+      73,
+      74,
+      75,
+      76
+    ],
+    "source_pages": 84,
+    "final_pages": 76,
+    "source_q2_pages": [
+      33,
+      49
+    ],
+    "final_q2_pages": [
+      33,
+      37
+    ],
+    "appendix_pages": [
+      73,
+      76
+    ],
+    "unchanged_pages": [
+      {
+        "source_page": 1,
+        "output_page": 1,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 2,
+        "output_page": 2,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 3,
+        "output_page": 3,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 4,
+        "output_page": 4,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 5,
+        "output_page": 5,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 6,
+        "output_page": 6,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 7,
+        "output_page": 7,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 8,
+        "output_page": 8,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 9,
+        "output_page": 9,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 10,
+        "output_page": 10,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 11,
+        "output_page": 11,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 12,
+        "output_page": 12,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 13,
+        "output_page": 13,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 14,
+        "output_page": 14,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 15,
+        "output_page": 15,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 16,
+        "output_page": 16,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 17,
+        "output_page": 17,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 18,
+        "output_page": 18,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 19,
+        "output_page": 19,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 20,
+        "output_page": 20,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 21,
+        "output_page": 21,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 22,
+        "output_page": 22,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 23,
+        "output_page": 23,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 24,
+        "output_page": 24,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 25,
+        "output_page": 25,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 26,
+        "output_page": 26,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 27,
+        "output_page": 27,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 28,
+        "output_page": 28,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 29,
+        "output_page": 29,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 30,
+        "output_page": 30,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 31,
+        "output_page": 31,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 32,
+        "output_page": 32,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 50,
+        "output_page": 38,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 51,
+        "output_page": 39,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 52,
+        "output_page": 40,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 53,
+        "output_page": 41,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 54,
+        "output_page": 42,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 55,
+        "output_page": 43,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 56,
+        "output_page": 44,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 57,
+        "output_page": 45,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 58,
+        "output_page": 46,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 59,
+        "output_page": 47,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 60,
+        "output_page": 48,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 61,
+        "output_page": 49,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 62,
+        "output_page": 50,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 63,
+        "output_page": 51,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 64,
+        "output_page": 52,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 65,
+        "output_page": 53,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 66,
+        "output_page": 54,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 67,
+        "output_page": 55,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 68,
+        "output_page": 56,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 69,
+        "output_page": 57,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 70,
+        "output_page": 58,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 71,
+        "output_page": 59,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 72,
+        "output_page": 60,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 73,
+        "output_page": 61,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 74,
+        "output_page": 62,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 75,
+        "output_page": 63,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 76,
+        "output_page": 64,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 77,
+        "output_page": 65,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 78,
+        "output_page": 66,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 79,
+        "output_page": 67,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 80,
+        "output_page": 68,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 81,
+        "output_page": 69,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 82,
+        "output_page": 70,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 83,
+        "output_page": 71,
+        "body_pixels_identical": true
+      },
+      {
+        "source_page": 84,
+        "output_page": 72,
+        "body_pixels_identical": true
+      }
+    ],
+    "reference_fields_resolve": true,
+    "note": "为规避LibreOffice不支持Word公式SEQ的按一级标题重置行为，另在只读渲染副本中固定原缓存编号并比对；交付DOCX保留原稿其他章节域结构。原稿与交付文档均未被渲染器回存。使用同一临时fontconfig加载中文字体。"
+  }
+}
