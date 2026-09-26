@@ -232,6 +232,6 @@
 /output_q2_model_evidence/*_candidate_oof.csv
 /output_q2_model_evidence/*_preview.png
 
-# v0.9.16 第四问论文图件矢量格式
+# v0.9.18 第四问论文图件矢量格式
 !/output_q4_evolution/figures/*.svg
 !/figures/q4_causal_publication.pdf
