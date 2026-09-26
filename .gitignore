@@ -235,3 +235,14 @@
 # v0.9.18 第四问论文图件矢量格式
 !/output_q4_evolution/figures/*.svg
 !/figures/q4_causal_publication.pdf
+
+# v0.9.19 第四问独立月度前沿图与可复现分析
+!/Q4/月度能力前沿.ipynb
+!/output_q4_monthly_frontier/
+/output_q4_monthly_frontier/*
+!/output_q4_monthly_frontier/*.md
+!/output_q4_monthly_frontier/*.json
+!/output_q4_monthly_frontier/*.csv
+!/output_q4_monthly_frontier/*.png
+!/output_q4_monthly_frontier/*.pdf
+!/output_q4_monthly_frontier/*.svg

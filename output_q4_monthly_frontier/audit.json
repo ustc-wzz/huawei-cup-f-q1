@@ -1,0 +1,29 @@
+{
+  "input_sha256": {
+    "real_attachments/C_efficiency_evolution/leaderboard_cleaned.csv": "199891128629f24f83ed2f51211eee65a82a13f45275e79a8227d5dacc7c2846",
+    "output_q4_evolution/tables/c1_analysis.csv": "3c6fa3e9d9f4728e952c3c92f2586b3ba9693a4a54a0c498724d10ac820420de"
+  },
+  "n": 2449,
+  "agrees_with_existing_analysis": true,
+  "monthly_count_conserved": true,
+  "frontier_threshold": 0.9,
+  "sensitivity_threshold": 0.8,
+  "quantile_method": "linear",
+  "backend": "python",
+  "figure_width_mm": 180,
+  "figure_height_mm": 116,
+  "dpi": 600,
+  "license_scope": "existing operational open-weight/research-use allowlist; not strict open source",
+  "causal_claim": false,
+  "notebook_executed_code_cells": 2,
+  "mirror_exact": true,
+  "visual_qa": "PNG preview checked: labels, panel order, legend, units and partial-month marking",
+  "png_pixels": [
+    4251,
+    2740
+  ],
+  "png_dpi": [
+    599.9988,
+    599.9988
+  ]
+}

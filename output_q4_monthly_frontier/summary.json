@@ -1,0 +1,13 @@
+{
+  "n": 2449,
+  "date_min": "2024-06-08",
+  "date_max": "2025-03-13",
+  "first_three_q90_mean": 29.5414987151489,
+  "last_three_complete_q90_mean": 40.22595926277716,
+  "complete_change": 10.684460547628259,
+  "last_three_including_partial_q90_mean": 40.75282382915224,
+  "including_partial_change": 11.21132511400334,
+  "initial_frontier_N_B": 34.389,
+  "final_frontier_N_B": 14.766,
+  "final_complete_frontier_N_B": 14.766
+}
