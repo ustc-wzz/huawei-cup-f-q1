@@ -8,7 +8,7 @@
   "comparison": "publication-time interquartile contrast in matched pretrained models",
   "bootstrap_replicates": 400,
   "bootstrap_unit": "publisher organization",
-  "condition_number": 5.955076320367434,
+  "condition_number": 5.955076320367432,
   "design_rank": 3,
   "assumptions": [
     "Residual time effect represents non-scale technical progress, conditional on comparable scale and evaluation.",

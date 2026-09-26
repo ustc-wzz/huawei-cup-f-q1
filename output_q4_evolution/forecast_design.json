@@ -2,7 +2,7 @@
   "cutoff": "2025-03-13",
   "compute_sample": 215,
   "C0": 3.303422000000004e+24,
-  "historical_log_compute_growth_per_year": 1.0337133922793413,
+  "historical_log_compute_growth_per_year": 1.0337133922793442,
   "main_growth_fraction": 0.25,
   "main_technical_half_life_months": 24,
   "quantile": 0.9,

@@ -16,7 +16,7 @@ from matplotlib.path import Path as MPath
 from repro_runtime import configure_fonts
 
 
-def draw():
+def draw(save_outputs=True):
     configure_fonts()
     if 'Arial Unicode MS' in {f.name for f in font_manager.fontManager.ttflist}:
         plt.rcParams['font.family'] = ['Arial Unicode MS']
@@ -56,6 +56,8 @@ def draw():
     arrow([(5.68,1.78),(4.35,1.78),(4.35,2.78)],True)
     arrow([(8.82,1.78),(9.80,1.78),(9.80,2.78)],True)
     arrow([(1.45,2.78),(1.45,.57),(10.65,.57),(10.65,2.78)])
+    if not save_outputs:
+        return fig
     dest=ROOT/'figures'/'q4_causal_publication';dest.parent.mkdir(exist_ok=True)
     for ext in ['png','pdf','svg']:
         fig.savefig(dest.with_suffix('.'+ext),dpi=600,facecolor='white')

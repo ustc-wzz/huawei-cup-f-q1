@@ -1,0 +1,28 @@
+{
+  "figures_png_svg_pdf": 8,
+  "result_tables_checked": 38,
+  "numerically_equivalent_replay_files": [
+    "output_q4_evolution/tables/q3_future_resources.csv",
+    "output_q4_evolution/tables/task_weight_sensitivity.csv",
+    "output_q4_evolution/tables/confounding_sensitivity.csv",
+    "output_q4_evolution/tables/mediation_contributions.csv",
+    "output_q4_evolution/tables/mediation_bootstrap.csv",
+    "output_q4_evolution/tables/structural_quantile_metrics.csv",
+    "output_q4_evolution/tables/broad_rolling_backtest.csv",
+    "output_q4_evolution/tables/broad_frontier_forecast.csv",
+    "output_q4_evolution/tables/q3_cost_quality_sensitivity.csv",
+    "output_q4_evolution/tables/mediation_coefficients.csv",
+    "output_q4_evolution/tables/coupled_frontier_forecast.csv",
+    "output_q4_evolution/tables/q3_absolute_bridge_forecast.csv",
+    "output_q4_evolution/tables/data_volume_sensitivity.csv",
+    "output_q4_evolution/tables/structural_quantile_validation.csv",
+    "output_q4_evolution/tables/broad_backtest_metrics.csv",
+    "output_q4_evolution/tables/structural_validation_predictions.csv",
+    "output_q4_evolution/tables/bootstrap_resource_shortcut_check.csv",
+    "output_q4_evolution/tables/structural_validation_metrics.csv"
+  ],
+  "baseline_table_bytes_preserved": true,
+  "panel_labels_continuous": true,
+  "math_labels_rendered": true,
+  "no_numbered_total_titles": true
+}

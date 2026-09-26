@@ -100,13 +100,14 @@ provenance(started)
 from verify import run as verify_run
 verification=verify_run()
 display(pd.Series(verification['checks'],name='独立核验'))
+# 按项目绘图规范导出：数学排版、连续子图编号、统一配色及PNG/SVG/PDF。
 from plots import run as plot_run
 plot_run()
 from report import run as report_run
 report_run()
 
 # %%
-for name in ['01_causal_structure','03_mediation_and_sensitivity','04_frontier_forecasts','05_loss_benchmark_bridge','06_task_level_audit','07_validation']:
+for name in ['01_causal_structure','02_data_and_evolution','03_mediation_and_sensitivity','04_frontier_forecasts','05_loss_benchmark_bridge','06_task_level_audit','07_validation']:
     display(Image(filename=str(OUT/'figures'/f'{name}.png'),width=1000))
 
 # %%
