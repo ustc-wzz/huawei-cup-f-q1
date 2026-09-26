@@ -16,10 +16,36 @@ from matplotlib.path import Path as MPath
 from repro_runtime import configure_fonts
 
 
+def embed_svg_font(path):
+    """Keep SVG labels editable and preserve Chinese glyphs on other machines."""
+    import base64
+    from io import BytesIO
+    import xml.etree.ElementTree as ET
+    from fontTools import subset
+    from fontTools.ttLib import TTFont
+    svg = path.read_text(encoding='utf-8')
+    root = ET.fromstring(svg)
+    labels = ''.join(''.join(el.itertext()) for el in root.iter('{http://www.w3.org/2000/svg}text'))
+    font = TTFont(ROOT/'assets/fonts/NotoSansSC-Regular.ttf')
+    sub = subset.Subsetter()
+    sub.populate(text=labels)
+    sub.subset(font)
+    font.flavor = 'woff'
+    buffer = BytesIO()
+    font.save(buffer)
+    data = base64.b64encode(buffer.getvalue()).decode('ascii')
+    style = ("<style type=\"text/css\">@font-face {font-family: 'Noto Sans SC Diagram';"
+             "font-weight: 400; src: url(data:font/woff;base64," + data + ") format('woff');}</style>")
+    path.write_text(svg.replace('<defs>', '<defs>'+style, 1), encoding='utf-8')
+
+
 def draw(save_outputs=True):
     configure_fonts()
-    if 'Arial Unicode MS' in {f.name for f in font_manager.fontManager.ttflist}:
-        plt.rcParams['font.family'] = ['Arial Unicode MS']
+    # Keep the bundled Simplified Chinese font; system Unicode fonts may use
+    # different regional glyph forms (for example, 与 in the disturbance node).
+    # A static Regular instance avoids rendering the variable font at weight 100.
+    font_manager.fontManager.addfont(str(ROOT/'assets/fonts/NotoSansSC-Regular.ttf'))
+    plt.rcParams['font.family'] = ['Noto Sans SC Diagram']
     plt.rcParams.update({'font.size': 12, 'mathtext.fontset': 'stix',
                          'pdf.fonttype': 42, 'svg.fonttype': 'none',
                          'axes.unicode_minus': False})
@@ -61,6 +87,7 @@ def draw(save_outputs=True):
     dest=ROOT/'figures'/'q4_causal_publication';dest.parent.mkdir(exist_ok=True)
     for ext in ['png','pdf','svg']:
         fig.savefig(dest.with_suffix('.'+ext),dpi=600,facecolor='white')
+    embed_svg_font(dest.with_suffix('.svg'))
     fig.savefig('/tmp/q4_causal_preview.png',dpi=140,facecolor='white')
     plt.close(fig)
     print(dest.with_suffix('.png'))

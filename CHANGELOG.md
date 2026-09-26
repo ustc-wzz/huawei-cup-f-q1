@@ -1,3 +1,7 @@
+## v0.9.23 — 2026-09-27
+
+- v0.9.23流程图字形修复：独立流程图与图37改用随包Noto Sans SC常规字重400，移除Arial Unicode MS覆盖；静态字体采用独立族名，SVG嵌入所用字符的字体子集以保留可编辑文字。同步PNG/PDF/SVG及Notebook内嵌图，核对51个汉字字形；数值模型和复现ZIP不变。核验见`figure_audit/q4_font_fix.json`。
+
 ## v0.9.22 — 2026-09-26
 
 - v0.9.22图12拆分：从原SVG直接提取左右矢量子图，分别输出`figures/fig_12_marginal_effects_forest_left.svg`和`figures/fig_12_marginal_effects_forest_right.svg`；保留原始坐标、图例、数学文字与统计内容，原图、数据、Notebook及模型不变。复现入口`Q1/split_fig12_svg.py`，结构核验见`figure_audit/fig12_split.json`，两图均已完成渲染检查。

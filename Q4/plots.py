@@ -38,10 +38,12 @@ def export(fig,name):
     fig.savefig(root/f'{stem}.png',dpi=300,bbox_inches='tight');fig.savefig(root/f'{stem}.svg',bbox_inches='tight');plt.close(fig)
 
 def causal():
-    from draw_causal_publication import draw
+    from draw_causal_publication import draw, embed_svg_font
     with matplotlib.rc_context():
         fig=draw(save_outputs=False)
         export(fig,'01_causal_structure')
+        embed_svg_font(OUT/'figures/01_causal_structure.svg')
+        embed_svg_font(OUT.parent/'figures/fig_37_q4_causal_structure.svg')
 
 
 def sample_plot():

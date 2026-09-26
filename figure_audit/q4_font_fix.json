@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "executed_code_cells": 11,
+  "tables_equivalent": 38,
+  "rtol": 1e-10,
+  "atol": 1e-10,
+  "font": "Noto Sans SC Diagram Regular",
+  "font_weight": 400,
+  "note": "Full notebook executed; non-diagram outputs restored to pre-run bytes; only first diagram display refreshed.",
+  "chinese_glyphs_covered": 51,
+  "svg_embedded_font": true,
+  "svg_text_editable": true
+}

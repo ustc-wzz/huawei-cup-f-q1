@@ -21,18 +21,18 @@
   },
   {
     "path": "output_q4_evolution/figures/01_causal_structure.pdf",
-    "bytes": 47000,
-    "sha256": "d95255f4488a7b442be192c15dbe44900bd88986a7747ece0a82d852c7d2130f"
+    "bytes": 24398,
+    "sha256": "44cbe2eed8c95603cc5eee3471e8e9c010dba83644b41ca9d7a690b27d946c63"
   },
   {
     "path": "output_q4_evolution/figures/01_causal_structure.png",
-    "bytes": 189012,
-    "sha256": "643ae35516fc802a960d1e23b7dbd6f99845ed04a89187cd788d15078f71c5d7"
+    "bytes": 192791,
+    "sha256": "9378d8ca04f4e387764860580bb4aa444ea0368e337c6466cf1eb89c15fdf58a"
   },
   {
     "path": "output_q4_evolution/figures/01_causal_structure.svg",
-    "bytes": 19743,
-    "sha256": "796fdd6efb6af85398f906c9a2fdbba71569b552f5c1a542d94e71068b28b638"
+    "bytes": 37468,
+    "sha256": "da5e0c80b89e2a392f6f2870914d50bcd734201a28e1c3ce104223aa49b5aba6"
   },
   {
     "path": "output_q4_evolution/figures/02_data_and_evolution.pdf",
@@ -376,8 +376,8 @@
   },
   {
     "path": "Q4/draw_causal_publication.py",
-    "bytes": 3339,
-    "sha256": "55452b47f36ca61a3aa48536a934c5beef5a2ec3b8bd3dbe06d54d27e54bdf40"
+    "bytes": 4617,
+    "sha256": "ca08b25f2877043c315d6747bfdfdc760f9978415d03191f21b609b051df7bc2"
   },
   {
     "path": "Q4/evolution_model.py",
@@ -396,8 +396,8 @@
   },
   {
     "path": "Q4/plots.py",
-    "bytes": 9620,
-    "sha256": "bc9a0e9555345ea998c7490e194f59461ee436b5ca546fd6e24ccc6beeb1019c"
+    "bytes": 9774,
+    "sha256": "564f9e8506194418fc60b69a2e230d7ca7e65a2740ba384947132916fe8b8c51"
   },
   {
     "path": "Q4/report.py",
