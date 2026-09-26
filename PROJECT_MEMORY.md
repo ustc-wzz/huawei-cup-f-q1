@@ -164,3 +164,5 @@ C6高／中可比层分别等渗桥接，支撑范围之外返回缺失；高可
 - v0.9.22图12拆分：从原SVG直接提取左右矢量子图，分别输出`figures/fig_12_marginal_effects_forest_left.svg`和`figures/fig_12_marginal_effects_forest_right.svg`；保留原始坐标、图例、数学文字与统计内容，原图、数据、Notebook及模型不变。复现入口`Q1/split_fig12_svg.py`，结构核验见`figure_audit/fig12_split.json`，两图均已完成渲染检查。
 
 - v0.9.23流程图字形修复：独立流程图与图37改用随包Noto Sans SC常规字重400，移除Arial Unicode MS覆盖；静态字体采用独立族名，SVG嵌入所用字符的字体子集以保留可编辑文字。同步PNG/PDF/SVG及Notebook内嵌图，核对51个汉字字形；数值模型和复现ZIP不变。核验见`figure_audit/q4_font_fix.json`。
+
+- v0.9.24第四问论文按用户六节结构调整为历史模型→贡献求解与验证→条件前沿→辅助对照；新增四种反事实情境及损失比恒等式，分开前沿与验证图，补齐起点38.73及三算力情景。交付`F题论文_问题四主线调整_独立章节_v0.9.24.docx`和完整副本，正文10页、附录4页，21个可编辑编号公式。入口`Q4/restructure_q4_v0924.py`，证据与图件位于`Q4/paper_restructure_v0924/`；仅写作与展示调整，原稿、数值模型、Notebook及ZIP不变。

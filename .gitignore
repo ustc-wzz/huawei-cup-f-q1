@@ -258,3 +258,13 @@
 
 # v0.9.22 图12左右矢量子图拆分复现入口
 !/Q1/split_fig12_svg.py
+
+# v0.9.24 第四问主线调整及审计材料
+!/F题论文_问题四主线调整_独立章节_v0.9.24.docx
+!/F题论文_问题四主线调整_完整副本_v0.9.24.docx
+!/Q4/paper_restructure_v0924/
+/Q4/paper_restructure_v0924/*
+!/Q4/paper_restructure_v0924/*.md
+!/Q4/paper_restructure_v0924/*.json
+!/Q4/paper_restructure_v0924/*.py
+!/Q4/paper_restructure_v0924/assets/

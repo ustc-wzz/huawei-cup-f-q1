@@ -1,0 +1,20 @@
+{
+ "872": "S_i=\\frac{1}{6}\\sum_{k=1}^{6}s_{ik},\\qquad 0\\leq S_i\\leq100.",
+ "885": "M_i=\\begin{pmatrix}\\ln N_{B,i}\\\\\\ln D_{B,i}\\end{pmatrix}=a_0+a_TT_i+\\varepsilon_{M,i}.",
+ "887": "r(N_B,D_B)=AN_B^{-\\alpha}+BD_B^{-\\nu},\\qquad x(N_B,D_B)=-\\ln r(N_B,D_B).",
+ "889": "Z_i=\\beta_0+\\kappa x(N_{B,i},D_{B,i})+\\gamma_TT_i+\\varepsilon_{Y,i}.",
+ "899": "\\begin{aligned}\\Delta_S&=\\tfrac12[G(t_0,t_1)-G(t_0,t_0)+G(t_1,t_1)-G(t_1,t_0)],\\\\\\Delta_T&=\\tfrac12[G(t_1,t_0)-G(t_0,t_0)+G(t_1,t_1)-G(t_0,t_1)].\\end{aligned}",
+ "925": "\\widehat f_\\ell=\\underset{f\\;\\mathrm{nonincreasing}}{\\arg\\min}\\sum_{i\\in I_\\ell}(S_i-f(L_i))^2.",
+ "935": "C_h=C_\\star\\exp\\!\\left[r_C\\max(g_C,0)\\frac{h}{12}\\right],\\quad r_C\\in\\{0,\\tfrac14,\\tfrac12\\}.",
+ "939": "q_\\tau(Z\\mid x,T)=b_{0,\\tau}+\\kappa_\\tau x+\\gamma_{T,\\tau}T,\\quad\\tau=0.9,\\quad\\kappa_\\tau\\geq0.",
+ "944": "\\psi_H(h)=\\int_0^{h/12}e^{-\\delta t}\\,dt=\\frac{1-e^{-\\delta h/12}}{\\delta},\\qquad\\psi_\\infty(h)=h/12.",
+ "948": "F_h=100\\operatorname{expit}\\!\\left[z_\\star-\\kappa_\\tau\\ln\\frac{L_h^\\star-E}{L_0^\\star-E}+\\gamma_{T,\\tau}\\psi_H(h)\\right].",
+ "874": "\\pi_i=\\operatorname{clip}(S_i/100,\\epsilon_S,1-\\epsilon_S),\\quad\\epsilon_S=0.001,\\quad Z_i=\\ln\\frac{\\pi_i}{1-\\pi_i},\\quad\\operatorname{expit}(z)=\\frac{1}{1+e^{-z}}.",
+ "904": "\\widehat Z=-3.541544+1.217559x(N,D)+0.191554T.",
+ "894": "\\begin{pmatrix}N_B^{(a)}(t')\\\\D_B^{(a)}(t')\\end{pmatrix}=\\exp(\\widehat a_0+\\widehat a_Tt'+\\widehat\\varepsilon_{M,a}).",
+ "896": "\\widehat G(t,t')=\\frac{100}{n_Mn_Y}\\sum_{a=1}^{n_M}\\sum_{b=1}^{n_Y}\\operatorname{expit}(\\widehat V_{ab}(t,t')),\\quad\\widehat V_{ab}(t,t')=\\widehat\\beta_0+\\widehat\\kappa x(N_B^{(a)}(t'),D_B^{(a)}(t'))+\\widehat\\gamma_Tt+\\widehat\\varepsilon_{Y,b}.",
+ "919": "\\kappa(\\rho)=\\widehat\\kappa-\\frac{\\rho}{\\sqrt{1-\\rho^2}}\\frac{s_Y}{s_x},\\qquad\\gamma_T(\\rho)=\\widehat\\gamma_T+[\\widehat\\kappa-\\kappa(\\rho)]b_x.",
+ "941": "\\min\\;\\tau\\sum_i e_i^++(1-\\tau)\\sum_i e_i^-,\\quad\\mathrm{s.t.}\\;Z_i-b_{0,\\tau}-\\kappa_\\tau x_i-\\gamma_{T,\\tau}T_i=e_i^+-e_i^-,\\quad e_i^+,e_i^-\\geq0,\\;\\kappa_\\tau\\geq0.",
+ "946": "z_\\star=b_{0,\\tau}+\\kappa_\\tau x(N_{B,0}^\\star,D_{B,0}^\\star)+\\gamma_{T,\\tau}t_\\star.",
+ "959": "q_\\tau(Z\\mid\\ln N_B,T,g)=b_{0,g}+b_{N,g}\\ln N_B+b_{T,g}T,\\qquad\\tau=0.9."
+}

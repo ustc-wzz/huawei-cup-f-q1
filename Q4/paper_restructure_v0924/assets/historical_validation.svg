@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="641.260534pt" height="289.049508pt" viewBox="0 0 641.260534 289.049508" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-27T01:07:59.010183</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 289.049508
+L 641.260534 289.049508
+L 641.260534 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 91.02025 254.524514
+L 317.553104 254.524514
+L 317.553104 20.084994
+L 91.02025 20.084994
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m7dae420af0" d="M 0 0
+L 0 3.5
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m7dae420af0" x="91.02025" y="254.524514" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: middle" x="91.02025" y="270.324514" transform="rotate(-0 91.02025 270.324514)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m7dae420af0" x="130.202626" y="254.524514" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: middle" x="130.202626" y="270.324514" transform="rotate(-0 130.202626 270.324514)">1</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m7dae420af0" x="169.385002" y="254.524514" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: middle" x="169.385002" y="270.324514" transform="rotate(-0 169.385002 270.324514)">2</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m7dae420af0" x="208.567378" y="254.524514" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: middle" x="208.567378" y="270.324514" transform="rotate(-0 208.567378 270.324514)">3</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m7dae420af0" x="247.749754" y="254.524514" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: middle" x="247.749754" y="270.324514" transform="rotate(-0 247.749754 270.324514)">4</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m7dae420af0" x="286.93213" y="254.524514" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: middle" x="286.93213" y="270.324514" transform="rotate(-0 286.93213 270.324514)">5</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: middle" x="204.286677" y="284.324514" transform="rotate(-0 204.286677 284.324514)">能力分 MAE</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7">
+      <path d="M 91.02025 53.17574
+L 317.553104 53.17574
+" clip-path="url(#pc5c50614f8)" style="fill: none; stroke: #e5e7eb; stroke-opacity: 0.7; stroke-width: 0.55; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <defs>
+       <path id="m97a3f3f8da" d="M 0 0
+L -3.5 0
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m97a3f3f8da" x="91.02025" y="53.17574" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: end" x="84.02025" y="57.57574" transform="rotate(-0 84.02025 57.57574)">标度＋时间</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_9">
+      <path d="M 91.02025 109.261749
+L 317.553104 109.261749
+" clip-path="url(#pc5c50614f8)" style="fill: none; stroke: #e5e7eb; stroke-opacity: 0.7; stroke-width: 0.55; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m97a3f3f8da" x="91.02025" y="109.261749" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: end" x="84.02025" y="113.661749" transform="rotate(-0 84.02025 113.661749)">仅规模</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_11">
+      <path d="M 91.02025 165.347759
+L 317.553104 165.347759
+" clip-path="url(#pc5c50614f8)" style="fill: none; stroke: #e5e7eb; stroke-opacity: 0.7; stroke-width: 0.55; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m97a3f3f8da" x="91.02025" y="165.347759" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: end" x="84.02025" y="169.747759" transform="rotate(-0 84.02025 169.747759)">仅时间</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_13">
+      <path d="M 91.02025 221.433768
+L 317.553104 221.433768
+" clip-path="url(#pc5c50614f8)" style="fill: none; stroke: #e5e7eb; stroke-opacity: 0.7; stroke-width: 0.55; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m97a3f3f8da" x="91.02025" y="221.433768" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <!-- 自由 $N$、$D$＋时间 -->
+      <g transform="translate(7.82025 225.833768)">
+       <text>
+        <tspan x="0" y="-0.578125" style="font-size: 10px; font-family: 'Noto Sans SC Diagram'">自</tspan>
+        <tspan x="9.999985" y="-0.578125" style="font-size: 10px; font-family: 'Noto Sans SC Diagram'">由</tspan>
+        <tspan x="19.999969" y="-0.578125" style="font-size: 10px; font-family: 'Noto Sans SC Diagram'"> </tspan>
+        <tspan x="28.909973" y="-0.578125" style="font-size: 10px; font-family: 'Noto Sans SC Diagram'">、</tspan>
+        <tspan x="46.129944" y="-0.578125" style="font-size: 10px; font-family: 'Noto Sans SC Diagram'">＋</tspan>
+        <tspan x="56.129929" y="-0.578125" style="font-size: 10px; font-family: 'Noto Sans SC Diagram'">时</tspan>
+        <tspan x="66.129913" y="-0.578125" style="font-size: 10px; font-family: 'Noto Sans SC Diagram'">间</tspan>
+        <tspan x="22.239975" y="-0.578125" style="font-style: italic; font-size: 10px; font-family: 'STIXGeneral'">N</tspan>
+        <tspan x="38.909958" y="-0.578125" style="font-style: italic; font-size: 10px; font-family: 'STIXGeneral'">D</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 91.02025 30.741336
+L 216.611443 30.741336
+L 216.611443 75.610143
+L 91.02025 75.610143
+z
+" clip-path="url(#pc5c50614f8)" style="fill: #366c91"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 91.02025 86.827345
+L 223.262404 86.827345
+L 223.262404 131.696153
+L 91.02025 131.696153
+z
+" clip-path="url(#pc5c50614f8)" style="fill: #9db1be"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 91.02025 142.913355
+L 306.765825 142.913355
+L 306.765825 187.782163
+L 91.02025 187.782163
+z
+" clip-path="url(#pc5c50614f8)" style="fill: #b9bfc4"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 91.02025 198.999365
+L 238.983511 198.999365
+L 238.983511 243.868172
+L 91.02025 243.868172
+z
+" clip-path="url(#pc5c50614f8)" style="fill: #cb8548"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 91.02025 254.524514
+L 91.02025 20.084994
+" style="fill: none; stroke: #555555; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 91.02025 254.524514
+L 317.553104 254.524514
+" style="fill: none; stroke: #555555; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 12px; font-family: 'Noto Sans SC Diagram'; text-anchor: middle" x="204.286677" y="14.084994" transform="rotate(-0 204.286677 14.084994)">(a) 机构留出</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_9">
+    <path d="M 406.753584 254.524514
+L 633.286437 254.524514
+L 633.286437 20.084994
+L 406.753584 20.084994
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_7">
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#m7dae420af0" x="406.753584" y="254.524514" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: middle" x="406.753584" y="270.324514" transform="rotate(-0 406.753584 270.324514)">0</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m7dae420af0" x="454.231889" y="254.524514" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: middle" x="454.231889" y="270.324514" transform="rotate(-0 454.231889 270.324514)">2</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_17">
+      <g>
+       <use xlink:href="#m7dae420af0" x="501.710195" y="254.524514" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_15">
+      <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: middle" x="501.710195" y="270.324514" transform="rotate(-0 501.710195 270.324514)">4</text>
+     </g>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m7dae420af0" x="549.188501" y="254.524514" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_16">
+      <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: middle" x="549.188501" y="270.324514" transform="rotate(-0 549.188501 270.324514)">6</text>
+     </g>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_19">
+      <g>
+       <use xlink:href="#m7dae420af0" x="596.666806" y="254.524514" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_17">
+      <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: middle" x="596.666806" y="270.324514" transform="rotate(-0 596.666806 270.324514)">8</text>
+     </g>
+    </g>
+    <g id="text_18">
+     <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: middle" x="520.02001" y="284.324514" transform="rotate(-0 520.02001 284.324514)">能力分 MAE</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_5">
+     <g id="line2d_20">
+      <path d="M 406.753584 53.17574
+L 633.286437 53.17574
+" clip-path="url(#p7a3b0ea418)" style="fill: none; stroke: #e5e7eb; stroke-opacity: 0.7; stroke-width: 0.55; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_21">
+      <g>
+       <use xlink:href="#m97a3f3f8da" x="406.753584" y="53.17574" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_19">
+      <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: end" x="399.753584" y="57.57574" transform="rotate(-0 399.753584 57.57574)">标度＋时间</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_22">
+      <path d="M 406.753584 109.261749
+L 633.286437 109.261749
+" clip-path="url(#p7a3b0ea418)" style="fill: none; stroke: #e5e7eb; stroke-opacity: 0.7; stroke-width: 0.55; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_23">
+      <g>
+       <use xlink:href="#m97a3f3f8da" x="406.753584" y="109.261749" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_20">
+      <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: end" x="399.753584" y="113.661749" transform="rotate(-0 399.753584 113.661749)">仅规模</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_24">
+      <path d="M 406.753584 165.347759
+L 633.286437 165.347759
+" clip-path="url(#p7a3b0ea418)" style="fill: none; stroke: #e5e7eb; stroke-opacity: 0.7; stroke-width: 0.55; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_25">
+      <g>
+       <use xlink:href="#m97a3f3f8da" x="406.753584" y="165.347759" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_21">
+      <text style="font-size: 10px; font-family: 'Noto Sans SC Diagram'; text-anchor: end" x="399.753584" y="169.747759" transform="rotate(-0 399.753584 169.747759)">仅时间</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_26">
+      <path d="M 406.753584 221.433768
+L 633.286437 221.433768
+" clip-path="url(#p7a3b0ea418)" style="fill: none; stroke: #e5e7eb; stroke-opacity: 0.7; stroke-width: 0.55; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_27">
+      <g>
+       <use xlink:href="#m97a3f3f8da" x="406.753584" y="221.433768" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_22">
+      <!-- 自由 $N$、$D$＋时间 -->
+      <g transform="translate(323.553584 225.833768)">
+       <text>
+        <tspan x="0" y="-0.578125" style="font-size: 10px; font-family: 'Noto Sans SC Diagram'">自</tspan>
+        <tspan x="9.999985" y="-0.578125" style="font-size: 10px; font-family: 'Noto Sans SC Diagram'">由</tspan>
+        <tspan x="19.999969" y="-0.578125" style="font-size: 10px; font-family: 'Noto Sans SC Diagram'"> </tspan>
+        <tspan x="28.909973" y="-0.578125" style="font-size: 10px; font-family: 'Noto Sans SC Diagram'">、</tspan>
+        <tspan x="46.129944" y="-0.578125" style="font-size: 10px; font-family: 'Noto Sans SC Diagram'">＋</tspan>
+        <tspan x="56.129929" y="-0.578125" style="font-size: 10px; font-family: 'Noto Sans SC Diagram'">时</tspan>
+        <tspan x="66.129913" y="-0.578125" style="font-size: 10px; font-family: 'Noto Sans SC Diagram'">间</tspan>
+        <tspan x="22.239975" y="-0.578125" style="font-style: italic; font-size: 10px; font-family: 'STIXGeneral'">N</tspan>
+        <tspan x="38.909958" y="-0.578125" style="font-style: italic; font-size: 10px; font-family: 'STIXGeneral'">D</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="patch_10">
+    <path d="M 406.753584 30.741336
+L 559.293108 30.741336
+L 559.293108 75.610143
+L 406.753584 75.610143
+z
+" clip-path="url(#p7a3b0ea418)" style="fill: #366c91"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 406.753584 86.827345
+L 575.635624 86.827345
+L 575.635624 131.696153
+L 406.753584 131.696153
+z
+" clip-path="url(#p7a3b0ea418)" style="fill: #9db1be"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 406.753584 142.913355
+L 622.499158 142.913355
+L 622.499158 187.782163
+L 406.753584 187.782163
+z
+" clip-path="url(#p7a3b0ea418)" style="fill: #b9bfc4"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 406.753584 198.999365
+L 564.781418 198.999365
+L 564.781418 243.868172
+L 406.753584 243.868172
+z
+" clip-path="url(#p7a3b0ea418)" style="fill: #cb8548"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 406.753584 254.524514
+L 406.753584 20.084994
+" style="fill: none; stroke: #555555; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 406.753584 254.524514
+L 633.286437 254.524514
+" style="fill: none; stroke: #555555; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 12px; font-family: 'Noto Sans SC Diagram'; text-anchor: middle" x="520.02001" y="14.084994" transform="rotate(-0 520.02001 14.084994)">(b) 发布队列阻塞留出</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pc5c50614f8">
+   <rect x="91.02025" y="20.084994" width="226.532853" height="234.43952"/>
+  </clipPath>
+  <clipPath id="p7a3b0ea418">
+   <rect x="406.753584" y="20.084994" width="226.532853" height="234.43952"/>
+  </clipPath>
+ </defs>
+</svg>
