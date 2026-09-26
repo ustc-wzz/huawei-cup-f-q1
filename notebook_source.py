@@ -76,6 +76,14 @@ for d in (FIG, TAB, CACHE):
     d.mkdir(parents=True, exist_ok=True)
 
 def savefig(name):
+    FIG.mkdir(parents=True, exist_ok=True)
+    stem = Path(name).stem
+    number, content = stem[3:5], stem[6:]
+    target = BASE_DIR / 'figures' / f'fig_{number}_{content}.png'
+    target.parent.mkdir(parents=True, exist_ok=True)
+    plt.tight_layout()
+    plt.savefig(target, dpi=300, bbox_inches='tight')
+    plt.savefig(target.with_suffix('.svg'), bbox_inches='tight')
     plt.savefig(FIG / name, dpi=300, bbox_inches='tight')
 
 print('数据目录:', DATA)

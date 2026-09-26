@@ -41,12 +41,19 @@ RNG=np.random.default_rng(925)
 pd.set_option('display.max_columns',15)
 from repro_runtime import configure_fonts
 configure_fonts()
-plt.rcParams.update({'axes.unicode_minus':False,'figure.dpi':110,'savefig.dpi':180,'axes.spines.top':False,'axes.spines.right':False})
+plt.rcParams.update({'axes.unicode_minus':False,'figure.dpi':110,'savefig.dpi':300,'figure.figsize':(6.5,4.2),'axes.spines.top':False,'axes.spines.right':False})
 def save_table(df,name):
     df.to_csv(TAB/f'{name}.csv',index=False,encoding='utf-8-sig');return df
 def show(s):display(Markdown(s))
 def finish_fig(name):
-    plt.tight_layout();plt.savefig(FIG/f'{name}.png',bbox_inches='tight');plt.show()
+    plt.tight_layout()
+    stem=Path(name).stem
+    target=ROOT/'figures'/f'fig_{int(name[:2])+20:02d}_q2_{name[3:]}'
+    target.parent.mkdir(parents=True,exist_ok=True)
+    plt.savefig(FIG/f'{name}.png',dpi=300,bbox_inches='tight')
+    plt.savefig(target.with_suffix('.png'),dpi=300,bbox_inches='tight')
+    plt.savefig(target.with_suffix('.svg'),bbox_inches='tight')
+    plt.show()
 def metrics(y,p):
     y=np.asarray(y,float);p=np.asarray(p,float);v=np.sum((y-y.mean())**2)
     return {'n':len(y),'RMSE':float(np.sqrt(np.mean((y-p)**2))),'MAE':float(np.mean(abs(y-p))),

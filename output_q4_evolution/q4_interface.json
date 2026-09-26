@@ -4,38 +4,38 @@
   "complete_ND_population": "matched pretrained only",
   "contributions": {
     "method": "scale_time",
-    "start_score": 9.114875861322949,
-    "end_score": 14.273433462452116,
-    "scale_points": 2.939433172077342,
-    "technology_points": 2.219124429051826,
-    "total_points": 5.158557601129168,
-    "scale_share": 0.5698168750570747,
-    "technology_share": 0.4301831249429253,
+    "start_score": 9.114875861322544,
+    "end_score": 14.27343346245221,
+    "scale_points": 2.9394331720815785,
+    "technology_points": 2.2191244290480885,
+    "total_points": 5.158557601129667,
+    "scale_share": 0.5698168750578408,
+    "technology_share": 0.4301831249421591,
     "additivity_error": 0.0,
-    "scale_points_lo": 0.3588920005326437,
-    "scale_points_hi": 7.412107988159507,
-    "technology_points_lo": -1.7543811879195466,
-    "technology_points_hi": 5.887444311288732,
-    "total_points_lo": 1.9052159274985876,
-    "total_points_hi": 10.33968644627737,
-    "scale_share_lo": 0.1049803362366772,
-    "scale_share_hi": 1.2391290967874369,
-    "technology_share_lo": -0.2391290967874373,
-    "technology_share_hi": 0.8950196637633225
+    "scale_points_lo": 0.3588920005328111,
+    "scale_points_hi": 7.412107988170754,
+    "technology_points_lo": -1.7543811879394924,
+    "technology_points_hi": 5.88744431128098,
+    "total_points_lo": 1.9052159275069491,
+    "total_points_hi": 10.339686446278316,
+    "scale_share_lo": 0.1049803362368747,
+    "scale_share_hi": 1.2391290967898436,
+    "technology_share_lo": -0.2391290967898443,
+    "technology_share_hi": 0.8950196637631249
   },
   "origin": "2025-03-13",
   "forecast_targets": [
     {
       "target_date": "2026-03-13",
-      "forecast": 45.82623673664799,
-      "lo": 22.885955093855923,
-      "hi": 74.7606401061422
+      "forecast": 45.82623673660792,
+      "lo": 22.885955093812463,
+      "hi": 74.76064010614445
     },
     {
       "target_date": "2027-03-13",
-      "forecast": 51.29545566132112,
-      "lo": 23.054772634887104,
-      "hi": 84.9721103009153
+      "forecast": 51.29545566127875,
+      "lo": 23.054772634830563,
+      "hi": 84.97211030091717
     }
   ],
   "bridges": "high-comparability future losses unsupported; medium cross-report scenario only",

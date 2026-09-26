@@ -56,6 +56,10 @@ def run(root,model,make_scenario,scan,main,contexts):
     def figsave(fig,name):
         fig.savefig(figdir/f'{name}.png',dpi=300,bbox_inches='tight')
         fig.savefig(figdir/f'{name}.pdf',bbox_inches='tight')
+        root_fig=Path(root)/'figures';root_fig.mkdir(parents=True,exist_ok=True)
+        target=root_fig/f'fig_{int(name[:2])+24:02d}_q3_{name[3:]}'
+        fig.savefig(target.with_suffix('.png'),dpi=300,bbox_inches='tight')
+        fig.savefig(target.with_suffix('.svg'),bbox_inches='tight')
         plt.close(fig)
     plt.rcParams.update({'pdf.fonttype':42,'axes.grid':True,'grid.alpha':.15,'legend.frameon':False})
     sc=make_scenario()

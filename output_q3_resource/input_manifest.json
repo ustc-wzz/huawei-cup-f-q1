@@ -1,33 +1,33 @@
 [
   {
     "path": "0924_F题_问题一.ipynb",
-    "bytes": 429192,
-    "sha256": "974bafee71dcc6e1d5a4207e4326eb45bd81c20372e0591de6eeccda3af95a41"
+    "bytes": 4539342,
+    "sha256": "934bb9802911bf7f6b4e25c56e66109fc1036ff49418080a1099b91d03299026"
   },
   {
     "path": "notebook_source.py",
-    "bytes": 153225,
-    "sha256": "f0a8bf7fbf292cc65aa1b9584516a7d33b11cd9f173cb04087e53e5fc56eaf9b"
+    "bytes": 153598,
+    "sha256": "4dcccce71331af7680d4782e13116f94d5805cee9a701db019b13f6721b5b321"
   },
   {
     "path": "0924_问题二.ipynb",
-    "bytes": 143834,
-    "sha256": "604a5c37ecf0ef4690bb29ab7e491a99a1d1fbc34413c07d1fd18dde99e14c58"
+    "bytes": 519540,
+    "sha256": "3843f47ba1df86f98261242e9e5432baee3ae9c9f25c09add6e3cbd689dea773"
   },
   {
     "path": "Q2/notebook_source.py",
-    "bytes": 44587,
-    "sha256": "df736393e066a5cd384abc2c983035a51c43c6b8d5eb979719670b151bc693b0"
+    "bytes": 44913,
+    "sha256": "ab975b8ae8e15b4ceb1b1ec651c567229f69d7e6847f412842e68a3f99caf70b"
   },
   {
     "path": "output_q1/length_domain_calibrated22/tables/q1_outputs_for_q2_q3.json",
-    "bytes": 33964,
-    "sha256": "84b8588103765ebf867eed63b79246626d884c7af11110af51c44d2a573b17fa"
+    "bytes": 33975,
+    "sha256": "cef384757208acdbf91c680713a797483eb2cfcd97128cbc7a56a745b7b236f1"
   },
   {
     "path": "output_q2_shared/q2_interface.json",
-    "bytes": 3779,
-    "sha256": "840078125cf347cf03d6bd95477e0afbe030e19c5c287699dc22076215995cf3"
+    "bytes": 3770,
+    "sha256": "85d730930cf2408526d6644bbfdbc4ae57059262560cf0733f666e88b17e2a88"
   },
   {
     "path": "real_attachments/C_efficiency_evolution/model_architecture_metadata.csv",
@@ -46,13 +46,13 @@
   },
   {
     "path": "Q3/quality_audit/quality_cap_candidates.csv",
-    "bytes": 1343,
-    "sha256": "293747c4328b2fca4a0ca5adf07c5dafb229526933f05680972488ed645e660c"
+    "bytes": 1348,
+    "sha256": "0027d3419bef58145d28b7541e3fadd216a68cb9a2066c4f1c191a752be0a0a4"
   },
   {
     "path": "Q3/quality_audit/input_manifest.json",
     "bytes": 1697,
-    "sha256": "334ea7e8581495f18da5add4eaa9dbf8fbad0f02f81cabf2075d973c7d0b4819"
+    "sha256": "794e546dded51014e6bc1e1a096bd412cf325289e352fac732f4cf54af922c58"
   },
   {
     "path": "Q3/resource_model.py",
@@ -61,8 +61,8 @@
   },
   {
     "path": "Q3/notebook_source.py",
-    "bytes": 46435,
-    "sha256": "85e86c7ce280c45fbd2c3f5c626a4942b7c65b8317a0ce12be84d859a98acdc8"
+    "bytes": 46753,
+    "sha256": "f25fb117da1d3d63596ce00e308890328b3237d88bbd7b10520494f51b5377fc"
   },
   {
     "path": "real_attachments/B_scaling_laws/pythia_training_log_existing.csv",
@@ -76,8 +76,8 @@
   },
   {
     "path": "Q3/decision_analysis.py",
-    "bytes": 14289,
-    "sha256": "3cad56725a7d64907dc0c017d70076c4c7411066bbd2b2a60026dccbf1d1bdd5"
+    "bytes": 14582,
+    "sha256": "3b432195ddc675b676ab912dcf736331821eaf35fe0c33419e8609e23abe90fb"
   },
   {
     "path": "Q3/audit_quality_interface.py",

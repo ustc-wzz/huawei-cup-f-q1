@@ -18,10 +18,14 @@ def setup():
     plt.rcParams.update({
       'axes.unicode_minus':False,'font.size':10,'axes.titlesize':12,'axes.labelsize':10,
       'axes.spines.top':False,'axes.spines.right':False,'legend.frameon':False,
-      'pdf.fonttype':42,'svg.fonttype':'none','figure.dpi':130,'savefig.dpi':300})
+      'pdf.fonttype':42,'svg.fonttype':'none','figure.dpi':130,'savefig.dpi':300,'figure.figsize':(6.5,4.2)})
 def export(fig,name):
     dest=OUT/'figures';dest.mkdir(exist_ok=True)
-    fig.savefig(dest/f'{name}.png',bbox_inches='tight');fig.savefig(dest/f'{name}.pdf',bbox_inches='tight');plt.close(fig)
+    root=OUT.parent/'figures';root.mkdir(exist_ok=True)
+    number=int(name[:2])+36
+    stem=f'fig_{number:02d}_q4_{name[3:]}'
+    fig.savefig(dest/f'{name}.png',dpi=300,bbox_inches='tight');fig.savefig(dest/f'{name}.pdf',bbox_inches='tight')
+    fig.savefig(root/f'{stem}.png',dpi=300,bbox_inches='tight');fig.savefig(root/f'{stem}.svg',bbox_inches='tight');plt.close(fig)
 
 def causal():
     fig,ax=plt.subplots(figsize=(11,5));ax.set(xlim=(0,11),ylim=(0,5));ax.axis('off')

@@ -1,8 +1,8 @@
 equation,term,value
-outcome_logit,intercept,-3.541544001655858
-outcome_logit,scale_index,1.217559474575308
-outcome_logit,time_year,0.19155390537719286
-lnN,intercept,1.3227985572639192
-lnN,time_year,0.28652848007393034
-lnD,intercept,6.410830705880421
-lnD,time_year,1.2392168359115792
+outcome_logit,intercept,-3.541544001660515
+outcome_logit,scale_index,1.21755947457087
+outcome_logit,time_year,0.19155390537687006
+lnN,intercept,1.322798557263919
+lnN,time_year,0.2865284800739302
+lnD,intercept,6.41083070588042
+lnD,time_year,1.2392168359115778

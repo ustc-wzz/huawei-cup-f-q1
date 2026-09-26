@@ -144,3 +144,11 @@
 !/Q3/模型建立.md
 !/公式完整性核查.md
 !/formula_verification.json
+
+# v0.9.4 —论文插图与四问结果图册
+!/figures/
+/figures/*
+!/figures/*.png
+!/figures/*.svg
+!/四问结果分析与论文插图.docx
+!/build_figures_doc.py

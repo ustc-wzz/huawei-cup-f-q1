@@ -3,32 +3,32 @@
   "audit_passed": true,
   "protected_q1_q2_unchanged": true,
   "protected_sha256": {
-    "0924_F题_问题一.ipynb": "974bafee71dcc6e1d5a4207e4326eb45bd81c20372e0591de6eeccda3af95a41",
-    "notebook_source.py": "f0a8bf7fbf292cc65aa1b9584516a7d33b11cd9f173cb04087e53e5fc56eaf9b",
-    "0924_问题二.ipynb": "604a5c37ecf0ef4690bb29ab7e491a99a1d1fbc34413c07d1fd18dde99e14c58",
-    "Q2/notebook_source.py": "df736393e066a5cd384abc2c983035a51c43c6b8d5eb979719670b151bc693b0",
-    "output_q1/length_domain_calibrated22/tables/q1_outputs_for_q2_q3.json": "84b8588103765ebf867eed63b79246626d884c7af11110af51c44d2a573b17fa",
-    "output_q2_shared/q2_interface.json": "840078125cf347cf03d6bd95477e0afbe030e19c5c287699dc22076215995cf3"
+    "0924_F题_问题一.ipynb": "934bb9802911bf7f6b4e25c56e66109fc1036ff49418080a1099b91d03299026",
+    "notebook_source.py": "4dcccce71331af7680d4782e13116f94d5805cee9a701db019b13f6721b5b321",
+    "0924_问题二.ipynb": "3843f47ba1df86f98261242e9e5432baee3ae9c9f25c09add6e3cbd689dea773",
+    "Q2/notebook_source.py": "ab975b8ae8e15b4ceb1b1ec651c567229f69d7e6847f412842e68a3f99caf70b",
+    "output_q1/length_domain_calibrated22/tables/q1_outputs_for_q2_q3.json": "cef384757208acdbf91c680713a797483eb2cfcd97128cbc7a56a745b7b236f1",
+    "output_q2_shared/q2_interface.json": "85d730930cf2408526d6644bbfdbc4ae57059262560cf0733f666e88b17e2a88"
   },
   "main_rows": 45,
   "budget_scan_rows": 3015,
   "sensitivity_rows": 180,
   "sensitivity_scan_rows": 6060,
-  "max_budget_relative_error": 4.4119560852680157e-16,
-  "max_inner_KKT_log_residual": 2.0405899192610377e-13,
-  "max_derivative_relative_error": 3.103951242731859e-10,
-  "max_classic_N_relative_error": 2.6645352591003757e-15,
-  "max_expanded_bracket_relative_error": 1.7186252421197423e-13,
+  "max_budget_relative_error": 5.206443909991394e-16,
+  "max_inner_KKT_log_residual": 2.0827783941967937e-13,
+  "max_derivative_relative_error": 2.714785651932144e-10,
+  "max_classic_N_relative_error": 2.886579864025407e-15,
+  "max_expanded_bracket_relative_error": 1.7175150190951172e-13,
   "max_outer_grid_relative_error": 2.220446049250313e-16,
-  "max_outer_grid_t_difference": 4.177458046150662e-09,
+  "max_outer_grid_t_difference": 3.111379288656124e-07,
   "independent_cases": 33,
-  "max_independent_objective_relative_error": 9.520162436160763e-15,
+  "max_independent_objective_relative_error": 9.159339953157545e-16,
   "independent_quality_states": [
     "R0",
     "R1",
     "R2"
   ],
-  "max_transition_analytic_relative_error": 2.0605739337042905e-13,
+  "max_transition_analytic_relative_error": 2.0394796962364126e-13,
   "main_states": [
     "R2"
   ],
@@ -44,9 +44,9 @@
     "decision_checks": 1125,
     "max_threshold_grid_relative_error": 0.0,
     "max_tie_log_objective_gap": 2.220446049250313e-16,
-    "max_shadow_relative_error": 7.76183561868038e-11,
+    "max_shadow_relative_error": 7.834777271398252e-11,
     "max_equivalent_loss_error": 8.881784197001252e-16,
-    "max_budget_relative_error": 4.194304e-16,
+    "max_budget_relative_error": 4.096e-16,
     "limits": "Sample-supported quality scenarios, no token supply guarantee; lambda is conditional, no new training validation."
   }
 }

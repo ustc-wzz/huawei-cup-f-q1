@@ -36,7 +36,7 @@ pd.set_option('display.max_columns',16)
 pd.set_option('display.precision',6)
 from repro_runtime import configure_fonts
 configure_fonts()
-plt.rcParams.update({'axes.unicode_minus':False,'figure.dpi':110,'savefig.dpi':160,
+plt.rcParams.update({'axes.unicode_minus':False,'figure.dpi':110,'savefig.dpi':300,'figure.figsize':(6.5,4.2),
                     'axes.spines.top':False,'axes.spines.right':False,'font.size':10})
 protected=[ROOT/x for x in ['0924_F题_问题一.ipynb','notebook_source.py','0924_问题二.ipynb','Q2/notebook_source.py',
            'output_q1/length_domain_calibrated22/tables/q1_outputs_for_q2_q3.json','output_q2_shared/q2_interface.json']]
@@ -375,8 +375,13 @@ zoom=pd.DataFrame(zoom);save(zoom,'transition_zoom')
 # %%
 def finish(fig,name):
     fig.tight_layout()
-    fig.savefig(FIG/f'{name}.png',bbox_inches='tight')
+    stem=Path(name).stem
+    target=ROOT/'figures'/f'fig_{int(name[:2])+24:02d}_q3_{name[3:]}'
+    target.parent.mkdir(parents=True,exist_ok=True)
+    fig.savefig(FIG/f'{name}.png',dpi=300,bbox_inches='tight')
     fig.savefig(FIG/f'{name}.pdf',bbox_inches='tight')
+    fig.savefig(target.with_suffix('.png'),dpi=300,bbox_inches='tight')
+    fig.savefig(target.with_suffix('.svg'),bbox_inches='tight')
     plt.close(fig);display(Image(filename=str(FIG/f'{name}.png')))
 colors={'exponential':'#277DA1','power':'#D17B35','logarithmic':'#4D9078'}
 fig,axes=plt.subplots(2,2,figsize=(11,7))

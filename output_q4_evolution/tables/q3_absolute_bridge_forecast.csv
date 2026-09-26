@@ -1,19 +1,19 @@
 scenario,horizon_months,tier,loss,prediction,lo,hi,support_low,support_high,supported,bootstrap_supported,interpretation
-compute_frozen,0,high,1.8695913720441104,,,,2.0933,2.5978,False,0,same-validation-set bridge
-compute_frozen,0,medium,1.8695913720441104,27.513901408289524,21.076498572955106,33.64798378670074,1.65,2.84,True,399,absolute cross-report scenario only
-compute_frozen,12,high,1.8695913720441104,,,,2.0933,2.5978,False,0,same-validation-set bridge
-compute_frozen,12,medium,1.8695913720441104,27.513901408289524,20.07088201624994,33.81998131278014,1.65,2.84,True,400,absolute cross-report scenario only
-compute_frozen,24,high,1.8695913720441104,,,,2.0933,2.5978,False,0,same-validation-set bridge
-compute_frozen,24,medium,1.8695913720441104,27.513901408289524,20.556834347878603,33.07074718956758,1.65,2.84,True,400,absolute cross-report scenario only
-quarter_historical_growth,0,high,1.8695913720441104,,,,2.0933,2.5978,False,0,same-validation-set bridge
-quarter_historical_growth,0,medium,1.8695913720441104,27.513901408289524,21.578932812687984,33.682907021750026,1.65,2.84,True,400,absolute cross-report scenario only
-quarter_historical_growth,12,high,1.8625988113307637,,,,2.0933,2.5978,False,0,same-validation-set bridge
-quarter_historical_growth,12,medium,1.8625988113307637,27.513901408289524,20.21062628789935,34.98661648054326,1.65,2.84,True,400,absolute cross-report scenario only
-quarter_historical_growth,24,high,1.8558783679829571,,,,2.0933,2.5978,False,0,same-validation-set bridge
-quarter_historical_growth,24,medium,1.8558783679829571,27.513901408289524,20.564360094885437,34.347798673572264,1.65,2.84,True,400,absolute cross-report scenario only
-half_historical_growth,0,high,1.8695913720441104,,,,2.0933,2.5978,False,0,same-validation-set bridge
-half_historical_growth,0,medium,1.8695913720441104,27.513901408289524,20.409240125343885,33.802905939705305,1.65,2.84,True,400,absolute cross-report scenario only
-half_historical_growth,12,high,1.8558783679829571,,,,2.0933,2.5978,False,0,same-validation-set bridge
-half_historical_growth,12,medium,1.8558783679829571,27.513901408289524,20.40807298341352,34.274872279935536,1.65,2.84,True,400,absolute cross-report scenario only
-half_historical_growth,24,high,1.8432118321628006,,,,2.0933,2.5978,False,0,same-validation-set bridge
-half_historical_growth,24,medium,1.8432118321628006,27.513901408289524,21.192371281942872,33.89818887159061,1.65,2.84,True,398,absolute cross-report scenario only
+compute_frozen,0,high,1.8695913720495432,,,,2.0933,2.5978,False,0,same-validation-set bridge
+compute_frozen,0,medium,1.8695913720495432,27.513901408289524,21.076498572955106,33.647983786570094,1.65,2.84,True,399,absolute cross-report scenario only
+compute_frozen,12,high,1.8695913720495432,,,,2.0933,2.5978,False,0,same-validation-set bridge
+compute_frozen,12,medium,1.8695913720495432,27.513901408289524,20.07088201624994,33.81998131247638,1.65,2.84,True,400,absolute cross-report scenario only
+compute_frozen,24,high,1.8695913720495432,,,,2.0933,2.5978,False,0,same-validation-set bridge
+compute_frozen,24,medium,1.8695913720495432,27.513901408289524,20.556834347878603,33.070747189557665,1.65,2.84,True,400,absolute cross-report scenario only
+quarter_historical_growth,0,high,1.8695913720495432,,,,2.0933,2.5978,False,0,same-validation-set bridge
+quarter_historical_growth,0,medium,1.8695913720495432,27.513901408289524,21.578932812687984,33.68290702174513,1.65,2.84,True,400,absolute cross-report scenario only
+quarter_historical_growth,12,high,1.8625988113360892,,,,2.0933,2.5978,False,0,same-validation-set bridge
+quarter_historical_growth,12,medium,1.8625988113360892,27.513901408289524,20.21062628789935,34.98661648020144,1.65,2.84,True,400,absolute cross-report scenario only
+quarter_historical_growth,24,high,1.8558783679881803,,,,2.0933,2.5978,False,0,same-validation-set bridge
+quarter_historical_growth,24,medium,1.8558783679881803,27.513901408289524,20.564360094885437,34.34779867305292,1.65,2.84,True,400,absolute cross-report scenario only
+half_historical_growth,0,high,1.8695913720495432,,,,2.0933,2.5978,False,0,same-validation-set bridge
+half_historical_growth,0,medium,1.8695913720495432,27.513901408289524,20.409240125343885,33.802905939365196,1.65,2.84,True,400,absolute cross-report scenario only
+half_historical_growth,12,high,1.8558783679881803,,,,2.0933,2.5978,False,0,same-validation-set bridge
+half_historical_growth,12,medium,1.8558783679881803,27.513901408289524,20.40807298341352,34.274872279935536,1.65,2.84,True,400,absolute cross-report scenario only
+half_historical_growth,24,high,1.8432118321678332,,,,2.0933,2.5978,False,0,same-validation-set bridge
+half_historical_growth,24,medium,1.8432118321678332,27.513901408289524,21.192371281942872,33.89818887159061,1.65,2.84,True,398,absolute cross-report scenario only
