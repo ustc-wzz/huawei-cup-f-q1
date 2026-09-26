@@ -1,0 +1,79 @@
+{
+  "input_sha256": {
+    "output_q2_shared/q2_interface.json": "85d730930cf2408526d6644bbfdbc4ae57059262560cf0733f666e88b17e2a88",
+    "real_attachments/B_scaling_laws/pythia_training_log_existing.csv": "529a59644b0f57bf3a76037838b614bfedc35e58bb26b93052e34ffc63e454c2",
+    "output_q2_shared/tables/quality_oof_predictions.csv": "51e35bb2830cc89abe977fe55e9587b26e1a63634a57a64e7b5adf8b8bde4590",
+    "output_q2_shared/tables/mixture_oof_predictions.csv": "3a3a897b5a12605c4b35bb18c5a37815c6e8a7d77c0b9bef35a943c07689a075"
+  },
+  "frozen_inputs_unchanged": true,
+  "common_oof_reproduced_tolerance": 1e-06,
+  "group_overlap": false,
+  "profile_minima_checked": [
+    "theta_Q",
+    "eta"
+  ],
+  "profile_exponent_minimum": {
+    "alpha": 0.3399854249224743,
+    "nu": 0.2798924654965345,
+    "objective": 1.69773413865937e-06
+  },
+  "comparison": [
+    {
+      "branch": "quality",
+      "kind": "none",
+      "n": 450,
+      "RMSE": 0.20730671923052887,
+      "coefficient": 0.0
+    },
+    {
+      "branch": "quality",
+      "kind": "parameter",
+      "n": 450,
+      "RMSE": 0.07373224486292959,
+      "coefficient": 0.6261315619389632
+    },
+    {
+      "branch": "quality",
+      "kind": "data",
+      "n": 450,
+      "RMSE": 0.12213078196193267,
+      "coefficient": 0.6646429600716544
+    },
+    {
+      "branch": "quality",
+      "kind": "common",
+      "n": 450,
+      "RMSE": 0.06222516983386956,
+      "coefficient": 0.39665934755494103
+    },
+    {
+      "branch": "mixture",
+      "kind": "none",
+      "n": 576,
+      "RMSE": 0.2371948146206208,
+      "coefficient": 0.0
+    },
+    {
+      "branch": "mixture",
+      "kind": "parameter",
+      "n": 576,
+      "RMSE": 0.12495719470114547,
+      "coefficient": 0.17442378767863176
+    },
+    {
+      "branch": "mixture",
+      "kind": "data",
+      "n": 576,
+      "RMSE": 0.09578702431305759,
+      "coefficient": 0.13505590121162692
+    },
+    {
+      "branch": "mixture",
+      "kind": "common",
+      "n": 576,
+      "RMSE": 0.09467908538346859,
+      "coefficient": 0.079566813036415
+    }
+  ],
+  "note": "RMSE curves are training profiles, not uncertainty intervals. Existing model is unchanged."
+}

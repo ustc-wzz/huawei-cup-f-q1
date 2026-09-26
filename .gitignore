@@ -218,3 +218,16 @@
 !/Q1/论文5.6至5.10修订说明.md
 !/output_q1/length_domain_calibrated22/tables/domain_marginal_effects.csv
 !/output_q1/length_domain_calibrated22/tables/transfer_matrix.csv
+
+# v0.9.17 独立问题二模型证据图
+!/Q2/draw_model_evidence.py
+!/output_q2_model_evidence/
+/output_q2_model_evidence/*
+!/output_q2_model_evidence/*.md
+!/output_q2_model_evidence/*.json
+!/output_q2_model_evidence/*.csv
+!/output_q2_model_evidence/*.png
+!/output_q2_model_evidence/*.pdf
+!/output_q2_model_evidence/*.svg
+/output_q2_model_evidence/*_candidate_oof.csv
+/output_q2_model_evidence/*_preview.png
