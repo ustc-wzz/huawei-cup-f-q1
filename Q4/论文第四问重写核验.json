@@ -1,0 +1,29 @@
+{
+  "source_sha256": "091161d54dbe37fd29caaeb647194de3565351676acfd8995d53d976de35c993",
+  "output": "F题论文初稿_问题四重写_20260926.docx",
+  "output_sha256": "b5c1de56a1bc320a6b91c21eeca7946c440423504255516e12f91e356e42b37f",
+  "preserved_pre_q4_body_elements": 866,
+  "changed_parts": [
+    "word/document.xml",
+    "word/_rels/document.xml.rels",
+    "word/settings.xml"
+  ],
+  "equations": 19,
+  "tables": 5,
+  "source_unchanged": true,
+  "model_recomputed": false,
+  "chapter_text_characters": 8184,
+  "rendered_pages": 75,
+  "q4_physical_pages": [
+    67,
+    75
+  ],
+  "q4_printed_pages": [
+    65,
+    73
+  ],
+  "pre_q4_first_66_pages_pixel_identical": true,
+  "visual_review": "已逐页检查：公式完整、表题与表格同页、表格无截断、图件清晰。",
+  "numerical_results_reused_from": "output_q4_evolution/tables",
+  "version": "v0.9.9"
+}

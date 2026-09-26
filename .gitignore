@@ -152,3 +152,9 @@
 !/figures/*.svg
 !/四问结果分析与论文插图.docx
 !/build_figures_doc.py
+
+# v0.9.9 问题四论文副本与审查记录
+!/F题论文初稿_问题四重写_20260926.docx
+!/rewrite_q4_paper.py
+!/Q4/论文第四问重写正文.md
+!/Q4/论文第四问重写核验.json
