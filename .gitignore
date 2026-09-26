@@ -180,3 +180,10 @@
 !/output_q2_paper/*.csv
 !/output_q2_paper/*.json
 !/output_q2_paper/*.md
+
+# v0.9.13 第三问论文精简及可追溯编辑
+!/F题论文初稿_问题三精简_20260926.docx
+!/rewrite_q3_paper.py
+!/Q3/论文第三问精简正文.md
+!/Q3/论文第三问实现附录.md
+!/Q3/论文第三问精简核验.json
